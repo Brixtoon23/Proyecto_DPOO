@@ -1,0 +1,53 @@
+{"usuarios": [
+    {
+        "verificado": true,
+        "valores_especiales": {"soyAdmin": true},
+        "password": "Admin",
+        "login": "tatiana_administrador",
+        "telefono": "56789",
+        "nombre": "tatiana",
+        "rol": "administrador"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {"comprasRegistradas": []},
+        "password": "Transferencia",
+        "login": "bri_cajero",
+        "telefono": "3234345",
+        "nombre": "bri",
+        "rol": "cajero"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {"estadoCuenta": 3000000},
+        "password": "bri",
+        "login": "bri_comprador",
+        "telefono": "2345532",
+        "nombre": "bri",
+        "rol": "comprador"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "piezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "Admin",
+        "login": "bri_propietario",
+        "telefono": "23323",
+        "nombre": "bri",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "soyAdmin": true,
+            "subastas": []
+        },
+        "password": "Galeria",
+        "login": "bri_operador",
+        "telefono": "345324",
+        "nombre": "bri",
+        "rol": "operador"
+    }
+]}
