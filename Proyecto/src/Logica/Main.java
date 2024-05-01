@@ -427,7 +427,9 @@ public class Main
             System.out.println("\nBienvenido al menu comprador");
             System.out.println("1. Ver Piezas Subasta");
             System.out.println("2. Ver piezas PrecioFijo");
-            System.out.println("3. Salir");
+            System.out.println("3. Comprar pieza a precio fijo");
+            System.out.println("4. Comprar pieza subasta");
+            System.out.println("5. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -439,12 +441,20 @@ public class Main
 
             switch (opcion) {
                 case 1:
-                    ImprimirJSON.ImprimirPiezas(opcion);;
+                    ImprimirJSON.ImprimirPiezas(opcion);
                     break;
                 case 2:
-                    ImprimirJSON.ImprimirPiezas(opcion);;
+                    ImprimirJSON.ImprimirPiezas(opcion);
                     break;
                 case 3:
+                   
+                    break;
+                
+                case 4:
+                   
+                    break;
+
+                case 5:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
