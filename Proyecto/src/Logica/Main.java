@@ -233,8 +233,9 @@ public class Main
 
         while (!salir) {
             System.out.println("\nBienvenido al menu cajero");
-            System.out.println("1. Registrar_Venta");
-            System.out.println("2. Salir");
+            System.out.println("1. Ver historial pieza");
+            System.out.println("2. Ver historial artista");
+            System.out.println("3. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try 
@@ -249,9 +250,19 @@ public class Main
             switch (opcion) 
             {
                 case 1:
-                    ;
+                    System.out.println("Ingrese el nombre de la pieza a consultar: ");
+                    String nomPieza = scanner.nextLine();
+                /**Se busca la pieza y se obtiene su historial
+                Se imprime el historial. Este debe tener los datos generales, los propietarios,
+                por cuánto se vendieron y cuándo se vendieron**/
                     break;
                 case 2:
+                    System.out.println("Ingrese el nombre del artista a consultar: ");
+                    String nomArtist = scanner.nextLine();
+                    /**Se obtienen las piezas que hizo el artista. Para cada pieza se obtiene
+                     * cuando se hicieron, cuando se vendieron y por cuánto se vendieron**/
+                break;
+                case 3:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
