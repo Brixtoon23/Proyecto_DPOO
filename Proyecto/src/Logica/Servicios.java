@@ -3,6 +3,7 @@ package Logica;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import org.json.JSONArray;
@@ -105,4 +106,25 @@ public class Servicios
 
     }
     
+    //TODO: Revisar
+
+    public static void imprimirListaPiezas(List<Pieza> lista,boolean estados)
+    {
+        for(Pieza p:lista)
+        {
+            System.out.println("Título: "+p.getTitulo());
+            System.out.println("Tipo: "+p.getTipo());
+            String autores = p.getAutor().toString();
+            System.out.println("Autor(es): " +autores);
+            System.out.println("Año de creación: "+p.getAnioCreacion());
+            System.out.println("Lugar de Creación:"+p.getLugarCreacion());
+            System.out.println("Precio de venta: "+ p.getValores().getLast().toString());
+            if(estados)
+            {
+                System.out.println("Para subasta: "+((Boolean)p.isSubasta()).toString());
+                System.out.println("En venta: "+((Boolean)p.isDisponible()).toString());
+                System.out.println("En bodega: "+((Boolean)p.isBodega()).toString());
+            }
+        }
+    }
 }

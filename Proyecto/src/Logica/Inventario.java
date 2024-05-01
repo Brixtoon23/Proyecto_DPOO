@@ -19,6 +19,8 @@ public class Inventario {
         return piezasExhibidad;
     }
 
+
+    //TODO: revisar
     public Pieza buscarPieza(String nomPieza)
     {
         Pieza pRespuesta = null;

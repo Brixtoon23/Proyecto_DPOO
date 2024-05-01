@@ -106,6 +106,7 @@ public class Cajero  extends Usuario
 		
 	}
 
+	//TODO: Revisar
 	public static boolean verificarComprador(Comprador comprador,Pieza pieza)
 	{
 		return Administrador.verificacionComprador(comprador,pieza);

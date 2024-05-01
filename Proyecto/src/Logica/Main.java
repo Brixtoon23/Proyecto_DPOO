@@ -9,7 +9,7 @@ import Persistencia.UsuarioPersistencia;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -497,7 +497,7 @@ public class Main
         }
     }
 
-    private static void menuPropietario(Usuario usuario) {
+    private static void menuPropietario(Propietario usuario) {
         boolean salir = false;
 
         while (!salir) {
@@ -516,10 +516,13 @@ public class Main
 
             switch (opcion) {
                 case 1:
-                    //Cargar historial de la Pesistencia
+                //TODO: Revisar
+                    List<Pieza> historial = usuario.getHistorialPiezas();
+                    Servicios.imprimirListaPiezas(historial,false);
                     break;
                 case 2:
-                    UsuarioPersistencia.iniciarSesion();
+                    List<Pieza> piezas = usuario.getPiezasActuales();
+                    Servicios.imprimirListaPiezas(piezas,true);
                     break;
                 case 3:
                     salir = true;
