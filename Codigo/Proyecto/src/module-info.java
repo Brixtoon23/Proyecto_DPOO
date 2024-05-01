@@ -1,10 +1,7 @@
-/**
- * 
- */
-/**
- * 
- */
-module Proyecto {
-	requires gson;
+
+
+module Proyecto
+{
 	requires org.json;
+
 }
