@@ -31,8 +31,8 @@ public class InicializadorDeClases
         try 
         {
         // Especifica la ruta del archivo JSON con la carpeta "Archivos"
-        String rutaArchivoPiezas = "Archivos/base_de_datos_piezas.json";
-        String rutaArchivoUsuarios = "Archivos/base_de_datos_usuarios.json";
+        String rutaArchivoPiezas = "Proyecto/Archivos/base_de_datos_piezas.json";
+        String rutaArchivoUsuarios = "Proyecto/Archivos/base_de_datos_usuarios.json";
 
 
             // Crea un objeto File con la ruta del archivo

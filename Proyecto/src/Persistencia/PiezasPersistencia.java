@@ -130,7 +130,7 @@ public class PiezasPersistencia {
     {
         try {
             // Utilizamos la misma ruta relativa que en guardarBaseDeDatos
-            File archivo = new File("Archivos/base_de_datos_piezas.json");
+            File archivo = new File("Proyecto/Archivos/base_de_datos_piezas.json");
             Scanner scanner = new Scanner(archivo);
             StringBuilder jsonText = new StringBuilder();
             while (scanner.hasNextLine()) {
@@ -146,7 +146,7 @@ public class PiezasPersistencia {
 
     private static void guardarBaseDeDatos(JSONObject baseDeDatosJSON) 
     {
-        try (FileWriter file = new FileWriter("Archivos/base_de_datos_piezas.json")) {
+        try (FileWriter file = new FileWriter("Proyecto/Archivos/base_de_datos_piezas.json")) {
             file.write(baseDeDatosJSON.toString(4));
             System.out.println("Base de datos actualizada y guardada.");
         } catch (IOException e) {

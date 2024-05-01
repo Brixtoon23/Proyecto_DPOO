@@ -85,7 +85,7 @@ public class UsuarioPersistencia
     public static JSONObject leerBaseDeDatos()
      {
         try {
-            Scanner scanner = new Scanner(new File("Archivos/base_de_datos_usuarios.json"));
+            Scanner scanner = new Scanner(new File("Proyecto/Archivos/base_de_datos_usuarios.json"));
             StringBuilder jsonText = new StringBuilder();
             while (scanner.hasNextLine()) {
                 jsonText.append(scanner.nextLine());
@@ -101,7 +101,7 @@ public class UsuarioPersistencia
     
     private static void guardarBaseDeDatos(JSONObject baseDeDatosJSON) 
     {
-        try (FileWriter file = new FileWriter("Archivos/base_de_datos_usuarios.json")) 
+        try (FileWriter file = new FileWriter("Proyecto/Archivos/base_de_datos_usuarios.json")) 
         {
             file.write(baseDeDatosJSON.toString(4));
             System.out.println("Base de datos actualizada y guardada.");

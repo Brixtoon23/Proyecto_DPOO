@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "Proyecto/src",
+        "Proyecto"
+    ],
+    "java.project.referencedLibraries": [
+        "Proyecto/Gson/json-20231013.jar"
+    ]
+}
