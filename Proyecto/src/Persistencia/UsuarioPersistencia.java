@@ -5,19 +5,18 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import Logica.Administrador;
-import Logica.Cajero;
+
+
 import Logica.Compra;
 import Logica.Comprador;
-import Logica.Operador;
+
 import Logica.Pieza;
-import Logica.Propietario;
+
 import Logica.Subasta;
 import Logica.Usuario;
 

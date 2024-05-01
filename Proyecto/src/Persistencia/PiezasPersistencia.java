@@ -3,7 +3,7 @@ import java.io.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import Logica.Administrador;
+
 import Logica.Escultura;
 import Logica.Fotografia;
 import Logica.Galeria;
@@ -13,7 +13,7 @@ import Logica.Pintura;
 import Logica.Video;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.Scanner;
 
