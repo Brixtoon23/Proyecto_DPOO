@@ -2,10 +2,14 @@ package Logica;
 
 import java.util.ArrayList;
 import java.util.List;
+//TODO: Revisar
+//import org.javatuples.Pair;
 
 public class Cajero  extends Usuario
 {
 	private List<Compra> comprasRegistradas;
+	//TODO: Revisar
+	//private List<Pair> solicitudesCompra;
 
 	
 
@@ -13,6 +17,7 @@ public class Cajero  extends Usuario
 			List<Compra> comprasRegistradas) {
 		super(login, nombre, password, rol, telefono, verificado);
 		this.comprasRegistradas = comprasRegistradas;
+		//solicitudesCompra = new ArrayList<Pair>();
 	}
 
 	public List<Compra> getComprasRegistradas() {
