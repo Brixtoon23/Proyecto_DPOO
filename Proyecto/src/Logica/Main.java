@@ -447,7 +447,21 @@ public class Main
                     ImprimirJSON.ImprimirPiezas(opcion);
                     break;
                 case 3:
-                   
+                //Revisar
+                System.out.println("Ingrese el nombre de la pieza: ");
+                String nomPieza = scanner.nextLine();
+                Pieza piezaCompra = galeria.buscarPieza(nomPieza);
+
+                if(piezaCompra.equals(null))
+                {
+                    System.out.println("Esa pieza no está disponible para compra por un precio fijo");
+                }
+                else
+                {
+                    
+                }
+
+
                     break;
                 
                 case 4:
@@ -494,7 +508,7 @@ public class Main
 
             switch (opcion) {
                 case 1:
-                    
+                    //Cargar historial de la Pesistencia
                     break;
                 case 2:
                     UsuarioPersistencia.iniciarSesion();

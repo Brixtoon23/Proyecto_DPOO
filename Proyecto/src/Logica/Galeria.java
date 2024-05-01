@@ -57,6 +57,10 @@ public class Galeria
         
     }
 
+    public Pieza buscarPieza(String nomPieza)
+    {
+        return inventario.buscarPieza(nomPieza);
+    }
 
     
 
