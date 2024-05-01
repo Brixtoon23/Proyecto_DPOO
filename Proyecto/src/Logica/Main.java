@@ -200,7 +200,7 @@ public class Main
                             menuAdministrador(usuario);
                             break;
                         case "comprador":
-                            menuComprador(usuario);
+                            menuComprador(usuario, login);
                             break;
                         case "propietario":
                             menuPropietario(usuario);
@@ -420,7 +420,7 @@ public class Main
     }
     
 
-    private static void menuComprador(Usuario usuario) {
+    private static void menuComprador(Usuario usuario, String login) {
         boolean salir = false;
 
         while (!salir) {
@@ -428,7 +428,7 @@ public class Main
             System.out.println("1. Ver Piezas Subasta");
             System.out.println("2. Ver piezas PrecioFijo");
             System.out.println("3. Comprar pieza a precio fijo");
-            System.out.println("4. Comprar pieza subasta");
+            System.out.println("4. Comprar pieza subastada");
             System.out.println("5. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
@@ -451,6 +451,17 @@ public class Main
                     break;
                 
                 case 4:
+
+                System.out.print("Ingrese el nombre de la pieza: ");
+                String NombrePieza= scanner.nextLine();
+                    
+                System.out.print("Ingrese el valor ofertado: ");
+                int valorOfertado= Integer.parseInt(scanner.nextLine());
+
+                System.out.print("Ingrese el metodo de pago: ");
+                String metodoPago= scanner.nextLine();
+
+                Oferta oferta = new Oferta(NombrePieza, login, valorOfertado, NombrePieza, metodoPago);
                    
                     break;
 

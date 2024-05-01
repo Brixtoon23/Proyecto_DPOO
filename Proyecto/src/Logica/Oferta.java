@@ -2,58 +2,38 @@ package Logica;
 
 public class Oferta 
 {
-	private Pieza piezaSubastada;
-	private Comprador comprador;
+	private String Nombre;
+	private String  compradorLogin;
 	private int valorOfertado;
-	private Subasta subasta;
-	private String id;
+	private String idSubasta;
 	private String metodoPago;
-	public Oferta(Pieza piezaSubastada, Comprador comprador, int valorOfertado, Subasta subasta, String id,
-			String metodoPago) {
-		super();
-		this.piezaSubastada = piezaSubastada;
-		this.comprador = comprador;
+
+	
+	public Oferta(String nombre, String compradorLogin, int valorOfertado, String idSubasta, String metodoPago) {
+		Nombre = nombre;
+		this.compradorLogin = compradorLogin;
 		this.valorOfertado = valorOfertado;
-		this.subasta = subasta;
-		this.id = id;
+		this.idSubasta = idSubasta;
 		this.metodoPago = metodoPago;
 	}
-	public Pieza getPiezaSubastada() {
-		return piezaSubastada;
+	public String getNombre() {
+		return Nombre;
 	}
-	public void setPiezaSubastada(Pieza piezaSubastada) {
-		this.piezaSubastada = piezaSubastada;
-	}
-	public Comprador getComprador() {
-		return comprador;
-	}
-	public void setComprador(Comprador comprador) {
-		this.comprador = comprador;
+	public String getCompradorLogin() {
+		return compradorLogin;
 	}
 	public int getValorOfertado() {
 		return valorOfertado;
 	}
-	public void setValorOfertado(int valorOfertado) {
-		this.valorOfertado = valorOfertado;
-	}
-	public Subasta getSubasta() {
-		return subasta;
-	}
-	public void setSubasta(Subasta subasta) {
-		this.subasta = subasta;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
+	public String getIdSubasta() {
+		return idSubasta;
 	}
 	public String getMetodoPago() {
 		return metodoPago;
 	}
-	public void setMetodoPago(String metodoPago) {
-		this.metodoPago = metodoPago;
-	}
+	
+
+	
 	
 	
 	
