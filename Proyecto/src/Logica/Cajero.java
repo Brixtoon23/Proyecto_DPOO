@@ -105,4 +105,9 @@ public class Cajero  extends Usuario
 		pieza.setPropietario(propietario);
 		
 	}
+
+	public static boolean verificarComprador(Comprador comprador,Pieza pieza)
+	{
+		return Administrador.verificacionComprador(comprador,pieza);
+	}
 }

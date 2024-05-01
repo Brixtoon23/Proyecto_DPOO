@@ -420,7 +420,7 @@ public class Main
     }
     
 
-    private static void menuComprador(Usuario usuario, String login) {
+    private static void menuComprador(Comprador usuario, String login) {
         boolean salir = false;
 
         while (!salir) {
@@ -447,21 +447,29 @@ public class Main
                     ImprimirJSON.ImprimirPiezas(opcion);
                     break;
                 case 3:
-                //Revisar
-                System.out.println("Ingrese el nombre de la pieza: ");
+                //TODO: Revisar
+                System.out.println("Ingrese el nombre de la pieza que desea comprar: ");
                 String nomPieza = scanner.nextLine();
                 Pieza piezaCompra = galeria.buscarPieza(nomPieza);
 
-                if(piezaCompra.equals(null))
+                if((piezaCompra.equals(null))&&(piezaCompra.isDisponible()==false))
                 {
                     System.out.println("Esa pieza no está disponible para compra por un precio fijo");
                 }
                 else
                 {
-                    
+                    System.out.println("Ingrese la forma de pago que va a usar: ")
+                    String metdPago = scanner.nextLine();
+                    if(Cajero.verificarComprador(usuario, piezaCompra))
+                    {
+                        Cajero.registrarCompraPrecioFijo(usuario, piezaCompra, metdPago);
+                        //Continua con el guardado de la compra en Peristencia
+                    }
+                    else
+                    {
+                        System.out.println("Lo sentimos no se pudo realizar la compra. Revise su estado de cuenta y si está en mora")
+                    }
                 }
-
-
                     break;
                 
                 case 4:

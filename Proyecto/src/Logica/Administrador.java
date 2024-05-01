@@ -178,6 +178,12 @@ public class Administrador extends Usuario
 
 			  Operador.getSubastas().add(subasta);
 		}
+
+		public static boolean verificacionComprador(Comprador comprador, Pieza pieza)
+		{
+			boolean tienePlata = (comprador.getEstadoCuenta()-pieza.getValores().get(0))>0;
+			return (comprador.isVerificado())&&(!comprador.isMora())&&tienePlata;
+		}
 		
 	
 }
