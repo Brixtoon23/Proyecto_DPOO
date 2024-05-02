@@ -55,9 +55,14 @@ public class Main
                 case 1:
                     
                     System.out.println("\n--- Registrarse ---");
-                    System.out.print("Ingrese su rol (cajero / administrador / comprador / operador): ");
+                    System.out.print("Recuerde que si ingresa como comprdor se registrará instantaniamente como comprador y propietario: ");
+                    System.out.print("y si se registro solamente como propietario no podrá ser comprador con el mismo login: ");
+                    System.out.print("Ingrese su rol (cajero / administrador / comprador / operador / propietario): ");
+                
+                    
                     rol = scanner.nextLine();
                     System.out.print("Ingrese su login: ");
+
          
                     String login1 = scanner.nextLine();
                     login= login1+"_"+ rol;
@@ -103,7 +108,8 @@ public class Main
                             {
                                 System.out.println("No se pudo verificar su cuenta. Intente nuevamente. ");
                             }     
-                            break;    
+                            break;   
+                            
                             
                         case "comprador":
                         
