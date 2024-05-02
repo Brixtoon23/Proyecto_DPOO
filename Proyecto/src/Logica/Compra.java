@@ -2,26 +2,21 @@ package Logica;
 
 public class Compra 
 {
-	private boolean aceptada;
-	private Comprador comprador;
+	
+	private String compradorLogin;
 	private int precio;
 	private Pieza pieza;
 	private String metodoPago; 
-	public Compra(boolean aceptada, Comprador comprador, int precio, Pieza pieza, String metodoPago)
+	public Compra( String compradorLogin, int precio, Pieza pieza, String metodoPago)
 	 {
 		
-		this.aceptada = aceptada;
-		this.comprador = comprador;
+		
+		this.compradorLogin = compradorLogin;
 		this.precio = precio;
 		this.pieza = pieza;
 		this.metodoPago=metodoPago;
 	}
-	public boolean isAceptada() {
-		return aceptada;
-	}
-	public Comprador getComprador() {
-		return comprador;
-	}
+	
 	public int getPrecio() {
 		return precio;
 	}
@@ -32,9 +27,12 @@ public class Compra
 	public String getMetodoPago() {
 		return metodoPago;
 	}
-	public void setMetodoPago(String metodoPago) {
-		this.metodoPago = metodoPago;
+	public String getCompradorLogin() {
+		return compradorLogin;
 	}
+	
+	
+
 
 	
 	

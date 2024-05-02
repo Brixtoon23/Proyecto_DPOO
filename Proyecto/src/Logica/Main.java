@@ -9,7 +9,7 @@ import Persistencia.UsuarioPersistencia;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -109,7 +109,8 @@ public class Main
                             
                             
 
-                            Comprador comprador = new Comprador(login, nombre, password, rol, telefono, false, estadoCuenta, new ArrayList<Compra>(), 0, false, new ArrayList<Pieza>());
+                            Comprador comprador = new Comprador(login, nombre, password, rol, telefono, false, estadoCuenta,
+                            new ArrayList<Compra>(), 0, false, new ArrayList<Pieza>(),new ArrayList<Mensaje>() );
                             Administrador.verificarComprador(comprador);
                             if (comprador.isVerificado())
                             {
@@ -429,7 +430,9 @@ public class Main
             System.out.println("2. Ver piezas PrecioFijo");
             System.out.println("3. Comprar pieza a precio fijo");
             System.out.println("4. Comprar pieza subastada");
-            System.out.println("5. Salir");
+            System.out.println("5. ver Compra aprobadas por subasta");
+            System.out.println("6. ver Compra no aprobadas por subasta");
+            System.out.println("7. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -453,7 +456,7 @@ public class Main
                 case 4:
 
                 System.out.print("Ingrese el nombre de la pieza: ");
-                String NombrePieza= scanner.nextLine();
+                String nombrePieza= scanner.nextLine();
                     
                 System.out.print("Ingrese el valor ofertado: ");
                 int valorOfertado= Integer.parseInt(scanner.nextLine());
@@ -461,11 +464,62 @@ public class Main
                 System.out.print("Ingrese el metodo de pago: ");
                 String metodoPago= scanner.nextLine();
 
-                Oferta oferta = new Oferta(NombrePieza, login, valorOfertado, NombrePieza, metodoPago);
-                   
+                Pieza pieza= Servicios.buscarPiezaSubasta(galeria,nombrePieza);
+
+                Oferta oferta = new Oferta(pieza, login, valorOfertado, nombrePieza, metodoPago); 
+                Operador operador= Servicios.buscarOperador(galeria, login);
+                List<Subasta> subastas= operador.getSubastas();
+                Operador.registrarOferta(oferta, subastas, galeria);
+
+               
+                    break;
+                case 5:
+                    Comprador comprador= Servicios.buscarComprador(galeria, login);
+                    List<Mensaje> mensajes= comprador.getMensajesSubasta();
+                    if (mensajes.size()==0)
+                    {
+                        System.out.print("No tienes ventas aprobadas por subasta por el momento revisa más tarde ");
+                    }
+                    else
+                    {
+                        for (Mensaje mensaje : mensajes)
+                    {
+                        if (mensaje.isVendida()==true)
+                        {
+                            System.out.print(mensaje.getMensaj1());
+                        }
+                    }
+
+                    }
+                    
+                    
+
                     break;
 
-                case 5:
+
+                case 6:
+                     comprador= Servicios.buscarComprador(galeria, login);
+                     mensajes= comprador.getMensajesSubasta();
+            
+                    if (mensajes.size()==0)
+                    {
+                        System.out.print("No tienes ventas no aprobadas por subasta por el momento revisa más tarde ");
+                    }
+                    else
+                    {
+                        for (Mensaje mensaje : mensajes)
+                    {
+                        if (mensaje.isVendida()==false)
+                        {
+                            System.out.print(mensaje.getMensaj1());
+                        }
+                    }
+
+                    }
+
+                
+
+                case 7:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;

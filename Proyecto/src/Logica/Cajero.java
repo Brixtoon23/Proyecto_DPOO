@@ -25,47 +25,39 @@ public class Cajero  extends Usuario
 	}
 
 	
-	public static void registrarCompraSubasta(Oferta oferta)
+	public static void registrarCompraSubasta(Oferta oferta, Comprador comprador)
 
 	{
-		boolean disponible= oferta.getPiezaSubastada().isDisponible();
-		if (disponible == false)
-		{
-			Comprador comprador= oferta.getComprador();
-			int valorPago= oferta.getValorOfertado();
-			float estadoCuenta=comprador.getEstadoCuenta();
+
+		Pieza pieza =  oferta.getPiezaSubastada();
+
+		pieza.setDisponoble(false);
+
+		pieza.setLoginPropietario(comprador.getLogin());
+		comprador.getPiezasCompradas().add(pieza);
+		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), pieza, oferta.getMetodoPago());
+		comprador.getHistorialCompras().add(compra);
+		String mensaje1="La pieza con el titulo "+ pieza.getTitulo()+ " " + "fue vendida exitosamente";
+		Mensaje mensaje = new Mensaje(pieza.getTitulo(), true, mensaje1);
+		comprador.getMensajesSubasta().add(mensaje);
 			
+
+
+
+
+
 		
-			comprador.setEstadoCuenta( (estadoCuenta-valorPago));
-			
-			
-			String metodoPago= oferta.getMetodoPago();
-			Pieza piezaComprada=oferta.getPiezaSubastada();
-			piezaComprada.getPropietario().getPiezasActuales().remove(piezaComprada);
-			Compra compra= new Compra(true,  comprador,valorPago,  piezaComprada, metodoPago );
-			comprador.getHistorialCompras().add(compra);
-			comprador.getPiezasCompradas().add(piezaComprada);
-			
-			
-			List<Compra> compras= comprador.getHistorialCompras();
-			List<Pieza> historialPiezas= new ArrayList<>();
-			for (Compra compra1 : compras)
-			{
-				historialPiezas.add(compra1.getPieza());
-			}
-			
-			Propietario newPropietario= new Propietario(comprador.getLogin(), comprador.getNombre(), comprador.getPassword(), comprador.getRol(), comprador.getTelefono(), comprador.isVerificado(),
-					comprador.getPiezasCompradas(),  historialPiezas);
-			
-			piezaComprada.setPropietario(newPropietario);
-			
-			
-			comprador.getHistorialCompras().add(compra);
-			comprador.getPiezasCompradas().add(piezaComprada);
-			
-			
-		}
 	}
+
+
+
+
+
+
+
+
+
+	
 	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago) 
 	{
 		float cuenta = comprador.getEstadoCuenta();

@@ -117,30 +117,60 @@ public class Administrador extends Usuario
 	
 	
 		
-	public void aprobarVentaSubasta(Operador operador )
+	public static boolean aprobarVentaSubasta(Oferta mejorOferta, Galeria galeria)
 	{
-		List<Oferta> mejoresOfertas= Operador.mejoresOfertas(operador.getSubastas());
-		
-		for (Oferta oferta: mejoresOfertas)
+		String loginComprador=mejorOferta.getCompradorLogin();
+		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
+		Pieza pieza= mejorOferta.getPiezaSubastada();
+		int valorMinimo= pieza.valores.get(1);
+		 boolean vendida=false;
+
+		if (mejorOferta.getValorOfertado()< valorMinimo )
 		{
-			
-			Comprador comprador= oferta.getComprador();
-			if (comprador.isMora()== true)
-				oferta.getPiezaSubastada().setDisponoble(true);
-			else if (comprador.getEstadoCuenta()< oferta.getValorOfertado())
-			{
-				oferta.getPiezaSubastada().setDisponoble(true);
-			
-			}
-			else if (oferta.getValorOfertado() > comprador.getMaxCompras())
-					{
-				         oferta.getPiezaSubastada().setDisponoble(true);
-					}
-			else
-			{
-				Cajero.registrarCompraSubasta(oferta);
-			}
+			vendida=false;
+			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida";
+
+			Mensaje mensaje2= new Mensaje(pieza.getTitulo(), vendida, mensaje1 );
+			comprador.getMensajesSubasta().add(mensaje2);
 		}
+		else if (comprador.isMora()==true)
+		{
+			vendida=false;
+			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida";
+
+			Mensaje mensaje2= new Mensaje(pieza.getTitulo(), vendida, mensaje1 );
+			comprador.getMensajesSubasta().add(mensaje2);
+		}
+		else if(comprador.getEstadoCuenta()< mejorOferta.getValorOfertado())
+		{
+			vendida=false;
+			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida";
+
+			Mensaje mensaje2= new Mensaje(pieza.getTitulo(), vendida, mensaje1 );
+			comprador.getMensajesSubasta().add(mensaje2);
+		}
+
+		else if (comprador.getMaxCompras()< mejorOferta.getValorOfertado() )
+		{
+			vendida=false;
+			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida";
+
+			Mensaje mensaje2= new Mensaje(pieza.getTitulo(), vendida, mensaje1 );
+			comprador.getMensajesSubasta().add(mensaje2);
+		}
+
+		else
+		{
+			vendida=true;
+
+			Cajero.registrarCompraSubasta(mejorOferta, comprador);
+
+		}
+
+		return vendida;
+
+		
+		
 	}
 	
 	public void aprobarVentaPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago ) 

@@ -8,20 +8,21 @@ public class Comprador  extends Usuario
 	private  List<Compra> historialCompras;
 	private float maxCompras;
 	private boolean mora;
+	private List<Mensaje> mensajesSubasta;
 
 	private List<Pieza> piezasCompradas;
 	
 	public Comprador(String login, String nombre, String password, String rol, String telefono, boolean verificado,
 			float estadoCuenta, List<Compra> historialCompras,float maxCompras,
-			boolean mora, List<Pieza> piezasCompradas)
+			boolean mora, List<Pieza> piezasCompradas, List<Mensaje>mensajesSubasta )
 	{
 		super(login, nombre, password, rol, telefono, verificado);
 		this.estadoCuenta =  estadoCuenta;
 		this.historialCompras = historialCompras;
 		this.maxCompras =  maxCompras;
-		
 		this.mora = mora;
 		this.piezasCompradas = piezasCompradas;
+		this.mensajesSubasta= mensajesSubasta;
 		
 	}
 	
@@ -59,6 +60,18 @@ public class Comprador  extends Usuario
 	public void setPiezasCompradas(List<Pieza> piezasCompradas) {
 		this.piezasCompradas = piezasCompradas;
 	}
+
+
+
+	public List<Mensaje> getMensajesSubasta() {
+		return mensajesSubasta;
+	}
+
+	public void setMensajesSubasta(List<Mensaje> mensajesSubasta) {
+		this.mensajesSubasta = mensajesSubasta;
+	}
+
+	
 
 
 }

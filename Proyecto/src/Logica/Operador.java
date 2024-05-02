@@ -1,6 +1,7 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
 public class Operador extends Usuario 
 {
 	
-	public  static List <Subasta> subastas;
+	private  static List <Subasta> subastas;
 
 	
 
@@ -23,16 +24,15 @@ public class Operador extends Usuario
 	
 	
 
-
-
-	public static List<Subasta> getSubastas() {
+	public static  List<Subasta> getSubastas() {
 		return subastas;
 	}
 
 	
-	public void  registrarOferta(Oferta oferta1,  List <Subasta> subastas)
+	public  static void  registrarOferta(Oferta oferta1, List<Subasta> subastas, Galeria galeria)
 	{
-		 for (Subasta subasta  : subastas )
+		 for (Subasta subasta  : subastas)
+
 		 {
 			 List<Oferta> ofertas =subasta.getOfertas();
 			 
@@ -40,52 +40,73 @@ public class Operador extends Usuario
 			 {
 				 if (oferta.getPiezaSubastada()== oferta1.getPiezaSubastada())
 				 {
-					 ofertas.add(oferta1);
+					subasta.getOfertas().add(oferta1);
 				 }
+
+			if ( ofertas.size()==10)
+
+			{
+				List<Integer> valoresOfertados= new ArrayList<Integer>();
+				for(Oferta oferta2 :ofertas)
+				{
+					valoresOfertados.add(oferta2.getValorOfertado());
+					 
+				}
+
+
+				 Collections.sort(valoresOfertados, Collections.reverseOrder());
+				 List<Oferta> ofertasOrdenadas= new ArrayList<Oferta>();
 				 
+
+				 for(int valor: valoresOfertados)
+				 {
+					for(Oferta oferta3: ofertas)
+					{
+						if (oferta3.getValorOfertado()==valor)
+						{
+							ofertasOrdenadas.add(oferta3);
+						}
+
+					}
+				 }
+
+				boolean flag=false;
+				int i=0;
+
+				 while (flag==false)
+				 {
+					Oferta mejoroferta =ofertasOrdenadas.get(i);
+
+					boolean aprobado= Administrador.aprobarVentaSubasta(mejoroferta, galeria);
+					if(aprobado== true)
+					{
+						flag=true;
+
+					}
+
+					i+=1;
+
+
+
+				 }
+
+				 if(flag==false)
+				 {
+					ofertas.clear();
+				 }
+
+
+				 }
+
+			}
+
+				
+				 
+
 			 }
 		 }
 		 
-	}
-		
 	
-
-	
-	public static List<Oferta> mejoresOfertas(List<Subasta> subastas) 
-	{
-		HashMap<Pieza, Oferta> mejoresOfertasPorPieza = new HashMap<>();
-
-       
-        for (Subasta subasta : subastas)
-        {
-            List<Oferta> ofertas = subasta.getOfertas();
-
-           
-            for (Oferta oferta : ofertas)
-            {
-                Pieza pieza = oferta.getPiezaSubastada();
-                float valorOfertado = oferta.getValorOfertado();
-
-               
-                if (!mejoresOfertasPorPieza.containsKey(pieza) || valorOfertado > mejoresOfertasPorPieza.get(pieza).getValorOfertado()) {
-                    mejoresOfertasPorPieza.put(pieza, oferta);
-                    
-                   
-                }
-            }
-             
-        }
-
-        
-        List<Oferta> mejoresOfertas = new ArrayList<>(mejoresOfertasPorPieza.values());
-        
-        for (Oferta mejorOferta: mejoresOfertas)
-        {
-        	Pieza piezaCasivendida=mejorOferta.getPiezaSubastada();
-        	piezaCasivendida.setDisponoble(false);
-        }
-        return mejoresOfertas;
-    }
 	
 	
 }

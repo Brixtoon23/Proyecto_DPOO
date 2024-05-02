@@ -104,5 +104,142 @@ public class Servicios
         return null;
 
     }
+
+    public static Pieza buscarPiezaSubasta(Galeria galeria, String nombrePieza)
+    {
+
+        String ward = "a" ;
+        int cont = 0 ;
+        Inventario inventario= galeria.getInventario();
+
+        ArrayList<Pieza> listaPiezasExhibidas = inventario.getPiezasExhibidad();
+        ArrayList<Pieza> listaPiezasBodega = inventario.getPiezasExhibidad();
+
+     
+        while (ward.equals("a") && cont != listaPiezasExhibidas.size()) 
+        {
+            Pieza pieza = listaPiezasExhibidas.get(cont);
+            if (pieza.getTitulo().equals(nombrePieza))
+            {
+               Pieza piezaSubastada = pieza;
+                ward = "b";
+                return piezaSubastada;
+
+            }
+            else
+            {
+                cont ++ ;
+
+            }
+
+        }
+
+        
+        while (ward.equals("a") && cont != listaPiezasExhibidas.size()) 
+        {
+            Pieza pieza = listaPiezasExhibidas.get(cont);
+            if (pieza.getTitulo().equals(nombrePieza))
+            {
+               Pieza piezaSubastada = pieza;
+                ward = "b";
+                return piezaSubastada;
+
+            }
+            else
+            {
+                cont ++ ;
+
+            }
+
+        }
+
+         
+        while (ward.equals("a") && cont !=  listaPiezasBodega.size()) 
+        {
+            Pieza pieza =  listaPiezasBodega.get(cont);
+            if (pieza.getTitulo().equals(nombrePieza))
+            {
+               Pieza piezaSubastada = pieza;
+                ward = "b";
+                return piezaSubastada;
+
+            }
+            else
+            {
+                cont ++ ;
+
+            }
+
+        }
+
+
+
+        return null;
+
+    }
+
+
+    public static Operador buscarOperador(Galeria galeria, String login)
+    {
+
+        String ward = "a" ;
+        int cont = 0 ;
+
+        ArrayList<Usuario>listaUsuarios = galeria.getUsuarios();
+        Operador operador;
+        while (ward.equals("a") && cont != listaUsuarios.size()) 
+        {
+            Usuario usuario = listaUsuarios.get(cont);
+            if (usuario.getRol().equals("operador")&&usuario.getLogin().equals(login))
+            {
+                operador = (Operador) usuario;
+                ward = "b";
+                return operador;
+
+            }
+            else
+            {
+                cont ++ ;
+
+            }
+
+        }
+
+
+        return null;
+
+    }
+
+    public static Comprador buscarComprador(Galeria galeria, String login)
+    {
+
+        String ward = "a" ;
+        int cont = 0 ;
+
+        ArrayList<Usuario>listaUsuarios = galeria.getUsuarios();
+        Comprador comprador;
+        while (ward.equals("a") && cont != listaUsuarios.size()) 
+        {
+            Usuario usuario = listaUsuarios.get(cont);
+            if (usuario.getRol().equals("comprador")&& usuario.getLogin().equals(login))
+            {
+                comprador = (Comprador) usuario;
+                ward = "b";
+                return comprador;
+
+            }
+            else
+            {
+                cont ++ ;
+
+            }
+
+        }
+
+
+        return null;
+
+    }
     
 }
+
