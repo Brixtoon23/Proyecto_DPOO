@@ -450,8 +450,36 @@ public class Main
                     ImprimirJSON.ImprimirPiezas(opcion);
                     break;
                 case 3:
-                   
+                System.out.println("Ingrese el nombre de la pieza que desea comprar: ");
+                String nomPieza = scanner.nextLine();
+                Pieza piezaCompra = Servicios.buscarPiezaSubasta(galeria,nomPieza);
+
+                if((piezaCompra.equals(null)) || (piezaCompra.isDisponible()==false))
+                {
+                    System.out.println("Esa pieza no está disponible para compra por un precio fijo");
+                }
+                else
+                {
+                    System.out.println("Ingrese el metodo de pago que va a usar: ");
+
+                    String metdPago = scanner.nextLine();
+                    Comprador comprador1= Servicios.buscarComprador(galeria, login);
+
+                    boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago);
+
+                    if(aprobar== true)
+                    {
+                        System.out.println("La compra fue realizada exitosamente: ");
+                       
+                    }
+                    else
+                    {
+                        System.out.println("Lo sentimos no se pudo realizar la compra. Revise su estado de cuenta o si está en mora");
+                    }
+                }
                     break;
+                   
+                    
                 
                 case 4:
 

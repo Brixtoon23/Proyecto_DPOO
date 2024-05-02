@@ -64,15 +64,17 @@ public class Cajero  extends Usuario
 		List<Integer> valores = pieza.getValores();
 		int precioFijo = valores.get(0);
 		
-		Propietario propietarioAnterior = pieza.getPropietario();
+		String propietarioAnteriorLogin = pieza.getLoginPropietario();
+		Propietario propietarioAnterior= Servicios.buscarPropietario(null, propietarioAnteriorLogin);
 		List<Pieza> piezasPropietarioAnterior = propietarioAnterior.getPiezasActuales();
+
 		piezasPropietarioAnterior.remove(pieza);
 		
 		List<Compra> historialCompra = comprador.getHistorialCompras();
-		Compra compraNueva = new Compra(true, comprador, precioFijo, pieza,  metodoPago);
+
+		Compra compraNueva = new Compra(propietarioAnteriorLogin, precioFijo, pieza, metodoPago);
+
 		historialCompra.add(compraNueva);
-		comprador.setHistorialCompras(historialCompra);
-		
 		
 		cuenta = cuenta - precioFijo;
 		comprador.setEstadoCuenta(cuenta);
@@ -81,20 +83,21 @@ public class Cajero  extends Usuario
 		List<Pieza> piezas =  comprador.getPiezasCompradas();
 		piezas.add(pieza);
 		comprador.setPiezasCompradas(piezas);
-		
-		
-		List<Compra> compras = comprador.getHistorialCompras();
-		List<Pieza> historial = new ArrayList<Pieza>();
-		for (Compra compra :compras)
+
+
+		Propietario nuevoPropiertario= Servicios.buscarPropietario(null, comprador.login);
+		if (nuevoPropiertario== null)
 		{
-			Pieza pieza1 = compra.getPieza();
-			historial.add(pieza1);
-			
+			new Propietario( , propietarioAnteriorLogin, metodoPago, propietarioAnteriorLogin, propietarioAnteriorLogin, false, piezas, piezas)
+
 		}
 		
 		
-		Propietario propietario = new Propietario(comprador.getLogin(), comprador.getNombre(), comprador.getPassword(), comprador.getRol(), comprador.getTelefono(), comprador.isVerificado(), comprador.getPiezasCompradas(), historial);
-		pieza.setPropietario(propietario);
+		
+		 
+		
+		
+	
 		
 	}
 }
