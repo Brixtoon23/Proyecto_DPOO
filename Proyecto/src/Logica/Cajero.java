@@ -58,14 +58,14 @@ public class Cajero  extends Usuario
 
 
 	
-	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago) 
+	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago,Galeria galeria) 
 	{
 		float cuenta = comprador.getEstadoCuenta();
 		List<Integer> valores = pieza.getValores();
 		int precioFijo = valores.get(0);
 		
 		String propietarioAnteriorLogin = pieza.getLoginPropietario();
-		Propietario propietarioAnterior= Servicios.buscarPropietario(null, propietarioAnteriorLogin);
+		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, propietarioAnteriorLogin);
 		List<Pieza> piezasPropietarioAnterior = propietarioAnterior.getPiezasActuales();
 
 		piezasPropietarioAnterior.remove(pieza);
@@ -83,21 +83,14 @@ public class Cajero  extends Usuario
 		List<Pieza> piezas =  comprador.getPiezasCompradas();
 		piezas.add(pieza);
 		comprador.setPiezasCompradas(piezas);
+		String loginnuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
+		Propietario nuevoPropiertario= Servicios.buscarPropietario(galeria, loginnuevoPropiertario);
 
+		nuevoPropiertario.getHistorialPiezas().add(pieza);
+		nuevoPropiertario.getPiezasActuales().add(pieza);
 
-		Propietario nuevoPropiertario= Servicios.buscarPropietario(null, comprador.login);
-		if (nuevoPropiertario== null)
-		{
-			new Propietario( , propietarioAnteriorLogin, metodoPago, propietarioAnteriorLogin, propietarioAnteriorLogin, false, piezas, piezas)
+		
+		
 
-		}
-		
-		
-		
-		 
-		
-		
-	
-		
 	}
 }

@@ -173,7 +173,7 @@ public class Administrador extends Usuario
 		
 	}
 	
-	public static boolean aprobarVentaPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago ) 
+	public static boolean aprobarVentaPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago, Galeria galeria) 
 	{
 		float cuenta = comprador.getEstadoCuenta();
 		List<Integer> valores = pieza.getValores();
@@ -181,7 +181,7 @@ public class Administrador extends Usuario
 		boolean retorno= false;
 		if (precioFijo <= cuenta)
 		{
-			Cajero.registrarCompraPrecioFijo(comprador,pieza, metodoPago);
+			Cajero.registrarCompraPrecioFijo(comprador,pieza, metodoPago, galeria);
 			retorno= true;
 			
 		}

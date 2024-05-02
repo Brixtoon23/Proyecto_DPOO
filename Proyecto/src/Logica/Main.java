@@ -55,10 +55,13 @@ public class Main
                 case 1:
                     
                     System.out.println("\n--- Registrarse ---");
-                    System.out.print("Ingrese su rol (cajero / administrador / comprador / propietario / operador): ");
+                    System.out.print("Ingrese su rol (cajero / administrador / comprador / operador): ");
                     rol = scanner.nextLine();
                     System.out.print("Ingrese su login: ");
-                    login = scanner.nextLine()+"_"+ rol ;
+         
+                    String login1 = scanner.nextLine();
+                    login= login1+"_"+ rol;
+                    
                     if (Servicios.verificarLoginRepetido(galeria, login))
                      {
                         System.out.println("Ya existe un usuario con ese login. Inténtelo de nuevo.");
@@ -114,7 +117,14 @@ public class Main
                             Administrador.verificarComprador(comprador);
                             if (comprador.isVerificado())
                             {
+                                String loginPropietario= login1 +"_propietario";
+                                List<Pieza> piezasActuales= new ArrayList();
+                                List<Pieza> historialPiezas= new ArrayList();
+                                Propietario propiertario= new Propietario(loginPropietario, nombre, password, "propietario", telefono, salir, piezasActuales,  historialPiezas);
                                 Administrador.ingresarUsuario(comprador, galeria);
+                                Administrador.ingresarUsuario(propiertario, galeria);
+                                System.out.println("Su registro fue exitoso,  recuerde que automaticamente se creo una cuneta con el rol propietario. ");
+
 
                             }       
                             else
@@ -124,20 +134,7 @@ public class Main
                             break;   
                             
                             
-                        case "propietario":
-                            
-                            Propietario propietario = new Propietario(login, nombre, password, rol, telefono, false, new ArrayList<>(), new ArrayList<>());
-                            Administrador.verificarPropietario(propietario);
-                            if (propietario.isVerificado())
-                            {
-                                Administrador.ingresarUsuario(propietario, galeria);
-
-                            }       
-                            else
-                            {
-                                System.out.println("No se pudo verificar su cuenta. Intente nuevamente. ");
-                            }     
-                            break;   
+                      
                         case "operador":
                             
                             Operador operador = new Operador(login, nombre, password, rol, telefono, false, new ArrayList<Subasta>());
@@ -465,7 +462,7 @@ public class Main
                     String metdPago = scanner.nextLine();
                     Comprador comprador1= Servicios.buscarComprador(galeria, login);
 
-                    boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago);
+                    boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago, galeria);
 
                     if(aprobar== true)
                     {
