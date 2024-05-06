@@ -20,7 +20,8 @@ public abstract class Usuario {
 	}
 
 
-	public String getLogin() {
+	public String getLogin() 
+	{
 		return login;
 	}
 

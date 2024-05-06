@@ -10,15 +10,16 @@ public abstract class Pieza
 	protected int anioCreacion;
 	protected String  lugarCreacion;
 	protected ArrayList<String> autor;
-	protected  boolean  disponible;
+	protected boolean  disponible;
 	protected int tiempoConsignacion;
 	protected boolean subasta;
 	protected ArrayList<Integer> valores;
-	protected String loginPropietario;
 	protected boolean bodega;
 	protected String tipo;
+	protected ArrayList<String> historialPropietarios;
+
 	public Pieza(String titulo, int anioCreacion, String lugarCreacion, ArrayList<String> autor, boolean disponible,
-			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores, String loginPropietario, boolean bodega,String tipo) 
+			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores, ArrayList<String> historialPropietarios, boolean bodega,String tipo) 
 	{
 		super();
 		this.titulo = titulo;
@@ -29,7 +30,7 @@ public abstract class Pieza
 		this.tiempoConsignacion = tiempoConsignacion;
 		this.subasta = subasta;
 		this.valores = valores;
-		this.loginPropietario= loginPropietario;
+		this.historialPropietarios= historialPropietarios;
 		this.bodega = bodega;
 		this.tipo = tipo;
 	}
@@ -97,13 +98,13 @@ public abstract class Pieza
 	{
 		this.valores = valores;
 	}
-	public String getLoginPropietario() 
+	public ArrayList<String> getHistorialPropietarios() 
 	{
-		return loginPropietario;
+		return historialPropietarios;
 	}
-	public void setLoginPropietario(String loginPropietario) 
+	public void setHistorialPropietario(ArrayList<String> historialPropietarios) 
 	{
-		this.loginPropietario = loginPropietario;
+		this.historialPropietarios = historialPropietarios;
 	}
 	public boolean isBodega() 
 	{

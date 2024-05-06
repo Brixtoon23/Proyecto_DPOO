@@ -15,11 +15,15 @@ public class Escultura extends Pieza
 	
 
 
+	
+
+
 	public Escultura(String titulo, int anioCreacion, String lugarCreacion, ArrayList<String> autor, boolean disponible,
-			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores, String loginPropietario,
-			boolean bodega, String tipo, int alto, int ancho, int profundidad, int peso, boolean electricidad) {
+			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores,
+			ArrayList<String> historialPropietarios, boolean bodega, String tipo, int alto, int ancho, int profundidad,
+			int peso, boolean electricidad) {
 		super(titulo, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion, subasta, valores,
-				loginPropietario, bodega, tipo);
+				historialPropietarios, bodega, tipo);
 		this.alto = alto;
 		this.ancho = ancho;
 		this.profundidad = profundidad;

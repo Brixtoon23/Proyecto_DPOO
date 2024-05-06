@@ -13,11 +13,13 @@ public class Fotografia extends Pieza
 
 	
 
+	
+
 	public Fotografia(String titulo, int anioCreacion, String lugarCreacion, ArrayList<String> autor,
 			boolean disponible, int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores,
-			String loginPropietario, boolean bodega, String tipo, int tamanioGiga, String resolucion) {
+			ArrayList<String> historialPropietarios, boolean bodega, String tipo, String resolucion, int tamanioGiga) {
 		super(titulo, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion, subasta, valores,
-				loginPropietario, bodega, tipo);
+				historialPropietarios, bodega, tipo);
 		this.resolucion = resolucion;
 		this.tamanioGiga = tamanioGiga;
 	}

@@ -18,7 +18,7 @@
             "electricidad": true,
             "alto": 3
         },
-        "loginPropietario": "Ojala yo",
+        "historialPropietarios": ["bri_propietario"],
         "bodega": false,
         "disponible": true
     },
@@ -40,7 +40,7 @@
             "tecnica": "blanquismo",
             "alto": 70
         },
-        "loginPropietario": "bri_propietario",
+        "historialPropietarios": ["bri_propietario"],
         "bodega": true,
         "disponible": true
     },
@@ -62,7 +62,7 @@
             "tecnica": "expresionista",
             "alto": 34
         },
-        "loginPropietario": "bri_propietario",
+        "historialPropietarios": ["bri_propietario"],
         "bodega": true,
         "disponible": true
     },
@@ -82,7 +82,7 @@
             "resolucion": "4k",
             "tamanioGiga": 23
         },
-        "loginPropietario": "bri_propietario",
+        "historialPropietarios": ["bri_propietario"],
         "bodega": false,
         "disponible": false
     }

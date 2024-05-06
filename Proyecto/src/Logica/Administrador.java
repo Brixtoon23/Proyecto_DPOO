@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Persistencia.PiezasPersistencia;
+import Persistencia.SubastaPersistencia;
 import Persistencia.UsuarioPersistencia;
 
 public class Administrador extends Usuario
@@ -12,7 +13,8 @@ public class Administrador extends Usuario
 {
 
 
-	public Administrador(String login, String nombre, String password, String rol, String telefono, boolean verificado) {
+	public Administrador(String login, String nombre, String password, String rol, String telefono, boolean verificado) 
+	{
 		super(login, nombre, password, rol, telefono, verificado);
 		
 	}
@@ -163,7 +165,7 @@ public class Administrador extends Usuario
 		{
 			vendida=true;
 
-			Cajero.registrarCompraSubasta(mejorOferta, comprador);
+			Cajero.registrarCompraSubasta(mejorOferta, comprador, galeria);
 
 		}
 
@@ -204,19 +206,20 @@ public class Administrador extends Usuario
 
 		}
 
-		public static void crearSusbasta(int id, Pieza pieza)
+		public static void crearSusbasta(Galeria galeria, String id)
 		{
 
-			 List<Oferta> listaOfertas= new ArrayList<>();
+			 ArrayList<Oferta> listaOfertas= new ArrayList<Oferta>();
 
-			 List<Pieza> listaPiezasSubasta=   new ArrayList<>();
-			 listaPiezasSubasta.add(pieza);
+			 ArrayList<Pieza> listaPiezasSubasta=   new ArrayList<>();
+			 
+			 ArrayList<Comprador> listaCompradores = new ArrayList<Comprador>();
 
-			  Subasta subasta =new Subasta( id, listaOfertas, listaPiezasSubasta);
+			  Subasta subasta = new Subasta(id, listaOfertas, listaPiezasSubasta, listaCompradores);
 
-			  Operador.getSubastas().add(subasta);
-		}
-		
+			  galeria.getSubastas().add(subasta);
+			  SubastaPersistencia.registrarSubasta(galeria, subasta);
+		}		
 	
 }
 

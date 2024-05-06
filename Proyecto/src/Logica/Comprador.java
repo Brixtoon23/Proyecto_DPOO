@@ -28,7 +28,6 @@ public class Comprador  extends Usuario
 	
 	
 	
-	
 	public float getEstadoCuenta() {
 		return estadoCuenta;
 	}

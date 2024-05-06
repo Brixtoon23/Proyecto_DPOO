@@ -10,12 +10,12 @@ import java.util.List;
 public class Operador extends Usuario 
 {
 	
-	private  static List <Subasta> subastas;
+	private  ArrayList <Subasta> subastas;
 
 	
 
 	public Operador(String login, String nombre, String password, String rol, String telefono, boolean verificado,
-			List<Subasta> subastas) {
+			ArrayList<Subasta> subastas) {
 		super(login, nombre, password, rol, telefono, verificado);
 		this.subastas = new ArrayList<Subasta>();
 		
@@ -24,12 +24,13 @@ public class Operador extends Usuario
 	
 	
 
-	public static  List<Subasta> getSubastas() {
+	public static  ArrayList<Subasta> getSubastas() 
+	{
 		return subastas;
 	}
 
 	
-	public  static void  registrarOferta(Oferta oferta1, List<Subasta> subastas, Galeria galeria)
+	public static  void  registrarOferta(Oferta oferta1, List<Subasta> subastas, Galeria galeria)
 	{
 		 for (Subasta subasta  : subastas)
 

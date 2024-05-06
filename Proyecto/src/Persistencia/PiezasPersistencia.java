@@ -17,11 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PiezasPersistencia {
+public class PiezasPersistencia 
+{
 	
-	static JSONObject baseDeDatosJSON = leerBaseDeDatos();
+	private static JSONObject baseDeDatosJSON = leerBaseDeDatos();
 
-	static List<JSONObject> piezas = obtenerPiezasDesdeJSON(baseDeDatosJSON.getJSONArray("piezas"));
+	private static List<JSONObject> piezas = obtenerPiezasDesdeJSON(baseDeDatosJSON.getJSONArray("piezas"));
 	
 	
 	public static void registrarPieza(Galeria galeria , Pieza pieza) 
@@ -39,7 +40,7 @@ public class PiezasPersistencia {
         piezaJSON.put("tiempoConsignacion", pieza.getTiempoConsignacion());
         piezaJSON.put("subasta", pieza.isSubasta());
         piezaJSON.put("valores", pieza.getValores()); // Usar un JSONArray para los valores
-        piezaJSON.put("loginPropietario", pieza.getLoginPropietario());
+        piezaJSON.put("historialPropietarios", pieza.getHistorialPropietarios());
         piezaJSON.put("bodega", pieza.isBodega());
         piezaJSON.put("tipo", pieza.getTipo());
 

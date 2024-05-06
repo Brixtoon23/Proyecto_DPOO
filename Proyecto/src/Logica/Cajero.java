@@ -37,11 +37,14 @@ public class Cajero  extends Usuario
 
 		pieza.setDisponoble(false);
 
-		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, pieza.loginPropietario);
+		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, pieza.historialPropietarios.get(-1));
 		
 		propietarioAnterior.getPiezasActuales().remove(pieza);
 
-		pieza.setLoginPropietario(comprador.getLogin());
+		pieza.getHistorialPropietarios().add(comprador.getLogin());
+		ArrayList<String> nuevoPropieatrio = pieza.getHistorialPropietarios();
+
+		pieza.setHistorialPropietario(nuevoPropieatrio);
 		comprador.getPiezasCompradas().add(pieza);
 
 		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), pieza, oferta.getMetodoPago());
@@ -77,7 +80,7 @@ public class Cajero  extends Usuario
 		List<Integer> valores = pieza.getValores();
 		int precioFijo = valores.get(0);
 		
-		String propietarioAnteriorLogin = pieza.getLoginPropietario();
+		String propietarioAnteriorLogin = pieza.getHistorialPropietarios().get(-1);
 		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, propietarioAnteriorLogin);
 		List<Pieza> piezasPropietarioAnterior = propietarioAnterior.getPiezasActuales();
 
