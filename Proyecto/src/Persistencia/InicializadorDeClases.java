@@ -96,7 +96,7 @@ public class InicializadorDeClases
             //ArrayList<Object> piezasExhibida = new ArrayList<Object>();
             ArrayList<Pieza> piezasExhibidasObjeto = new ArrayList<Pieza>();
             
-            ArrayList<Map<String,String>>  historialDueños= new ArrayList<>();
+           
 
             //HashMap<String,Integer> totalObras = new HashMap<String,Integer>();
             //HashMap<String,String> nombreGaleria = new HashMap<String,String>();
@@ -107,6 +107,7 @@ public class InicializadorDeClases
 
             // crea las listas para almacenar piezas en bodega o exhibicion
             for (int i = 0; i < piezasArray.length(); i++) 
+            
             {
                 JSONObject pieza = piezasArray.getJSONObject(i);
                 ArrayList<String> autores = new ArrayList<String>();
@@ -116,6 +117,8 @@ public class InicializadorDeClases
                 JSONArray propietariosJson = pieza.getJSONArray("historialPropietarios");
                 int tamanioAutores = autoresJson.length();
                 int tamanioPropietarios = propietariosJson.length();
+                JSONArray historialPropietariosJson=pieza.getJSONArray("historialPropietarios");
+                int tamanioPropietariosJson= historialPropietariosJson.length();
 
                 for (int e = 0; e < tamanioAutores; e++) 
                 {
@@ -136,6 +139,20 @@ public class InicializadorDeClases
                 }
                 Pieza piezaParaAñadir = null;
                 String tipo = pieza.getString("tipo");
+
+                ArrayList<Map<String,String>>  historialPropietarios= new ArrayList<>();
+                
+
+               
+
+                for (int f=0 ;  f < tamanioPropietariosJson; f++)
+                {
+
+                }
+
+
+
+               
 
 
                 

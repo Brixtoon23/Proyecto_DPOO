@@ -538,7 +538,8 @@ public class Main
                 Pieza pieza= Servicios.buscarPiezaSubasta(galeria,nombrePieza);
                 ///public Oferta(String nombre, String compradorLogin, int valorOfertado, String idSubasta, String metodoPago,			Pieza piezaSubastada)
 
-                Oferta oferta = new Oferta(login, valorOfertado, idSubasta, metodoPago,nombrePieza, fecha1); 
+
+                Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
                 Operador operador= Servicios.buscarOperador(galeria, login);
                 List<Subasta> subastas= operador.getSubastas();
                 

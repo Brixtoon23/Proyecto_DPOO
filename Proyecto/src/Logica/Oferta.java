@@ -5,18 +5,17 @@ public class Oferta
 	
 	private String  compradorLogin;
 	private int valorOfertado;
-	private String idSubasta;
 	private String metodoPago;
 	private String NombrepiezaSubastada;
 	private String fecha;
 
 	
 	
-	public Oferta(String compradorLogin, int valorOfertado, String idSubasta, String metodoPago,
+	public Oferta(String compradorLogin, int valorOfertado,  String metodoPago,
 			String nombrepiezaSubastada, String fecha) {
 		this.compradorLogin = compradorLogin;
 		this.valorOfertado = valorOfertado;
-		this.idSubasta = idSubasta;
+
 		this.metodoPago = metodoPago;
 		NombrepiezaSubastada = nombrepiezaSubastada;
 		this.fecha = fecha;
@@ -33,12 +32,7 @@ public class Oferta
 	public void setValorOfertado(int valorOfertado) {
 		this.valorOfertado = valorOfertado;
 	}
-	public String getIdSubasta() {
-		return idSubasta;
-	}
-	public void setIdSubasta(String idSubasta) {
-		this.idSubasta = idSubasta;
-	}
+	
 	public String getMetodoPago() {
 		return metodoPago;
 	}
