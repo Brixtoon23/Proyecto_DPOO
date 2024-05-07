@@ -123,7 +123,8 @@ public class Administrador extends Usuario
 	{
 		String loginComprador=mejorOferta.getCompradorLogin();
 		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
-		Pieza pieza= mejorOferta.getPiezaSubastada();
+		String nombrePieza= mejorOferta.getNombrepiezaSubastada();
+		Pieza pieza= Servicios.buscarPiezaSubasta(galeria, nombrePieza);
 		int valorMinimo= pieza.valores.get(1);
 		 boolean vendida=false;
 
@@ -211,11 +212,9 @@ public class Administrador extends Usuario
 
 			 ArrayList<Oferta> listaOfertas= new ArrayList<Oferta>();
 
-			 ArrayList<Pieza> listaPiezasSubasta=   new ArrayList<>();
-			 
-			 ArrayList<Comprador> listaCompradores = new ArrayList<Comprador>();
+			 ArrayList<String> idListaPiezasSubasta=   new ArrayList<>();
 
-			  Subasta subasta = new Subasta(id, listaOfertas, listaPiezasSubasta, listaCompradores);
+			  Subasta subasta = new Subasta(id, listaOfertas, idListaPiezasSubasta);
 
 			  galeria.getSubastas().add(subasta);
 			  SubastaPersistencia.registrarSubasta(galeria, subasta);

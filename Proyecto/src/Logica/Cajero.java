@@ -1,53 +1,51 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Cajero  extends Usuario
 {
-	private List<Compra> comprasRegistradas;
+	private List<String> idcomprasRegistradas;
 
 	
-
+	
 	public Cajero(String login, String nombre, String password, String rol, String telefono, boolean verificado,
-			List<Compra> comprasRegistradas) {
+			List<String> idcomprasRegistradas) {
 		super(login, nombre, password, rol, telefono, verificado);
-		this.comprasRegistradas = comprasRegistradas;
+		this.idcomprasRegistradas = idcomprasRegistradas;
 	}
 
-	public List<Compra> getComprasRegistradas() {
-		return comprasRegistradas;
-	}
 
-	public void setComprasRegistradas(List<Compra> comprasRegistradas) 
-	{
-		this.comprasRegistradas = comprasRegistradas;
-	}
 
-	
-	public static void registrarCompraSubasta(Oferta oferta, Comprador comprador, Galeria galeria)
+	public static void registrarCompraSubasta(Oferta oferta, Comprador comprador, Galeria galeria, String fecha)
 
 	{
 
-		Pieza pieza =  oferta.getPiezaSubastada();
+		String nombrePieza =  oferta.getNombrepiezaSubastada();
+		Pieza pieza = Servicios.buscarPiezaSubasta(galeria, nombrePieza);
 		
 		float cuenta= comprador.getEstadoCuenta() - oferta.getValorOfertado();
 
 		comprador.setEstadoCuenta(cuenta);
 
-		pieza.setDisponoble(false);
+		pieza.setDisponible(false);
 
-		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, pieza.historialPropietarios.get(-1));
+		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, pieza.getLoginPropietarioActual());
 		
-		propietarioAnterior.getPiezasActuales().remove(pieza);
+		propietarioAnterior.getIdPiezasActuales().remove(pieza.getTitulo());
+		Map<String, String> mapa = new HashMap<>();
+		mapa.put("propietario",comprador.getLogin());
+		
+		pieza.getHistorialPropietarios().add(mapa);
 
-		pieza.getHistorialPropietarios().add(comprador.getLogin());
-		ArrayList<String> nuevoPropieatrio = pieza.getHistorialPropietarios();
+		
+	
 
-		pieza.setHistorialPropietario(nuevoPropieatrio);
-		comprador.getPiezasCompradas().add(pieza);
-
-		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), pieza, oferta.getMetodoPago());
+		Compra compra= new Compra(nombrePieza, oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha)
+		
+		
 		comprador.getHistorialCompras().add(compra);
 
 		String mensaje1="La pieza con el titulo "+ pieza.getTitulo()+ " " + "fue vendida exitosamente";
@@ -108,5 +106,37 @@ public class Cajero  extends Usuario
 		
 		
 
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public List<String> getIdcomprasRegistradas() {
+		return idcomprasRegistradas;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setIdcomprasRegistradas(List<String> idcomprasRegistradas) {
+		this.idcomprasRegistradas = idcomprasRegistradas;
 	}
 }

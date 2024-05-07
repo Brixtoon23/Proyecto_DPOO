@@ -72,6 +72,42 @@ public abstract class Pieza
 	public ArrayList<Map<String, String>> getHistorialPropietarios() {
 		return historialPropietarios;
 	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public void setLoginPropietarioActual(String loginPropietarioActual) {
+		this.loginPropietarioActual = loginPropietarioActual;
+	}
+	public void setAnioCreacion(int anioCreacion) {
+		this.anioCreacion = anioCreacion;
+	}
+	public void setLugarCreacion(String lugarCreacion) {
+		this.lugarCreacion = lugarCreacion;
+	}
+	public void setAutor(ArrayList<String> autor) {
+		this.autor = autor;
+	}
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+	public void setTiempoConsignacion(int tiempoConsignacion) {
+		this.tiempoConsignacion = tiempoConsignacion;
+	}
+	public void setSubasta(boolean subasta) {
+		this.subasta = subasta;
+	}
+	public void setValores(ArrayList<Integer> valores) {
+		this.valores = valores;
+	}
+	public void setBodega(boolean bodega) {
+		this.bodega = bodega;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public void setHistorialPropietarios(ArrayList<Map<String, String>> historialPropietarios) {
+		this.historialPropietarios = historialPropietarios;
+	}
 
 	
 
