@@ -2,26 +2,24 @@ package Logica;
 
 public class Oferta 
 {
-	private String Nombre;
+	
 	private String  compradorLogin;
 	private int valorOfertado;
 	private String idSubasta;
 	private String metodoPago;
 	private String NombrepiezaSubastada;
-	public Oferta(String nombre, String compradorLogin, int valorOfertado, String idSubasta, String metodoPago,
-			String nombrepiezaSubastada) {
-		Nombre = nombre;
+	private String fecha;
+
+	
+	
+	public Oferta(String compradorLogin, int valorOfertado, String idSubasta, String metodoPago,
+			String nombrepiezaSubastada, String fecha) {
 		this.compradorLogin = compradorLogin;
 		this.valorOfertado = valorOfertado;
 		this.idSubasta = idSubasta;
 		this.metodoPago = metodoPago;
 		NombrepiezaSubastada = nombrepiezaSubastada;
-	}
-	public String getNombre() {
-		return Nombre;
-	}
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.fecha = fecha;
 	}
 	public String getCompradorLogin() {
 		return compradorLogin;
@@ -52,6 +50,12 @@ public class Oferta
 	}
 	public void setNombrepiezaSubastada(String nombrepiezaSubastada) {
 		NombrepiezaSubastada = nombrepiezaSubastada;
+	}
+	public String getFecha() {
+		return fecha;
+	}
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
 	
 

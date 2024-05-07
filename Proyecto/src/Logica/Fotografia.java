@@ -1,6 +1,7 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 
 public class Fotografia extends Pieza
@@ -11,15 +12,16 @@ public class Fotografia extends Pieza
 	
 	
 
-	
 
 	
 
-	public Fotografia(String titulo, int anioCreacion, String lugarCreacion, ArrayList<String> autor,
-			boolean disponible, int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores,
-			ArrayList<String> historialPropietarios, boolean bodega, String tipo, String resolucion, int tamanioGiga) {
-		super(titulo, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion, subasta, valores,
-				historialPropietarios, bodega, tipo);
+
+	public Fotografia(String titulo, String loginPropietarioActual, int anioCreacion, String lugarCreacion,
+			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
+			ArrayList<Integer> valores, boolean bodega, String tipo,
+			ArrayList<Map<String, String>> historialPropietarios, String resolucion, int tamanioGiga) {
+		super(titulo, loginPropietarioActual, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion,
+				subasta, valores, bodega, tipo, historialPropietarios);
 		this.resolucion = resolucion;
 		this.tamanioGiga = tamanioGiga;
 	}

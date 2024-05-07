@@ -43,7 +43,7 @@ public class Cajero  extends Usuario
 		
 	
 
-		Compra compra= new Compra(nombrePieza, oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha)
+		Compra compra= new Compra(nombrePieza, oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha);
 		
 		
 		comprador.getHistorialCompras().add(compra);
@@ -72,21 +72,21 @@ public class Cajero  extends Usuario
 
 
 	
-	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago,Galeria galeria) 
+	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago,Galeria galeria, String fecha) 
 	{
 		float cuenta = comprador.getEstadoCuenta();
 		List<Integer> valores = pieza.getValores();
 		int precioFijo = valores.get(0);
 		
-		String propietarioAnteriorLogin = pieza.getHistorialPropietarios().get(-1);
+		String propietarioAnteriorLogin = pieza.getLoginPropietarioActual();
 		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, propietarioAnteriorLogin);
-		List<Pieza> piezasPropietarioAnterior = propietarioAnterior.getPiezasActuales();
+		List<String> piezasPropietarioAnterior = propietarioAnterior.getIdPiezasActuales();
 
-		piezasPropietarioAnterior.remove(pieza);
+		piezasPropietarioAnterior.remove(pieza.getTitulo());
 		
 		List<Compra> historialCompra = comprador.getHistorialCompras();
 
-		Compra compraNueva = new Compra(propietarioAnteriorLogin, precioFijo, pieza, metodoPago);
+		Compra compraNueva = new Compra(propietarioAnteriorLogin, precioFijo, pieza.getTitulo() , metodoPago, fecha);
 
 		historialCompra.add(compraNueva);
 		
@@ -94,14 +94,15 @@ public class Cajero  extends Usuario
 		comprador.setEstadoCuenta(cuenta);
 		
 		
-		List<Pieza> piezas =  comprador.getPiezasCompradas();
-		piezas.add(pieza);
-		comprador.setPiezasCompradas(piezas);
+		List<String> piezas =  comprador.getIdpiezasCompradas();
+		piezas.add(pieza.getTitulo());
+
+		comprador.setIdpiezasCompradas(piezas);
 		String loginnuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
 		Propietario nuevoPropiertario= Servicios.buscarPropietario(galeria, loginnuevoPropiertario);
 
-		nuevoPropiertario.getHistorialPiezas().add(pieza);
-		nuevoPropiertario.getPiezasActuales().add(pieza);
+		nuevoPropiertario.getHistorialPiezas().add(pieza.getTitulo());
+		nuevoPropiertario.getIdPiezasActuales().add(pieza.getTitulo());
 
 		
 		

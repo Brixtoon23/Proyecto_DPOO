@@ -8,6 +8,7 @@ import java.util.List;
 
 
 public class Operador extends Usuario 
+
 {
 	
 	private   ArrayList <String> idSubastas;
@@ -15,17 +16,24 @@ public class Operador extends Usuario
 
 
 		
-	public Operador(String login, String nombre, String password, String rol, String telefono, boolean verificado,
-			ArrayList<String> idSubastas) {
-		super(login, nombre, password, rol, telefono, verificado);
-		this.idSubastas = idSubastas;
 	
 
 
 
 
 
-	public static  void  registrarOferta(Oferta oferta1, List<Subasta> subastas, Galeria galeria)
+	public Operador(String login, String nombre, String password, String rol, String telefono, boolean verificado,
+			ArrayList<String> idSubastas) {
+		super(login, nombre, password, rol, telefono, verificado);
+		this.idSubastas = idSubastas;
+	}
+
+
+
+
+
+
+	public static  void  registrarOferta(Oferta oferta1, List<Subasta> subastas, Galeria galeria, String fecha)
 	{
 		 for (Subasta subasta  : subastas)
 
@@ -34,7 +42,11 @@ public class Operador extends Usuario
 			 
 			 for (Oferta oferta: ofertas)
 			 {
-				 if (oferta.getPiezaSubastada()== oferta1.getPiezaSubastada())
+
+				String nombrePieza=oferta.getNombrepiezaSubastada();
+				String nombrePieza1=oferta1.getNombrepiezaSubastada();
+				
+				 if (nombrePieza== nombrePieza1)
 				 {
 					subasta.getListaOfertas().add(oferta1);
 				 }
@@ -73,7 +85,7 @@ public class Operador extends Usuario
 				 {
 					Oferta mejoroferta =ofertasOrdenadas.get(i);
 
-					boolean aprobado= Administrador.aprobarVentaSubasta(mejoroferta, galeria);
+					boolean aprobado= Administrador.aprobarVentaSubasta(mejoroferta, galeria, fecha);
 					if(aprobado== true)
 					{
 						flag=true;

@@ -119,7 +119,7 @@ public class Administrador extends Usuario
 	
 	
 		
-	public static boolean aprobarVentaSubasta(Oferta mejorOferta, Galeria galeria)
+	public static boolean aprobarVentaSubasta(Oferta mejorOferta, Galeria galeria, String fecha)
 	{
 		String loginComprador=mejorOferta.getCompradorLogin();
 		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
@@ -166,7 +166,7 @@ public class Administrador extends Usuario
 		{
 			vendida=true;
 
-			Cajero.registrarCompraSubasta(mejorOferta, comprador, galeria);
+			Cajero.registrarCompraSubasta(mejorOferta, comprador, galeria, fecha);
 
 		}
 
@@ -176,7 +176,7 @@ public class Administrador extends Usuario
 		
 	}
 	
-	public static boolean aprobarVentaPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago, Galeria galeria) 
+	public static boolean aprobarVentaPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago, Galeria galeria, String fecha) 
 	{
 		float cuenta = comprador.getEstadoCuenta();
 		List<Integer> valores = pieza.getValores();
@@ -184,7 +184,7 @@ public class Administrador extends Usuario
 		boolean retorno= false;
 		if (precioFijo <= cuenta)
 		{
-			Cajero.registrarCompraPrecioFijo(comprador,pieza, metodoPago, galeria);
+			Cajero.registrarCompraPrecioFijo(comprador,pieza, metodoPago, galeria, fecha);
 			retorno= true;
 			
 		}

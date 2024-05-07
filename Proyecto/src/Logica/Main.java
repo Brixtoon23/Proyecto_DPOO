@@ -9,7 +9,9 @@ import Persistencia.UsuarioPersistencia;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -285,12 +287,25 @@ public class Main
     
                     System.out.print("Ingrese lugar de creación: ");
                     String lugarCreacion = scanner.nextLine();
+
+                    
+                    System.out.print("Ingrese en que fecha adquirió la pieza su propietario actual (con formato   dia/mes/año ) : ");
+                    String fecha = scanner.nextLine();
+
+
+                    System.out.print("Ingrese en que valor adquirió la pieza propietario actual: ");
+                    String valor1  = scanner.nextLine();
+
+                    
+
+
                     
                     System.out.print("Ingrese autor/es separados por ',' : ");
                     String[] autoresArreglo = scanner.nextLine().split(",");
                     ArrayList<String> autores = new ArrayList<>();
                     for (String autor : autoresArreglo) {
                         autores.add(autor.trim()); 
+
                     }
                     
                     System.out.print("¿Se encuentra disponible? (true/false): ");
@@ -303,6 +318,7 @@ public class Main
                     
                     System.out.print("¿Se encuentra en subasta? (true/false): ");
                     boolean subasta = Boolean.parseBoolean(scanner.nextLine());
+
     
                     
                     System.out.print("Ingrese los valores separados por ',' : ");
@@ -329,6 +345,19 @@ public class Main
                     int peso;
                     int tamanioGiga;
                     String resolucion;
+
+
+                    ArrayList<Map<String, String>> historialPropietarios = new ArrayList<>();
+
+                    HashMap<String, String> primerPropietario= new HashMap<>();
+                    primerPropietario.put("propietario", loginPropietario);
+                    primerPropietario.put("fecha", fecha);
+                    primerPropietario.put("valor", valor1);
+
+
+                    historialPropietarios.add(primerPropietario);
+
+
     
                     if (tipo.equals("pintura")) {
                         System.out.print("Ingrese el alto: ");
@@ -343,8 +372,14 @@ public class Main
                         
                         System.out.print("Ingrese la técnica: ");
                         String tecnica = scanner.nextLine();
+                        
+                       
+
+
+
+
     
-                        Pintura pintura = new Pintura(titulo, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, propietarios, bodega, tipo, alto, ancho, peso, tecnica);
+                        Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, historialPropietarios, alto, ancho, peso, tecnica);
                         Administrador.ingresarPieza(galeria, pintura);
                     } else if (tipo.equals("fotografia")) {
                         System.out.print("Ingrese la resolución: ");
@@ -353,7 +388,7 @@ public class Main
                         System.out.print("Ingrese el tamaño en gigas: ");
                         tamanioGiga = Integer.parseInt(scanner.nextLine());
     
-                        Fotografia fotografia = new Fotografia(titulo, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, propietarios, bodega, tipo, resolucion, tamanioGiga);
+                        Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, historialPropietarios, resolucion, tamanioGiga);
                         Administrador.ingresarPieza(galeria, fotografia);
                     } else if (tipo.equals("escultura")) {
                         System.out.print("Ingrese el alto: ");
@@ -375,7 +410,7 @@ public class Main
                         System.out.print("¿Necesita electricidad? (true/false): ");
                         boolean electricidad = Boolean.parseBoolean(scanner.nextLine());
     
-                        Escultura escultura = new Escultura(titulo, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, propietarios, bodega, tipo, alto, ancho, profundidad, peso, electricidad);
+                        Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, historialPropietarios, alto, ancho, profundidad, peso, electricidad);
                         Administrador.ingresarPieza(galeria, escultura);
                     } else if (tipo.equals("video")) {
                         System.out.print("Ingrese la duración en minutos: ");
@@ -389,7 +424,7 @@ public class Main
                         System.out.print("Ingrese la resolución: ");
                         resolucion = scanner.nextLine();
                         
-                        Video video = new Video(titulo, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, propietarios, bodega, tipo, duracion, tamanioGiga, resolucion);
+                        Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, historialPropietarios, duracion, tamanioGiga, resolucion);
                         
                         Administrador.ingresarPieza(galeria,video);
     
@@ -455,6 +490,10 @@ public class Main
                 String nomPieza = scanner.nextLine();
                 Pieza piezaCompra = Servicios.buscarPiezaSubasta(galeria,nomPieza);
 
+                System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
+                String fecha = scanner.nextLine();
+
+
                 if((piezaCompra.equals(null)) || (piezaCompra.isDisponible()==false))
                 {
                     System.out.println("Esa pieza no está disponible para compra por un precio fijo");
@@ -466,7 +505,7 @@ public class Main
                     String metdPago = scanner.nextLine();
                     Comprador comprador1= Servicios.buscarComprador(galeria, login);
 
-                    boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago, galeria);
+                    boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago, galeria, fecha);
 
                     if(aprobar== true)
                     {
@@ -493,13 +532,17 @@ public class Main
                 System.out.print("Ingrese el metodo de pago: ");
                 String metodoPago= scanner.nextLine();
 
+                System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
+                String fecha1 = scanner.nextLine();
+
                 Pieza pieza= Servicios.buscarPiezaSubasta(galeria,nombrePieza);
                 ///public Oferta(String nombre, String compradorLogin, int valorOfertado, String idSubasta, String metodoPago,			Pieza piezaSubastada)
 
-                Oferta oferta = new Oferta(nombrePieza, login, valorOfertado, nombrePieza, metodoPago,pieza); 
+                Oferta oferta = new Oferta(login, valorOfertado, idSubasta, metodoPago,nombrePieza, fecha1); 
                 Operador operador= Servicios.buscarOperador(galeria, login);
                 List<Subasta> subastas= operador.getSubastas();
-                Operador.registrarOferta(oferta, subastas, galeria);
+                
+                Operador.registrarOferta(oferta, subastas, galeria, fecha1);
 
                
                     break;
