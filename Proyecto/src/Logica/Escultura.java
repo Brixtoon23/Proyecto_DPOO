@@ -1,6 +1,7 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 
 public class Escultura extends Pieza
@@ -18,12 +19,15 @@ public class Escultura extends Pieza
 	
 
 
+	
+
+
 	public Escultura(String titulo, int anioCreacion, String lugarCreacion, ArrayList<String> autor, boolean disponible,
-			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores,
-			ArrayList<String> historialPropietarios, boolean bodega, String tipo, int alto, int ancho, int profundidad,
-			int peso, boolean electricidad) {
-		super(titulo, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion, subasta, valores,
-				historialPropietarios, bodega, tipo);
+			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores, boolean bodega, String tipo,
+			ArrayList<Map<String, String>> historialDueños, int alto, int ancho, int profundidad, int peso,
+			boolean electricidad) {
+		super(titulo, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion, subasta, valores, bodega,
+				tipo, historialDueños);
 		this.alto = alto;
 		this.ancho = ancho;
 		this.profundidad = profundidad;

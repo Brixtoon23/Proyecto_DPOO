@@ -21,6 +21,7 @@ public class Subasta
     {
         return id;
     }
+    
     public ArrayList<Oferta> getListaOfertas() 
     {
         return listaOfertas;

@@ -10,7 +10,7 @@ import java.util.List;
 public class Operador extends Usuario 
 {
 	
-	private  ArrayList <Subasta> subastas;
+	private static  ArrayList <Subasta> subastas;
 
 	
 
@@ -35,13 +35,13 @@ public class Operador extends Usuario
 		 for (Subasta subasta  : subastas)
 
 		 {
-			 List<Oferta> ofertas =subasta.getOfertas();
+			 List<Oferta> ofertas =subasta.getListaOfertas();
 			 
 			 for (Oferta oferta: ofertas)
 			 {
 				 if (oferta.getPiezaSubastada()== oferta1.getPiezaSubastada())
 				 {
-					subasta.getOfertas().add(oferta1);
+					subasta.getListaOfertas().add(oferta1);
 				 }
 
 			if ( ofertas.size()==10)

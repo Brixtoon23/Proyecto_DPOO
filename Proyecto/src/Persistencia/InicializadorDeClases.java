@@ -3,6 +3,7 @@ package Persistencia;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.json.JSONArray;
@@ -93,7 +94,9 @@ public class InicializadorDeClases
             ArrayList<Pieza> piezasBodegaObjeto = new ArrayList<Pieza>();  
             //ArrayList<Object> usuariosLista = new ArrayList<Object>(); 
             //ArrayList<Object> piezasExhibida = new ArrayList<Object>();
-            ArrayList<Pieza> piezasExhibidasObjeto = new ArrayList<Pieza>();   
+            ArrayList<Pieza> piezasExhibidasObjeto = new ArrayList<Pieza>();
+            
+            ArrayList<Map<String,String>>  historialDueños= new ArrayList<>();
 
             //HashMap<String,Integer> totalObras = new HashMap<String,Integer>();
             //HashMap<String,String> nombreGaleria = new HashMap<String,String>();
@@ -134,6 +137,9 @@ public class InicializadorDeClases
                 Pieza piezaParaAñadir = null;
                 String tipo = pieza.getString("tipo");
 
+
+                
+
                 
                 
 
@@ -142,7 +148,7 @@ public class InicializadorDeClases
                     piezaParaAñadir = new Pintura(pieza.getString("titulo"), pieza.getInt("anioCreacion"), pieza.getString("lugarCreacion"),autores , pieza.getBoolean("disponible"),
                                                 pieza.getInt("tiempoConsignacion") , pieza.getBoolean("subasta"), valores, historialPropietarios,  pieza.getBoolean("bodega"), 
                                                 pieza.getString("tipo"),pieza.getJSONObject("valoresEspeciales").getInt("alto"), pieza.getJSONObject("valoresEspeciales").getInt("ancho"),
-                                                pieza.getJSONObject("valoresEspeciales").getInt("peso"),pieza.getJSONObject("valoresEspeciales").getString("tecnica"));
+                                                pieza.getJSONObject("valoresEspeciales").getInt("peso"),pieza.getJSONObject("valoresEspeciales").getString("tecnica"), pieza.getJSONArray("historialDueños"));
                 }
                 else if (tipo.equals("video")) 
                 {

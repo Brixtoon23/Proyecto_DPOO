@@ -2,6 +2,7 @@ package Logica;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Pintura extends Pieza
 {
@@ -14,12 +15,13 @@ public class Pintura extends Pieza
 			
 	
 
+	
+
 	public Pintura(String titulo, int anioCreacion, String lugarCreacion, ArrayList<String> autor, boolean disponible,
-			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores,
-			ArrayList<String> historialPropietarios, boolean bodega, String tipo, int alto, int ancho, int peso,
-			String tecnica) {
-		super(titulo, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion, subasta, valores,
-				historialPropietarios, bodega, tipo);
+			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores, boolean bodega, String tipo,
+			ArrayList<Map<String, String>> historialDueños, int alto, int ancho, int peso, String tecnica) {
+		super(titulo, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion, subasta, valores, bodega,
+				tipo, historialDueños);
 		this.alto = alto;
 		this.ancho = ancho;
 		this.peso = peso;

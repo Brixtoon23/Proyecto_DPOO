@@ -2,6 +2,7 @@ package Logica;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public abstract class Pieza
 {
@@ -16,12 +17,16 @@ public abstract class Pieza
 	protected ArrayList<Integer> valores;
 	protected boolean bodega;
 	protected String tipo;
-	protected ArrayList<String> historialPropietarios;
+	protected ArrayList<Map<String, String>> historialDueños;
 
+	
+
+	
+    
+	
 	public Pieza(String titulo, int anioCreacion, String lugarCreacion, ArrayList<String> autor, boolean disponible,
-			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores, ArrayList<String> historialPropietarios, boolean bodega,String tipo) 
-	{
-		super();
+			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores, boolean bodega, String tipo,
+			ArrayList<Map<String, String>> historialDueños) {
 		this.titulo = titulo;
 		this.anioCreacion = anioCreacion;
 		this.lugarCreacion = lugarCreacion;
@@ -30,9 +35,9 @@ public abstract class Pieza
 		this.tiempoConsignacion = tiempoConsignacion;
 		this.subasta = subasta;
 		this.valores = valores;
-		this.historialPropietarios= historialPropietarios;
 		this.bodega = bodega;
 		this.tipo = tipo;
+		this.historialDueños = historialDueños;
 	}
 	public String getTitulo() 
 	{
@@ -98,14 +103,8 @@ public abstract class Pieza
 	{
 		this.valores = valores;
 	}
-	public ArrayList<String> getHistorialPropietarios() 
-	{
-		return historialPropietarios;
-	}
-	public void setHistorialPropietario(ArrayList<String> historialPropietarios) 
-	{
-		this.historialPropietarios = historialPropietarios;
-	}
+	
+	
 	public boolean isBodega() 
 	{
 		return bodega;
@@ -119,6 +118,23 @@ public abstract class Pieza
 	{
 		return tipo;
 	}
+	
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public ArrayList<Map<String, String>> getHistorialDueños() {
+		return historialDueños;
+	}
+	public void setHistorialDueños(ArrayList<Map<String, String>> historialDueños) {
+		this.historialDueños = historialDueños;
+	}
+	
+	
+
+
 	
 	
 	
