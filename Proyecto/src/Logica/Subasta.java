@@ -7,49 +7,55 @@ public class Subasta
 {
     private String id; 
     private ArrayList<Oferta> listaOfertas;
-    private ArrayList<Pieza> listaPiezasSubasta;
-    private ArrayList<Comprador> listaCompradores;
-    public Subasta(String id, ArrayList<Oferta> listaOfertas, ArrayList<Pieza> listaPiezasSubasta,
-            ArrayList<Comprador> listaCompradores) 
-            {
+    private ArrayList<String> IdListaPiezasSubasta;
+
+
+
+    public Subasta(String id, ArrayList<Oferta> listaOfertas, ArrayList<String> idListaPiezasSubasta) {
         this.id = id;
         this.listaOfertas = listaOfertas;
-        this.listaPiezasSubasta = listaPiezasSubasta;
-        this.listaCompradores = listaCompradores;
+        IdListaPiezasSubasta = idListaPiezasSubasta;
     }
-    public String getId() 
-    {
+
+
+
+    public String getId() {
         return id;
     }
-    
-    public ArrayList<Oferta> getListaOfertas() 
-    {
+
+
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
+
+    public ArrayList<Oferta> getListaOfertas() {
         return listaOfertas;
     }
-    public ArrayList<Pieza> getListaPiezasSubasta() 
-    {
-        return listaPiezasSubasta;
-    }
-    public ArrayList<Comprador> getListaCompradores() 
-    {
-        return listaCompradores;
-    }
-    public void setListaOfertas(ArrayList<Oferta> listaOfertas) 
-    {
+
+
+
+    public void setListaOfertas(ArrayList<Oferta> listaOfertas) {
         this.listaOfertas = listaOfertas;
     }
-    public void setListaPiezasSubasta(ArrayList<Pieza> listaPiezasSubasta) 
-    {
-        this.listaPiezasSubasta = listaPiezasSubasta;
+
+
+
+    public ArrayList<String> getIdListaPiezasSubasta() {
+        return IdListaPiezasSubasta;
     }
-    public void setListaCompradores(ArrayList<Comprador> listaCompradores) 
-    {
-        this.listaCompradores = listaCompradores;
+
+
+
+    public void setIdListaPiezasSubasta(ArrayList<String> idListaPiezasSubasta) {
+        IdListaPiezasSubasta = idListaPiezasSubasta;
     }
 
     
-    
-    
+
 
     
+   
 }

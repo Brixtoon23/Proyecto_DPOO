@@ -5,25 +5,79 @@ public class Compra
 	
 	private String compradorLogin;
 	private int precio;
-	private Pieza pieza;
+	private  String Nombrepieza;
 	private String metodoPago; 
-	public Compra( String compradorLogin, int precio, Pieza pieza, String metodoPago)
-	 {
-		
-		
+	private String fecha;
+
+	
+
+
+	
+	
+	public Compra(String compradorLogin, int precio, String nombrepieza, String metodoPago, String fecha) {
 		this.compradorLogin = compradorLogin;
 		this.precio = precio;
-		this.pieza = pieza;
-		this.metodoPago=metodoPago;
+		Nombrepieza = nombrepieza;
+		this.metodoPago = metodoPago;
+		this.fecha = fecha;
 	}
+
+
 	
+
+	public void setCompradorLogin(String compradorLogin) {
+		this.compradorLogin = compradorLogin;
+	}
+
+
+
+
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+
+
+
+
+	public String getNombrepieza() {
+		return Nombrepieza;
+	}
+
+
+
+
+	public void setNombrepieza(String nombrepieza) {
+		Nombrepieza = nombrepieza;
+	}
+
+
+
+
+	public void setMetodoPago(String metodoPago) {
+		this.metodoPago = metodoPago;
+	}
+
+
+
+
+	public String getFecha() {
+		return fecha;
+	}
+
+
+
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+
+
+
 	public int getPrecio() {
 		return precio;
 	}
 	
-	public Pieza getPieza() {
-		return pieza;
-	}
 	public String getMetodoPago() {
 		return metodoPago;
 	}

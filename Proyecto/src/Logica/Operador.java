@@ -10,26 +10,21 @@ import java.util.List;
 public class Operador extends Usuario 
 {
 	
-	private static  ArrayList <Subasta> subastas;
+	private   ArrayList <String> idSubastas;
 
-	
 
-	public Operador(String login, String nombre, String password, String rol, String telefono, boolean verificado,
-			ArrayList<Subasta> subastas) {
-		super(login, nombre, password, rol, telefono, verificado);
-		this.subastas = new ArrayList<Subasta>();
+
 		
-	}
-	
-	
+	public Operador(String login, String nombre, String password, String rol, String telefono, boolean verificado,
+			ArrayList<String> idSubastas) {
+		super(login, nombre, password, rol, telefono, verificado);
+		this.idSubastas = idSubastas;
 	
 
-	public static  ArrayList<Subasta> getSubastas() 
-	{
-		return subastas;
-	}
 
-	
+
+
+
 	public static  void  registrarOferta(Oferta oferta1, List<Subasta> subastas, Galeria galeria)
 	{
 		 for (Subasta subasta  : subastas)
@@ -106,7 +101,23 @@ public class Operador extends Usuario
 
 			 }
 		 }
-		 
+
+
+
+
+
+
+	public  ArrayList<String> getIdSubastas() {
+		return idSubastas;
+	}
+	public void setIdSubastas(ArrayList<String> idSubastas) {
+		this.idSubastas = idSubastas;
+	}
+
+
+
+
+
 	
 	
 	

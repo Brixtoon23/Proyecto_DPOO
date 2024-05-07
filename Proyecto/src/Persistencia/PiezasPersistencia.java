@@ -40,7 +40,7 @@ public class PiezasPersistencia
         piezaJSON.put("tiempoConsignacion", pieza.getTiempoConsignacion());
         piezaJSON.put("subasta", pieza.isSubasta());
         piezaJSON.put("valores", pieza.getValores()); // Usar un JSONArray para los valores
-        piezaJSON.put("historialdueños", pieza.getHistorialDueños());
+        piezaJSON.put("historialPropietarios", pieza.getHistorialPropietarios());
         piezaJSON.put("bodega", pieza.isBodega());
         piezaJSON.put("tipo", pieza.getTipo());
 

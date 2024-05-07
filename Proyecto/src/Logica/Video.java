@@ -16,11 +16,14 @@ public class Video extends Pieza
 
 	
 
-	public Video(String titulo, int anioCreacion, String lugarCreacion, ArrayList<String> autor, boolean disponible,
-			int tiempoConsignacion, boolean subasta, ArrayList<Integer> valores, boolean bodega, String tipo,
-			ArrayList<Map<String, String>> historialDueños, int duracion, int tamanioGiga, String resolucion) {
-		super(titulo, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion, subasta, valores, bodega,
-				tipo, historialDueños);
+	
+
+	public Video(String titulo, String loginPropietarioActual, int anioCreacion, String lugarCreacion,
+			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
+			ArrayList<Integer> valores, boolean bodega, String tipo,
+			ArrayList<Map<String, String>> historialPropietarios, int duracion, int tamanioGiga, String resolucion) {
+		super(titulo, loginPropietarioActual, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion,
+				subasta, valores, bodega, tipo, historialPropietarios);
 		this.duracion = duracion;
 		this.tamanioGiga = tamanioGiga;
 		this.resolucion = resolucion;
