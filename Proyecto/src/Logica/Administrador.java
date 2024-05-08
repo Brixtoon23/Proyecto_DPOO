@@ -82,18 +82,26 @@ public class Administrador extends Usuario
 		
 	}
 		
-	public static void ingrearAutor(Galeria galeria,String autor, String pieza)
+	public static void ingresarAutor(Galeria galeria, ArrayList<String> autores, String pieza)
 	{
-		if (galeria.getAutores().containsKey(autor))
+		
+		for(int i=0 ;autores.size() < i ;i++)
 		{
-			galeria.getAutores().get(autor).add(pieza);
+			if (galeria.getAutores().containsKey(autores.get(i))) 
+			{
+				galeria.getAutores().get(autores.get(i)).add(pieza);
+				AutoresPersistencia.registrarAutor(autores.get(i),pieza);
+			}
+			else
+			{
+				galeria.getAutores().put(autores.get(i), new ArrayList<String>());
+				galeria.getAutores().get(autores.get(i)).add(pieza);
+				AutoresPersistencia.registrarAutor(autores.get(i),pieza);
+
+			}
 		}
-		else
-		{
-			galeria.getAutores().put(autor, new ArrayList<String>());
-			galeria.getAutores().get(autor).add(pieza);
-		}
-		AutoresPersistencia.registrarAutor(galeria, autor,pieza);
+
+			
 
 
 	}

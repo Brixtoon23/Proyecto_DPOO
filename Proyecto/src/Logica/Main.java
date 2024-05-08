@@ -5,7 +5,7 @@ package Logica;
 import Persistencia.AutoresPersistencia;
 import Persistencia.ImprimirJSON;
 import Persistencia.InicializadorDeClases;
-
+import Persistencia.SubastaPersistencia;
 import Persistencia.UsuarioPersistencia;
 
 import java.io.FileNotFoundException;
@@ -23,10 +23,10 @@ public class Main
 
     private static Scanner scanner = new Scanner(System.in);
     private static Galeria galeria = InicializadorDeClases.cargarGaleria();
-    private static Map<String,ArrayList<String>> lol = AutoresPersistencia.registrarAutor(galeria, "pixar ", "El rayo mquen");
 
     public static void main(String[] args) throws FileNotFoundException 
     {
+        //AutoresPersistencia.registrarAutor("pixar ", "El rayo mquen");
 
         boolean salir = false;
 
@@ -420,6 +420,7 @@ public class Main
     
                         Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, profundidad, peso, electricidad);
                         Administrador.ingresarPieza(galeria, escultura);
+
                     } else if (tipo.equals("video")) {
                         System.out.print("Ingrese la duración en minutos: ");
                         int duracion = Integer.parseInt(scanner.nextLine());
@@ -435,6 +436,7 @@ public class Main
                         Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, duracion, tamanioGiga, resolucion);
                         
                         Administrador.ingresarPieza(galeria,video);
+                        Administrador.ingresarAutor(galeria, autores, titulo);
     
                     }
     

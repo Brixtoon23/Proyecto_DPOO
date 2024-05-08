@@ -1,12 +1,13 @@
-{
-    "autores":
-    [
-        {
-            "nombre":"pixar",
-            "piezas":["El rayo mquen"]
-        }
-
-    ]
-
-
-}
+{"autores": [
+    {
+        "piezas": ["El rayo mquen"],
+        "nombre": "pixar"
+    },
+    {
+        "piezas": [
+            "El rayo mquen",
+            "El rayo mquen"
+        ],
+        "nombre": "pixar "
+    }
+]}
