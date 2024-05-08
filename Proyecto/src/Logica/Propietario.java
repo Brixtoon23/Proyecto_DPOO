@@ -1,18 +1,19 @@
 package Logica;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Propietario extends Usuario
 {
 	
 	private ArrayList<String> idPiezasActuales = new ArrayList<String>();
 	private ArrayList<String> HistorialPiezas = new ArrayList<String>();
+	
 	public Propietario(String login, String nombre, String password, String rol, String telefono, boolean verificado,
-			ArrayList<String> idPiezasActuales, ArrayList<String> historialPiezas) {
+			ArrayList<String> piezasActuales, ArrayList<String> historialPiezas2) {
 		super(login, nombre, password, rol, telefono, verificado);
-		this.idPiezasActuales = idPiezasActuales;
-		HistorialPiezas = historialPiezas;
+		this.idPiezasActuales = piezasActuales;
+		HistorialPiezas = historialPiezas2;
 	}
 	public ArrayList<String> getIdPiezasActuales() {
 		return idPiezasActuales;

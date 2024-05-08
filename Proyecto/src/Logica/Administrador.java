@@ -2,8 +2,11 @@ package Logica;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import Persistencia.AutoresPersistencia;
 import Persistencia.PiezasPersistencia;
 import Persistencia.SubastaPersistencia;
 import Persistencia.UsuarioPersistencia;
@@ -35,6 +38,15 @@ public class Administrador extends Usuario
 			 PiezasPersistencia.registrarPieza(galeria,pieza);
 		}
 		
+		
+	}
+
+	public static void ingresarUsuario(Usuario usuario,Galeria galeria )
+	{
+
+			galeria.getUsuarios().add(usuario);
+
+			UsuarioPersistencia.registrarUsuario(usuario);
 		
 	}
 		
@@ -70,6 +82,21 @@ public class Administrador extends Usuario
 		
 	}
 		
+	public static void ingrearAutor(Galeria galeria,String autor, String pieza)
+	{
+		if (galeria.getAutores().containsKey(autor))
+		{
+			galeria.getAutores().get(autor).add(pieza);
+		}
+		else
+		{
+			galeria.getAutores().put(autor, new ArrayList<String>());
+			galeria.getAutores().get(autor).add(pieza);
+		}
+		AutoresPersistencia.registrarAutor(galeria, autor,pieza);
+
+
+	}
 	
 	public static void verificarOperador(Operador operador)
 	{
@@ -197,28 +224,19 @@ public class Administrador extends Usuario
 	}
 	
 		
-		public static void ingresarUsuario(Usuario usuario,Galeria galeria )
-		{
 
-			galeria.getUsuarios().add(usuario);
+	public static void crearSusbasta(Galeria galeria, String id)
+	{
 
-			UsuarioPersistencia.registrarUsuario(usuario);
+		ArrayList<Oferta> listaOfertas= new ArrayList<Oferta>();
 
+		ArrayList<String> idListaPiezasSubasta=   new ArrayList<>();
 
-		}
+		Subasta subasta = new Subasta(id, listaOfertas, idListaPiezasSubasta);
 
-		public static void crearSusbasta(Galeria galeria, String id)
-		{
-
-			 ArrayList<Oferta> listaOfertas= new ArrayList<Oferta>();
-
-			 ArrayList<String> idListaPiezasSubasta=   new ArrayList<>();
-
-			  Subasta subasta = new Subasta(id, listaOfertas, idListaPiezasSubasta);
-
-			  galeria.getSubastas().add(subasta);
-			  SubastaPersistencia.registrarSubasta(galeria, subasta);
-		}		
+		galeria.getSubastas().add(subasta);
+		SubastaPersistencia.registrarSubasta(galeria, subasta);
+	}		
 	
 }
 

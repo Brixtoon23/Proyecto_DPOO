@@ -1,8 +1,7 @@
 package Logica;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+
 import java.util.Map;
 
 public class Video extends Pieza
@@ -21,7 +20,7 @@ public class Video extends Pieza
 	public Video(String titulo, String loginPropietarioActual, int anioCreacion, String lugarCreacion,
 			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
 			ArrayList<Integer> valores, boolean bodega, String tipo,
-			ArrayList<Map<String, String>> historialPropietarios, int duracion, int tamanioGiga, String resolucion) {
+			ArrayList<Map<String, Object>> historialPropietarios, int duracion, int tamanioGiga, String resolucion) {
 		super(titulo, loginPropietarioActual, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion,
 				subasta, valores, bodega, tipo, historialPropietarios);
 		this.duracion = duracion;

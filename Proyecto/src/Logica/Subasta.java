@@ -11,7 +11,8 @@ public class Subasta
 
 
 
-    public Subasta(String id, ArrayList<Oferta> listaOfertas, ArrayList<String> idListaPiezasSubasta) {
+    public Subasta(String id, ArrayList<Oferta> listaOfertas, ArrayList<String> idListaPiezasSubasta) 
+    {
         this.id = id;
         this.listaOfertas = listaOfertas;
         IdListaPiezasSubasta = idListaPiezasSubasta;

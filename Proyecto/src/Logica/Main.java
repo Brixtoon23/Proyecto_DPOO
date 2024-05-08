@@ -2,6 +2,7 @@ package Logica;
 
 
 
+import Persistencia.AutoresPersistencia;
 import Persistencia.ImprimirJSON;
 import Persistencia.InicializadorDeClases;
 
@@ -19,8 +20,10 @@ import java.util.Scanner;
 
 public class Main
 {
+
     private static Scanner scanner = new Scanner(System.in);
     private static Galeria galeria = InicializadorDeClases.cargarGaleria();
+    private static Map<String,ArrayList<String>> lol = AutoresPersistencia.registrarAutor(galeria, "pixar ", "El rayo mquen");
 
     public static void main(String[] args) throws FileNotFoundException 
     {
@@ -59,15 +62,15 @@ public class Main
                     System.out.println("\n--- Registrarse ---");
                     System.out.print("Recuerde que si ingresa como comprdor se registrará instantaniamente como comprador y propietario: ");
                     System.out.print("y si se registro solamente como propietario no podrá ser comprador con el mismo login: ");
-                    System.out.print("Ingrese su rol (cajero / administrador / comprador / operador / propietario): ");
-                
-                    
-                    rol = scanner.nextLine();
-                    System.out.print("Ingrese su login: ");
 
-         
+
+                    System.out.print("Ingrese su rol (cajero / administrador / comprador / operador / propietario): ");
+                    rol = scanner.nextLine();
+
+                    System.out.print("Ingrese su login: ");
                     String login1 = scanner.nextLine();
-                    login= login1+"_"+ rol;
+                    
+                    login = login1+"_"+ rol;
                     
                     if (Servicios.verificarLoginRepetido(galeria, login))
                      {
@@ -117,16 +120,15 @@ public class Main
                         
                             System.out.print("Ingrese su estado de cuenta: ");
                             Float estadoCuenta = Float.parseFloat(scanner.nextLine());
+                            Comprador comprador = new Comprador(login, nombre, password, rol, telefono, false, estadoCuenta, new ArrayList<Compra>(),0,
+                            false,new ArrayList<Mensaje>(), new ArrayList<String>());
                         
-                            Comprador comprador = new Comprador(login, nombre, password, rol, telefono, false, estadoCuenta,
-                            new ArrayList<Compra>(), 0, false, new ArrayList<Pieza>(),new ArrayList<Mensaje>() );
+
                             Administrador.verificarComprador(comprador);
                             if (comprador.isVerificado())
                             {
                                 String loginPropietario= login1 +"_propietario";
-                                ArrayList<Pieza> piezasActuales = new ArrayList<Pieza>();
-                                ArrayList<Pieza> historialPiezas= new ArrayList<Pieza>();
-                                Propietario propiertario= new Propietario(loginPropietario, nombre, password, "propietario", telefono, salir, piezasActuales,  historialPiezas);
+                                Propietario propiertario= new Propietario(loginPropietario, nombre, password, "propietario", telefono, salir, new ArrayList<String>(),  new ArrayList<String>());
                                 Administrador.ingresarUsuario(comprador, galeria);
                                 Administrador.ingresarUsuario(propiertario, galeria);
                                 System.out.println("Su registro fue exitoso,  recuerde que automaticamente se creo una cuneta con el rol propietario. ");
@@ -143,7 +145,7 @@ public class Main
                       
                         case "operador":
                             
-                            Operador operador = new Operador(login, nombre, password, rol, telefono, false, new ArrayList<Subasta>());
+                            Operador operador = new Operador(login, nombre, password, rol, telefono, false, new ArrayList<String>());
                             Administrador.verificarOperador(operador);
                             if (operador.isVerificado())
                             {
@@ -158,6 +160,20 @@ public class Main
                         default:
                             System.out.println("Opción no válida. Inténtelo de nuevo.");
                             break;
+                        case "propietario":
+
+                            Propietario propiertario= new Propietario(login, nombre, password, "propietario", telefono, salir, new ArrayList<String>(),  new ArrayList<String>());
+                            Administrador.verificarPropietario(propiertario);
+                            if (propiertario.isVerificado())
+                            {
+                                Administrador.ingresarUsuario(propiertario, galeria);
+
+                            }       
+                            else
+                            {
+                                System.out.println("No se pudo verificar su cuenta. Intente nuevamente. ");
+                            }     
+                            break;  
                     }
                     continue;
 
@@ -168,6 +184,8 @@ public class Main
 
 
                 case 2:
+               
+
 
                     System.out.println("\n--- Iniciar Sesión ---");
                     System.out.print("Ingrese su rol (cajero / administrador / comprador / propietario / operador): ");
@@ -180,7 +198,7 @@ public class Main
                     if (usuario == null)
                     {
                         System.out.println("No existe un usuario con ese login. Inténtelo de nuevo.");
-                        return;
+                        continue;
                     }
                     System.out.println("Inicio de sesión exitoso como " + rol);
                     System.out.println("Bienvenido");
@@ -294,10 +312,7 @@ public class Main
 
 
                     System.out.print("Ingrese en que valor adquirió la pieza propietario actual: ");
-                    String valor1  = scanner.nextLine();
-
-                    
-
+                    int valorCompra  = Integer.parseInt(scanner.nextLine());
 
                     
                     System.out.print("Ingrese autor/es separados por ',' : ");
@@ -328,11 +343,14 @@ public class Main
                         valores.add(Integer.parseInt(valor.trim()));
                     }
 
-                    ArrayList<String> propietarios = new ArrayList<String>();
+                    ArrayList<Map<String,Object>> propietarios = new ArrayList<Map<String,Object>>();
+                    Map<String,Object> mapaPropietario = new HashMap<String,Object>();
                     System.out.print("Ingrese Login del propietario: ");
                     String loginPropietario = scanner.nextLine()+"_propietario";
-                    propietarios.add(loginPropietario);
-                    
+                    mapaPropietario.put("loginPropietario", loginPropietario);
+                    mapaPropietario.put("valorCompra", valorCompra);
+                    mapaPropietario.put("fecha",fecha);
+                    propietarios.add(mapaPropietario);
                     
                     
                     System.out.print("¿Se encuentra en bodega? (true/false): ");
@@ -345,17 +363,6 @@ public class Main
                     int peso;
                     int tamanioGiga;
                     String resolucion;
-
-
-                    ArrayList<Map<String, String>> historialPropietarios = new ArrayList<>();
-
-                    HashMap<String, String> primerPropietario= new HashMap<>();
-                    primerPropietario.put("propietario", loginPropietario);
-                    primerPropietario.put("fecha", fecha);
-                    primerPropietario.put("valor", valor1);
-
-
-                    historialPropietarios.add(primerPropietario);
 
 
     
@@ -373,22 +380,23 @@ public class Main
                         System.out.print("Ingrese la técnica: ");
                         String tecnica = scanner.nextLine();
                         
-                       
-
-
-
+                    
 
     
-                        Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, historialPropietarios, alto, ancho, peso, tecnica);
+                        Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, peso, tecnica);
+                        
                         Administrador.ingresarPieza(galeria, pintura);
-                    } else if (tipo.equals("fotografia")) {
+
+                    } 
+                    else if (tipo.equals("fotografia")) 
+                    {
                         System.out.print("Ingrese la resolución: ");
                         resolucion = scanner.nextLine();
                         
                         System.out.print("Ingrese el tamaño en gigas: ");
                         tamanioGiga = Integer.parseInt(scanner.nextLine());
     
-                        Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, historialPropietarios, resolucion, tamanioGiga);
+                        Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, resolucion, tamanioGiga);
                         Administrador.ingresarPieza(galeria, fotografia);
                     } else if (tipo.equals("escultura")) {
                         System.out.print("Ingrese el alto: ");
@@ -410,7 +418,7 @@ public class Main
                         System.out.print("¿Necesita electricidad? (true/false): ");
                         boolean electricidad = Boolean.parseBoolean(scanner.nextLine());
     
-                        Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, historialPropietarios, alto, ancho, profundidad, peso, electricidad);
+                        Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, profundidad, peso, electricidad);
                         Administrador.ingresarPieza(galeria, escultura);
                     } else if (tipo.equals("video")) {
                         System.out.print("Ingrese la duración en minutos: ");
@@ -424,7 +432,7 @@ public class Main
                         System.out.print("Ingrese la resolución: ");
                         resolucion = scanner.nextLine();
                         
-                        Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, historialPropietarios, duracion, tamanioGiga, resolucion);
+                        Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, duracion, tamanioGiga, resolucion);
                         
                         Administrador.ingresarPieza(galeria,video);
     
@@ -433,6 +441,7 @@ public class Main
                     // Después de cargar una pieza, volver al menú del administrador
                     break;
     
+
                 case 2:
                     System.out.print("Ingrear ID: ");
                     String id = scanner.nextLine();

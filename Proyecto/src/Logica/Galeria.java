@@ -2,6 +2,7 @@ package Logica;
 
 
 import java.util.ArrayList;
+import java.util.Map;
 
 
 
@@ -14,16 +15,18 @@ public class Galeria
     private Inventario inventario;
     private ArrayList<Usuario> usuarios;
     private ArrayList<Subasta> subastas;
+    private Map<String,ArrayList<String>> autores;
     
 
 
-    public Galeria(String nombre, int cantidadObras, Inventario inventario, ArrayList<Usuario> usuarios, ArrayList<Subasta> subastas) 
+    public Galeria(String nombre, int cantidadObras, Inventario inventario, ArrayList<Usuario> usuarios, ArrayList<Subasta> subastas, Map<String,ArrayList<String>> autores) 
     {
         this.nombre = nombre;
         this.cantidadObras = cantidadObras;
         this.inventario = inventario;
         this.usuarios = usuarios;
         this.subastas = subastas;
+        this.autores = autores;
 
     }
     
@@ -57,6 +60,12 @@ public class Galeria
     public ArrayList<Subasta> getSubastas() 
     {
         return subastas;
+    }
+
+
+    public Map<String,ArrayList<String>> getAutores() 
+    {
+        return autores;
     }
     
 

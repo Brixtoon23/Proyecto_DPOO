@@ -6,18 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-
-
 import Logica.Compra;
 import Logica.Comprador;
-
-import Logica.Pieza;
-
-import Logica.Subasta;
+import Logica.Mensaje;
 import Logica.Usuario;
 
 
@@ -48,11 +41,12 @@ public class UsuarioPersistencia
             case "cajero":
             	
                 valoresEspecialesJSON.put("comprasRegistradas", new ArrayList<Compra>()); 
+
               
                 break;
             case "operador" :
                 
-                valoresEspecialesJSON.put("subastas",new ArrayList<Subasta>());
+                valoresEspecialesJSON.put("idSubastas",new ArrayList<String>());
                
             case "administrador":
 
@@ -63,11 +57,19 @@ public class UsuarioPersistencia
             
                 Comprador comprador = (Comprador) usuario;
                 valoresEspecialesJSON.put("estadoCuenta", comprador.getEstadoCuenta());
+                valoresEspecialesJSON.put("maxCompras", comprador.getMaxCompras());
+                valoresEspecialesJSON.put("mora", comprador.isMora());
+                valoresEspecialesJSON.put("historialCompras", new ArrayList<Compra>());
+                valoresEspecialesJSON.put("mensajesSubasta", new ArrayList<Mensaje>());
+                valoresEspecialesJSON.put("idPiezasCompradas", new ArrayList<String>());
+
                 break;
+
             case "propietario" :
 
-                valoresEspecialesJSON.put("piezasActuales", new ArrayList<Pieza>());
-                valoresEspecialesJSON.put("historialPiezas", new ArrayList<Pieza>());
+                valoresEspecialesJSON.put("idPiezasActuales", new ArrayList<String>());
+                valoresEspecialesJSON.put("historialPiezas", new ArrayList<String>());
+
                 break;
             default:
                 System.out.println("Rol no reconocido. Los valores especiales no se guardarán.");

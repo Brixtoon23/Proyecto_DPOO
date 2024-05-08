@@ -9,7 +9,8 @@ public abstract class Usuario {
 	protected boolean verificado;
 	
 	
-	public Usuario(String login, String nombre, String password, String rol, String telefono, boolean verificado) {
+	public Usuario(String login, String nombre, String password, String rol, String telefono, boolean verificado) 
+	{
 		
 		this.login = login;
 		this.nombre = nombre;

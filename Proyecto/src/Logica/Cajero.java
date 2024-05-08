@@ -7,14 +7,15 @@ import java.util.Map;
 
 public class Cajero  extends Usuario
 {
-	private List<String> idcomprasRegistradas;
+	private ArrayList<Compra> comprasRegistradas;
 
 	
 	
 	public Cajero(String login, String nombre, String password, String rol, String telefono, boolean verificado,
-			List<String> idcomprasRegistradas) {
+			ArrayList<Compra> comprasResgistradas) 
+	{
 		super(login, nombre, password, rol, telefono, verificado);
-		this.idcomprasRegistradas = idcomprasRegistradas;
+		this.comprasRegistradas = comprasResgistradas;
 	}
 
 
@@ -35,7 +36,7 @@ public class Cajero  extends Usuario
 		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, pieza.getLoginPropietarioActual());
 		
 		propietarioAnterior.getIdPiezasActuales().remove(pieza.getTitulo());
-		Map<String, String> mapa = new HashMap<>();
+		Map<String, Object> mapa = new HashMap<>();
 		mapa.put("propietario",comprador.getLogin());
 		
 		pieza.getHistorialPropietarios().add(mapa);
@@ -75,7 +76,7 @@ public class Cajero  extends Usuario
 	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago,Galeria galeria, String fecha) 
 	{
 		float cuenta = comprador.getEstadoCuenta();
-		List<Integer> valores = pieza.getValores();
+		ArrayList<Integer> valores = pieza.getValores();
 		int precioFijo = valores.get(0);
 		
 		String propietarioAnteriorLogin = pieza.getLoginPropietarioActual();
@@ -84,7 +85,7 @@ public class Cajero  extends Usuario
 
 		piezasPropietarioAnterior.remove(pieza.getTitulo());
 		
-		List<Compra> historialCompra = comprador.getHistorialCompras();
+		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
 
 		Compra compraNueva = new Compra(propietarioAnteriorLogin, precioFijo, pieza.getTitulo() , metodoPago, fecha);
 
@@ -94,7 +95,7 @@ public class Cajero  extends Usuario
 		comprador.setEstadoCuenta(cuenta);
 		
 		
-		List<String> piezas =  comprador.getIdpiezasCompradas();
+		ArrayList<String> piezas =  comprador.getIdpiezasCompradas();
 		piezas.add(pieza.getTitulo());
 
 		comprador.setIdpiezasCompradas(piezas);
@@ -121,8 +122,9 @@ public class Cajero  extends Usuario
 
 
 
-	public List<String> getIdcomprasRegistradas() {
-		return idcomprasRegistradas;
+	public ArrayList<Compra> getComprasRegistradas() 
+	{
+		return comprasRegistradas;
 	}
 
 
@@ -137,7 +139,7 @@ public class Cajero  extends Usuario
 
 
 
-	public void setIdcomprasRegistradas(List<String> idcomprasRegistradas) {
-		this.idcomprasRegistradas = idcomprasRegistradas;
+	public void setComprasRegistradas(ArrayList<Compra> comprasRegistradas) {
+		this.comprasRegistradas = comprasRegistradas;
 	}
 }

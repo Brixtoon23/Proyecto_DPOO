@@ -22,7 +22,7 @@ public class Pintura extends Pieza
 	public Pintura(String titulo, String loginPropietarioActual, int anioCreacion, String lugarCreacion,
 			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
 			ArrayList<Integer> valores, boolean bodega, String tipo,
-			ArrayList<Map<String, String>> historialPropietarios, int alto, int ancho, int peso, String tecnica) {
+			ArrayList<Map<String, Object>> historialPropietarios, int alto, int ancho, int peso, String tecnica) {
 		super(titulo, loginPropietarioActual, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion,
 				subasta, valores, bodega, tipo, historialPropietarios);
 		this.alto = alto;

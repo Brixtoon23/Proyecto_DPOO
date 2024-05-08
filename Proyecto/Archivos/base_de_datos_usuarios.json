@@ -13,41 +13,60 @@
         "valores_especiales": {"comprasRegistradas": []},
         "password": "Transferencia",
         "login": "bri_cajero",
-        "telefono": "3234345",
+        "telefono": "344323456",
         "nombre": "bri",
         "rol": "cajero"
     },
     {
         "verificado": true,
-        "valores_especiales": {"estadoCuenta": 3000000},
-        "password": "bri",
-        "login": "bri_comprador",
-        "telefono": "2345532",
+        "valores_especiales": {
+            "idSubastas": [],
+            "soyAdmin": true
+        },
+        "password": "Galeria",
+        "login": "bri_operador",
+        "telefono": "2345653",
         "nombre": "bri",
-        "rol": "comprador"
+        "rol": "operador"
     },
     {
         "verificado": true,
         "valores_especiales": {
-            "piezasActuales": [],
+            "idPiezasActuales": [],
             "historialPiezas": []
         },
         "password": "Admin",
         "login": "bri_propietario",
-        "telefono": "23323",
+        "telefono": "234566",
         "nombre": "bri",
         "rol": "propietario"
     },
     {
         "verificado": true,
         "valores_especiales": {
-            "soyAdmin": true,
-            "subastas": []
+            "maxCompras": 1900000,
+            "historialCompras": [],
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 999999,
+            "idPiezasCompradas": []
         },
-        "password": "Galeria",
-        "login": "bri_operador",
-        "telefono": "345324",
-        "nombre": "bri",
-        "rol": "operador"
+        "password": "briceno",
+        "login": "briceno_comprador",
+        "telefono": "23456543",
+        "nombre": "briceno",
+        "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "briceno",
+        "login": "briceno_propietario",
+        "telefono": "23456543",
+        "nombre": "briceno",
+        "rol": "propietario"
     }
 ]}

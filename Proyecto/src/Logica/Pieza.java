@@ -1,7 +1,6 @@
 package Logica;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public abstract class Pieza
@@ -18,11 +17,12 @@ public abstract class Pieza
 	protected ArrayList<Integer> valores;
 	protected boolean bodega;
 	protected String tipo;
-	protected ArrayList<Map<String, String>> historialPropietarios;
+	protected ArrayList<Map<String, Object>> historialPropietarios;
 	public Pieza(String titulo, String loginPropietarioActual, int anioCreacion, String lugarCreacion,
 			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
 			ArrayList<Integer> valores, boolean bodega, String tipo,
-			ArrayList<Map<String, String>> historialPropietarios) {
+			ArrayList<Map<String, Object>> historialPropietarios) 
+			{
 		this.titulo = titulo;
 		this.loginPropietarioActual = loginPropietarioActual;
 		this.anioCreacion = anioCreacion;
@@ -69,7 +69,7 @@ public abstract class Pieza
 	public String getTipo() {
 		return tipo;
 	}
-	public ArrayList<Map<String, String>> getHistorialPropietarios() {
+	public ArrayList<Map<String, Object>> getHistorialPropietarios() {
 		return historialPropietarios;
 	}
 	public void setTitulo(String titulo) {
@@ -105,7 +105,7 @@ public abstract class Pieza
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public void setHistorialPropietarios(ArrayList<Map<String, String>> historialPropietarios) {
+	public void setHistorialPropietarios(ArrayList<Map<String, Object>> historialPropietarios) {
 		this.historialPropietarios = historialPropietarios;
 	}
 

@@ -15,7 +15,7 @@ public class Escultura extends Pieza
 	public Escultura(String titulo, String loginPropietarioActual, int anioCreacion, String lugarCreacion,
 			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
 			ArrayList<Integer> valores, boolean bodega, String tipo,
-			ArrayList<Map<String, String>> historialPropietarios, int alto, int ancho, int profundidad, int peso,
+			ArrayList<Map<String, Object>> historialPropietarios, int alto, int ancho, int profundidad, int peso,
 			boolean electricidad) {
 		super(titulo, loginPropietarioActual, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion,
 				subasta, valores, bodega, tipo, historialPropietarios);

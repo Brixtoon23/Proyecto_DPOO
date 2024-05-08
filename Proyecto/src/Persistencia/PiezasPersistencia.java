@@ -34,6 +34,7 @@ public class PiezasPersistencia
         JSONObject piezaJSON = new JSONObject();
         piezaJSON.put("titulo", pieza.getTitulo());
         piezaJSON.put("anioCreacion", pieza.getAnioCreacion());
+        piezaJSON.put("loginPropietarioActual", pieza.getLoginPropietarioActual());
         piezaJSON.put("lugarCreacion", pieza.getLugarCreacion());
         piezaJSON.put("autores", pieza.getAutor()); // Usar un JSONArray para los autores
         piezaJSON.put("disponible", pieza.isDisponible());
