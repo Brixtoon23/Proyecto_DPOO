@@ -1,11 +1,8 @@
 package Logica;
 
 
-
-import Persistencia.AutoresPersistencia;
 import Persistencia.ImprimirJSON;
 import Persistencia.InicializadorDeClases;
-import Persistencia.SubastaPersistencia;
 import Persistencia.UsuarioPersistencia;
 
 import java.io.FileNotFoundException;
