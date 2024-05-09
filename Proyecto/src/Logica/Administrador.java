@@ -233,17 +233,16 @@ public class Administrador extends Usuario
 	
 		
 
-	public static void crearSusbasta(Galeria galeria, String id)
+	public static void crearSusbasta(Galeria galeria, String id, ArrayList<String> piezas)
 	{
 
 		ArrayList<Oferta> listaOfertas= new ArrayList<Oferta>();
 
-		ArrayList<String> idListaPiezasSubasta=   new ArrayList<>();
-
-		Subasta subasta = new Subasta(id, listaOfertas, idListaPiezasSubasta);
+		Subasta subasta = new Subasta(id, listaOfertas, piezas);
 
 		galeria.getSubastas().add(subasta);
-		SubastaPersistencia.registrarSubasta(galeria, subasta);
+		
+		SubastaPersistencia.registrarSubasta(subasta);
 	}		
 	
 }

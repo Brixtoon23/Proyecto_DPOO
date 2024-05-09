@@ -27,6 +27,7 @@ public class Main
     public static void main(String[] args) throws FileNotFoundException 
     {
         //AutoresPersistencia.registrarAutor("pixar ", "El rayo mquen");
+        //Galeria gal = galeria;
 
         boolean salir = false;
 
@@ -445,9 +446,20 @@ public class Main
     
 
                 case 2:
+
                     System.out.print("Ingrear ID: ");
                     String id = scanner.nextLine();
-                    Administrador.crearSusbasta(galeria, id);
+                    System.out.println("Ingrese el titulo de las piezas que van a entrar en la subasta separados por una (,): ");
+                    String[] piezasArreglo = scanner.nextLine().split(",");
+                    ArrayList<String> piezas = new ArrayList<String>();
+                    for (String pieza : piezasArreglo) 
+                    {
+                        piezas.add(pieza.trim()); 
+                    }
+
+                    Administrador.crearSusbasta(galeria, id, piezas);
+                    
+
 
 
 
@@ -552,7 +564,7 @@ public class Main
 
                 Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
                 Operador operador= Servicios.buscarOperador(galeria, login);
-                List<Subasta> subastas= operador.getSubastas();
+                List<Subasta> subastas= galeria.getSubastas();
                 
                 Operador.registrarOferta(oferta, subastas, galeria, fecha1);
 
