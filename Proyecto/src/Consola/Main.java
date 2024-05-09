@@ -1,6 +1,22 @@
-package Logica;
+package Consola;
+import Logica.Administrador;
+import Logica.Cajero;
+import Logica.Compra;
+import Logica.Comprador;
+import Logica.Escultura;
+import Logica.Fotografia;
+import Logica.Galeria;
 
-
+import Logica.Mensaje;
+import Logica.Oferta;
+import Logica.Operador;
+import Logica.Pieza;
+import Logica.Pintura;
+import Logica.Propietario;
+import Logica.Servicios;
+import Logica.Subasta;
+import Logica.Usuario;
+import Logica.Video;
 import Persistencia.ImprimirJSON;
 import Persistencia.InicializadorDeClases;
 import Persistencia.UsuarioPersistencia;
