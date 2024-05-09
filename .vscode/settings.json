@@ -4,6 +4,7 @@
         "Proyecto"
     ],
     "java.project.referencedLibraries": [
-        "Proyecto/Gson/json-20231013.jar"
+        "Proyecto/Gson/json-20231013.jar",
+        "test-lib\\**\\*.jar"
     ]
 }
