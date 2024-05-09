@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import Persistencia.SubastaPersistencia;
+
 
 
 public class Operador extends Usuario 
@@ -32,7 +34,7 @@ public class Operador extends Usuario
 
 
 
-	public static  void  registrarOferta(Oferta oferta1, List<Subasta> subastas, Galeria galeria, String fecha)
+	public static  void  registrarOferta(Oferta oferta1, ArrayList<Subasta> subastas, Galeria galeria, String fecha)
 	{
 		 for (Subasta subasta  : subastas)
 
@@ -48,21 +50,23 @@ public class Operador extends Usuario
 				 if (nombrePieza== nombrePieza1)
 				 {
 					subasta.getListaOfertas().add(oferta1);
+					SubastaPersistencia.registrarSubasta(subasta);
 				 }
 
 			if ( ofertas.size()==10)
 
 			{
-				List<Integer> valoresOfertados= new ArrayList<Integer>();
+				ArrayList<Integer> valoresOfertados= new ArrayList<Integer>();
 				for(Oferta oferta2 :ofertas)
 				{
 					valoresOfertados.add(oferta2.getValorOfertado());
+
 					 
 				}
 
 
 				 Collections.sort(valoresOfertados, Collections.reverseOrder());
-				 List<Oferta> ofertasOrdenadas= new ArrayList<Oferta>();
+				 ArrayList<Oferta> ofertasOrdenadas= new ArrayList<Oferta>();
 				 
 
 				 for(int valor: valoresOfertados)

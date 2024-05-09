@@ -161,7 +161,7 @@ public class Administrador extends Usuario
 		String nombrePieza= mejorOferta.getNombrepiezaSubastada();
 		Pieza pieza= Servicios.buscarPiezaSubasta(galeria, nombrePieza);
 		int valorMinimo= pieza.valores.get(1);
-		 boolean vendida=false;
+		boolean vendida=false;
 
 		if (mejorOferta.getValorOfertado()< valorMinimo )
 		{

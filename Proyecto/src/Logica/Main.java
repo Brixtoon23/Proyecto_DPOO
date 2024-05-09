@@ -561,7 +561,7 @@ public class Main
 
                 Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
                 Operador operador= Servicios.buscarOperador(galeria, login);
-                List<Subasta> subastas= galeria.getSubastas();
+                ArrayList<Subasta> subastas= galeria.getSubastas();
                 
                 Operador.registrarOferta(oferta, subastas, galeria, fecha1);
 

@@ -9,6 +9,7 @@ import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import Logica.Oferta;
 import Logica.Subasta;
 
 
@@ -61,4 +62,6 @@ public class SubastaPersistencia
             e.printStackTrace();
         }
     }
+
+    
 }
