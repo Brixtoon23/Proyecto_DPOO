@@ -70,10 +70,30 @@ public class TestsAdmin
     @Test
     void testIngresarPieza()
     {
-        int tamanio_inicial = (GaleriaPrueba.getInventario().getPiezasBodega().size())+(GaleriaPrueba.getInventario().getPiezasExhibidad().size())
-        assertEquals(tamanio_inicial,GaleriaPrueba.getCantidadObras(), "La cantidad incial de obras no es correcta");
-        Administrador.ingresarPieza(GaleriaPrueba,VideoPrueba);
-        assertEquals(tamanio_inicial+1,GaleriaPrueba.getCantidadObras(), "La pieza no se agregó a la galería");
+        int bodega_inicial = GaleriaPrueba.getInventario().getPiezasBodega().size();
+        int exhibicion_inicial = GaleriaPrueba.getInventario().getPiezasExhibidad().size();
+        assertEquals((bodega_inicial+exhibicion_inicial),GaleriaPrueba.getCantidadObras(), "La cantidad incial de obras no es correcta");
+        Administrador.ingresarPieza(GaleriaPrueba,VideoPrueba); //Se ingresa una pieza a exhibicion
+        assertEquals((exhibicion_inicial+bodega_inicial+1),GaleriaPrueba.getCantidadObras(),"La pieza no se agregó a la galería");
+        assertEquals((exhibicion_inicial+1),GaleriaPrueba.getInventario().getPiezasExhibidad().size(), "La pieza no se agregó a la lista correcta en la galería");
+        Pieza piezaAgregada = GaleriaPrueba.getInventario().getPiezasExhibidad().getLast();
+        //Se verifica que la pieza que se agregó sea la correcta
+        assertEquals(VideoPrueba.getTitulo(),piezaAgregada.getTitulo(),"La pieza no se agregó correctamente, el título no es correcto");
+        assertEquals(VideoPrueba.getLoginPropietarioActual(), piezaAgregada.getLoginPropietarioActual(),"La pieza no se agregó correctamente, el propietario actual no es correcto");
+        assertEquals(VideoPrueba.getAutor().size(),piezaAgregada.getAutor().size(),"La pieza no se agregó correctamente, los autores no son los correctos");
+        assertEquals(VideoPrueba.getTipo(),piezaAgregada.getTipo(), "La pieza no se agregó correctamente, el tipo de pieza es incorrecto");
 
+        exhibicion_inicial = GaleriaPrueba.getInventario().getPiezasExhibidad().size(); //Se actualiza la cantidad en bodega inicial para la siguiente prueba
+        
+        //Ahora se hace una prueba para el ingreso de un pieza a bodega
+        Administrador.ingresarPieza(GaleriaPrueba,PinturaPrueba);
+        assertEquals((exhibicion_inicial+bodega_inicial+1),GaleriaPrueba.getCantidadObras(),"La pieza no se agregó a la galería");
+        assertEquals((bodega_inicial+1),GaleriaPrueba.getInventario().getPiezasBodega().size(), "La pieza no se agregó a la lista correcta en la galería");
+        //Se verifica que la pieza agregada es correcta
+        piezaAgregada = GaleriaPrueba.getInventario().getPiezasBodega().getLast();
+        assertEquals(PinturaPrueba.getTitulo(),piezaAgregada.getTitulo(),"La pieza no se agregó correctamente, el título no es correcto");
+        assertEquals(PinturaPrueba.getLoginPropietarioActual(), piezaAgregada.getLoginPropietarioActual(),"La pieza no se agregó correctamente, el propietario actual no es correcto");
+        assertEquals(PinturaPrueba.getAutor().size(),piezaAgregada.getAutor().size(),"La pieza no se agregó correctamente, los autores no son los correctos");
+        assertEquals(PinturaPrueba.getTipo(),piezaAgregada.getTipo(), "La pieza no se agregó correctamente, el tipo de pieza es incorrecto");
     }
 }
