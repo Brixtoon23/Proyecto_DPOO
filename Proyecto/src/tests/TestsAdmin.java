@@ -68,7 +68,7 @@ public class TestsAdmin
     }
 
     @Test
-    public void testIngresarPieza()
+    void testIngresarPieza()
     {
         int bodega_inicial = GaleriaPrueba.getInventario().getPiezasBodega().size();
         int exhibicion_inicial = GaleriaPrueba.getInventario().getPiezasExhibidad().size();
