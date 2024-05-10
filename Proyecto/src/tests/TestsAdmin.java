@@ -35,7 +35,7 @@ public class TestsAdmin
 
 
     @BeforeAll
-    void setUp() throws Exception
+    public void setUp() throws Exception
     {
         GaleriaPrueba = InicializadorDeClases.cargarGaleria();
 
@@ -68,7 +68,7 @@ public class TestsAdmin
     }
 
     @Test
-    void testIngresarPieza()
+    public void testIngresarPieza()
     {
         int bodega_inicial = GaleriaPrueba.getInventario().getPiezasBodega().size();
         int exhibicion_inicial = GaleriaPrueba.getInventario().getPiezasExhibidad().size();
