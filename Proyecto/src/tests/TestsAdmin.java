@@ -1,6 +1,7 @@
 package tests;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,7 +34,7 @@ public class TestsAdmin
     private static Galeria GaleriaPrueba = InicializadorDeClases.cargarGaleria();
 
 
-    @BeforeAll
+    @BeforeEach
     public void setUp() throws Exception
     {
 
