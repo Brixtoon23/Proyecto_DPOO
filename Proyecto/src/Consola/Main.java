@@ -501,7 +501,7 @@ public class Main
             System.out.println("1. Ver Piezas Subasta");
             System.out.println("2. Ver piezas PrecioFijo");
             System.out.println("3. Comprar pieza a precio fijo");
-            System.out.println("4. Comprar pieza subastada");
+            System.out.println("4. Hacer oferta para pieza subastada");
             System.out.println("5. ver Compra aprobadas por subasta");
             System.out.println("6. ver Compra no aprobadas por subasta");
             System.out.println("7. Salir");
