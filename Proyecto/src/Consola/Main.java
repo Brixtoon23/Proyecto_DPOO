@@ -40,7 +40,7 @@ public class Main
     public static void main(String[] args) throws FileNotFoundException 
     {
         //AutoresPersistencia.registrarAutor("pixar ", "El rayo mquen");
-        //Galeria gal = galeria;
+
 
         boolean salir = false;
 
@@ -363,7 +363,7 @@ public class Main
                     String loginPropietario = scanner.nextLine()+"_propietario";
                     mapaPropietario.put("loginPropietario", loginPropietario);
                     mapaPropietario.put("valorCompra", valorCompra);
-                    mapaPropietario.put("fecha",fecha);
+                    mapaPropietario.put("fechaVenta",fecha);
                     propietarios.add(mapaPropietario);
                     
                     

@@ -14,7 +14,7 @@
         },
         "bodega": false,
         "historialPropietarios": [{
-            "propietario": "bri_propietario",
+            "loginPropietario": "bri_propietario",
             "valorCompra": 233432,
             "fechaVenta": "2023-11-08"
         }],
@@ -42,7 +42,7 @@
         },
         "bodega": true,
         "historialPropietarios": [{
-            "propietario": "briceno_propietario",
+            "loginPropietario": "briceno_propietario",
             "valorCompra": 230000,
             "fechaVenta": "23/11/2024"
         }],
@@ -74,7 +74,7 @@
         "historialPropietarios": [{
             "valorCompra": 0,
             "loginPropietario": "bri_propietario_propietario",
-            "fecha": "90/80/20"
+            "fechaVenta": "90/80/20"
         }],
         "loginPropietarioActual": "bri_propietario_propietario",
         "anioCreacion": 2005,
