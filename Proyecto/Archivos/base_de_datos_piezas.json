@@ -14,7 +14,7 @@
         },
         "bodega": false,
         "historialPropietarios": [{
-            "propietario": "bri_propietario",
+            "loginPropietario": "bri_propietario",
             "valorCompra": 233432,
             "fechaVenta": "2023-11-08"
         }],
@@ -43,7 +43,7 @@
         "bodega": true,
         "historialPropietarios": [{
             "valorCompra": 230000,
-            "propietario": "briceno_propietario",
+            "loginPropietario": "briceno_propietario",
             "fechaVenta": "23/11/2024"
         }],
         "loginPropietarioActual": "briceno_propietario",
