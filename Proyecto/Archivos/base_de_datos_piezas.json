@@ -81,5 +81,32 @@
             4000000
         ],
         "disponible": true
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Italia",
+        "titulo": "La monalisa",
+        "autores": ["Davinci"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 60,
+            "tecnica": "oleo",
+            "alto": 30
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 2000000,
+            "loginPropietario": "nikol_propietario",
+            "fechaVenta": "20/06/2016"
+        }],
+        "loginPropietarioActual": "nikol_propietario",
+        "anioCreacion": 1519,
+        "subasta": true,
+        "valores": [
+            3000000,
+            400000000
+        ],
+        "disponible": true
     }
 ]}
