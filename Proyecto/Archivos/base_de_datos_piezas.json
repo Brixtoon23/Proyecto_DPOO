@@ -14,6 +14,7 @@
         },
         "bodega": false,
         "historialPropietarios": [{
+        
             "loginPropietario": "bri_propietario",
             "valorCompra": 233432,
             "fechaVenta": "2023-11-08"
