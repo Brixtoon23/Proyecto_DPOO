@@ -45,11 +45,11 @@
         "verificado": true,
         "valores_especiales": {
             "maxCompras": 1900000,
-            "historialCompras": [],
             "mora": false,
             "mensajesSubasta": [],
             "estadoCuenta": 9999999,
-            "idPiezasCompradas": []
+            "idPiezasCompradas": [],
+            "historialCompras": []
         },
         "password": "briceno",
         "login": "briceno_comprador",
@@ -67,6 +67,34 @@
         "login": "briceno_propietario",
         "telefono": "23456543",
         "nombre": "briceno",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "maxCompras": 150000,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 0,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "$000",
+        "login": "Sin_Plata_comprador",
+        "telefono": "000000",
+        "nombre": "No_money",
+        "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "$000",
+        "login": "Sin_Plata_propietario",
+        "telefono": "000000",
+        "nombre": "No_money",
         "rol": "propietario"
     }
 ]}

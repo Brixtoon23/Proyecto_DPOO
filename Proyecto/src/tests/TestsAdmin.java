@@ -9,11 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import Logica.Galeria;
 import Logica.Inventario;
 import Persistencia.InicializadorDeClases;
+import Logica.Comprador;
 import Logica.Administrador;
 import Logica.Pieza;
 import Logica.Escultura;
 import Logica.Fotografia;
 import Logica.Pintura;
+import Logica.Servicios;
 import Logica.Video;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,7 +45,7 @@ public class TestsAdmin
         Autores_uno.add("Autor1");
         Autores_dos = new ArrayList<String>();
         Autores_dos.add("Autor1");
-        Autores_dos.add("Autor2");
+        Autores_dos.add("pixar");
         Valores_uno = new ArrayList<Integer>();
         Valores_uno.add(120000);
         Valores_dos = new ArrayList<Integer>();
@@ -95,5 +97,45 @@ public class TestsAdmin
         assertEquals(PinturaPrueba.getLoginPropietarioActual(), piezaAgregada.getLoginPropietarioActual(),"La pieza no se agregó correctamente, el propietario actual no es correcto");
         assertEquals(PinturaPrueba.getAutor().size(),piezaAgregada.getAutor().size(),"La pieza no se agregó correctamente, los autores no son los correctos");
         assertEquals(PinturaPrueba.getTipo(),piezaAgregada.getTipo(), "La pieza no se agregó correctamente, el tipo de pieza es incorrecto");
+    }
+
+    @Test
+    public void testAprobarVentaPrecioFijo()
+    {
+        Comprador conSuficienteDinero = Servicios.buscarComprador(GaleriaPrueba, "briceno_comprador");
+        Comprador sinSuficienteDinero = Servicios.buscarComprador(GaleriaPrueba, "Sin_Plata_comprador");
+        Pieza pieza = Servicios.buscarPiezaSubasta(GaleriaPrueba, "El rayo mquen");
+        //Se veirifica que el administrador autorice la compra para un comprador con monto suficiente y que no lo autorice para uno sin suficiente dinero
+        boolean respuesta1 = Administrador.aprobarVentaPrecioFijo(conSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10");
+        boolean respuesta2 = Administrador.aprobarVentaPrecioFijo(sinSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10");
+        assertEquals(true, respuesta1,"No se aprobó la venta para un comprador con el suficiente dinero");
+        assertEquals(false,respuesta2,"Se aprobó la venta para un cliente que no tiene suficiente dinero");
+    }
+
+    @Test
+    public void testVerificarComprador()
+    {
+        Comprador compradorTest1 = new Comprador("X","Someone","XX","comprador","12345",false,200000,null,0,false,null,null);
+        Comprador compradorTest2 = new Comprador("Y","Someonelse","YY","comprador","54321",false,200000,null,0,true,null,null);
+        Administrador.verificarComprador(compradorTest1);
+        Administrador.verificarComprador(compradorTest2);
+        //Se prueba si compradorTest1 fue verificado como true y compradorTest2 fue verificado como false (comprador2 está en mora)
+        assertEquals(true,compradorTest1.isVerificado(),"El comprador no fue verificado correctamente");
+        assertEquals(false,compradorTest2.isVerificado(),"El comprador no fue verificado correctamente");
+        
+    }
+
+    @Test
+    public void testIngresarAutor()
+    {
+        int numAutores = GaleriaPrueba.getAutores().size();
+        int piezasPixar = GaleriaPrueba.getAutores().get("pixar").size();
+        Administrador.ingresarAutor(GaleriaPrueba, Autores_dos, "Arte");
+        //Se verifica que se haya ingresado el nuevo autor
+        assertEquals(numAutores+1,GaleriaPrueba.getAutores().size(),"No se añadió el nuevo autor");
+        //Se verifica que a pixar se le haya añadido la pieza
+        assertEquals(piezasPixar+1,GaleriaPrueba.getAutores().get("pixar").size(),"La pieza no se añadió al autor ya existente");
+        
+
     }
 }
