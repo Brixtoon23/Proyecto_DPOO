@@ -243,7 +243,31 @@ public class Administrador extends Usuario
 		galeria.getSubastas().add(subasta);
 		
 		SubastaPersistencia.registrarSubasta(subasta);
-	}		
+	}
+	
+	
+	public static float montoColeccion(Galeria galeria, String loginComprador)
+	{
+		float monto=0;
+		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
+		ArrayList<String> idPiezasComtpadas= comprador.getIdpiezasCompradas();
+
+		if  (comprador== null)
+		{
+			return 0;
+		}
+		for (  String idPieza : idPiezasComtpadas)
+		{
+			Pieza pieza = Servicios.buscarPiezaSubasta(galeria, idPieza );
+			ArrayList<Integer> valores= pieza.getValores();
+			int valor= valores.get(0);
+
+			monto+=valor;
+			
+
+		}
+		return monto;
+	}
 	
 }
 
