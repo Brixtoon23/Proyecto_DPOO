@@ -14,8 +14,8 @@
         },
         "bodega": false,
         "historialPropietarios": [{
-            "valorCompra": 233432,
             "loginPropietario": "bri_propietario",
+            "valorCompra": 233432,
             "fechaVenta": "2023-11-08"
         }],
         "loginPropietarioActual": "bri_propietario",
@@ -48,37 +48,10 @@
         }],
         "loginPropietarioActual": "briceno_propietario",
         "anioCreacion": 1415,
-        "subasta": true,
+        
         "valores": [
             2345,
             354
-        ],
-        "disponible": true
-    },
-    {
-        "tiempoConsignacion": -1,
-        "tipo": "pintura",
-        "lugarCreacion": "Espa�a",
-        "titulo": "Las meninas",
-        "autores": ["Diego Velasquez"],
-        "valoresEspeciales": {
-            "peso": 4,
-            "ancho": 279,
-            "tecnica": "oleo",
-            "alto": 320
-        },
-        "bodega": true,
-        "historialPropietarios": [{
-            "valorCompra": 30000,
-            "loginPropietario": "nikol_propietario",
-            "fechaVenta": "14/02/2010"
-        }],
-        "loginPropietarioActual": "nikol_propietario",
-        "anioCreacion": 1956,
-        "subasta": true,
-        "valores": [
-            3000000,
-            4000000
         ],
         "disponible": true
     }
