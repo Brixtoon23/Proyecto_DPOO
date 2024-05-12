@@ -25,8 +25,8 @@ public class TestsAdmin {
 
         Administrador.crearSusbasta(galeria, idSubasta, piezas);
 
-        assertEquals(galeria.getSubastas().size(), 2);
-        Subasta subastaCreada = galeria.getSubastas().get(1);
+        assertEquals(galeria.getSubastas().size(), 3);
+        Subasta subastaCreada = galeria.getSubastas().get(2);
         assertEquals(subastaCreada.getId(), idSubasta);
         assertEquals(subastaCreada.getIdListaPiezasSubasta(), piezas);
 
