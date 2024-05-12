@@ -1,1 +1,23 @@
-{}
+{"subastas": [
+    {
+        "idListaPiezasSubasta": 
+        [
+            "Pixar",
+            "Miguel Angel"
+        ],
+        "id": "subasta Turbia",
+        "listaOfertas": 
+        [{
+            "valorOfertado": 234543,
+            "metodoPago": "efectivo",
+            "fecha": "10/05/2023",
+            "nombrePiezaSubastada": "El rayo mquen",
+            "compradorLogin": "bri_comprador"
+        }]
+    },
+    {
+        "idListaPiezasSubasta": ["La pola"],
+        "id": "Subasta Pejelagarto",
+        "listaOfertas": []
+    }
+]}
