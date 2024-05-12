@@ -133,9 +133,9 @@ public class InicializadorDeClases
                 {
                     JSONObject histoProp = historialPropietariosJson.getJSONObject(e);
                     Map<String,Object> mapaPropietarios = new HashMap<String,Object>();
-                    mapaPropietarios.put("Propietario", histoProp.getString("loginPropietario"));
+                    mapaPropietarios.put("loginPropietario", histoProp.getString("loginPropietario"));
                     mapaPropietarios.put("fechaVenta", histoProp.getString("fechaVenta"));
-                    mapaPropietarios.put("precioVenta", histoProp.getInt("valorCompra"));
+                    mapaPropietarios.put("valorCompra", histoProp.getInt("valorCompra"));
                     historialPropietarios.add(mapaPropietarios);
                     
 
