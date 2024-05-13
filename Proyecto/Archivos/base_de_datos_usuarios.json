@@ -49,7 +49,7 @@
             "mensajesSubasta": [],
             "estadoCuenta": 4.0E+18,
             "idPiezasCompradas": ["Las meninas",  "La monalisa"],
-            "historialCompras": ["Las meninas",  "La monalisa"]
+            "historialCompras": []
         },
         "password": "N1k0l%",
         "login": "nikol_comprador",
