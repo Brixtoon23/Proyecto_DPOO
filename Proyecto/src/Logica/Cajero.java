@@ -38,6 +38,7 @@ public class Cajero  extends Usuario
 
 
 		String loginnuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
+		pieza.setLoginPropietarioActual(loginnuevoPropiertario);
 
 		Map<String, Object> mapa = new HashMap<>();
 
@@ -130,6 +131,8 @@ public class Cajero  extends Usuario
 		mapa.put("fechaVenta", fecha);
 
 		pieza.getHistorialPropietarios().add(mapa);
+
+		pieza.setLoginPropietarioActual(loginnuevoPropiertario);
 
 
 		UsuarioPersistencia.ActualizarregistrarCompraSubasta(propietarioAnterior.getLogin(),  loginnuevoPropiertario, comprador.getLogin());
