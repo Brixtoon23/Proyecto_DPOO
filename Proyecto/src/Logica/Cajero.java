@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import Persistencia.UsuarioPersistencia;
 
 public class Cajero  extends Usuario
 {
@@ -59,6 +60,9 @@ public class Cajero  extends Usuario
 		Mensaje mensaje = new Mensaje(pieza.getTitulo(), true, mensaje1);
 
 		comprador.getMensajesSubasta().add(mensaje);
+
+
+		UsuarioPersistencia.ActualizarregistrarCompraSubasta(propietarioAnterior.getLogin(),  loginnuevoPropiertario, comprador.getLogin());
 
 
 			
@@ -127,6 +131,10 @@ public class Cajero  extends Usuario
 		mapa.put("fechaVenta", fecha);
 
 		pieza.getHistorialPropietarios().add(mapa);
+
+
+		UsuarioPersistencia.ActualizarregistrarCompraSubasta(propietarioAnterior.getLogin(),  loginnuevoPropiertario, comprador.getLogin());
+
 
 		
 		

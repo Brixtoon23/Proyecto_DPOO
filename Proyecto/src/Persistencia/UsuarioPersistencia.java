@@ -119,6 +119,11 @@ public class UsuarioPersistencia
 
     }
 
+    public static void ActualizarregistrarCompraSubasta(String loginPropietarioAnteror, String loginPropietarioNuevo, String loginComprador)
+    {
+        
+    }
+
 
 
 
