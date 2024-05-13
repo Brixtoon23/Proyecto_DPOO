@@ -1,7 +1,6 @@
 package Logica;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class Pintura extends Pieza
@@ -10,12 +9,6 @@ public class Pintura extends Pieza
 	private int ancho;
 	private int peso;
 	private String tecnica;
-	
-	
-			
-	
-
-	
 
 	
 

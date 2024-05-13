@@ -353,7 +353,7 @@ public class Main
 
     
                     
-                    System.out.print("Ingrese los valores separados por ',' : ");
+                    System.out.print("Ingrese los valores separados por ',' (1:valorPrecioFijo, 2:valorMinimo, 3:ValorMaximo) : ");
                     String[] valoresArreglo = scanner.nextLine().split(",");
                     ArrayList<Integer> valores = new ArrayList<Integer>();
                     for (String valor : valoresArreglo) {
@@ -488,7 +488,7 @@ public class Main
                     break;
 
                 case 4:
-                  
+                    verHistorialComprador(galeria);
                     break;
     
                 case 5:
@@ -791,7 +791,7 @@ public class Main
     {
 
         System.out.println("Ingrese el login del comprador");
-        String nombreComprador = scanner.nextLine();
+        String nombreComprador = scanner.nextLine()+"_comprador";
         Comprador comprador= Servicios.buscarComprador(galeria, nombreComprador);
         if (comprador!=null)
         {

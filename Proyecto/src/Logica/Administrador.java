@@ -260,30 +260,24 @@ public class Administrador extends Usuario
 	
 	public static int montoColeccion(Galeria galeria, String loginComprador)
 	{
+
+
+		ArrayList<Compra> compras;
 		int monto=0;
 
-		Propietario propietario= Servicios.buscarPropietario(galeria, loginComprador);
-		ArrayList<String> idPiezasActuales= propietario.getIdPiezasActuales();
-
-		if  (propietario!= null)
-
+		if  (loginComprador!= null)
 		{
-			for (  String idPieza : idPiezasActuales)
-		{
-			Pieza pieza = Servicios.buscarPiezaSubasta(galeria, idPieza );
-			ArrayList<Integer> valores= pieza.getValores();
-			int valor= valores.get(0);
-
-			monto+=valor;
-			
-
+			Comprador comprador = Servicios.buscarComprador(galeria, loginComprador);
+			compras = comprador.getHistorialCompras();
+			for (  Compra compra : compras)
+			{
+				monto = compra.getPrecio();
+			}
+			return monto;
 		}
-			
-		}
-
-		
-
 		return monto;
+
+
 	}
 
 

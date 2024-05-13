@@ -113,7 +113,7 @@ public class Servicios
         Inventario inventario= galeria.getInventario();
 
         ArrayList<Pieza> listaPiezasExhibidas = inventario.getPiezasExhibidad();
-        ArrayList<Pieza> listaPiezasBodega = inventario.getPiezasExhibidad();
+        ArrayList<Pieza> listaPiezasBodega = inventario.getPiezasBodega();
 
      
         while (ward.equals("a") && cont != listaPiezasExhibidas.size()) 
