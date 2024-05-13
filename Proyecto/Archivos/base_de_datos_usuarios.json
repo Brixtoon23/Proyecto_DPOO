@@ -365,6 +365,34 @@
     {
         "verificado": true,
         "valores_especiales": {
+            "maxCompras": 150000,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 0,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "$000",
+        "login": "Sin_Plata_comprador",
+        "telefono": "000000",
+        "nombre": "No_money",
+        "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "$000",
+        "login": "Sin_Plata_propietario",
+        "telefono": "000000",
+        "nombre": "No_money",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
             "maxCompras": 0,
             "mora": false,
             "mensajesSubasta": [],

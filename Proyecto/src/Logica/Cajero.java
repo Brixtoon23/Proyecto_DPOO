@@ -35,10 +35,13 @@ public class Cajero  extends Usuario
 		pieza.setDisponible(false);
 		Propietario propietarioAnterior = Servicios.buscarPropietario(galeria, pieza.getLoginPropietarioActual());
 		propietarioAnterior.getIdPiezasActuales().remove(pieza.getTitulo());
+		
 
 
 		String loginNuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
 		Propietario nuevoPropiertario = Servicios.buscarPropietario(galeria, loginNuevoPropiertario);
+
+		pieza.setLoginPropietarioActual(loginNuevoPropiertario);
 
 		Map<String, Object> mapa = new HashMap<>();
 
@@ -118,6 +121,8 @@ public class Cajero  extends Usuario
 		mapa.put("fechaVenta", fecha);
 
 		pieza.getHistorialPropietarios().add(mapa);
+
+		pieza.setLoginPropietarioActual(loginnuevoPropiertario);
 
 		PiezasPersistencia.actualizarPropietarioPieza(galeria,pieza);
 		UsuarioPersistencia.actualizarCompradorCompra( comprador );

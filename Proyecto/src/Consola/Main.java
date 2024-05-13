@@ -39,7 +39,7 @@ public class Main
     public static void main(String[] args) throws FileNotFoundException 
     {
         //AutoresPersistencia.registrarAutor("pixar ", "El rayo mquen");
-        //Galeria gal = galeria;
+
 
         boolean salir = false;
 
