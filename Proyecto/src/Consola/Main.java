@@ -255,7 +255,9 @@ public class Main
         while (!salir) {
             System.out.println("\nBienvenido al menu cajero");
             System.out.println("1. ver historial de una pieza");
-            System.out.println("2. Salir");
+            System.out.println("2. ver historial de un artista");
+
+            System.out.println("3. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try 
@@ -272,7 +274,10 @@ public class Main
                 case 1:
                 verHistorialPieza(galeria);
                     break;
+
                 case 2:
+                   break;
+                case 3:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
@@ -292,8 +297,8 @@ public class Main
             System.out.println("2. Crear  uns subasta");
             System.out.println("3.  ver historial de una pieza");
             System.out.println("4.  ver historial de un comprador");
-
-            System.out.println("5. Salir");
+            System.out.println("5. ver historial de un artista");
+            System.out.println("6. Salir");
             System.out.print("Ingrese su opción: ");
             
             int opcion;
@@ -479,8 +484,12 @@ public class Main
                 case 4:
                     verHistorialComprador(galeria);
                     break;
-    
+
                 case 5:
+                    
+                    break;
+    
+                case 6:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
@@ -506,8 +515,10 @@ public class Main
             System.out.println("5. ver Compra aprobadas por subasta");
             System.out.println("6. ver Compra no aprobadas por subasta");
             System.out.println("7. ver historial de una pieza");
+            System.out.println("8. ver historial de un artista");
+            
 
-            System.out.println("8. Salir");
+            System.out.println("9. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -634,8 +645,10 @@ public class Main
                 case 7:
                     verHistorialPieza(galeria);
                     break;
+                case 8:    
+                    break;
 
-                case 8:
+                case 9:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
@@ -653,8 +666,10 @@ public class Main
             System.out.println("1. Cargar el historial de sus piezas");
             System.out.println("2. Ver estado piezas");
             System.out.println("3. ver historial de una pieza");
+            System.out.println("4. ver historial de un Artista");
 
-            System.out.println("4. Salir");
+
+            System.out.println("5. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -677,6 +692,11 @@ public class Main
                     verHistorialPieza(galeria);
                     break;
                 case 4:
+                  
+                    break;
+
+                case 5:
+
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
@@ -690,8 +710,9 @@ public class Main
 
         while (!salir) {
             System.out.println("\nBienvenido al menu cajero");
-            System.out.println("1. Registrar_Pujas");
-            System.out.println("2. Salir");
+            System.out.println("1. ver historial de una pieza");
+            System.out.println("2. ver historial de un Artista");
+            System.out.println("3. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -704,9 +725,13 @@ public class Main
             switch (opcion) 
             {
                 case 1:
-                    
+                verHistorialPieza(galeria);
+                
                     break;
+
                 case 2:
+                    break;
+                case 3:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
