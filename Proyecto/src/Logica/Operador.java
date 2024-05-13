@@ -32,7 +32,7 @@ public class Operador extends Usuario
 		 for (Subasta subasta  : subastas)
 
 		 {
-			 List<String> idPiezas =subasta.getIdListaPiezasSubasta();
+			ArrayList<String> idPiezas =subasta.getIdListaPiezasSubasta();
 			
 			 for (String  idPieza : idPiezas )
 			 {
@@ -40,7 +40,7 @@ public class Operador extends Usuario
 				
 				String nombrePieza1=oferta1.getNombrepiezaSubastada();
 				
-				 if (idPieza == nombrePieza1)
+				 if (idPieza.equals(nombrePieza1))
 				 {
 					subasta.getListaOfertas().add(oferta1);
 
@@ -53,7 +53,7 @@ public class Operador extends Usuario
 
 			for (Oferta oferta: ListaOfertas)
 			{
-				if (oferta.getNombrepiezaSubastada()== oferta1.getNombrepiezaSubastada())
+				if (oferta.getNombrepiezaSubastada().equals(oferta1.getNombrepiezaSubastada()))
 				{
 					ListaOfertasPieza.add(oferta);
 					
