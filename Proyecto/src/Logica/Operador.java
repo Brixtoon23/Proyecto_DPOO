@@ -39,25 +39,42 @@ public class Operador extends Usuario
 		 for (Subasta subasta  : subastas)
 
 		 {
-			 List<Oferta> ofertas =subasta.getListaOfertas();
-			 
-			 for (Oferta oferta: ofertas)
+			 List<String> idPiezas =subasta.getIdListaPiezasSubasta();
+			
+			 for (String  idPieza : idPiezas )
 			 {
 
-				String nombrePieza=oferta.getNombrepiezaSubastada();
+				
 				String nombrePieza1=oferta1.getNombrepiezaSubastada();
 				
-				 if (nombrePieza== nombrePieza1)
+				 if (idPieza == nombrePieza1)
 				 {
 					subasta.getListaOfertas().add(oferta1);
+
 					SubastaPersistencia.registrarSubasta(subasta);
 				 }
+				 
 
-			if ( ofertas.size()==10)
+			ArrayList<Oferta> ListaOfertas= subasta.getListaOfertas();
+			ArrayList<Oferta> ListaOfertasPieza= new ArrayList<>();
+
+			for (Oferta oferta: ListaOfertas)
+			{
+				if (oferta.getNombrepiezaSubastada()== oferta1.getNombrepiezaSubastada())
+				{
+					ListaOfertasPieza.add(oferta);
+
+				}
+			}
+
+
+
+			 if ( ListaOfertasPieza.size()==10)
 
 			{
 				ArrayList<Integer> valoresOfertados= new ArrayList<Integer>();
-				for(Oferta oferta2 :ofertas)
+
+				for(Oferta oferta2 :ListaOfertasPieza)
 				{
 					valoresOfertados.add(oferta2.getValorOfertado());
 
@@ -71,7 +88,7 @@ public class Operador extends Usuario
 
 				 for(int valor: valoresOfertados)
 				 {
-					for(Oferta oferta3: ofertas)
+					for(Oferta oferta3: ListaOfertasPieza)
 					{
 						if (oferta3.getValorOfertado()==valor)
 						{
@@ -103,7 +120,18 @@ public class Operador extends Usuario
 
 				 if(flag==false)
 				 {
-					ofertas.clear();
+					for( Oferta oferta4 : ListaOfertas)
+					{
+						if (oferta4.getNombrepiezaSubastada()== oferta1.getNombrepiezaSubastada())
+						{
+							ListaOfertas.remove(oferta4);
+							
+						}
+
+					}
+
+					subasta.setListaOfertas(ListaOfertasPieza);
+					
 				 }
 
 

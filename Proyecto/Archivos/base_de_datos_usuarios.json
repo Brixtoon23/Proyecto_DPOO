@@ -88,7 +88,7 @@
     {
         "verificado": false,
         "valores_especiales": {
-            "idPiezasActuales": [ ] ,
+            "idPiezasActuales": [],
             "historialPiezas": []
         },
         "password": "N1k0l%",
@@ -376,5 +376,21 @@
         "telefono": "125875577545",
         "nombre": "valentina",
         "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "maxCompras": 2.3456654E8,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 1.2339484E9,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "gladys",
+        "login": "gladys_comprador",
+        "telefono": "12387544",
+        "nombre": "gladys",
+        "rol": "comprador"
     }
 ]}
