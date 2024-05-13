@@ -43,8 +43,8 @@
         },
         "bodega": true,
         "historialPropietarios": [{
-            "valorCompra": 230000,
             "loginPropietario": "briceno_propietario",
+            "valorCompra": 230000,
             "fechaVenta": "23/11/2024"
         }],
         "loginPropietarioActual": "briceno_propietario",
@@ -114,5 +114,32 @@
             509999
         ],
         "disponible": true
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "video",
+        "lugarCreacion": "09",
+        "titulo": "Order 66",
+        "autores": [
+            "The Senate",
+            "Darth Sidious",
+            "Sheev Palpatine"
+        ],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 3
+        },
+        "bodega": false,
+        "historialPropietarios": [{
+            "valorCompra": 0,
+            "loginPropietario": "bri_propietario_propietario",
+            "fechaVenta": "90/80/20"
+        }],
+        "loginPropietarioActual": "bri_propietario_propietario",
+        "anioCreacion": 2005,
+        "subasta": true,
+        "valores": [0],
+        "disponible": false
     }
 ]}
