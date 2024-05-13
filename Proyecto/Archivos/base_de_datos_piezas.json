@@ -14,8 +14,8 @@
         },
         "bodega": false,
         "historialPropietarios": [{
-            "loginPropietario": "bri_propietario",
             "valorCompra": 233432,
+            "loginPropietario": "bri_propietario",
             "fechaVenta": "2023-11-08"
         }],
         "loginPropietarioActual": "bri_propietario",
@@ -44,6 +44,7 @@
         "historialPropietarios": [{
             "loginPropietario": "briceno_propietario",
             "valorCompra": 230000,
+            "loginPropietario": "briceno_propietario",
             "fechaVenta": "23/11/2024"
         }],
         "loginPropietarioActual": "briceno_propietario",
@@ -52,6 +53,60 @@
         "valores": [
             2345,
             354
+        ],
+        "disponible": true
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Espana",
+        "titulo": "Las meninas",
+        "autores": ["Diego Velasquez"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 279,
+            "tecnica": "oleo",
+            "alto": 320
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 30000,
+            "loginPropietario": "nikol_propietario",
+            "fechaVenta": "14/02/2010"
+        }],
+        "loginPropietarioActual": "nikol_propietario",
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            3000000,
+            4000000
+        ],
+        "disponible": true
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Italia",
+        "titulo": "La monalisa",
+        "autores": ["Davinci"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 60,
+            "tecnica": "oleo",
+            "alto": 30
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 2000000,
+            "loginPropietario": "nikol_propietario",
+            "fechaVenta": "20/06/2016"
+        }],
+        "loginPropietarioActual": "nikol_propietario",
+        "anioCreacion": 1519,
+        "subasta": true,
+        "valores": [
+            3000000,
+            400000000
         ],
         "disponible": true
     },

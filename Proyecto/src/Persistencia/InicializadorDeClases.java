@@ -135,7 +135,7 @@ public class InicializadorDeClases
                     Map<String,Object> mapaPropietarios = new HashMap<String,Object>();
                     mapaPropietarios.put("loginPropietario", histoProp.getString("loginPropietario"));
                     mapaPropietarios.put("fechaVenta", histoProp.getString("fechaVenta"));
-                    mapaPropietarios.put("precioVenta", histoProp.getInt("valorCompra"));
+                    mapaPropietarios.put("valorCompra", histoProp.getInt("valorCompra"));
                     historialPropietarios.add(mapaPropietarios);
                     
 

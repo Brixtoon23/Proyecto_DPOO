@@ -37,6 +37,18 @@ public class Administrador extends Usuario
 			 galeria.getInventario().getPiezasExhibidad().add(pieza);
 			 PiezasPersistencia.registrarPieza(galeria,pieza);
 		}
+
+		Propietario propietario= Servicios.buscarPropietario(galeria, pieza.getLoginPropietarioActual());
+
+		propietario.getHistorialPiezas().add(pieza.getTitulo());
+		propietario.getIdPiezasActuales().add(pieza.getTitulo());
+		
+	    // Actualizar persistecia propietario
+
+		UsuarioPersistencia.actualizarPropietario( propietario);
+
+
+
 		
 		
 	}
@@ -243,7 +255,39 @@ public class Administrador extends Usuario
 		galeria.getSubastas().add(subasta);
 		
 		SubastaPersistencia.registrarSubasta(subasta);
-	}		
+	}
+	
+	
+	public static int montoColeccion(Galeria galeria, String loginComprador)
+	{
+		int monto=0;
+
+		Propietario propietario= Servicios.buscarPropietario(galeria, loginComprador);
+		ArrayList<String> idPiezasActuales= propietario.getIdPiezasActuales();
+
+		if  (propietario!= null)
+
+		{
+			for (  String idPieza : idPiezasActuales)
+		{
+			Pieza pieza = Servicios.buscarPiezaSubasta(galeria, idPieza );
+			ArrayList<Integer> valores= pieza.getValores();
+			int valor= valores.get(0);
+
+			monto+=valor;
+			
+
+		}
+			
+		}
+
+		
+
+		return monto;
+	}
+
+
+	
 	
 }
 

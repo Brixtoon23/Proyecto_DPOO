@@ -211,7 +211,7 @@ public class Main
                     usuario =  Servicios.inicioLogin(galeria, login, password);
                     if (usuario == null)
                     {
-                        System.out.println("No existe un usuario con ese login. Inténtelo de nuevo.");
+                        System.out.println("No existe un usuario con ese login o su password es incoreccta Inténtelo de nuevo.");
                         continue;
                     }
                     System.out.println("Inicio de sesión exitoso como " + rol);
@@ -259,7 +259,7 @@ public class Main
 
         while (!salir) {
             System.out.println("\nBienvenido al menu cajero");
-            System.out.println("1. Registrar_Venta");
+            System.out.println("1. ver historial de una pieza");
             System.out.println("2. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
@@ -275,7 +275,7 @@ public class Main
             switch (opcion) 
             {
                 case 1:
-                    ;
+                verHistorialPieza(galeria);
                     break;
                 case 2:
                     salir = true;
@@ -293,9 +293,12 @@ public class Main
     
         while (!salir) {
             System.out.println("\nBienvenido al menu administrador");
-            System.out.println("1. Cargar_Pieza");
-            System.out.println("2. Crear Subasta");
-            System.out.println("3. Salir");
+            System.out.println("1. Cargar una pieza");
+            System.out.println("2. Crear  uns subasta");
+            System.out.println("3.  ver historial de una pieza");
+            System.out.println("4.  ver historial de un comprador");
+
+            System.out.println("5. Salir");
             System.out.print("Ingrese su opción: ");
             
             int opcion;
@@ -479,8 +482,16 @@ public class Main
                     
 
                     break;
-    
+
                 case 3:
+                    verHistorialPieza(galeria);
+                    break;
+
+                case 4:
+                  
+                    break;
+    
+                case 5:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
@@ -501,10 +512,12 @@ public class Main
             System.out.println("1. Ver Piezas Subasta");
             System.out.println("2. Ver piezas PrecioFijo");
             System.out.println("3. Comprar pieza a precio fijo");
-            System.out.println("4. Comprar pieza subastada");
+            System.out.println("4. Hacer oferta para pieza subastada");
             System.out.println("5. ver Compra aprobadas por subasta");
             System.out.println("6. ver Compra no aprobadas por subasta");
-            System.out.println("7. Salir");
+            System.out.println("7. ver historial de una pieza");
+
+            System.out.println("8. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -561,6 +574,7 @@ public class Main
 
                 System.out.print("Ingrese el nombre de la pieza: ");
                 String nombrePieza= scanner.nextLine();
+                
                     
                 System.out.print("Ingrese el valor ofertado: ");
                 int valorOfertado= Integer.parseInt(scanner.nextLine());
@@ -570,16 +584,14 @@ public class Main
 
                 System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
                 String fecha1 = scanner.nextLine();
-
-                Pieza pieza= Servicios.buscarPiezaSubasta(galeria,nombrePieza);
-                ///public Oferta(String nombre, String compradorLogin, int valorOfertado, String idSubasta, String metodoPago,			Pieza piezaSubastada)
-
+            
 
                 Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
-                Operador operador= Servicios.buscarOperador(galeria, login);
-                ArrayList<Subasta> subastas= galeria.getSubastas();
-                
-                Operador.registrarOferta(oferta, subastas, galeria, fecha1);
+                Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1);
+
+                System.out.println("Revisa tus mensajes mensajes para saber si la venta fue exitosa");
+
+
 
                
                     break;
@@ -630,6 +642,10 @@ public class Main
                 
 
                 case 7:
+                    verHistorialPieza(galeria);
+                    break;
+
+                case 8:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
@@ -644,9 +660,11 @@ public class Main
 
         while (!salir) {
             System.out.println("\nBienvenido al menu Propietario");
-            System.out.println("1. Cargar el historial");
+            System.out.println("1. Cargar el historial de sus piezas");
             System.out.println("2. Ver estado piezas");
-            System.out.println("3. Salir");
+            System.out.println("3. ver historial de una pieza");
+
+            System.out.println("4. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -663,7 +681,11 @@ public class Main
                 case 2:
                     UsuarioPersistencia.iniciarSesion();
                     break;
+
                 case 3:
+                    verHistorialPieza(galeria);
+                    break;
+                case 4:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
@@ -700,6 +722,121 @@ public class Main
                     System.out.println("Opción no válida. Inténtelo de nuevo.");
             }
         }
+    }
+
+
+    private static void verHistorialPieza(Galeria galeria) {
+        System.out.print("Ingrese el nombre de la pieza de la cual desea saber su historial: ");
+        String nombrePieza = scanner.nextLine();
+        Pieza pieza = Servicios.buscarPiezaSubasta(galeria, nombrePieza);
+
+        if (pieza != null) {
+            System.out.println("El nombre de la pieza es " + pieza.getTitulo() + ".");
+            System.out.println("El lugar de origen de la pieza es " + pieza.getLugarCreacion() + ".");
+            System.out.println("El año de creación de la pieza es " + pieza.getAnioCreacion() + ".");
+            System.out.println("El nombre del propietario actual es " + pieza.getLoginPropietarioActual() + ".");
+            System.out.println("La pieza es identificada como " + pieza.getTipo() + ".");
+
+            if (pieza.isBodega()) {
+                System.out.println("La pieza está en bodega.");
+            } else {
+                System.out.println("La pieza se encuentra en exhibición.");
+            }
+
+            if (pieza.isDisponible()) {
+                System.out.println("La pieza está disponible para la venta.");
+            } else {
+                System.out.println("La pieza no está disponible para la venta.");
+            }
+
+            if (pieza.getAutor().size() == 1) {
+                System.out.println("El nombre del autor de la pieza es " + pieza.getAutor().get(0) + ".");
+            } else {
+                System.out.print("Los autores de la pieza son ");
+                for (int i = 0; i < pieza.getAutor().size(); i++) {
+                    if (i == pieza.getAutor().size() - 1) {
+                        System.out.print(pieza.getAutor().get(i) + ".");
+                    } else {
+                        System.out.print(pieza.getAutor().get(i) + ", ");
+                    }
+                }
+                System.out.println();
+            }
+
+            if (pieza.getValores().size() == 1 && !pieza.isSubasta()) {
+                System.out.println("La pieza se venderá por precio fijo.");
+                System.out.println("El valor de la pieza es " + pieza.getValores().get(0) + ".");
+            } else {
+                System.out.println("La pieza se venderá por medio de una subasta.");
+                System.out.println("El valor de la pieza es " + pieza.getValores().get(0) + ".");
+                System.out.println("El valor mínimo para ofertar es " + pieza.getValores().get(1) + ".");
+                System.out.println("El valor máximo para ofertar es " + pieza.getValores().get(2) + ".");
+            }
+
+            System.out.println("A continuación se mostrará el historial de propietarios: ");
+            ArrayList<Map<String, Object>> historialPropietarios = pieza.getHistorialPropietarios();
+            
+            for (Map<String,  Object> mapa :  historialPropietarios)
+             {
+                System.out.println("El login del propietario " + mapa.get("loginPropietario") + ", adquirió la pieza en la fecha " + mapa.get("fechaVenta") + " y su valor fue " + mapa.get("valorCompra") + ".");
+             }
+        } 
+        else 
+        {
+            System.out.println("La pieza no se encuentra en la galería. Intente nuevamente.");
+        }
+    }
+
+    private static void verHistorialComprador(Galeria  galeria)
+    {
+
+        System.out.println("Ingrese el login del comprador");
+        String nombreComprador = scanner.nextLine();
+        Comprador comprador= Servicios.buscarComprador(galeria, nombreComprador);
+        if (comprador!=null)
+        {
+            System.out.println("Acontinuación vera la piezas que ha comprado el cliente con su respectiva fecha");
+
+            for(Compra compra: comprador.getHistorialCompras())
+            {
+                System.out.println("El nombre de la pieza es " + compra.getNombrepieza()+ "y fue comprada en "+ compra.getFecha()+".");
+
+
+            }
+
+            System.out.println("Acontinuación vera la piezas de las cueles el comprador es dueño.");
+
+            for( String piezaNombre: comprador.getIdpiezasCompradas())
+            {
+                Pieza pieza = Servicios.buscarPiezaSubasta(galeria, piezaNombre);
+                String loginPropiertario= comprador.getLogin().replace("_comprador", "_propietario");
+
+                if (pieza.getLoginPropietarioActual()==loginPropiertario)
+
+                {
+                    System.out.println(pieza.getTitulo());
+                }
+            }
+
+            System.out.println("El valor de la colección de cliente es: " + Administrador.montoColeccion(galeria, nombreComprador));
+
+
+
+
+
+
+        }
+
+        else
+        {
+            System.out.println("El comprador no se encuentra en la base de datos");
+
+        }
+
+       
+
+
+        
     }
                 
 

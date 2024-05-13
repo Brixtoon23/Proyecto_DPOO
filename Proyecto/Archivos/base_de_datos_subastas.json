@@ -1,13 +1,11 @@
 {"subastas": [
     {
-        "idListaPiezasSubasta": 
-        [
+        "idListaPiezasSubasta": [
             "Pixar",
             "Miguel Angel"
         ],
         "id": "subasta Turbia",
-        "listaOfertas": 
-        [{
+        "listaOfertas": [{
             "valorOfertado": 234543,
             "metodoPago": "efectivo",
             "fecha": "10/05/2023",
@@ -20,4 +18,5 @@
         "id": "Subasta Pejelagarto",
         "listaOfertas": []
     }
+    
 ]}
