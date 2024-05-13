@@ -6,7 +6,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class ImprimirJSON {
+public class ImprimirJSON 
+{
     public static void ImprimirPiezas(int opcion) 
     {
         // Especifica la ruta del archivo JSON con la carpeta "Archivos"

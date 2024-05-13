@@ -192,11 +192,6 @@ public class Main
                     continue;
 
 
-
-
-
-
-
                 case 2:
                
 
@@ -221,19 +216,19 @@ public class Main
                     {
                         case "cajero":
                             menuCajero(usuario);
-                            break;
+                            continue;
                         case "administrador":
                             menuAdministrador(usuario);
-                            break;
+                            continue;
                         case "comprador":
                             menuComprador(usuario, login);
-                            break;
+                            continue;
                         case "propietario":
                             menuPropietario(usuario);
-                            break;
+                            continue;
                         case "operador":
                             menuOperador(usuario);
-                            break;
+                            continue;
                         default:
                             System.out.println("Rol no reconocido. No se puede abrir el menú.");
                     }
@@ -474,12 +469,6 @@ public class Main
                     }
 
                     Administrador.crearSusbasta(galeria, id, piezas);
-                    
-
-
-
-
-                    
 
                     break;
 
@@ -501,6 +490,7 @@ public class Main
                     break;
             }
         }
+    
     }
     
 
@@ -529,10 +519,10 @@ public class Main
 
             switch (opcion) {
                 case 1:
-                    ImprimirJSON.ImprimirPiezas(opcion);
+                    Servicios.imprimirPiezas(galeria, true);
                     break;
                 case 2:
-                    ImprimirJSON.ImprimirPiezas(opcion);
+                    Servicios.imprimirPiezas(galeria, false);
                     break;
                 case 3:
                 System.out.println("Ingrese el nombre de la pieza que desea comprar: ");
@@ -674,7 +664,8 @@ public class Main
                 continue;
             }
 
-            switch (opcion) {
+            switch (opcion) 
+            {
                 case 1:
                     
                     break;
@@ -710,7 +701,8 @@ public class Main
                 continue;
             }
 
-            switch (opcion) {
+            switch (opcion) 
+            {
                 case 1:
                     
                     break;

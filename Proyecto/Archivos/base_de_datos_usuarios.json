@@ -380,10 +380,10 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "maxCompras": 2.3456654E8,
+            "maxCompras": 2.3456654E+8,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 1.2339484E9,
+            "estadoCuenta": 1.2339484E+9,
             "idPiezasCompradas": [],
             "historialCompras": []
         },
@@ -392,5 +392,14 @@
         "telefono": "12387544",
         "nombre": "gladys",
         "rol": "comprador"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {"soyAdmin": true},
+        "password": "Admin",
+        "login": "julian_administrador",
+        "telefono": "23421367",
+        "nombre": "julian",
+        "rol": "administrador"
     }
 ]}
