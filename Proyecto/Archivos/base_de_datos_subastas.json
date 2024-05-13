@@ -1,37 +1,25 @@
 {"subastas": [
     {
         "idListaPiezasSubasta": [
-            "Pixar",
-            "Miguel Angel"
+            "Las meninas",
+            "La monalisa"
         ],
-        "id": "subasta Turbia",
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "El rayo mquen",
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "Piezas_Facheras",
         "listaOfertas": [{
-            "valorOfertado": 234543,
-            "metodoPago": "efectivo",
-            "fecha": "10/05/2023",
-            "nombrePiezaSubastada": "El rayo mquen",
-            "compradorLogin": "bri_comprador"
+            "valorOfertado": 5890494,
+            "metodoPago": "Efectivo",
+            "fecha": "23/05/2024",
+            "nombrepiezaSubastada": "El rayo mquen",
+            "compradorLogin": "briceno_comprador"
         }]
-    },
-    {
-        "idListaPiezasSubasta": ["La pola"],
-        "id": "Subasta Pejelagarto",
-        "listaOfertas": []
-    },
-    {
-        "idListaPiezasSubasta": [
-            "Las meninas",
-            "La monalisa"
-        ],
-        "id": "subasta prueba",
-        "listaOfertas": []
-    },
-    {
-        "idListaPiezasSubasta": [
-            "Las meninas",
-            "La monalisa"
-        ],
-        "id": "subasta prueba",
-        "listaOfertas": []
     }
 ]}

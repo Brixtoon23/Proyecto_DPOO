@@ -88,7 +88,7 @@ public class Main
                     if (Servicios.verificarLoginRepetido(galeria, login))
                      {
                         System.out.println("Ya existe un usuario con ese login. Inténtelo de nuevo.");
-                        return;
+                        break;
                      }
                     System.out.print("Ingrese su nombre: ");
                     nombre = scanner.nextLine();
@@ -151,6 +151,7 @@ public class Main
                             else
                             {
                                 System.out.println("No se pudo verificar su cuenta. Intente nuevamente. ");
+                                continue;
                             }     
                             break;   
                             
@@ -571,24 +572,24 @@ public class Main
                 
                 case 4:
 
-                System.out.print("Ingrese el nombre de la pieza: ");
-                String nombrePieza= scanner.nextLine();
+                    System.out.print("Ingrese el nombre de la pieza: ");
+                    String nombrePieza= scanner.nextLine();
                 
                     
-                System.out.print("Ingrese el valor ofertado: ");
-                int valorOfertado= Integer.parseInt(scanner.nextLine());
+                    System.out.print("Ingrese el valor ofertado: ");
+                    int valorOfertado= Integer.parseInt(scanner.nextLine());
 
-                System.out.print("Ingrese el metodo de pago: ");
-                String metodoPago= scanner.nextLine();
+                    System.out.print("Ingrese el metodo de pago: ");
+                    String metodoPago= scanner.nextLine();
 
-                System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
-                String fecha1 = scanner.nextLine();
+                    System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
+                    String fecha1 = scanner.nextLine();
             
 
-                Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
-                Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1);
+                    Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
+                    Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1);
 
-                System.out.println("Revisa tus mensajes mensajes para saber si la venta fue exitosa");
+                    System.out.println("Revisa tus mensajes mensajes para saber si la venta fue exitosa");
 
 
 
