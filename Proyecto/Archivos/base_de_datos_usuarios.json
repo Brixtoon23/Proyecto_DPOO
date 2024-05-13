@@ -88,7 +88,7 @@
     {
         "verificado": false,
         "valores_especiales": {
-            "idPiezasActuales": [],
+            "idPiezasActuales": [ ] ,
             "historialPiezas": []
         },
         "password": "N1k0l%",

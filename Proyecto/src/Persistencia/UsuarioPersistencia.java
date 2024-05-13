@@ -12,6 +12,7 @@ import Logica.Compra;
 import Logica.Comprador;
 import Logica.Mensaje;
 import Logica.Usuario;
+import Logica.Propietario;
 
 
 
@@ -110,6 +111,12 @@ public class UsuarioPersistencia
             System.out.println("Error al guardar la base de datos.");
             e.printStackTrace();
         }
+    }
+
+
+    public static void actualizarPropietario(Propietario propietario)
+    {
+
     }
 
 
