@@ -85,7 +85,7 @@ public class TestServicios
         //Se prueba que el método puede encontrar a un comprador que sí esté en la galería
         assertEquals("briceno_comprador",Servicios.buscarComprador(galeriaPrueba, "briceno_comprador").getLogin(),"No se encontró al usuario correctamente");
         //Se prueba que el método no encuentre a un comprador que no esté registrado en la galería
-        assertEquals("X",Servicios.buscarComprador(galeriaPrueba, "X"),"Se encontró a un comprador que no está registrado en la galería");
+        assertEquals(null,Servicios.buscarComprador(galeriaPrueba, "X"),"Se encontró a un comprador que no está registrado en la galería");
     }
 
     @Test
@@ -94,7 +94,7 @@ public class TestServicios
         //Se prueba que el método puede encontrar a un propietario que sí esté en la galería
         assertEquals("briceno_propietario",Servicios.buscarComprador(galeriaPrueba, "briceno_propietario").getLogin(),"No se encontró al usuario correctamente");
         //Se prueba que el método no encuentre a un comprador que no esté registrado en la galería
-        assertEquals("X",Servicios.buscarComprador(galeriaPrueba, "X"),"Se encontró a un propietario que no está registrado en la galería");
+        assertEquals(null,Servicios.buscarComprador(galeriaPrueba, "X"),"Se encontró a un propietario que no está registrado en la galería");
     }
 
 }
