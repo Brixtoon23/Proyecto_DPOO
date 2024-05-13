@@ -120,7 +120,7 @@ public class TestsAdmin
     {
         Comprador conSuficienteDinero = Servicios.buscarComprador(GaleriaPrueba, "briceno_comprador");
         Comprador sinSuficienteDinero = Servicios.buscarComprador(GaleriaPrueba, "Sin_Plata_comprador");
-        Pieza pieza = Servicios.buscarPiezaSubasta(GaleriaPrueba, "El rayo mquen");
+        Pieza pieza = Servicios.buscarPieza(GaleriaPrueba, "El rayo mquen");
         //Se veirifica que el administrador autorice la compra para un comprador con monto suficiente y que no lo autorice para uno sin suficiente dinero
         boolean respuesta1 = Administrador.aprobarVentaPrecioFijo(conSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10");
         boolean respuesta2 = Administrador.aprobarVentaPrecioFijo(sinSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10");

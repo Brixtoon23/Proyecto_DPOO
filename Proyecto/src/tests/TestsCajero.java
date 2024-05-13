@@ -36,7 +36,7 @@ public class TestsCajero
         Comprador cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
-        Pieza pieza = Servicios.buscarPiezaSubasta(galeriaPrueba, "El rayo mquen");
+        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "El rayo mquen");
         int tamanioHistorialPieza = pieza.getHistorialPropietarios().size();
         Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "bri_propietario");
         int piezasAntiguoPropietario = antiguoPropietario.getIdPiezasActuales().size();
@@ -62,7 +62,7 @@ public class TestsCajero
         Propietario propietarioActual = Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario");
         assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().getLast(),"La pieza no fue agregada al perfil de propiertario del comprador");
         //Se verifica que el historial de propietarios de la pieza se haya actualizado
-        pieza = Servicios.buscarPiezaSubasta(galeriaPrueba,"El rayo mquen");
+        pieza = Servicios.buscarPieza(galeriaPrueba,"El rayo mquen");
         assertEquals(tamanioHistorialPieza+1,pieza.getHistorialPropietarios().size(),"El historial de propietarios de la pieza no se actualizó");
     }
         
@@ -74,7 +74,7 @@ public class TestsCajero
         Comprador cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
-        Pieza pieza = Servicios.buscarPiezaSubasta(galeriaPrueba, "El rayo mquen");
+        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "El rayo mquen");
         int tamanioHistorialPieza = pieza.getHistorialPropietarios().size();
         Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "bri_propietario");
         int piezasAntiguoPropietario = antiguoPropietario.getIdPiezasActuales().size();
@@ -101,7 +101,7 @@ public class TestsCajero
         Propietario propietarioActual = Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario");
         assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().getLast(),"La pieza no fue agregada al perfil de propiertario del comprador");
         //Se verifica que el historial de propietarios de la pieza se haya actualizado
-        pieza = Servicios.buscarPiezaSubasta(galeriaPrueba,"El rayo mquen");
+        pieza = Servicios.buscarPieza(galeriaPrueba,"El rayo mquen");
         assertEquals(tamanioHistorialPieza+1,pieza.getHistorialPropietarios().size(),"El historial de propietarios de la pieza no se actualizó");
         //Se verifica si el comprador recibió el mensaje tras ganar la subasta
         assertEquals(cantMensajesCliente+1,cliente.getMensajesSubasta().size(),"No se le envió un mensaje al comprador después de haber acabado la subasta");

@@ -1,34 +1,5 @@
 {"piezas": [
     {
-        "tiempoConsignacion": 600,
-        "tipo": "escultura",
-        "lugarCreacion": "a los pits",
-        "titulo": "El rayo mquen",
-        "autores": ["pixar"],
-        "valoresEspeciales": {
-            "peso": 456,
-            "ancho": 2,
-            "profundidad": 2,
-            "electricidad": true,
-            "alto": 3
-        },
-        "bodega": false,
-        "historialPropietarios": [{
-            "valorCompra": 233432,
-            "loginPropietario": "bri_propietario",
-            "fechaVenta": "2023-11-08"
-        }],
-        "loginPropietarioActual": "bri_propietario",
-        "anioCreacion": 69,
-        "subasta": true,
-        "valores": [
-            23243,
-            7384,
-            242342
-        ],
-        "disponible": true
-    },
-    {
         "tiempoConsignacion": 345,
         "tipo": "escultura",
         "lugarCreacion": "bogota",
@@ -43,8 +14,8 @@
         },
         "bodega": true,
         "historialPropietarios": [{
-            "loginPropietario": "briceno_propietario",
             "valorCompra": 230000,
+            "loginPropietario": "briceno_propietario",
             "fechaVenta": "23/11/2024"
         }],
         "loginPropietarioActual": "briceno_propietario",
@@ -87,36 +58,6 @@
     },
     {
         "tiempoConsignacion": -1,
-        "tipo": "pintura",
-        "lugarCreacion": "Italia",
-        "titulo": "La monalisa",
-        "autores": ["Davinci"],
-        "valoresEspeciales": {
-            "peso": 4,
-            "ancho": 60,
-            "tecnica": "oleo",
-            "alto": 30
-        },
-        "bodega": true,
-        "historialPropietarios": [
-            {
-                "valorCompra": 2000000,
-                "loginPropietario": "alejandra_propietario",
-                "fechaVenta": "20/06/2016"
-            }
-        ],
-        "loginPropietarioActual": "alejandra_propietario",
-        "anioCreacion": 1956,
-        "subasta": true,
-        "valores": [
-            3000000,
-            4000000,
-            509999
-        ],
-        "disponible": true
-    },
-    {
-        "tiempoConsignacion": -1,
         "tipo": "video",
         "lugarCreacion": "09",
         "titulo": "Order 66",
@@ -140,6 +81,107 @@
         "anioCreacion": 2005,
         "subasta": true,
         "valores": [0],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Italia",
+        "titulo": "La monalisa",
+        "autores": ["Davinci"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 60,
+            "tecnica": "oleo",
+            "alto": 30
+        },
+        "bodega": true,
+        "historialPropietarios": [
+            {
+                "valorCompra": 2000000,
+                "loginPropietario": "alejandra_propietario",
+                "fechaVenta": "20/06/2016"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            }
+        ],
+        "loginPropietarioActual": "sara_propietario",
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            3000000,
+            4000000,
+            509999
+        ],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 600,
+        "tipo": "escultura",
+        "lugarCreacion": "a los pits",
+        "titulo": "El rayo mquen",
+        "autores": ["pixar"],
+        "valoresEspeciales": {
+            "peso": 456,
+            "ancho": 2,
+            "profundidad": 2,
+            "electricidad": true,
+            "alto": 3
+        },
+        "bodega": false,
+        "historialPropietarios": [
+            {
+                "valorCompra": 233432,
+                "loginPropietario": "bri_propietario",
+                "fechaVenta": "2023-11-08"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            }
+        ],
+        "loginPropietarioActual": "briceno_propietario",
+        "anioCreacion": 69,
+        "subasta": true,
+        "valores": [
+            23243,
+            7384,
+            242342
+        ],
         "disponible": false
     }
 ]}

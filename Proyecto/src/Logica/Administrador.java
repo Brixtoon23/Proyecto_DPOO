@@ -22,7 +22,7 @@ public class Administrador extends Usuario
 		
 	}
 	
-	public  static void ingresarPieza(Galeria galeria,Pieza pieza ) 
+	public  static void ingresarPieza(Galeria galeria, Pieza pieza) 
 	{
 		
 		if(pieza.isBodega()==true)
