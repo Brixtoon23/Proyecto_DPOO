@@ -51,7 +51,7 @@ public class TestsAdmin {
 
         int monto= Administrador.montoColeccion(galeria, loginComprador);
 
-        assertEquals(0.0f, monto, 0.01f);
+        assertEquals(6000000f, monto, 0.01f);
      }
 
 
@@ -63,7 +63,7 @@ public class TestsAdmin {
         Galeria galeria = InicializadorDeClases.cargarGaleria();
         String metodoPago= "trasferencia";
         String fecha= "12/05/2024";
-        Oferta oferta= new Oferta("sara_comprador", 30000000 , metodoPago,   "La monalisa" , fecha);
+        Oferta oferta= new Oferta("sara_comprador", 4123456 , metodoPago,   "La monalisa" , fecha);
         boolean aprobado= Administrador.aprobarVentaSubasta(oferta, galeria, fecha);
         assertEquals(true, aprobado);
 

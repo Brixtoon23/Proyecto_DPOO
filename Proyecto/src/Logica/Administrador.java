@@ -178,7 +178,7 @@ public class Administrador extends Usuario
 		if (mejorOferta.getValorOfertado()< valorMinimo )
 		{
 			vendida=false;
-			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida";
+			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida porque el valor ofertado es menor que el valor mínimo";
 
 			Mensaje mensaje2= new Mensaje(pieza.getTitulo(), vendida, mensaje1 );
 			comprador.getMensajesSubasta().add(mensaje2);
@@ -186,7 +186,7 @@ public class Administrador extends Usuario
 		else if (comprador.isMora()==true)
 		{
 			vendida=false;
-			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida";
+			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida, ya que te encuentras en mora";
 
 			Mensaje mensaje2= new Mensaje(pieza.getTitulo(), vendida, mensaje1 );
 			comprador.getMensajesSubasta().add(mensaje2);
@@ -194,7 +194,7 @@ public class Administrador extends Usuario
 		else if(comprador.getEstadoCuenta()< mejorOferta.getValorOfertado())
 		{
 			vendida=false;
-			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida";
+			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida, porque no tienes dinero suficiente en tu estado de cuenta";
 
 			Mensaje mensaje2= new Mensaje(pieza.getTitulo(), vendida, mensaje1 );
 			comprador.getMensajesSubasta().add(mensaje2);
@@ -203,7 +203,7 @@ public class Administrador extends Usuario
 		else if (comprador.getMaxCompras()< mejorOferta.getValorOfertado() )
 		{
 			vendida=false;
-			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida";
+			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida, porque superaste el maximo de tus compras";
 
 			Mensaje mensaje2= new Mensaje(pieza.getTitulo(), vendida, mensaje1 );
 			comprador.getMensajesSubasta().add(mensaje2);
