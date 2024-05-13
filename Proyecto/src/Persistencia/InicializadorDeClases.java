@@ -288,7 +288,7 @@ public class InicializadorDeClases
                     }
                     for (int a = 0; a < idPiezasJson.length(); a++) 
                     {
-                        idPiezas.add(idPiezasJson.getString(i));
+                        idPiezas.add(idPiezasJson.getString(a));
                     }
 
 
