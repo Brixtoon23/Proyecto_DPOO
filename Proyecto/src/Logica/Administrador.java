@@ -171,7 +171,7 @@ public class Administrador extends Usuario
 		String loginComprador=mejorOferta.getCompradorLogin();
 		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
 		String nombrePieza= mejorOferta.getNombrepiezaSubastada();
-		Pieza pieza= Servicios.buscarPiezaSubasta(galeria, nombrePieza);
+		Pieza pieza= Servicios.buscarPieza(galeria, nombrePieza);
 		int valorMinimo= pieza.valores.get(1);
 		boolean vendida=false;
 

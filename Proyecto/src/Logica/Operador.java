@@ -16,13 +16,6 @@ public class Operador extends Usuario
 
 
 
-		
-	
-
-
-
-
-
 	public Operador(String login, String nombre, String password, String rol, String telefono, boolean verificado,
 			ArrayList<String> idSubastas) {
 		super(login, nombre, password, rol, telefono, verificado);
@@ -51,7 +44,7 @@ public class Operador extends Usuario
 				 {
 					subasta.getListaOfertas().add(oferta1);
 
-					SubastaPersistencia.registrarSubasta(subasta);
+					SubastaPersistencia.registrarOferta(subasta);
 				 }
 				 
 
@@ -63,7 +56,7 @@ public class Operador extends Usuario
 				if (oferta.getNombrepiezaSubastada()== oferta1.getNombrepiezaSubastada())
 				{
 					ListaOfertasPieza.add(oferta);
-
+					
 				}
 			}
 
@@ -77,7 +70,6 @@ public class Operador extends Usuario
 				for(Oferta oferta2 :ListaOfertasPieza)
 				{
 					valoresOfertados.add(oferta2.getValorOfertado());
-
 					 
 				}
 
@@ -132,10 +124,10 @@ public class Operador extends Usuario
 
 					subasta.setListaOfertas(ListaOfertasPieza);
 					
-				 }
+				}
 
 
-				 }
+				}
 
 			}
 

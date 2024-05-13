@@ -9,7 +9,6 @@ import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import Logica.Oferta;
 import Logica.Subasta;
 
 
@@ -19,12 +18,11 @@ public class SubastaPersistencia
 {
 
     private static final String NOMBRE_ARCHIVO = "Proyecto/Archivos/base_de_datos_subastas.json";
+    private static JSONObject baseDeDatosJSON = leerBaseDeDatos();
+    private static JSONArray subastasArray = baseDeDatosJSON.getJSONArray("subastas");
 
     public static void registrarSubasta(Subasta subasta) 
     {
-        JSONObject baseDeDatosJSON = leerBaseDeDatos();
-
-        JSONArray subastasArray = baseDeDatosJSON.getJSONArray("subastas");
         JSONObject subastaJson = new JSONObject();
         subastaJson.put("id", subasta.getId());
         subastaJson.put("idListaPiezasSubasta", subasta.getIdListaPiezasSubasta());
@@ -60,6 +58,22 @@ public class SubastaPersistencia
         } catch (IOException e) {
             System.out.println("Error al guardar la base de datos.");
             e.printStackTrace();
+        }
+    }
+
+    public static void registrarOferta(Subasta subasta) 
+    {
+        for (int i = 0; i < subastasArray.length(); i++) 
+        {
+            JSONObject objSubasta = subastasArray.getJSONObject(i);
+            // Verifica si el objeto tiene la clave que quieres eliminar
+            if (objSubasta.getString("id").equals(subasta.getId()))
+            {            
+                subastasArray.remove(i);
+                registrarSubasta(subasta);
+                break; 
+            }
+
         }
     }
 
