@@ -44,7 +44,6 @@
         "historialPropietarios": [{
             "loginPropietario": "briceno_propietario",
             "valorCompra": 230000,
-            "loginPropietario": "briceno_propietario",
             "fechaVenta": "23/11/2024"
         }],
         "loginPropietarioActual": "briceno_propietario",

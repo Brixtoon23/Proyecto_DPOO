@@ -17,6 +17,13 @@
         "idListaPiezasSubasta": ["La pola"],
         "id": "Subasta Pejelagarto",
         "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
     }
-    
 ]}
