@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import Logica.Compra;
 import Logica.Comprador;
+import Logica.Galeria;
 import Logica.Mensaje;
 import Logica.Usuario;
 import Logica.Propietario;
@@ -19,13 +20,13 @@ import Logica.Propietario;
 public class UsuarioPersistencia 
 {
 
+    private static JSONObject baseDatos = leerBaseDeDatos();
+    private static JSONArray usuariosJSON = baseDatos.getJSONArray("usuarios");
     
 
     public static void registrarUsuario(Usuario usuario) 
 
     {
-        JSONObject baseDatos = leerBaseDeDatos();
-        JSONArray usuariosJSON = baseDatos.getJSONArray("usuarios");
         JSONObject usuarioJSON = new JSONObject();
 
         usuarioJSON.put("login", usuario.getLogin());
@@ -124,32 +125,52 @@ public class UsuarioPersistencia
         
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static void iniciarSesion() 
     {
         
+    }
+
+
+
+    public static void actualizarCompradorCompra( Comprador comprador) 
+    {
+        for (int i = 0; i < usuariosJSON.length(); i++) 
+        {
+            JSONObject objUsuario = usuariosJSON.getJSONObject(i);
+            // Verifica si el objeto tiene la clave que quieres eliminar
+            if (objUsuario.getString("login").equals(comprador.getLogin())) 
+            {            
+                usuariosJSON.remove(i);
+                registrarUsuario(comprador);
+                break; 
+            
+            }
+        }
+
+    }
+
+
+
+    public static void actualizarPropietarioCompra( Propietario propietarioAnterior, Propietario nuevoPropietario) 
+    {
+        for (int i = 0; i < usuariosJSON.length(); i++) 
+        {
+            JSONObject objUsuario = usuariosJSON.getJSONObject(i);
+            // Verifica si el objeto tiene la clave que quieres eliminar
+            if (objUsuario.getString("login").equals(propietarioAnterior.getLogin())) 
+            {            
+                usuariosJSON.remove(i);
+                registrarUsuario(propietarioAnterior);
+
+            }
+            else if (objUsuario.getString("login").equals(nuevoPropietario.getLogin()))
+            {
+                usuariosJSON.remove(i);
+                registrarUsuario(nuevoPropietario);
+                
+
+            }
+        }
     }
     
 }

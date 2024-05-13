@@ -536,12 +536,12 @@ public class Main
                     Servicios.imprimirPiezas(galeria, false);
                     break;
                 case 3:
-                System.out.println("Ingrese el nombre de la pieza que desea comprar: ");
-                String nomPieza = scanner.nextLine();
-                Pieza piezaCompra = Servicios.buscarPiezaSubasta(galeria,nomPieza);
+                    System.out.println("Ingrese el nombre de la pieza que desea comprar: ");
+                    String nomPieza = scanner.nextLine();
+                    Pieza piezaCompra = Servicios.buscarPieza(galeria,nomPieza);
 
-                System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
-                String fecha = scanner.nextLine();
+                    System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
+                    String fecha = scanner.nextLine();
 
 
                 if((piezaCompra.equals(null)) || (piezaCompra.isDisponible()==false))
@@ -554,7 +554,6 @@ public class Main
 
                     String metdPago = scanner.nextLine();
                     Comprador comprador1= Servicios.buscarComprador(galeria, login);
-
                     boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago, galeria, fecha);
 
                     if(aprobar== true)
@@ -745,7 +744,7 @@ public class Main
     private static void verHistorialPieza(Galeria galeria) {
         System.out.print("Ingrese el nombre de la pieza de la cual desea saber su historial: ");
         String nombrePieza = scanner.nextLine();
-        Pieza pieza = Servicios.buscarPiezaSubasta(galeria, nombrePieza);
+        Pieza pieza = Servicios.buscarPieza(galeria, nombrePieza);
 
         if (pieza != null) {
             System.out.println("El nombre de la pieza es " + pieza.getTitulo() + ".");
@@ -825,7 +824,7 @@ public class Main
 
             for( String piezaNombre: comprador.getIdpiezasCompradas())
             {
-                Pieza pieza = Servicios.buscarPiezaSubasta(galeria, piezaNombre);
+                Pieza pieza = Servicios.buscarPieza(galeria, piezaNombre);
                 String loginPropiertario= comprador.getLogin().replace("_comprador", "_propietario");
 
                 if (pieza.getLoginPropietarioActual()==loginPropiertario)

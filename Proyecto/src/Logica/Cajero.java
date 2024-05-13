@@ -3,6 +3,8 @@ package Logica;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import Persistencia.PiezasPersistencia;
 import Persistencia.UsuarioPersistencia;
 
 public class Cajero  extends Usuario
@@ -25,30 +27,26 @@ public class Cajero  extends Usuario
 	{
 
 		String nombrePieza =  oferta.getNombrepiezaSubastada();
-		Pieza pieza = Servicios.buscarPiezaSubasta(galeria, nombrePieza);
+		Pieza pieza = Servicios.buscarPieza(galeria, nombrePieza);
 		float cuenta= comprador.getEstadoCuenta() - oferta.getValorOfertado();
 		comprador.setEstadoCuenta(cuenta);
 
 
 		pieza.setDisponible(false);
-
-
-		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, pieza.getLoginPropietarioActual());
+		Propietario propietarioAnterior = Servicios.buscarPropietario(galeria, pieza.getLoginPropietarioActual());
 		propietarioAnterior.getIdPiezasActuales().remove(pieza.getTitulo());
 
 
-		String loginnuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
+		String loginNuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
+		Propietario nuevoPropiertario = Servicios.buscarPropietario(galeria, loginNuevoPropiertario);
 
 		Map<String, Object> mapa = new HashMap<>();
 
-		mapa.put(  "loginPropietario",loginnuevoPropiertario);
+		mapa.put( "loginPropietario",loginNuevoPropiertario);
 		mapa.put("valorCompra", oferta.getValorOfertado());
 		mapa.put("fechaVenta", fecha);
 
 		pieza.getHistorialPropietarios().add(mapa);
-
-		
-	
 
 		Compra compra= new Compra(nombrePieza, oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha);
 		
@@ -60,23 +58,13 @@ public class Cajero  extends Usuario
 
 		comprador.getMensajesSubasta().add(mensaje);
 
-
-		UsuarioPersistencia.ActualizarregistrarCompraSubasta(propietarioAnterior.getLogin(),  loginnuevoPropiertario, comprador.getLogin());
-
-
-			
-
-
-
+		PiezasPersistencia.actualizarPropietarioPieza(galeria,pieza);
+		UsuarioPersistencia.actualizarCompradorCompra( comprador );
+		UsuarioPersistencia.actualizarPropietarioCompra(propietarioAnterior,nuevoPropiertario);
 
 
 		
 	}
-
-
-
-
-
 
 
 
@@ -125,18 +113,16 @@ public class Cajero  extends Usuario
 
 		Map<String, Object> mapa = new HashMap<>();
 
-		mapa.put(  "loginPropietario", loginnuevoPropiertario);
+		mapa.put( "loginPropietario", loginnuevoPropiertario);
 		mapa.put("valorCompra", precioFijo);
 		mapa.put("fechaVenta", fecha);
 
 		pieza.getHistorialPropietarios().add(mapa);
 
+		PiezasPersistencia.actualizarPropietarioPieza(galeria,pieza);
+		UsuarioPersistencia.actualizarCompradorCompra( comprador );
+		UsuarioPersistencia.actualizarPropietarioCompra(propietarioAnterior,nuevoPropiertario);
 
-		UsuarioPersistencia.ActualizarregistrarCompraSubasta(propietarioAnterior.getLogin(),  loginnuevoPropiertario, comprador.getLogin());
-
-
-		
-		
 
 	}
 

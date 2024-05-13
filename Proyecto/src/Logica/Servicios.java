@@ -99,7 +99,7 @@ public class Servicios
 
     }
 
-    public static Pieza buscarPiezaSubasta(Galeria galeria, String nombrePieza)
+    public static Pieza buscarPieza(Galeria galeria, String nombrePieza)
     {
 
         int cont1 = 0 ;

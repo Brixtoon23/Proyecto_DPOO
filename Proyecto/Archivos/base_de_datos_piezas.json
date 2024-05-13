@@ -52,7 +52,8 @@
         "subasta": true,
         "valores": [
             2345,
-            3549,23456
+            3549,
+            23456
         ],
         "disponible": true
     },
@@ -71,15 +72,16 @@
         "bodega": true,
         "historialPropietarios": [{
             "valorCompra": 30000,
-            "loginPropietario": "nikol_propietario",
+            "loginPropietario": "alejandra_propietario",
             "fechaVenta": "14/02/2010"
         }],
-        "loginPropietarioActual": "nikol_propietario",
+        "loginPropietarioActual": "alejandra_propietario",
         "anioCreacion": 1956,
         "subasta": true,
         "valores": [
             3000000,
-            4000000,509999
+            4000000,
+            509999
         ],
         "disponible": true
     },
@@ -96,17 +98,22 @@
             "alto": 30
         },
         "bodega": true,
-        "historialPropietarios": [{
-            "valorCompra": 2000000,
-            "loginPropietario": "nikol_propietario",
-            "fechaVenta": "20/06/2016"
-        }],
-        "loginPropietarioActual": "nikol_propietario",
+        "historialPropietarios": [
+            {
+                "valorCompra": 2000000,
+                "loginPropietario": "alejandra_propietario",
+                "fechaVenta": "20/06/2016"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "13/05/2024"
+            }
+        ],
+        "loginPropietarioActual": "alejandra_propietario",
         "anioCreacion": 1519,
         "subasta": false,
-        "valores": [
-            3000000
-        ],
-        "disponible": true
+        "valores": [3000000],
+        "disponible": false
     }
 ]}

@@ -23,12 +23,11 @@ public class PiezasPersistencia
 	private static JSONObject baseDeDatosJSON = leerBaseDeDatos();
 
 	private static List<JSONObject> piezas = obtenerPiezasDesdeJSON(baseDeDatosJSON.getJSONArray("piezas"));
+
 	
 	
 	public static void registrarPieza(Galeria galeria , Pieza pieza) 
     {   
-
-
         
         // Crear el objeto JSON para la nueva pieza
         JSONObject piezaJSON = new JSONObject();
@@ -158,6 +157,22 @@ public class PiezasPersistencia
             e.printStackTrace();
         }
     }
+
+    public static void actualizarPropietarioPieza( Galeria galeria,Pieza pieza) 
+    {
+        for (int i = 0; i < piezas.size(); i++) {
+            JSONObject objPieza = piezas.get(i);
+            // Verifica si el objeto tiene la clave que quieres eliminar
+            if (objPieza.getString("titulo").equals(pieza.getTitulo())) 
+            {            
+                piezas.remove(i);
+                registrarPieza( galeria, pieza);
+                break; 
+            }
+
+        }
+    }
+    
 
     // Método para obtener la lista de piezas desde un JSONArray
 }
