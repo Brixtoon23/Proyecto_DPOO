@@ -14,10 +14,9 @@ import Logica.Pieza;
 import Logica.Pintura;
 import Logica.Propietario;
 import Logica.Servicios;
-import Logica.Subasta;
 import Logica.Usuario;
 import Logica.Video;
-import Persistencia.ImprimirJSON;
+
 import Persistencia.InicializadorDeClases;
 import Persistencia.UsuarioPersistencia;
 

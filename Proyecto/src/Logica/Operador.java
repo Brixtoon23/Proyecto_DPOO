@@ -132,10 +132,10 @@ public class Operador extends Usuario
 
 					subasta.setListaOfertas(ListaOfertasPieza);
 					
-				 }
+				}
 
 
-				 }
+				}
 
 			}
 

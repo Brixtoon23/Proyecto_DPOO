@@ -75,7 +75,7 @@ public class Cajero  extends Usuario
 		float cuenta = comprador.getEstadoCuenta();
 		ArrayList<Integer> valores = pieza.getValores();
 		int precioFijo = valores.get(0);
-		cuenta = cuenta - precioFijo;
+		cuenta -= precioFijo;
 		comprador.setEstadoCuenta(cuenta);
 
 		pieza.setDisponible(false);
@@ -129,27 +129,10 @@ public class Cajero  extends Usuario
 
 
 
-
-
-
-
-
-
-
-
-
 	public ArrayList<Compra> getComprasRegistradas() 
 	{
 		return comprasRegistradas;
 	}
-
-
-
-
-
-
-
-
 
 
 

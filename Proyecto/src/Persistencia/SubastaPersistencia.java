@@ -9,7 +9,6 @@ import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import Logica.Oferta;
 import Logica.Subasta;
 
 
