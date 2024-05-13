@@ -105,7 +105,7 @@
         "anioCreacion": 1519,
         "subasta": false,
         "valores": [
-            3000000
+            3000000, 4000000, 6000000
         ],
         "disponible": true
     }
