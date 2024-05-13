@@ -51,7 +51,7 @@ public class TestsAdmin {
 
         int monto= Administrador.montoColeccion(galeria, loginComprador);
 
-        assertEquals(0.0f, monto, 0.01f);
+        assertEquals(6000000f, monto, 0.01f);
      }
 
 

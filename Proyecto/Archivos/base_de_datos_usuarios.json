@@ -76,8 +76,8 @@
             "mora": false,
             "mensajesSubasta": [],
             "estadoCuenta": 4.0E+18,
-            "idPiezasCompradas": [],
-            "historialCompras": []
+            "idPiezasCompradas": ["Las meninas",  "La monalisa"],
+            "historialCompras": ["Las meninas",  "La monalisa"]
         },
         "password": "N1k0l%",
         "login": "nikol_comprador",
@@ -88,8 +88,8 @@
     {
         "verificado": false,
         "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
+            "idPiezasActuales": ["Las meninas",  "La monalisa"],
+            "historialPiezas": ["Las meninas",  "La monalisa"]
         },
         "password": "N1k0l%",
         "login": "nikol_propietario",
