@@ -222,6 +222,11 @@
                 "valorCompra": 1234567,
                 "loginPropietario": "briceno_propietario",
                 "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
             }
         ],
         "loginPropietarioActual": "briceno_propietario",
