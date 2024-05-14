@@ -56,71 +56,8 @@
         ],
         "disponible": true
     },
-    {
-        "tiempoConsignacion": -1,
-        "tipo": "video",
-        "lugarCreacion": "09",
-        "titulo": "Order 66",
-        "autores": [
-            "The Senate",
-            "Darth Sidious",
-            "Sheev Palpatine"
-        ],
-        "valoresEspeciales": {
-            "resolucion": "720",
-            "duracion": 20,
-            "tamanioGiga": 3
-        },
-        "bodega": false,
-        "historialPropietarios": [{
-            "valorCompra": 0,
-            "loginPropietario": "bri_propietario_propietario",
-            "fechaVenta": "90/80/20"
-        }],
-        "loginPropietarioActual": "bri_propietario_propietario",
-        "anioCreacion": 2005,
-        "subasta": true,
-        "valores": [0],
-        "disponible": false
-    },
-    {
-        "tiempoConsignacion": 20,
-        "tipo": "video",
-        "lugarCreacion": "In a galaxy far, far away",
-        "titulo": "Order 66",
-        "autores": [],
-        "valoresEspeciales": {
-            "resolucion": "720",
-            "duracion": 20,
-            "tamanioGiga": 1
-        },
-        "bodega": false,
-        "historialPropietarios": [],
-        "loginPropietarioActual": "Canc1ll3r_Palpatine",
-        "anioCreacion": 2020,
-        "subasta": true,
-        "valores": [],
-        "disponible": false
-    },
-    {
-        "tiempoConsignacion": 20,
-        "tipo": "video",
-        "lugarCreacion": "In a galaxy far, far away",
-        "titulo": "Order 66",
-        "autores": [],
-        "valoresEspeciales": {
-            "resolucion": "720",
-            "duracion": 20,
-            "tamanioGiga": 1
-        },
-        "bodega": false,
-        "historialPropietarios": [],
-        "loginPropietarioActual": "Canc1ll3r_Palpatine",
-        "anioCreacion": 2020,
-        "subasta": true,
-        "valores": [],
-        "disponible": false
-    },
+   
+   
     {
         "tiempoConsignacion": -1,
         "tipo": "pintura",
@@ -283,24 +220,6 @@
             242342
         ],
         "disponible": false
-    },
-    {
-        "tiempoConsignacion": 20,
-        "tipo": "video",
-        "lugarCreacion": "In a galaxy far, far away",
-        "titulo": "Order 66",
-        "autores": [],
-        "valoresEspeciales": {
-            "resolucion": "720",
-            "duracion": 20,
-            "tamanioGiga": 1
-        },
-        "bodega": false,
-        "historialPropietarios": [],
-        "loginPropietarioActual": "Canc1ll3r_Palpatine",
-        "anioCreacion": 2020,
-        "subasta": true,
-        "valores": [],
-        "disponible": false
     }
+    
 ]}
