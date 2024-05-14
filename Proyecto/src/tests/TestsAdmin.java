@@ -95,7 +95,7 @@ public class TestsAdmin
         Administrador.ingresarPieza(GaleriaPrueba,VideoPrueba);  //Se ingresa una pieza a exhibicion
         assertEquals((exhibicion_inicial+bodega_inicial+1),GaleriaPrueba.getCantidadObras(),"La pieza no se agregó a la galería");
         assertEquals((exhibicion_inicial+1),GaleriaPrueba.getInventario().getPiezasExhibidad().size(), "La pieza no se agregó a la lista correcta en la galería");
-        Pieza piezaAgregada = GaleriaPrueba.getInventario().getPiezasExhibidad().get(-1);
+        Pieza piezaAgregada = GaleriaPrueba.getInventario().getPiezasExhibidad().getLast();
         //Se verifica que la pieza que se agregó sea la correcta
         assertEquals(VideoPrueba.getTitulo(),piezaAgregada.getTitulo(),"La pieza no se agregó correctamente, el título no es correcto");
         assertEquals(VideoPrueba.getLoginPropietarioActual(), piezaAgregada.getLoginPropietarioActual(),"La pieza no se agregó correctamente, el propietario actual no es correcto");
