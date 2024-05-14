@@ -101,43 +101,12 @@
             "alto": 30
         },
         "bodega": true,
-<<<<<<< HEAD
         "historialPropietarios": [{
             "valorCompra": 2000000,
             "loginPropietario": "alejandra_propietario",
             "fechaVenta": "20/06/2016"
         }],
         "loginPropietarioActual": "alejandra_propietario",
-=======
-        "historialPropietarios": [
-            {
-                "valorCompra": 2000000,
-                "loginPropietario": "alejandra_propietario",
-                "fechaVenta": "20/06/2016"
-            },
-            {
-                "valorCompra": 4123456,
-                "loginPropietario": "sara_propietario",
-                "fechaVenta": "12/05/2024"
-            },
-            {
-                "valorCompra": 4123456,
-                "loginPropietario": "sara_propietario",
-                "fechaVenta": "12/05/2024"
-            },
-            {
-                "valorCompra": 4123456,
-                "loginPropietario": "sara_propietario",
-                "fechaVenta": "12/05/2024"
-            },
-            {
-                "valorCompra": 4123456,
-                "loginPropietario": "sara_propietario",
-                "fechaVenta": "12/05/2024"
-            }
-        ],
-        "loginPropietarioActual": "sara_propietario",
->>>>>>> 075065f34834464e2168cace7255f4f582377546
         "anioCreacion": 1956,
         "subasta": true,
         "valores": [
