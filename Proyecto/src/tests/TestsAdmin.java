@@ -147,12 +147,13 @@ public class TestsAdmin
      
     {
         Galeria galeria = InicializadorDeClases.cargarGaleria();
+
         Pieza pieza= Servicios.buscarPieza(galeria, "Caminos Entrelazados");
         int listaAntes= galeria.getAutores().size();
-        
+
         Administrador.ingresarAutor(galeria, pieza.getAutor(), "Caminos Entrelazados");
         //Se verifica que se haya ingresado el nuevo autor
-        assertEquals(listaAntes+3 , GaleriaPrueba.getAutores().size(),"No se añadió el nuevo autor");
+        assertEquals(listaAntes+3 , galeria.getAutores().size(),"No se añadió el nuevo autor");
         //Se verifica que a pixar se le haya añadido la pieza
        
         
