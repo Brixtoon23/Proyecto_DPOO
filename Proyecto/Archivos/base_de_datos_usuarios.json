@@ -388,6 +388,62 @@
         "rol": "comprador"
     },
     {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "alejandra",
+        "login": "alejandra_propietario",
+        "telefono": "12345432167",
+        "nombre": "alejandra",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "maxCompras": 2.3456654E+8,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 1.2339484E+9,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "gladys",
+        "login": "gladys_comprador",
+        "telefono": "12387544",
+        "nombre": "gladys",
+        "rol": "comprador"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "maxCompras": 2.3456654E+8,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 1.2339484E+9,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "gladys",
+        "login": "gladys_comprador",
+        "telefono": "12387544",
+        "nombre": "gladys",
+        "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "Canc1ll3r_Palpatine",
+        "login": "Canc1ll3r_Palpatine",
+        "telefono": "2343235565548",
+        "nombre": "Canc1ll3r_Palpatine",
+        "rol": "propietario"
+    },
+    {
         "verificado": true,
         "valores_especiales": {
             "maxCompras": 1.2367777E+29,
@@ -409,18 +465,6 @@
             "idPiezasActuales": [],
             "historialPiezas": []
         },
-        "password": "alejandra",
-        "login": "alejandra_propietario",
-        "telefono": "12345432167",
-        "nombre": "alejandra",
-        "rol": "propietario"
-    },
-    {
-        "verificado": false,
-        "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
-        },
         "password": "sara",
         "login": "sara_propietario",
         "telefono": "123456781",
@@ -430,10 +474,26 @@
     {
         "verificado": true,
         "valores_especiales": {
+            "maxCompras": 2.3456654E+8,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 1.2339484E+9,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "gladys",
+        "login": "gladys_comprador",
+        "telefono": "12387544",
+        "nombre": "gladys",
+        "rol": "comprador"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
             "maxCompras": 0,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 234356435,
+            "estadoCuenta": 2.3305213E8,
             "idPiezasCompradas": [],
             "historialCompras": []
         },

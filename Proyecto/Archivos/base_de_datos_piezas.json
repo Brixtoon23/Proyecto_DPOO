@@ -84,6 +84,76 @@
         "disponible": false
     },
     {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Medellín",
+        "titulo": "Caminos Entrelazados",
+        "autores": [
+            "AnaGomez",
+            "CarlosVargas",
+            "JuanPerez"
+        ],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 259,
+            "tecnica": "oleo",
+            "alto": 323
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 30000,
+            "loginPropietario": "alejandra_propietario",
+            "fechaVenta": "14/02/2010"
+        }],
+        "loginPropietarioActual": "alejandra_propietario",
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            3000000,
+            4000000,
+            509999
+        ],
+        "disponible": true
+    },
+    {
         "tiempoConsignacion": -1,
         "tipo": "pintura",
         "lugarCreacion": "Italia",
@@ -101,6 +171,16 @@
                 "valorCompra": 2000000,
                 "loginPropietario": "alejandra_propietario",
                 "fechaVenta": "20/06/2016"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
             },
             {
                 "valorCompra": 4123456,
@@ -172,6 +252,26 @@
                 "valorCompra": 1234567,
                 "loginPropietario": "briceno_propietario",
                 "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
             }
         ],
         "loginPropietarioActual": "briceno_propietario",
@@ -182,6 +282,25 @@
             7384,
             242342
         ],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
         "disponible": false
     }
 ]}

@@ -21,5 +21,13 @@
             "nombrepiezaSubastada": "El rayo mquen",
             "compradorLogin": "briceno_comprador"
         }]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
     }
 ]}
