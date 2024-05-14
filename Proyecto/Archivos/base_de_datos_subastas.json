@@ -5,7 +5,13 @@
             "La monalisa"
         ],
         "id": "subasta prueba",
-        "listaOfertas": []
+        "listaOfertas": [{
+            "valorOfertado": 300000000,
+            "metodoPago": "efectivo",
+            "fecha": "12/03/2024",
+            "nombrepiezaSubastada": "La monalisa",
+            "compradorLogin": "Daniel_comprador"
+        }]
     },
     {
         "idListaPiezasSubasta": [
@@ -14,13 +20,15 @@
             "La monalisa"
         ],
         "id": "Piezas_Facheras",
-        "listaOfertas": [{
-            "valorOfertado": 5890494,
-            "metodoPago": "Efectivo",
-            "fecha": "23/05/2024",
-            "nombrepiezaSubastada": "El rayo mquen",
-            "compradorLogin": "briceno_comprador"
-        }]
+        "listaOfertas": [
+            {
+                "valorOfertado": 5890494,
+                "metodoPago": "Efectivo",
+                "fecha": "23/05/2024",
+                "nombrepiezaSubastada": "El rayo mquen",
+                "compradorLogin": "briceno_comprador"
+            }
+        ]
     },
     {
         "idListaPiezasSubasta": [
@@ -28,6 +36,12 @@
             "La monalisa"
         ],
         "id": "subasta prueba",
-        "listaOfertas": []
+        "listaOfertas": [{
+            "valorOfertado": 300000000,
+            "metodoPago": "efectivo",
+            "fecha": "12/03/2024",
+            "nombrepiezaSubastada": "La monalisa",
+            "compradorLogin": "Daniel_comprador"
+        }]
     }
 ]}
