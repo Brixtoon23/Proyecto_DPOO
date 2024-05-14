@@ -6,18 +6,18 @@ public class Oferta
 	private String  compradorLogin;
 	private int valorOfertado;
 	private String metodoPago;
-	private String NombrepiezaSubastada;
+	private String nombrePiezaSubastada;
 	private String fecha;
 
 	
 	
 	public Oferta(String compradorLogin, int valorOfertado,  String metodoPago,
-			String nombrepiezaSubastada, String fecha) {
+			String nombrePiezaSubastada, String fecha) {
 		this.compradorLogin = compradorLogin;
 		this.valorOfertado = valorOfertado;
 
 		this.metodoPago = metodoPago;
-		NombrepiezaSubastada = nombrepiezaSubastada;
+		this.nombrePiezaSubastada = nombrePiezaSubastada;
 		this.fecha = fecha;
 	}
 	public String getCompradorLogin() {
@@ -40,10 +40,10 @@ public class Oferta
 		this.metodoPago = metodoPago;
 	}
 	public String getNombrepiezaSubastada() {
-		return NombrepiezaSubastada;
+		return nombrePiezaSubastada;
 	}
-	public void setNombrepiezaSubastada(String nombrepiezaSubastada) {
-		NombrepiezaSubastada = nombrepiezaSubastada;
+	public void setNombrepiezaSubastada(String nombrePiezaSubastada) {
+		this.nombrePiezaSubastada = nombrePiezaSubastada;
 	}
 	public String getFecha() {
 		return fecha;

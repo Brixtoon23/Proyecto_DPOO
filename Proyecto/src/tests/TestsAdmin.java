@@ -9,10 +9,11 @@ import Logica.Oferta;
 import Logica.Pieza;
 import Logica.Servicios;
 import Logica.Subasta;
+import Persistencia.AutoresPersistencia;
 import Persistencia.InicializadorDeClases;
 import Logica.Compra;
 
-
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -95,7 +96,7 @@ public class TestsAdmin
         Administrador.ingresarPieza(GaleriaPrueba,VideoPrueba);  //Se ingresa una pieza a exhibicion
         assertEquals((exhibicion_inicial+bodega_inicial+1),GaleriaPrueba.getCantidadObras(),"La pieza no se agregó a la galería");
         assertEquals((exhibicion_inicial+1),GaleriaPrueba.getInventario().getPiezasExhibidad().size(), "La pieza no se agregó a la lista correcta en la galería");
-        Pieza piezaAgregada = GaleriaPrueba.getInventario().getPiezasExhibidad().get(-1);
+        Pieza piezaAgregada = GaleriaPrueba.getInventario().getPiezasExhibidad().getLast();
         //Se verifica que la pieza que se agregó sea la correcta
         assertEquals(VideoPrueba.getTitulo(),piezaAgregada.getTitulo(),"La pieza no se agregó correctamente, el título no es correcto");
         assertEquals(VideoPrueba.getLoginPropietarioActual(), piezaAgregada.getLoginPropietarioActual(),"La pieza no se agregó correctamente, el propietario actual no es correcto");
@@ -154,8 +155,11 @@ public class TestsAdmin
         Administrador.ingresarAutor(galeria, pieza.getAutor(), "Caminos Entrelazados");
         //Se verifica que se haya ingresado el nuevo autor
         assertEquals(listaAntes+3 , galeria.getAutores().size(),"No se añadió el nuevo autor");
-        //Se verifica que a pixar se le haya añadido la pieza
-       
+        
+        galeria.getAutores().remove("AnaGomez");
+        galeria.getAutores().remove("CarlosVargas");
+        galeria.getAutores().remove("JuanPerez");
+        AutoresPersistencia.retirarAutores("AnaGomez","CarlosVargas","JuanPerez");
         
 
     }    
@@ -221,14 +225,7 @@ public class TestsAdmin
 
         assertEquals(compradorgaleria,comprador);
 
-
     }
-
-
-
-
-
-
 
     
 }

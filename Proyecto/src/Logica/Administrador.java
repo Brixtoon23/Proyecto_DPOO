@@ -42,6 +42,8 @@ public class Administrador extends Usuario
 
 		propietario.getHistorialPiezas().add(pieza.getTitulo());
 		propietario.getIdPiezasActuales().add(pieza.getTitulo());
+		int nuevaCantidadObras = galeria.getCantidadObras() + 1;
+		galeria.setCantidadObras(nuevaCantidadObras);
 		
 	    // Actualizar persistecia propietario
 
@@ -97,7 +99,7 @@ public class Administrador extends Usuario
 	public static void ingresarAutor(Galeria galeria, ArrayList<String> autores, String pieza)
 	{
 		
-		for(int i=0 ;autores.size() < i ;i++)
+		for(int i=0 ;i < autores.size()  ;i++)
 		{
 			if (galeria.getAutores().containsKey(autores.get(i))) 
 			{
@@ -163,9 +165,6 @@ public class Administrador extends Usuario
 		
 	}
 	
-	
-	
-		
 	public static boolean aprobarVentaSubasta(Oferta mejorOferta, Galeria galeria, String fecha)
 	{
 		String loginComprador=mejorOferta.getCompradorLogin();

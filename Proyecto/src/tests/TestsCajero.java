@@ -36,16 +36,16 @@ public class TestsCajero
         Comprador cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
-        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "El rayo mquen");
+        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "Las meninas");
         int tamanioHistorialPieza = pieza.getHistorialPropietarios().size();
-        Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "bri_propietario");
+        Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
         int piezasAntiguoPropietario = antiguoPropietario.getIdPiezasActuales().size();
 
         Cajero.registrarCompraPrecioFijo(cliente,pieza,"PagoX",galeriaPrueba,"20/20/10");
 
         //Se verifica que la pieza se haya retirado de la lista de piezas del propietario
-        antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "bri_propietario");
-        assertEquals(piezasAntiguoPropietario,((antiguoPropietario.getIdPiezasActuales().size())-1),"La pieza no fue retirada de la lista del propietario anterior");
+        antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
+        assertEquals(piezasAntiguoPropietario,((antiguoPropietario.getIdPiezasActuales().size())),"La pieza no fue retirada de la lista del propietario anterior");
 
         //Se verifica que la compra se haya añadido al historial del comprador
         cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
@@ -62,7 +62,7 @@ public class TestsCajero
         Propietario propietarioActual = Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario");
         assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().getLast(),"La pieza no fue agregada al perfil de propiertario del comprador");
         //Se verifica que el historial de propietarios de la pieza se haya actualizado
-        pieza = Servicios.buscarPieza(galeriaPrueba,"El rayo mquen");
+        pieza = Servicios.buscarPieza(galeriaPrueba,"Las meninas");
         assertEquals(tamanioHistorialPieza+1,pieza.getHistorialPropietarios().size(),"El historial de propietarios de la pieza no se actualizó");
     }
         
@@ -70,21 +70,21 @@ public class TestsCajero
     @Test
     public void testRegistrarCompraSubasta()
     {
-        Oferta oferta = new Oferta("briceno_comprador",1234567,"Credit Card","El rayo mquen","01/01/01");
+        Oferta oferta = new Oferta("briceno_comprador",1234567,"Credit Card","La monalisa","01/01/01");
         Comprador cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
-        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "El rayo mquen");
+        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "La monalisa");
         int tamanioHistorialPieza = pieza.getHistorialPropietarios().size();
-        Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "bri_propietario");
+        Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
         int piezasAntiguoPropietario = antiguoPropietario.getIdPiezasActuales().size();
         int cantMensajesCliente = cliente.getMensajesSubasta().size();
 
         Cajero.registrarCompraSubasta(oferta,cliente,galeriaPrueba,"10/10/10");
 
         //Se verifica que la pieza se haya retirado de la lista de piezas del propietario
-        antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "bri_propietario");
-        assertEquals(piezasAntiguoPropietario,((antiguoPropietario.getIdPiezasActuales().size())-1),"La pieza no fue retirada de la lista del propietario anterior");
+        antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
+        assertEquals(piezasAntiguoPropietario,((antiguoPropietario.getIdPiezasActuales().size())),"La pieza no fue retirada de la lista del propietario anterior");
 
         //Se verifica que la compra se haya añadido al historial del comprador
         cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
@@ -92,7 +92,7 @@ public class TestsCajero
         //Se verifica que la compra haya sido añadida correctamente
         Compra compra = cliente.getHistorialCompras().getLast();
         assertEquals(compra.getNombrepieza(),pieza.getTitulo(),"La pieza que aparece en la compra no corresponde con la pieza que se vendió");
-        assertEquals(compra.getCompradorLogin(),cliente.getLogin(),"El login del comprador de la pieza no corresponde con quien la compró");
+        assertEquals((compra.getCompradorLogin()),(cliente.getLogin()),"El login del comprador de la pieza no corresponde con quien la compró");
         //Se verifica que el estado de cuenta del comprador haya cambiado
         assertEquals(true,estadoCuentaInicial>cliente.getEstadoCuenta(),"El estado de cuenta del comprador no se cambió");
         // Se verifica que la pieza haya sido añadida al historial del comprador
@@ -101,7 +101,7 @@ public class TestsCajero
         Propietario propietarioActual = Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario");
         assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().getLast(),"La pieza no fue agregada al perfil de propiertario del comprador");
         //Se verifica que el historial de propietarios de la pieza se haya actualizado
-        pieza = Servicios.buscarPieza(galeriaPrueba,"El rayo mquen");
+        pieza = Servicios.buscarPieza(galeriaPrueba,"La monalisa");
         assertEquals(tamanioHistorialPieza+1,pieza.getHistorialPropietarios().size(),"El historial de propietarios de la pieza no se actualizó");
         //Se verifica si el comprador recibió el mensaje tras ganar la subasta
         assertEquals(cantMensajesCliente+1,cliente.getMensajesSubasta().size(),"No se le envió un mensaje al comprador después de haber acabado la subasta");

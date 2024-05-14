@@ -1,17 +1,101 @@
 {"subastas": [
     {
+        "idListaPiezasSubasta": ["Order 66"],
+        "id": "PacoList",
+        "listaOfertas": [{
+            "valorOfertado": 23432,
+            "metodoPago": "Efectivo",
+            "fecha": "23/07/3090",
+            "nombrepiezaSubastada": "Order 66",
+            "compradorLogin": "briceno_comprador"
+        }]
+    },
+    {
         "idListaPiezasSubasta": [
             "Las meninas",
             "La monalisa"
         ],
         "id": "subasta prueba",
-        "listaOfertas": [{
-            "valorOfertado": 300000000,
-            "metodoPago": "efectivo",
-            "fecha": "12/03/2024",
-            "nombrepiezaSubastada": "La monalisa",
-            "compradorLogin": "Daniel_comprador"
-        }]
+        "listaOfertas": [
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
     },
     {
         "idListaPiezasSubasta": [
@@ -22,11 +106,469 @@
         "id": "Piezas_Facheras",
         "listaOfertas": [
             {
-                "valorOfertado": 5890494,
                 "metodoPago": "Efectivo",
+                "valorOfertado": 5890494,
                 "fecha": "23/05/2024",
                 "nombrepiezaSubastada": "El rayo mquen",
                 "compradorLogin": "briceno_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            }
+        ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
+            },
+            {
+                "metodoPago": "efectivo",
+                "valorOfertado": 300000000,
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "Daniel_comprador"
             }
         ]
     },
@@ -37,11 +579,235 @@
         ],
         "id": "subasta prueba",
         "listaOfertas": [{
-            "valorOfertado": 300000000,
             "metodoPago": "efectivo",
+            "valorOfertado": 300000000,
             "fecha": "12/03/2024",
             "nombrepiezaSubastada": "La monalisa",
             "compradorLogin": "Daniel_comprador"
         }]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": []
     }
 ]}

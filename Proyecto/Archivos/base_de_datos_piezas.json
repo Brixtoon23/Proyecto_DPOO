@@ -31,34 +31,6 @@
     {
         "tiempoConsignacion": -1,
         "tipo": "pintura",
-        "lugarCreacion": "Espana",
-        "titulo": "Las meninas",
-        "autores": ["Diego Velasquez"],
-        "valoresEspeciales": {
-            "peso": 4,
-            "ancho": 279,
-            "tecnica": "oleo",
-            "alto": 320
-        },
-        "bodega": true,
-        "historialPropietarios": [{
-            "valorCompra": 30000,
-            "loginPropietario": "alejandra_propietario",
-            "fechaVenta": "14/02/2010"
-        }],
-        "loginPropietarioActual": "alejandra_propietario",
-        "anioCreacion": 1956,
-        "subasta": true,
-        "valores": [
-            3000000,
-            4000000,
-            509999
-        ],
-        "disponible": true
-    },
-    {
-        "tiempoConsignacion": -1,
-        "tipo": "pintura",
         "lugarCreacion": "Medellín",
         "titulo": "Caminos Entrelazados",
         "autores": [
@@ -87,6 +59,929 @@
             509999
         ],
         "disponible": true
+    },
+    {
+        "tiempoConsignacion": 34,
+        "tipo": "escultura",
+        "lugarCreacion": "Italia",
+        "titulo": "El David",
+        "autores": [
+            "Miguel Angel",
+            "Pana Random"
+        ],
+        "valoresEspeciales": {
+            "peso": 5572,
+            "ancho": 2,
+            "profundidad": 1,
+            "electricidad": false,
+            "alto": 6
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 30000,
+            "loginPropietario": "alejandra_propietario",
+            "fechaVenta": "23/06/2005"
+        }],
+        "loginPropietarioActual": "alejandra_propietario",
+        "anioCreacion": 1501,
+        "subasta": false,
+        "valores": [20000],
+        "disponible": true
+    },
+    {
+        "tiempoConsignacion": 34,
+        "tipo": "pintura",
+        "lugarCreacion": "Alemania",
+        "titulo": "El grito",
+        "autores": [
+            "Edvard Munch",
+            "Pana Random"
+        ],
+        "valoresEspeciales": {
+            "peso": 2,
+            "ancho": 2,
+            "tecnica": "Expresionismo",
+            "alto": 2
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 4000,
+            "loginPropietario": "alejandra_propietario",
+            "fechaVenta": "23/09/2007"
+        }],
+        "loginPropietarioActual": "alejandra_propietario",
+        "anioCreacion": 1893,
+        "subasta": false,
+        "valores": [7000],
+        "disponible": true
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": [],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "Canc1ll3r_Palpatine",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 600,
+        "tipo": "escultura",
+        "lugarCreacion": "a los pits",
+        "titulo": "El rayo mquen",
+        "autores": ["pixar"],
+        "valoresEspeciales": {
+            "peso": 456,
+            "ancho": 2,
+            "profundidad": 2,
+            "electricidad": true,
+            "alto": 3
+        },
+        "bodega": false,
+        "historialPropietarios": [
+            {
+                "valorCompra": 0,
+                "loginPropietario": "bri_propietario",
+                "fechaVenta": "90/80/20"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "14/08/2024"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "Sin_Plata_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 282939,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
+            }
+        ],
+        "loginPropietarioActual": "bri_propietario",
+        "anioCreacion": 2005,
+        "subasta": false,
+        "valores": [282939],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Espana",
+        "titulo": "Las meninas",
+        "autores": ["Diego Velasquez"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 279,
+            "tecnica": "oleo",
+            "alto": 320
+        },
+        "bodega": true,
+        "historialPropietarios": [
+            {
+                "valorCompra": 30000,
+                "loginPropietario": "alejandra_propietario",
+                "fechaVenta": "14/02/2010"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            }
+        ],
+        "loginPropietarioActual": "alejandra_propietario",
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            3000000,
+            4000000,
+            509999
+        ],
+        "disponible": false
     },
     {
         "tiempoConsignacion": -1,
@@ -126,116 +1021,325 @@
                 "valorCompra": 4123456,
                 "loginPropietario": "sara_propietario",
                 "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
             }
         ],
-        "loginPropietarioActual": "sara_propietario",
+        "loginPropietarioActual": "alejandra_propietario",
         "anioCreacion": 1956,
         "subasta": true,
         "valores": [
             3000000,
             4000000,
             509999
-        ],
-        "disponible": false
-    },
-    {
-        "tiempoConsignacion": 600,
-        "tipo": "escultura",
-        "lugarCreacion": "a los pits",
-        "titulo": "El rayo mquen",
-        "autores": ["pixar"],
-        "valoresEspeciales": {
-            "peso": 456,
-            "ancho": 2,
-            "profundidad": 2,
-            "electricidad": true,
-            "alto": 3
-        },
-        "bodega": false,
-        "historialPropietarios": [
-            {
-                "valorCompra": 233432,
-                "loginPropietario": "bri_propietario",
-                "fechaVenta": "2023-11-08"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "20/20/10"
-            },
-            {
-                "valorCompra": 1234567,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/10/10"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "20/20/10"
-            },
-            {
-                "valorCompra": 1234567,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/10/10"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/26/10"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "20/20/10"
-            },
-            {
-                "valorCompra": 1234567,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/10/10"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/26/10"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/26/10"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "20/20/10"
-            },
-            {
-                "valorCompra": 1234567,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/10/10"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/26/10"
-            },
-            {
-                "valorCompra": 1234567,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/10/10"
-            },
-            {
-                "valorCompra": 23243,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "20/20/10"
-            }
-        ],
-        "loginPropietarioActual": "briceno_propietario",
-        "anioCreacion": 69,
-        "subasta": true,
-        "valores": [
-            23243,
-            7384,
-            242342
         ],
         "disponible": false
     }
