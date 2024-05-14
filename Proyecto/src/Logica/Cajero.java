@@ -48,10 +48,12 @@ public class Cajero  extends Usuario
 
 		pieza.getHistorialPropietarios().add(mapa);
 
-		Compra compra= new Compra(nombrePieza, oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha);
+		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha);
 		
 		
 		comprador.getHistorialCompras().add(compra);
+		comprador.getIdpiezasCompradas().add(pieza.getTitulo());
+		nuevoPropiertario.getIdPiezasActuales().add(pieza.getTitulo());
 
 		String mensaje1="La pieza con el titulo "+ pieza.getTitulo()+ " " + "fue vendida exitosamente";
 		Mensaje mensaje = new Mensaje(pieza.getTitulo(), true, mensaje1);
@@ -90,7 +92,7 @@ public class Cajero  extends Usuario
 		
 		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
 
-		Compra compraNueva = new Compra(propietarioAnteriorLogin, precioFijo, pieza.getTitulo() , metodoPago, fecha);
+		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago, fecha);
 
 		historialCompra.add(compraNueva);
 
