@@ -662,6 +662,50 @@
     {
         "verificado": true,
         "valores_especiales": {
+            "maxCompras": 2.3456654E+8,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 1.2339484E+9,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "gladys",
+        "login": "gladys_comprador",
+        "telefono": "12387544",
+        "nombre": "gladys",
+        "rol": "comprador"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "maxCompras": 2.3456654E+8,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 1.2339484E+9,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "gladys",
+        "login": "gladys_comprador",
+        "telefono": "12387544",
+        "nombre": "gladys",
+        "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "briceno",
+        "login": "briceno_propietario",
+        "telefono": "234323678",
+        "nombre": "briceno",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
             "maxCompras": 2.3456654E8,
             "mora": false,
             "mensajesSubasta": [],
@@ -733,7 +777,7 @@
             "maxCompras": 0,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 1.5238229E8,
+            "estadoCuenta": 1.4334728E8,
             "idPiezasCompradas": [],
             "historialCompras": []
         },
@@ -765,18 +809,6 @@
         "login": "bri_propietario",
         "telefono": "234566",
         "nombre": "bri",
-        "rol": "propietario"
-    },
-    {
-        "verificado": false,
-        "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
-        },
-        "password": "briceno",
-        "login": "briceno_propietario",
-        "telefono": "234323678",
-        "nombre": "briceno",
         "rol": "propietario"
     }
 ]}
