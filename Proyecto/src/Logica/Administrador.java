@@ -22,7 +22,7 @@ public class Administrador extends Usuario
 		
 	}
 	
-	public  static void ingresarPieza(Galeria galeria,Pieza pieza ) 
+	public  static void ingresarPieza(Galeria galeria, Pieza pieza) 
 	{
 		
 		if(pieza.isBodega()==true)
@@ -261,14 +261,17 @@ public class Administrador extends Usuario
 
 		ArrayList<Compra> compras;
 		int monto=0;
+		String loginPropiertario= loginComprador.replace("_comprador", "_propietario");
+		Propietario propietario = Servicios.buscarPropietario(galeria, loginPropiertario);
 
-		if  (loginComprador!= null)
+		if  ( propietario != null)
 		{
-			Comprador comprador = Servicios.buscarComprador(galeria, loginComprador);
-			compras = comprador.getHistorialCompras();
-			for (  Compra compra : compras)
+			
+			 ArrayList<String> idPiezas = propietario.getIdPiezasActuales();
+			for (  String id : idPiezas)
 			{
-				monto = compra.getPrecio();
+				Pieza pieza = Servicios.buscarPieza(galeria, id);
+				monto+=pieza.getValores().get(0);
 			}
 			return monto;
 		}

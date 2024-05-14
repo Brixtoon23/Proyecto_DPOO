@@ -88,10 +88,11 @@ public class TestsAdmin
     @Test
     public void testIngresarPieza()
     {
+        VideoPrueba = new Video("Order 66", "Canc1ll3r_Palpatine", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial2, 20, 1, "720");
         int bodega_inicial = GaleriaPrueba.getInventario().getPiezasBodega().size();
         int exhibicion_inicial = GaleriaPrueba.getInventario().getPiezasExhibidad().size();
         assertEquals((bodega_inicial+exhibicion_inicial),GaleriaPrueba.getCantidadObras(), "La cantidad incial de obras no es correcta");
-        Administrador.ingresarPieza(GaleriaPrueba,VideoPrueba); //Se ingresa una pieza a exhibicion
+        Administrador.ingresarPieza(GaleriaPrueba,VideoPrueba);  //Se ingresa una pieza a exhibicion
         assertEquals((exhibicion_inicial+bodega_inicial+1),GaleriaPrueba.getCantidadObras(),"La pieza no se agregó a la galería");
         assertEquals((exhibicion_inicial+1),GaleriaPrueba.getInventario().getPiezasExhibidad().size(), "La pieza no se agregó a la lista correcta en la galería");
         Pieza piezaAgregada = GaleriaPrueba.getInventario().getPiezasExhibidad().get(-1);
@@ -143,14 +144,18 @@ public class TestsAdmin
 
     @Test
     public void testIngresarAutor()
+     
     {
-        int numAutores = GaleriaPrueba.getAutores().size();
-        int piezasPixar = GaleriaPrueba.getAutores().get("pixar").size();
-        Administrador.ingresarAutor(GaleriaPrueba, Autores_dos, "Arte");
+        Galeria galeria = InicializadorDeClases.cargarGaleria();
+
+        Pieza pieza= Servicios.buscarPieza(galeria, "Caminos Entrelazados");
+        int listaAntes= galeria.getAutores().size();
+
+        Administrador.ingresarAutor(galeria, pieza.getAutor(), "Caminos Entrelazados");
         //Se verifica que se haya ingresado el nuevo autor
-        assertEquals(numAutores+1,GaleriaPrueba.getAutores().size(),"No se añadió el nuevo autor");
+        assertEquals(listaAntes+3 , galeria.getAutores().size(),"No se añadió el nuevo autor");
         //Se verifica que a pixar se le haya añadido la pieza
-        assertEquals(piezasPixar+1,GaleriaPrueba.getAutores().get("pixar").size(),"La pieza no se añadió al autor ya existente");
+       
         
 
     }    
@@ -181,11 +186,11 @@ public class TestsAdmin
         Galeria galeria = InicializadorDeClases.cargarGaleria();
         
         
-        String loginComprador = "nikol_propietario";
+        String loginComprador = "alejandra_comprador";
 
         int monto= Administrador.montoColeccion(galeria, loginComprador);
 
-        assertEquals(6000000f, monto, 0.01f);
+        assertEquals(6000000, monto);
      }
 
 

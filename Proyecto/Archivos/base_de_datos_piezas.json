@@ -1,34 +1,5 @@
 {"piezas": [
     {
-        "tiempoConsignacion": 600,
-        "tipo": "escultura",
-        "lugarCreacion": "a los pits",
-        "titulo": "El rayo mquen",
-        "autores": ["pixar"],
-        "valoresEspeciales": {
-            "peso": 456,
-            "ancho": 2,
-            "profundidad": 2,
-            "electricidad": true,
-            "alto": 3
-        },
-        "bodega": false,
-        "historialPropietarios": [{
-            "valorCompra": 233432,
-            "loginPropietario": "bri_propietario",
-            "fechaVenta": "2023-11-08"
-        }],
-        "loginPropietarioActual": "bri_propietario",
-        "anioCreacion": 69,
-        "subasta": true,
-        "valores": [
-            23243,
-            7384,
-            242342
-        ],
-        "disponible": true
-    },
-    {
         "tiempoConsignacion": 345,
         "tipo": "escultura",
         "lugarCreacion": "bogota",
@@ -88,20 +59,24 @@
     {
         "tiempoConsignacion": -1,
         "tipo": "pintura",
-        "lugarCreacion": "Italia",
-        "titulo": "La monalisa",
-        "autores": ["Davinci"],
+        "lugarCreacion": "Medellín",
+        "titulo": "Caminos Entrelazados",
+        "autores": [
+            "AnaGomez",
+            "CarlosVargas",
+            "JuanPerez"
+        ],
         "valoresEspeciales": {
             "peso": 4,
-            "ancho": 60,
+            "ancho": 259,
             "tecnica": "oleo",
-            "alto": 30
+            "alto": 323
         },
         "bodega": true,
         "historialPropietarios": [{
-            "valorCompra": 2000000,
+            "valorCompra": 30000,
             "loginPropietario": "alejandra_propietario",
-            "fechaVenta": "20/06/2016"
+            "fechaVenta": "14/02/2010"
         }],
         "loginPropietarioActual": "alejandra_propietario",
         "anioCreacion": 1956,
@@ -115,18 +90,75 @@
     },
     {
         "tiempoConsignacion": -1,
-        "tipo": "video",
-        "lugarCreacion": "09",
-        "titulo": "Order 66",
-        "autores": [
-            "The Senate",
-            "Darth Sidious",
-            "Sheev Palpatine"
-        ],
+        "tipo": "pintura",
+        "lugarCreacion": "Italia",
+        "titulo": "La monalisa",
+        "autores": ["Davinci"],
         "valoresEspeciales": {
-            "resolucion": "720",
-            "duracion": 20,
-            "tamanioGiga": 3
+            "peso": 4,
+            "ancho": 60,
+            "tecnica": "oleo",
+            "alto": 30
+        },
+        "bodega": true,
+<<<<<<< HEAD
+        "historialPropietarios": [{
+            "valorCompra": 2000000,
+            "loginPropietario": "alejandra_propietario",
+            "fechaVenta": "20/06/2016"
+        }],
+        "loginPropietarioActual": "alejandra_propietario",
+=======
+        "historialPropietarios": [
+            {
+                "valorCompra": 2000000,
+                "loginPropietario": "alejandra_propietario",
+                "fechaVenta": "20/06/2016"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            }
+        ],
+        "loginPropietarioActual": "sara_propietario",
+>>>>>>> 075065f34834464e2168cace7255f4f582377546
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            3000000,
+            4000000,
+            509999
+        ],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 600,
+        "tipo": "escultura",
+        "lugarCreacion": "a los pits",
+        "titulo": "El rayo mquen",
+        "autores": ["pixar"],
+        "valoresEspeciales": {
+            "peso": 456,
+            "ancho": 2,
+            "profundidad": 2,
+            "electricidad": true,
+            "alto": 3
         },
         "bodega": false,
         "historialPropietarios": [
