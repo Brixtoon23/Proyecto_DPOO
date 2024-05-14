@@ -38,8 +38,6 @@ public class Main
 
     public static void main(String[] args) throws FileNotFoundException 
     {
-        //AutoresPersistencia.registrarAutor("pixar ", "El rayo mquen");
-
 
         boolean salir = false;
 
@@ -272,10 +270,12 @@ public class Main
             switch (opcion) 
             {
                 case 1:
-                verHistorialPieza(galeria);
+                    verHistorialPieza(galeria);
                     break;
 
                 case 2:
+                    verHistorialAutor(galeria);
+
                    break;
                 case 3:
                     salir = true;
@@ -402,7 +402,9 @@ public class Main
     
                         Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, peso, tecnica);
                         
+
                         Administrador.ingresarPieza(galeria, pintura);
+                        Administrador.ingresarAutor(galeria, autores, titulo);
 
                     } 
                     else if (tipo.equals("fotografia")) 
@@ -415,6 +417,8 @@ public class Main
     
                         Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, resolucion, tamanioGiga);
                         Administrador.ingresarPieza(galeria, fotografia);
+                        Administrador.ingresarAutor(galeria, autores, titulo);
+
                     } else if (tipo.equals("escultura")) {
                         System.out.print("Ingrese el alto: ");
                         alto = Integer.parseInt(scanner.nextLine());
@@ -437,6 +441,7 @@ public class Main
     
                         Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, profundidad, peso, electricidad);
                         Administrador.ingresarPieza(galeria, escultura);
+                        Administrador.ingresarAutor(galeria, autores, titulo);
 
                     } else if (tipo.equals("video")) {
                         System.out.print("Ingrese la duración en minutos: ");
@@ -486,7 +491,7 @@ public class Main
                     break;
 
                 case 5:
-                    
+                    verHistorialAutor(galeria);
                     break;
     
                 case 6:
@@ -516,8 +521,6 @@ public class Main
             System.out.println("6. ver Compra no aprobadas por subasta");
             System.out.println("7. ver historial de una pieza");
             System.out.println("8. ver historial de un artista");
-            
-
             System.out.println("9. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
@@ -645,6 +648,7 @@ public class Main
                     verHistorialPieza(galeria);
                     break;
                 case 8:    
+                    verHistorialAutor(galeria);
                     break;
 
                 case 9:
@@ -656,6 +660,7 @@ public class Main
             }
         }
     }
+
 
     private static void menuPropietario(Usuario usuario) {
         boolean salir = false;
@@ -691,7 +696,7 @@ public class Main
                     verHistorialPieza(galeria);
                     break;
                 case 4:
-                  
+                    verHistorialAutor(galeria);
                     break;
 
                 case 5:
@@ -729,6 +734,7 @@ public class Main
                     break;
 
                 case 2:
+                    verHistorialAutor(galeria);
                     break;
                 case 3:
                     salir = true;
@@ -835,12 +841,6 @@ public class Main
             }
 
             System.out.println("El valor de la colección de cliente es: " + Administrador.montoColeccion(galeria, nombreComprador));
-
-
-
-
-
-
         }
 
         else
@@ -854,6 +854,44 @@ public class Main
 
         
     }
+    private static void verHistorialAutor(Galeria galeria)
+    {
+        System.out.println("Ingrese nombre del artista");
+        String nombreArtista = scanner.nextLine();
+        Map<String,ArrayList<String>> autores = galeria.getAutores();
+        if (autores.containsKey(nombreArtista))
+        {
+            ArrayList<String> historialArtista = autores.get(nombreArtista);
+            int i = 1;
+            for (String nombrePieza : historialArtista)
+            {
+                Pieza pieza = Servicios.buscarPieza(galeria, nombrePieza);
+                System.out.println("pieza"+i);
+                System.out.println("titulo: "+ pieza.getTitulo());
+                System.out.println("Fecha creacion: "+pieza.getAnioCreacion());
+                if (pieza.getHistorialPropietarios().isEmpty())
+                {
+                    System.out.println("no se contiene informacion sobre su venta");
+                    i++;
+                }
+                else
+                {
+                    System.out.println("Fecha ultima venta: "+ pieza.getHistorialPropietarios().get(pieza.getHistorialPropietarios().size()-1).get("valorCompra"));
+                    System.out.println("Precio: "+ pieza.getHistorialPropietarios().get(pieza.getHistorialPropietarios().size()-1).get("fechaVenta"));
+                    i++;
+                }
+                
+            }
+        }
+        else
+        {
+            System.out.println("El artista no se encuentra en la base de datos");
+
+        }
+
+    }
+
+
                 
 
 

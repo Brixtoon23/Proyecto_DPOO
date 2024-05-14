@@ -339,7 +339,7 @@ public class InicializadorDeClases
                    JSONObject ofertaJson = subasta.getJSONArray("listaOfertas").getJSONObject(a);
                     
                     Oferta oferta = new Oferta(ofertaJson.getString("compradorLogin"), ofertaJson.getInt("valorOfertado"), ofertaJson.getString("metodoPago"), 
-                                    ofertaJson.getString("nombrePiezaSubastada"), ofertaJson.getString("fecha"));
+                                    ofertaJson.getString("nombrepiezaSubastada"), ofertaJson.getString("fecha"));
 
                    listaOfertas.add(oferta);
                 }

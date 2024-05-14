@@ -43,8 +43,8 @@
         },
         "bodega": true,
         "historialPropietarios": [{
-            "loginPropietario": "briceno_propietario",
             "valorCompra": 230000,
+            "loginPropietario": "briceno_propietario",
             "fechaVenta": "23/11/2024"
         }],
         "loginPropietarioActual": "briceno_propietario",
@@ -98,13 +98,11 @@
             "alto": 30
         },
         "bodega": true,
-        "historialPropietarios": [
-            {
-                "valorCompra": 2000000,
-                "loginPropietario": "alejandra_propietario",
-                "fechaVenta": "20/06/2016"
-            }
-        ],
+        "historialPropietarios": [{
+            "valorCompra": 2000000,
+            "loginPropietario": "alejandra_propietario",
+            "fechaVenta": "20/06/2016"
+        }],
         "loginPropietarioActual": "alejandra_propietario",
         "anioCreacion": 1956,
         "subasta": true,
@@ -131,15 +129,77 @@
             "tamanioGiga": 3
         },
         "bodega": false,
-        "historialPropietarios": [{
-            "valorCompra": 0,
-            "loginPropietario": "bri_propietario_propietario",
-            "fechaVenta": "90/80/20"
-        }],
-        "loginPropietarioActual": "bri_propietario_propietario",
+        "historialPropietarios": [
+            {
+                "valorCompra": 0,
+                "loginPropietario": "bri_propietario",
+                "fechaVenta": "90/80/20"
+            },
+            {
+                "valorCompra": 0,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "14/08/2024"
+            }
+        ],
+        "loginPropietarioActual": "bri_propietario",
         "anioCreacion": 2005,
-        "subasta": true,
+        "subasta": false,
         "valores": [0],
         "disponible": false
+    },
+    {
+        "tiempoConsignacion": 34,
+        "tipo": "escultura",
+        "lugarCreacion": "Italia",
+        "titulo": "El David",
+        "autores": [
+            "Miguel Angel",
+            "Pana Random"
+        ],
+        "valoresEspeciales": {
+            "peso": 5572,
+            "ancho": 2,
+            "profundidad": 1,
+            "electricidad": false,
+            "alto": 6
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 30000,
+            "loginPropietario": "alejandra_propietario",
+            "fechaVenta": "23/06/2005"
+        }],
+        "loginPropietarioActual": "alejandra_propietario",
+        "anioCreacion": 1501,
+        "subasta": false,
+        "valores": [20000],
+        "disponible": true
+    },
+    {
+        "tiempoConsignacion": 34,
+        "tipo": "pintura",
+        "lugarCreacion": "Alemania",
+        "titulo": "El grito",
+        "autores": [
+            "Edvard Munch",
+            "Pana Random"
+        ],
+        "valoresEspeciales": {
+            "peso": 2,
+            "ancho": 2,
+            "tecnica": "Expresionismo",
+            "alto": 2
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 4000,
+            "loginPropietario": "alejandra_propietario",
+            "fechaVenta": "23/09/2007"
+        }],
+        "loginPropietarioActual": "alejandra_propietario",
+        "anioCreacion": 1893,
+        "subasta": false,
+        "valores": [7000],
+        "disponible": true
     }
 ]}

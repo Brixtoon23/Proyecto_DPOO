@@ -2,5 +2,13 @@
     {
         "piezas": ["El rayo mquen"],
         "nombre": "pixar"
+    },
+    {
+        "piezas": ["El grito"],
+        "nombre": "Edvard Munch"
+    },
+    {
+        "piezas": ["El grito"],
+        "nombre": "Pana Random"
     }
 ]}

@@ -21,5 +21,16 @@
             "nombrepiezaSubastada": "El rayo mquen",
             "compradorLogin": "briceno_comprador"
         }]
+    },
+    {
+        "idListaPiezasSubasta": ["Order 66"],
+        "id": "PacoList",
+        "listaOfertas": [{
+            "valorOfertado": 23432,
+            "metodoPago": "Efectivo",
+            "fecha": "23/07/3090",
+            "nombrepiezaSubastada": "Order 66",
+            "compradorLogin": "briceno_comprador"
+        }]
     }
 ]}

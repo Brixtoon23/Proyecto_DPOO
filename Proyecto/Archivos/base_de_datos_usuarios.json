@@ -32,23 +32,14 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
-        },
-        "password": "Admin",
-        "login": "bri_propietario",
-        "telefono": "234566",
-        "nombre": "bri",
-        "rol": "propietario"
-    },
-    {
-        "verificado": true,
-        "valores_especiales": {
             "maxCompras": 0,
             "mora": false,
             "mensajesSubasta": [],
             "estadoCuenta": 4.0E+18,
-            "idPiezasCompradas": ["Las meninas",  "La monalisa"],
+            "idPiezasCompradas": [
+                "Las meninas",
+                "La monalisa"
+            ],
             "historialCompras": []
         },
         "password": "N1k0l%",
@@ -60,8 +51,14 @@
     {
         "verificado": false,
         "valores_especiales": {
-            "idPiezasActuales": ["Las meninas",  "La monalisa"],
-            "historialPiezas": ["Las meninas",  "La monalisa"]
+            "idPiezasActuales": [
+                "Las meninas",
+                "La monalisa"
+            ],
+            "historialPiezas": [
+                "Las meninas",
+                "La monalisa"
+            ]
         },
         "password": "N1k0l%",
         "login": "nikol_propietario",
@@ -391,12 +388,24 @@
         "rol": "propietario"
     },
     {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "alejandra",
+        "login": "alejandra_propietario",
+        "telefono": "12345432167",
+        "nombre": "alejandra",
+        "rol": "propietario"
+    },
+    {
         "verificado": true,
         "valores_especiales": {
             "maxCompras": 0,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 234356435,
+            "estadoCuenta": 2.34356432E8,
             "idPiezasCompradas": [],
             "historialCompras": []
         },
@@ -419,15 +428,15 @@
         "rol": "propietario"
     },
     {
-        "verificado": false,
+        "verificado": true,
         "valores_especiales": {
             "idPiezasActuales": [],
             "historialPiezas": []
         },
-        "password": "alejandra",
-        "login": "alejandra_propietario",
-        "telefono": "12345432167",
-        "nombre": "alejandra",
+        "password": "Admin",
+        "login": "bri_propietario",
+        "telefono": "234566",
+        "nombre": "bri",
         "rol": "propietario"
     }
 ]}
