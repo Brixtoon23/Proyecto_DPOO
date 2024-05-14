@@ -72,7 +72,7 @@ public class TestServicios
     public void TestBuscarPieza()
     {
         //Se prueba si el método encuentra una pieza que sí esta en la galería
-        assertEquals("El rayo mquen",Servicios.buscarPieza(galeriaPrueba,"El rayo mquen").getTitulo(),"La pieza encontrada no es la correcta");
+        assertEquals("El David",Servicios.buscarPieza(galeriaPrueba,"El David").getTitulo(),"La pieza encontrada no es la correcta");
         //Se prueba si el método retorna null cuando se le pasa una pieza que no está en la galería
         assertEquals(null,Servicios.buscarPieza(galeriaPrueba,"Algo"),"Se encontró una pieza que no pertence a la galería");
     }
