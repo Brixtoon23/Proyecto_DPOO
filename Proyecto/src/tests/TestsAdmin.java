@@ -9,10 +9,11 @@ import Logica.Oferta;
 import Logica.Pieza;
 import Logica.Servicios;
 import Logica.Subasta;
+import Persistencia.AutoresPersistencia;
 import Persistencia.InicializadorDeClases;
 import Logica.Compra;
 
-
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -155,7 +156,10 @@ public class TestsAdmin
         //Se verifica que se haya ingresado el nuevo autor
         assertEquals(listaAntes+3 , galeria.getAutores().size(),"No se añadió el nuevo autor");
         
-       
+        galeria.getAutores().remove("AnaGomez");
+        galeria.getAutores().remove("CarlosVargas");
+        galeria.getAutores().remove("JuanPerez");
+        AutoresPersistencia.retirarAutores("AnaGomez","CarlosVargas","JuanPerez");
         
 
     }    
@@ -221,14 +225,7 @@ public class TestsAdmin
 
         assertEquals(compradorgaleria,comprador);
 
-
     }
-
-
-
-
-
-
 
     
 }
