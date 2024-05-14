@@ -56,8 +56,6 @@
         ],
         "disponible": true
     },
-   
-   
     {
         "tiempoConsignacion": -1,
         "tipo": "pintura",
@@ -209,6 +207,11 @@
                 "valorCompra": 1234567,
                 "loginPropietario": "briceno_propietario",
                 "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 23243,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
             }
         ],
         "loginPropietarioActual": "briceno_propietario",
@@ -221,5 +224,4 @@
         ],
         "disponible": false
     }
-    
 ]}
