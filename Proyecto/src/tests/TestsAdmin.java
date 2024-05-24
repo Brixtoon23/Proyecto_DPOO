@@ -9,10 +9,11 @@ import Logica.Oferta;
 import Logica.Pieza;
 import Logica.Servicios;
 import Logica.Subasta;
+import Persistencia.AutoresPersistencia;
 import Persistencia.InicializadorDeClases;
 import Logica.Compra;
 
-
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -48,15 +49,11 @@ public class TestsAdmin
     private ArrayList<Integer> Valores_uno;
     private ArrayList<Integer> Valores_dos;
     private ArrayList<Map<String,Object>> historial1;
-    private ArrayList<Map<String,Object>> historial2;
     private static Galeria GaleriaPrueba = InicializadorDeClases.cargarGaleria();
 
 
-    @BeforeEach
-    public void setUp() throws Exception
+    public void setUp()
     {
-
-
         Autores_uno = new ArrayList<String>();
         Autores_uno.add("Autor1");
         Autores_dos = new ArrayList<String>();
@@ -67,35 +64,30 @@ public class TestsAdmin
         Valores_dos = new ArrayList<Integer>();
         Valores_dos.add(0);
         Map<String,Object> propietario1 = new HashMap<String,Object>();
-        propietario1.put("loginPropietario","loginX");
+        propietario1.put("loginPropietario","nikol_propietario");
         propietario1.put("valorCompra",120000);
-        propietario1.put("fecha","02/20/18");
+        propietario1.put("fechaVenta","02/20/18");
+        historial1 = new ArrayList<Map<String,Object>>();
         historial1.add(propietario1);
-        Map<String,Object> propietario2 = new HashMap<String,Object>();
-        propietario2.put("loginPropietario","loginY");
-        propietario2.put("valorCompra",340000);
-        propietario2.put("fecha","01/30/20");
-        historial2.add(propietario1);
-        historial2.add(propietario2);
 
-        EsculturaPrueba = new Escultura("El pensador", "Me", 1990, "somewhere", Autores_dos, true, -1, false, Valores_uno, true, "escultura", historial1, 1, 10, 12, 56, false);
-        VideoPrueba = new Video("Order 66", "Canc1ll3r_Palpatine", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial2, 20, 1, "720");
-        Photo = new Fotografia("Random photo", "Me_again", 2023, "who knows", Autores_uno, false, 32, true, Valores_dos, false, "video", historial1, "None", 28);
-        PinturaPrueba = new Pintura("Una pintura", "alguien", 1020, "???", Autores_dos, true, -1, false, Valores_uno, true, "pintura", historial2, 3, 3, 14, "creatividad");
+        EsculturaPrueba = new Escultura("El pensador", "nikol_propietario", 1990, "somewhere", Autores_dos, true, -1, false, Valores_uno, true, "escultura", historial1, 1, 10, 12, 56, false);
+        VideoPrueba = new Video("Order 66", "nikol_propietario", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial1, 20, 1, "720");
+        Photo = new Fotografia("Random photo", "nikol_propietario", 2023, "who knows", Autores_uno, false, 32, true, Valores_dos, false, "video", historial1, "None", 28);
+        PinturaPrueba = new Pintura("Una pintura", "nikol_propietario", 1020, "???", Autores_dos, true, -1, false, Valores_uno, true, "pintura", historial1, 3, 3, 14, "creatividad");
 
     }
 
     @Test
     public void testIngresarPieza()
     {
-        VideoPrueba = new Video("Order 66", "Canc1ll3r_Palpatine", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial2, 20, 1, "720");
+        setUp();
         int bodega_inicial = GaleriaPrueba.getInventario().getPiezasBodega().size();
         int exhibicion_inicial = GaleriaPrueba.getInventario().getPiezasExhibidad().size();
         assertEquals((bodega_inicial+exhibicion_inicial),GaleriaPrueba.getCantidadObras(), "La cantidad incial de obras no es correcta");
         Administrador.ingresarPieza(GaleriaPrueba,VideoPrueba);  //Se ingresa una pieza a exhibicion
         assertEquals((exhibicion_inicial+bodega_inicial+1),GaleriaPrueba.getCantidadObras(),"La pieza no se agregó a la galería");
         assertEquals((exhibicion_inicial+1),GaleriaPrueba.getInventario().getPiezasExhibidad().size(), "La pieza no se agregó a la lista correcta en la galería");
-        Pieza piezaAgregada = GaleriaPrueba.getInventario().getPiezasExhibidad().get(-1);
+        Pieza piezaAgregada = GaleriaPrueba.getInventario().getPiezasExhibidad().getLast();
         //Se verifica que la pieza que se agregó sea la correcta
         assertEquals(VideoPrueba.getTitulo(),piezaAgregada.getTitulo(),"La pieza no se agregó correctamente, el título no es correcto");
         assertEquals(VideoPrueba.getLoginPropietarioActual(), piezaAgregada.getLoginPropietarioActual(),"La pieza no se agregó correctamente, el propietario actual no es correcto");
@@ -109,7 +101,7 @@ public class TestsAdmin
         assertEquals((exhibicion_inicial+bodega_inicial+1),GaleriaPrueba.getCantidadObras(),"La pieza no se agregó a la galería");
         assertEquals((bodega_inicial+1),GaleriaPrueba.getInventario().getPiezasBodega().size(), "La pieza no se agregó a la lista correcta en la galería");
         //Se verifica que la pieza agregada es correcta
-        piezaAgregada = GaleriaPrueba.getInventario().getPiezasBodega().get(-1);
+        piezaAgregada = GaleriaPrueba.getInventario().getPiezasBodega().getLast();
         assertEquals(PinturaPrueba.getTitulo(),piezaAgregada.getTitulo(),"La pieza no se agregó correctamente, el título no es correcto");
         assertEquals(PinturaPrueba.getLoginPropietarioActual(), piezaAgregada.getLoginPropietarioActual(),"La pieza no se agregó correctamente, el propietario actual no es correcto");
         assertEquals(PinturaPrueba.getAutor().size(),piezaAgregada.getAutor().size(),"La pieza no se agregó correctamente, los autores no son los correctos");
@@ -119,9 +111,10 @@ public class TestsAdmin
     @Test
     public void testAprobarVentaPrecioFijo()
     {
+        setUp();
         Comprador conSuficienteDinero = Servicios.buscarComprador(GaleriaPrueba, "briceno_comprador");
         Comprador sinSuficienteDinero = Servicios.buscarComprador(GaleriaPrueba, "Sin_Plata_comprador");
-        Pieza pieza = Servicios.buscarPieza(GaleriaPrueba, "El rayo mquen");
+        Pieza pieza = Servicios.buscarPieza(GaleriaPrueba, "El David");
         //Se veirifica que el administrador autorice la compra para un comprador con monto suficiente y que no lo autorice para uno sin suficiente dinero
         boolean respuesta1 = Administrador.aprobarVentaPrecioFijo(conSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10");
         boolean respuesta2 = Administrador.aprobarVentaPrecioFijo(sinSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10");
@@ -154,8 +147,11 @@ public class TestsAdmin
         Administrador.ingresarAutor(galeria, pieza.getAutor(), "Caminos Entrelazados");
         //Se verifica que se haya ingresado el nuevo autor
         assertEquals(listaAntes+3 , galeria.getAutores().size(),"No se añadió el nuevo autor");
-        //Se verifica que a pixar se le haya añadido la pieza
-       
+        
+        galeria.getAutores().remove("AnaGomez");
+        galeria.getAutores().remove("CarlosVargas");
+        galeria.getAutores().remove("JuanPerez");
+        AutoresPersistencia.retirarAutores("AnaGomez","CarlosVargas","JuanPerez");
         
 
     }    
@@ -221,8 +217,13 @@ public class TestsAdmin
 
         assertEquals(compradorgaleria,comprador);
 
-
     }
 
 
+
+
+
+
+
+    
 }

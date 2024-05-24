@@ -71,10 +71,8 @@ public class TestServicios
     @Test
     public void TestBuscarPieza()
     {
-        galeriaPrueba.getInventario().getPiezasBodega().add(PinturaPrueba);
-        galeriaPrueba.getInventario().getPiezasExhibidad().add(Photo);
         //Se prueba si el método encuentra una pieza que sí esta en la galería
-        assertEquals(PinturaPrueba.getTitulo(),Servicios.buscarPieza(galeriaPrueba,"Una pintura").getTitulo(),"La pieza encontrada no es la correcta");
+        assertEquals("El David",Servicios.buscarPieza(galeriaPrueba,"El David").getTitulo(),"La pieza encontrada no es la correcta");
         //Se prueba si el método retorna null cuando se le pasa una pieza que no está en la galería
         assertEquals(null,Servicios.buscarPieza(galeriaPrueba,"Algo"),"Se encontró una pieza que no pertence a la galería");
     }
@@ -92,7 +90,7 @@ public class TestServicios
     public void TestBuscarPropietario()
     {
         //Se prueba que el método puede encontrar a un propietario que sí esté en la galería
-        assertEquals("briceno_propietario",Servicios.buscarComprador(galeriaPrueba, "briceno_propietario").getLogin(),"No se encontró al usuario correctamente");
+        assertEquals("briceno_propietario",Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario").getLogin(),"No se encontró al usuario correctamente");
         //Se prueba que el método no encuentre a un comprador que no esté registrado en la galería
         assertEquals(null,Servicios.buscarComprador(galeriaPrueba, "X"),"Se encontró a un propietario que no está registrado en la galería");
     }

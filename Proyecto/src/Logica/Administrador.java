@@ -41,6 +41,8 @@ public class Administrador extends Usuario
 
 		propietario.getHistorialPiezas().add(pieza.getTitulo());
 		propietario.getIdPiezasActuales().add(pieza.getTitulo());
+		int nuevaCantidadObras = galeria.getCantidadObras() + 1;
+		galeria.setCantidadObras(nuevaCantidadObras);
 		
 	    // Actualizar persistecia propietario
 

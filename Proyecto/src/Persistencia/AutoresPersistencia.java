@@ -47,6 +47,39 @@ public class AutoresPersistencia {
         System.out.println("Registro exitoso.");
     }
 
+    public static void retirarAutores(String autor1, String autor2, String autor3)
+    {
+        JSONObject baseDeDatosJSON = leerBaseDeDatos();
+
+
+        JSONArray autoresArray = baseDeDatosJSON.getJSONArray("autores");
+
+        int posAutor1 = 0;
+        int posAutor2 = 0;
+        int posAutor3 = 0;
+        for(int i = 0;i<autoresArray.length();i++)
+        {
+            String autorPos = autoresArray.getJSONObject(i).getString("nombre");
+            if (autorPos.equals(autor1))
+            {
+                posAutor1 = i;
+            }
+            else if (autorPos.equals(autor2))
+            {
+                posAutor2 = i;
+            }
+            else if (autorPos.equals(autor3))
+            {
+                posAutor3 = i;
+            }
+        }
+        autoresArray.remove(posAutor3);
+        autoresArray.remove(posAutor2);
+        autoresArray.remove(posAutor1);
+        guardarBaseDeDatos(baseDeDatosJSON);
+
+    }
+
     private static JSONObject leerBaseDeDatos() {
         try {
             File archivo = new File(NOMBRE_ARCHIVO);
