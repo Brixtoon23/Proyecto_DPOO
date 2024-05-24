@@ -109,11 +109,5 @@ public abstract class Pieza
 		this.historialPropietarios = historialPropietarios;
 	}
 
-	
 
-	
-
-	
-    
-	
 }

@@ -80,15 +80,5 @@ public abstract class Usuario {
 	public void setVerificado(boolean verificado) {
 		this.verificado = verificado;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

@@ -52,15 +52,6 @@ public class Oferta
 		this.fecha = fecha;
 	}
 	
-
-	
-
-	
-
-	
-	
-	
-	
 	
 }
 	
