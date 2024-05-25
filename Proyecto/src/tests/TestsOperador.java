@@ -37,10 +37,10 @@ public class TestsOperador {
         Operador.registrarOferta(oferta, subastas, galeria, fecha);
 
         // Obtener la subasta correspondiente
-        Subasta subasta = galeria.getSubastas().getFirst();
+        Subasta subasta = galeria.getSubastas().get(0);
 
         // Verificar que la oferta fue registrada correctamente
-        Oferta ofertaRegistrada = subasta.getListaOfertas().getLast();
+        Oferta ofertaRegistrada = subasta.getListaOfertas().get(-1);
 
         // Comparar la oferta registrada con la oferta esperada
         assertEquals(oferta, ofertaRegistrada);
