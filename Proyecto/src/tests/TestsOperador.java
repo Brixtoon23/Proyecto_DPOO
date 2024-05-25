@@ -72,7 +72,7 @@ public class TestsOperador {
         // Verificar que la oferta fue registrada correctamente
        
 
-        // Verificar que el tamaño de la lista de ofertas es 1
+        // Verificar que el tamaño de la lista de ofertas es 0
         assertEquals(0 , subasta1.getListaOfertas().size());
 
       
