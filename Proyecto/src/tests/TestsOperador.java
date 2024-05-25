@@ -39,11 +39,14 @@ public class TestsOperador {
         // Obtener la subasta correspondiente
         Subasta subasta = galeria.getSubastas().getLast();
 
-       
-        
+        // Verificar que la oferta fue registrada correctamente
+        Oferta ofertaRegistrada = subasta.getListaOfertas().getLast();
+
+        // Comparar la oferta registrada con la oferta esperada
+        assertEquals(oferta, ofertaRegistrada);
 
         // Verificar que el tamaño de la lista de ofertas es 1
-        assertEquals(4, subasta.getListaOfertas().size());
+        assertEquals(1, subasta.getListaOfertas().size());
 
         // Adicional: verificar que la oferta en la subasta es correcta
         assertTrue(subasta.getListaOfertas().contains(oferta));
