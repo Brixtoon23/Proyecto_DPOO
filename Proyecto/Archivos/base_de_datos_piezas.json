@@ -1052,7 +1052,7 @@
     "tiempoConsignacion": -1,
     "tipo": "pintura",
     "lugarCreacion": "Italia",
-    "titulo": "La Venus de Milo",
+    "titulo":"La Venus de Milo",
     "autores": ["n/A"],
     "valoresEspeciales": {
         "peso": 4,
