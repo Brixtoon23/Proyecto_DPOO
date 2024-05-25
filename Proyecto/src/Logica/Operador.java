@@ -62,7 +62,7 @@ public class Operador extends Usuario
 
 
 
-			 if ( ListaOfertasPieza.size()==10)
+			 if ( ListaOfertasPieza.size()==5)
 
 			{
 				ArrayList<Integer> valoresOfertados= new ArrayList<Integer>();

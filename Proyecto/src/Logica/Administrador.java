@@ -174,7 +174,7 @@ public class Administrador extends Usuario
 		int valorMinimo= pieza.valores.get(1);
 		boolean vendida=false;
 
-		if (mejorOferta.getValorOfertado()< valorMinimo )
+		if (mejorOferta.getValorOfertado() <valorMinimo )
 		{
 			vendida=false;
 			String mensaje1= "La pieza con el titulo "+ pieza.getTitulo()+ " " + " no fue vendida porque el valor ofertado es menor que el valor mínimo";

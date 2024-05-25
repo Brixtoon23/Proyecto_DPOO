@@ -24,7 +24,7 @@
         "valores": [
             2345,
             3549,
-            23456
+            234560000000000000000000000000000
         ],
         "disponible": true
     },
@@ -1508,6 +1508,11 @@
                 "valorCompra": 1234567,
                 "loginPropietario": "briceno_propietario",
                 "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 400000000,
+                "loginPropietario": "gabriela_propietario",
+                "fechaVenta": "15/03/2024"
             }
         ],
         "loginPropietarioActual": "alejandra_propietario",
