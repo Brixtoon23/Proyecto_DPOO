@@ -161,10 +161,10 @@ public class TestsAdmin
     public void testCrearSusbasta() 
     {
       Galeria galeria = InicializadorDeClases.cargarGaleria();
-      String idSubasta="subasta prueba";
+      String idSubasta="subasta agragar";
        ArrayList<String> piezas = new ArrayList<>();
-       piezas.add("Las meninas");
-       piezas.add("La monalisa");
+       piezas.add("La Noche Estrellada");
+       piezas.add("Guernica");
 
         Administrador.crearSusbasta(galeria, idSubasta, piezas);
 
