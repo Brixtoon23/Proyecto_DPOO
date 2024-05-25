@@ -211,9 +211,9 @@ public class TestsAdmin
         ArrayList<Compra> listacompras= new ArrayList<>();
         ArrayList<Mensaje> mensajesSubasta= new ArrayList<>();
         ArrayList<String> listaIdPiezasCompradas= new ArrayList<>();
-        Comprador comprador= new Comprador("gladys_comprador", "gladys", "gladys", "comprador", "12387544", true, 1233948383, listacompras, 234566544, false, mensajesSubasta, listaIdPiezasCompradas);
+        Comprador comprador= new Comprador("amelia_comprador", "amelia", "amelia", "comprador", "12387544", true, 1233948383, listacompras, 234566544, false, mensajesSubasta, listaIdPiezasCompradas);
         Administrador.ingresarUsuario(comprador, galeria);
-        Comprador compradorgaleria= Servicios.buscarComprador(galeria, "gladys_comprador");
+        Comprador compradorgaleria= Servicios.buscarComprador(galeria, "amelia_comprador");
 
         assertEquals(compradorgaleria,comprador);
 
