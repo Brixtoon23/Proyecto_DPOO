@@ -841,6 +841,189 @@
         "disponible": true
     },
     {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Italia",
+        "titulo": "La Noche Estrellada",
+        "autores": ["Vincent van Gogh"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 60,
+            "tecnica": "oleo",
+            "alto": 30
+        },
+        "bodega": true,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "claudia_propietario",
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            300000,
+            400000,
+            50999
+        ],
+        "disponible": true
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Italia",
+        "titulo": "Guernica",
+        "autores": ["Pablo Picasso"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 60,
+            "tecnica": "oleo",
+            "alto": 30
+        },
+        "bodega": true,
+        "historialPropietarios": [],
+        "loginPropietarioActual": "gabiela_propietario",
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            300100,
+            400300,
+            50919676765544333334
+        ],
+        "disponible": true
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Italia",
+        "titulo": "La monalisa",
+        "autores": ["Davinci"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 60,
+            "tecnica": "oleo",
+            "alto": 30
+        },
+        "bodega": true,
+        "historialPropietarios": [
+            {
+                "valorCompra": 2000000,
+                "loginPropietario": "alejandra_propietario",
+                "fechaVenta": "20/06/2016"
+            },
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 400000000,
+                "loginPropietario": "gabriela_propietario",
+                "fechaVenta": "15/03/2024"
+            },
+            {
+                "valorCompra": 400000000,
+                "loginPropietario": "gabriela_propietario",
+                "fechaVenta": "15/03/2024"
+            }
+        ],
+        "loginPropietarioActual": "alejandra_propietario",
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            3000000,
+            4000000,
+            509999
+        ],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "Espana",
+        "titulo": "Las meninas",
+        "autores": ["Diego Velasquez"],
+        "valoresEspeciales": {
+            "peso": 4,
+            "ancho": 279,
+            "tecnica": "oleo",
+            "alto": 320
+        },
+        "bodega": true,
+        "historialPropietarios": [
+            {
+                "valorCompra": 30000,
+                "loginPropietario": "alejandra_propietario",
+                "fechaVenta": "14/02/2010"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "20/20/10"
+            },
+            {
+                "valorCompra": 4123456,
+                "loginPropietario": "sara_propietario",
+                "fechaVenta": "12/05/2024"
+            }
+        ],
+        "loginPropietarioActual": "alejandra_propietario",
+        "anioCreacion": 1956,
+        "subasta": true,
+        "valores": [
+            3000000,
+            4000000,
+            509999
+        ],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": 20,
+        "tipo": "video",
+        "lugarCreacion": "In a galaxy far, far away",
+        "titulo": "Order 66",
+        "autores": ["Autor1"],
+        "valoresEspeciales": {
+            "resolucion": "720",
+            "duracion": 20,
+            "tamanioGiga": 1
+        },
+        "bodega": false,
+        "historialPropietarios": [{
+            "valorCompra": 120000,
+            "loginPropietario": "nikol_propietario",
+            "fechaVenta": "02/20/18"
+        }],
+        "loginPropietarioActual": "nikol_propietario",
+        "anioCreacion": 2020,
+        "subasta": true,
+        "valores": [0],
+        "disponible": false
+    },
+    {
+        "tiempoConsignacion": -1,
+        "tipo": "pintura",
+        "lugarCreacion": "???",
+        "titulo": "Una pintura",
+        "autores": [
+            "Autor1",
+            "pixar"
+        ],
+        "valoresEspeciales": {
+            "peso": 14,
+            "ancho": 3,
+            "tecnica": "creatividad",
+            "alto": 3
+        },
+        "bodega": true,
+        "historialPropietarios": [{
+            "valorCompra": 120000,
+            "loginPropietario": "nikol_propietario",
+            "fechaVenta": "02/20/18"
+        }],
+        "loginPropietarioActual": "nikol_propietario",
+        "anioCreacion": 1020,
+        "subasta": false,
+        "valores": [120000],
+        "disponible": true
+    },
+    {
         "tiempoConsignacion": 34,
         "tipo": "escultura",
         "lugarCreacion": "Italia",
@@ -877,6 +1060,11 @@
                 "valorCompra": 20000,
                 "loginPropietario": "briceno_propietario",
                 "fechaVenta": "10/26/10"
+            },
+            {
+                "valorCompra": 20000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/26/10"
             }
         ],
         "loginPropietarioActual": "alejandra_propietario",
@@ -888,35 +1076,28 @@
     {
         "tiempoConsignacion": -1,
         "tipo": "pintura",
-        "lugarCreacion": "Espana",
-        "titulo": "Las meninas",
-        "autores": ["Diego Velasquez"],
+        "lugarCreacion": "Italia",
+        "titulo": "La Ultima Cena",
+        "autores": ["Leonardo da Vinci"],
         "valoresEspeciales": {
             "peso": 4,
-            "ancho": 279,
+            "ancho": 60,
             "tecnica": "oleo",
-            "alto": 320
+            "alto": 30
         },
         "bodega": true,
-        "historialPropietarios": [
-            {
-                "valorCompra": 30000,
-                "loginPropietario": "alejandra_propietario",
-                "fechaVenta": "14/02/2010"
-            },
-            {
-                "valorCompra": 3000000,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "20/20/10"
-            }
-        ],
-        "loginPropietarioActual": "alejandra_propietario",
+        "historialPropietarios": [{
+            "valorCompra": 300100,
+            "loginPropietario": "briceno_propietario",
+            "fechaVenta": "20/20/10"
+        }],
+        "loginPropietarioActual": "gabriela_propietario",
         "anioCreacion": 1956,
         "subasta": true,
         "valores": [
-            3000000,
-            4000000,
-            509999
+            300100,
+            400300,
+            -134529002
         ],
         "disponible": false
     },
@@ -924,8 +1105,8 @@
         "tiempoConsignacion": -1,
         "tipo": "pintura",
         "lugarCreacion": "Italia",
-        "titulo": "La monalisa",
-        "autores": ["Davinci"],
+        "titulo": "La Venus de Milo",
+        "autores": ["n/A"],
         "valoresEspeciales": {
             "peso": 4,
             "ancho": 60,
@@ -933,149 +1114,19 @@
             "alto": 30
         },
         "bodega": true,
-        "historialPropietarios": [
-            {
-                "valorCompra": 2000000,
-                "loginPropietario": "alejandra_propietario",
-                "fechaVenta": "20/06/2016"
-            },
-           
-            {
-                "valorCompra": 1234567,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/10/10"
-            },
-            {
-                "valorCompra": 400000000,
-                "loginPropietario": "gabriela_propietario",
-                "fechaVenta": "15/03/2024"
-            }
-        ],
-        "loginPropietarioActual": "alejandra_propietario",
+        "historialPropietarios": [{
+            "valorCompra": 1234567,
+            "loginPropietario": "briceno_propietario",
+            "fechaVenta": "10/10/10"
+        }],
+        "loginPropietarioActual": "gabriela_propietario",
         "anioCreacion": 1956,
         "subasta": true,
         "valores": [
-            3000000,
-            4000000,
-            509999
-        ],
-        "disponible": true
-    },
-
-    {
-        "tiempoConsignacion": -1,
-        "tipo": "pintura",
-        "lugarCreacion": "Italia",
-        "titulo": "La Noche Estrellada",
-        "autores": ["Vincent van Gogh"],
-        "valoresEspeciales": {
-            "peso": 4,
-            "ancho": 60,
-            "tecnica": "oleo",
-            "alto": 30
-        },
-        "bodega": true,
-        "historialPropietarios": [],
-    
-        "loginPropietarioActual": "claudia_propietario",
-        "anioCreacion": 1956,
-        "subasta": true,
-        "valores": [
-                300000,
-                400000,
-                50999
-            ],
-            "disponible": true
-    
-
-    },
-
-    {
-        "tiempoConsignacion": -1,
-        "tipo": "pintura",
-        "lugarCreacion": "Italia",
-        "titulo": "Guernica",
-        "autores": ["Pablo Picasso"],
-        "valoresEspeciales": {
-            "peso": 4,
-            "ancho": 60,
-            "tecnica": "oleo",
-            "alto": 30
-        },
-        "bodega": true,
-        "historialPropietarios": [],
-    
-        "loginPropietarioActual": "gabiela_propietario",
-        "anioCreacion": 1956,
-        "subasta": true,
-        "valores": [
-                300100,
-                400300,
-                50919676765544333334
-            ],
-            "disponible": true
-    
-
-},
-
-
-{
-    "tiempoConsignacion": -1,
-    "tipo": "pintura",
-    "lugarCreacion": "Italia",
-    "titulo": "La Ultima Cena",
-    "autores": ["Leonardo da Vinci"],
-    "valoresEspeciales": {
-        "peso": 4,
-        "ancho": 60,
-        "tecnica": "oleo",
-        "alto": 30
-    },
-    "bodega": true,
-    "historialPropietarios": [],
-
-    "loginPropietarioActual": "gabriela_propietario",
-    "anioCreacion": 1956,
-    "subasta": true,
-    "valores": [
             300100,
             400300,
-            50919676765544333334
+            -134529002
         ],
-        "disponible": true
-
-
-},
-
-
-{
-    "tiempoConsignacion": -1,
-    "tipo": "pintura",
-    "lugarCreacion": "Italia",
-    "titulo":"La Venus de Milo",
-    "autores": ["n/A"],
-    "valoresEspeciales": {
-        "peso": 4,
-        "ancho": 60,
-        "tecnica": "oleo",
-        "alto": 30
-    },
-    "bodega": true,
-    "historialPropietarios": [],
-
-    "loginPropietarioActual": "gabriela_propietario",
-    "anioCreacion": 1956,
-    "subasta": true,
-    "valores": [
-            300100,
-            400300,
-            50919676765544333334
-        ],
-        "disponible": true
-
+        "disponible": false
     }
-
-
-
-]
-}
+]}
