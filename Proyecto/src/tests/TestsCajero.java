@@ -36,12 +36,12 @@ public class TestsCajero
         Comprador cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
-        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "Las meninas");
+        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "La Última Cena");
         int tamanioHistorialPieza = pieza.getHistorialPropietarios().size();
         Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
         int piezasAntiguoPropietario = antiguoPropietario.getIdPiezasActuales().size();
 
-        Cajero.registrarCompraPrecioFijo(cliente,pieza,"PagoX",galeriaPrueba,"20/20/10");
+        Cajero.registrarCompraPrecioFijo(cliente,pieza,"Transferencia",galeriaPrueba,"20/20/10");
 
         //Se verifica que la pieza se haya retirado de la lista de piezas del propietario
         antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
@@ -62,7 +62,7 @@ public class TestsCajero
         Propietario propietarioActual = Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario");
         assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().getLast(),"La pieza no fue agregada al perfil de propiertario del comprador");
         //Se verifica que el historial de propietarios de la pieza se haya actualizado
-        pieza = Servicios.buscarPieza(galeriaPrueba,"Las meninas");
+        pieza = Servicios.buscarPieza(galeriaPrueba, "La Última Cena");
         assertEquals(tamanioHistorialPieza+1,pieza.getHistorialPropietarios().size(),"El historial de propietarios de la pieza no se actualizó");
     }
         
@@ -70,7 +70,7 @@ public class TestsCajero
     @Test
     public void testRegistrarCompraSubasta()
     {
-        Oferta oferta = new Oferta("briceno_comprador",1234567,"Credit Card","La monalisa","01/01/01");
+        Oferta oferta = new Oferta("briceno_comprador",1234567,"Credit Card","La ","01/01/01");
         Comprador cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
