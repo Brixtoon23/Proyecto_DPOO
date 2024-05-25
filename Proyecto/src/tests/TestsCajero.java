@@ -36,7 +36,7 @@ public class TestsCajero
         Comprador cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
-        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "La Última Cena");
+        Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "La Ultima Cena");
         int tamanioHistorialPieza = pieza.getHistorialPropietarios().size();
         Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
         int piezasAntiguoPropietario = antiguoPropietario.getIdPiezasActuales().size();
