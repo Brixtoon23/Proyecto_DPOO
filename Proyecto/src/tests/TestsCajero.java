@@ -71,7 +71,7 @@ public class TestsCajero
     @Test
     public void testRegistrarCompraSubasta()
     {
-        Oferta oferta = new Oferta("briceno_comprador",1234567,"Credit Card","La ","01/01/01");
+        Oferta oferta = new Oferta("briceno_comprador",1234567,"Credit Card","La Venus de Milo","01/01/01");
         Comprador cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
