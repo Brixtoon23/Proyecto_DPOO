@@ -37,7 +37,7 @@ public class TestsOperador {
         Operador.registrarOferta(oferta, subastas, galeria, fecha);
 
         // Obtener la subasta correspondiente
-        Subasta subasta = galeria.getSubastas().getLast();
+        Subasta subasta = galeria.getSubastas().getFirst();
 
         // Verificar que la oferta fue registrada correctamente
         Oferta ofertaRegistrada = subasta.getListaOfertas().getLast();
@@ -67,7 +67,7 @@ public class TestsOperador {
         Operador.registrarOferta(oferta1, subastas, galeria, fecha1);
 
         // Obtener la subasta correspondiente
-        Subasta subasta1 = galeria.getSubastas().getFirst();
+        Subasta subasta1 = galeria.getSubastas().getLast();
 
         // Verificar que la oferta fue registrada correctamente
         Oferta ofertaRegistrada1 = subasta1.getListaOfertas().getLast();
