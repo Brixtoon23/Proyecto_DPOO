@@ -1142,7 +1142,7 @@
             "mora": false,
             "mensajesSubasta": [],
             "estadoCuenta": 1.234568E+18,
-            "idPiezasCompradas": ["La Ultima Cena"],
+            "idPiezasCompradas": ["La Ultima Cena", "La Venus de Milo"],
             "historialCompras": []
         },
         "password": "gabriela",

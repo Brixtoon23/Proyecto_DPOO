@@ -182,11 +182,11 @@ public class TestsAdmin
         Galeria galeria = InicializadorDeClases.cargarGaleria();
         
         
-        String loginComprador = "alejandra_comprador";
+        String loginComprador =  "gabriela_comprador";
 
         int monto= Administrador.montoColeccion(galeria, loginComprador);
 
-        assertEquals(6000000, monto);
+        assertEquals(300100, monto);
      }
 
 
