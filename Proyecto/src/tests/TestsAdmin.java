@@ -198,7 +198,7 @@ public class TestsAdmin
         Galeria galeria = InicializadorDeClases.cargarGaleria();
         String metodoPago= "trasferencia";
         String fecha= "12/05/2024";
-        Oferta oferta= new Oferta("sara_comprador", 4123456 , metodoPago,   "La monalisa" , fecha);
+        Oferta oferta= new Oferta("sara_comprador", 4123456 , metodoPago,  "Las meninas" , fecha);
         boolean aprobado= Administrador.aprobarVentaSubasta(oferta, galeria, fecha);
         assertEquals(true, aprobado);
 

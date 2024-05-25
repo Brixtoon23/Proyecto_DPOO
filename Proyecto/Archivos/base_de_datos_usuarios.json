@@ -1110,34 +1110,6 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "maxCompras": 1.2367777E+29,
-            "mora": false,
-            "mensajesSubasta": [],
-            "estadoCuenta": 3.0E+15,
-            "idPiezasCompradas": [],
-            "historialCompras": []
-        },
-        "password": "sara",
-        "login": "sara_comprador",
-        "telefono": "123456781",
-        "nombre": "sara",
-        "rol": "comprador"
-    },
-    {
-        "verificado": false,
-        "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
-        },
-        "password": "sara",
-        "login": "sara_propietario",
-        "telefono": "123456781",
-        "nombre": "sara",
-        "rol": "propietario"
-    },
-    {
-        "verificado": true,
-        "valores_especiales": {
             "maxCompras": 0,
             "mora": false,
             "mensajesSubasta": [],
@@ -1166,10 +1138,10 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "maxCompras": 3.5893595E14,
+            "maxCompras": 3.5893595E+14,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 1.234568E18,
+            "estadoCuenta": 1.234568E+18,
             "idPiezasCompradas": [],
             "historialCompras": []
         },
@@ -1177,6 +1149,34 @@
         "login": "gabriela_comprador",
         "telefono": "12657654",
         "nombre": "gabriela",
+        "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "gabriela",
+        "login": "gabriela_propietario",
+        "telefono": "12657654",
+        "nombre": "gabriela",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "maxCompras": 1.2367777E29,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 3.0E15,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "sara",
+        "login": "sara_comprador",
+        "telefono": "123456781",
+        "nombre": "sara",
         "rol": "comprador"
     },
     {
@@ -1197,10 +1197,10 @@
             "idPiezasActuales": [],
             "historialPiezas": []
         },
-        "password": "gabriela",
-        "login": "gabriela_propietario",
-        "telefono": "12657654",
-        "nombre": "gabriela",
+        "password": "sara",
+        "login": "sara_propietario",
+        "telefono": "123456781",
+        "nombre": "sara",
         "rol": "propietario"
     },
     {
