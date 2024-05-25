@@ -167,6 +167,7 @@ public class Administrador extends Usuario
 	public static boolean aprobarVentaSubasta(Oferta mejorOferta, Galeria galeria, String fecha)
 	{
 		String loginComprador=mejorOferta.getCompradorLogin();
+		
 		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
 		String nombrePieza= mejorOferta.getNombrepiezaSubastada();
 		Pieza pieza= Servicios.buscarPieza(galeria, nombrePieza);

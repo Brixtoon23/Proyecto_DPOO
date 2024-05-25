@@ -14,26 +14,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestsOperador {
-     private Galeria galeria;
-    private ArrayList<Subasta> subastas;
+    
 
-    @BeforeEach
-    public void setUp() {
-        galeria = InicializadorDeClases.cargarGaleria();
-        subastas = galeria.getSubastas();
-    }
+   
 
     @Test
     public void testRegistrarOferta() {
         // Datos de prueba
-        String compradorLogin = "gladys_comprador";
+        Galeria galeria=InicializadorDeClases.cargarGaleria();
+        ArrayList<Subasta> subastas= galeria.getSubastas();
+
+     
         int valorOfertado = 300000000;
         String metodoPago = "efectivo";
-        String nombrePieza = "La monalisa";
+        String nombrePieza = "Order 66";
         String fecha = "12/03/2024";
 
         // Crear una nueva oferta
-        Oferta oferta = new Oferta(compradorLogin, valorOfertado, metodoPago, nombrePieza, fecha);
+        Oferta oferta = new Oferta("gladys_comprador", valorOfertado, metodoPago, nombrePieza, fecha);
 
         // Registrar la oferta
         Operador.registrarOferta(oferta, subastas, galeria, fecha);
