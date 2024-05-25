@@ -1142,7 +1142,7 @@
             "mora": false,
             "mensajesSubasta": [],
             "estadoCuenta": 1.234568E+18,
-            "idPiezasCompradas": [],
+            "idPiezasCompradas": ["La Ultima Cena"],
             "historialCompras": []
         },
         "password": "gabriela",
@@ -1154,7 +1154,7 @@
     {
         "verificado": false,
         "valores_especiales": {
-            "idPiezasActuales": [],
+            "idPiezasActuales": ["La Ultima Cena"],
             "historialPiezas": []
         },
         "password": "gabriela",
