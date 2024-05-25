@@ -37,9 +37,10 @@ public class TestsCajero
         int tamanioHistorialCompras = cliente.getHistorialCompras().size();
         double estadoCuentaInicial = cliente.getEstadoCuenta();
         Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "La Ultima Cena");
-        int tamanioHistorialPieza = pieza.getHistorialPropietarios().size();
-        Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
-        int piezasAntiguoPropietario = antiguoPropietario.getIdPiezasActuales().size();
+        int tamanioHistorialPieza= pieza.getHistorialPropietarios().size();
+
+        Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "gabiela_propietario");
+        int piezasAntiguoPropietario= antiguoPropietario.getIdPiezasActuales().size();
 
         Cajero.registrarCompraPrecioFijo(cliente,pieza,"Transferencia",galeriaPrueba,"20/20/10");
 
