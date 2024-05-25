@@ -1045,9 +1045,35 @@
         "disponible": true
 
 
-}
+},
 
 
+{
+    "tiempoConsignacion": -1,
+    "tipo": "pintura",
+    "lugarCreacion": "Italia",
+    "titulo": "La Venus de Milo",
+    "autores": ["n/A"],
+    "valoresEspeciales": {
+        "peso": 4,
+        "ancho": 60,
+        "tecnica": "oleo",
+        "alto": 30
+    },
+    "bodega": true,
+    "historialPropietarios": [],
+
+    "loginPropietarioActual": "gabriela_propietario",
+    "anioCreacion": 1956,
+    "subasta": true,
+    "valores": [
+            300100,
+            400300,
+            50919676765544333334
+        ],
+        "disponible": true
+
+    }
 
 
 
