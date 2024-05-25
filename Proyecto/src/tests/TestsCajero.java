@@ -39,7 +39,7 @@ public class TestsCajero
         Pieza pieza = Servicios.buscarPieza(galeriaPrueba, "La Ultima Cena");
         int tamanioHistorialPieza= pieza.getHistorialPropietarios().size();
 
-        Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "gabiela_propietario");
+        Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "gabriela_propietario");
         int piezasAntiguoPropietario= antiguoPropietario.getIdPiezasActuales().size();
 
         Cajero.registrarCompraPrecioFijo(cliente,pieza,"Transferencia",galeriaPrueba,"20/20/10");
