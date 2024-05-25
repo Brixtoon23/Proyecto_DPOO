@@ -40,12 +40,12 @@ public class TestsCajero
         int tamanioHistorialPieza= pieza.getHistorialPropietarios().size();
 
         Propietario antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "gabriela_propietario");
-        int piezasAntiguoPropietario= antiguoPropietario.getIdPiezasActuales().size();
+      
 
         Cajero.registrarCompraPrecioFijo(cliente,pieza,"Transferencia",galeriaPrueba,"20/20/10");
-
+        int piezasAntiguoPropietario= antiguoPropietario.getIdPiezasActuales().size();
         //Se verifica que la pieza se haya retirado de la lista de piezas del propietario
-        antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "nikol_propietario");
+        antiguoPropietario = Servicios.buscarPropietario(galeriaPrueba, "gabriela_propietario");
         assertEquals(piezasAntiguoPropietario,((antiguoPropietario.getIdPiezasActuales().size())),"La pieza no fue retirada de la lista del propietario anterior");
 
         //Se verifica que la compra se haya añadido al historial del comprador
@@ -63,7 +63,7 @@ public class TestsCajero
         Propietario propietarioActual = Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario");
         assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().getLast(),"La pieza no fue agregada al perfil de propiertario del comprador");
         //Se verifica que el historial de propietarios de la pieza se haya actualizado
-        pieza = Servicios.buscarPieza(galeriaPrueba, "La Última Cena");
+        pieza = Servicios.buscarPieza(galeriaPrueba, "La Ultima Cena");
         assertEquals(tamanioHistorialPieza+1,pieza.getHistorialPropietarios().size(),"El historial de propietarios de la pieza no se actualizó");
     }
         
