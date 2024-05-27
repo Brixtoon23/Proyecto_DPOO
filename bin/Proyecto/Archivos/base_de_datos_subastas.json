@@ -1,0 +1,44 @@
+{"subastas": [
+    {
+        "idListaPiezasSubasta": ["Order 66"],
+        "id": "PacoList",
+        "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "subasta prueba",
+        "listaOfertas": [
+            {
+                "valorOfertado": -1294967296,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "nikol_comprador"
+            },
+            {
+                "valorOfertado": 300000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "alejandro_comprador"
+            },
+            {
+                "valorOfertado": 30000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "michel_comprador"
+            },
+            {
+                "valorOfertado": 3000000,
+                "metodoPago": "efectivo",
+                "fecha": "12/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "claudia_comprador"
+            }
+        ]
+    }
+]}
