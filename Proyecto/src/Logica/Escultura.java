@@ -16,9 +16,9 @@ public class Escultura extends Pieza
 			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
 			ArrayList<Integer> valores, boolean bodega, String tipo,
 			ArrayList<Map<String, Object>> historialPropietarios, int alto, int ancho, int profundidad, int peso,
-			boolean electricidad) {
+			boolean electricidad,String rutaImagen) {
 		super(titulo, loginPropietarioActual, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion,
-				subasta, valores, bodega, tipo, historialPropietarios);
+				subasta, valores, bodega, tipo, historialPropietarios, rutaImagen);
 		this.alto = alto;
 		this.ancho = ancho;
 		this.profundidad = profundidad;

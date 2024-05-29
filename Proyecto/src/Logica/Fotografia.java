@@ -19,9 +19,9 @@ public class Fotografia extends Pieza
 	public Fotografia(String titulo, String loginPropietarioActual, int anioCreacion, String lugarCreacion,
 			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
 			ArrayList<Integer> valores, boolean bodega, String tipo,
-			ArrayList<Map<String, Object>> historialPropietarios, String resolucion, int tamanioGiga) {
+			ArrayList<Map<String, Object>> historialPropietarios, String resolucion, int tamanioGiga, String rutaImagen) {
 		super(titulo, loginPropietarioActual, anioCreacion, lugarCreacion, autor, disponible, tiempoConsignacion,
-				subasta, valores, bodega, tipo, historialPropietarios);
+				subasta, valores, bodega, tipo, historialPropietarios, rutaImagen);
 		this.resolucion = resolucion;
 		this.tamanioGiga = tamanioGiga;
 	}
