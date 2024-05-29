@@ -70,10 +70,10 @@ public class TestsAdmin
         historial1 = new ArrayList<Map<String,Object>>();
         historial1.add(propietario1);
 
-        EsculturaPrueba = new Escultura("El pensador", "nikol_propietario", 1990, "somewhere", Autores_dos, true, -1, false, Valores_uno, true, "escultura", historial1, 1, 10, 12, 56, false);
-        VideoPrueba = new Video("Order 66", "nikol_propietario", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial1, 20, 1, "720");
-        Photo = new Fotografia("Random photo", "nikol_propietario", 2023, "who knows", Autores_uno, false, 32, true, Valores_dos, false, "video", historial1, "None", 28);
-        PinturaPrueba = new Pintura("Una pintura", "nikol_propietario", 1020, "???", Autores_dos, true, -1, false, Valores_uno, true, "pintura", historial1, 3, 3, 14, "creatividad");
+        EsculturaPrueba = new Escultura("El pensador", "nikol_propietario", 1990, "somewhere", Autores_dos, true, -1, false, Valores_uno, true, "escultura", historial1, 1, 10, 12, 56, false,"ruta");
+        VideoPrueba = new Video("Order 66", "nikol_propietario", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial1, 20, 1, "720","ruta");
+        Photo = new Fotografia("Random photo", "nikol_propietario", 2023, "who knows", Autores_uno, false, 32, true, Valores_dos, false, "video", historial1, "None", 28,"ruta");
+        PinturaPrueba = new Pintura("Una pintura", "nikol_propietario", 1020, "???", Autores_dos, true, -1, false, Valores_uno, true, "pintura", historial1, 3, 3, 14, "creatividad","ruta");
 
     }
 

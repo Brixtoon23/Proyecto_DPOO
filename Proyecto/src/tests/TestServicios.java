@@ -59,10 +59,10 @@ public class TestServicios
         historial2.add(propietario1);
         historial2.add(propietario2);
 
-        EsculturaPrueba = new Escultura("El pensador", "Me", 1990, "somewhere", Autores_dos, true, -1, false, Valores_uno, true, "escultura", historial1, 1, 10, 12, 56, false);
-        VideoPrueba = new Video("Order 66", "Canc1ll3r_Palpatine", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial2, 20, 1, "720");
-        Photo = new Fotografia("Random photo", "Me_again", 2023, "who knows", Autores_uno, false, 32, true, Valores_dos, false, "video", historial1, "None", 28);
-        PinturaPrueba = new Pintura("Una pintura", "alguien", 1020, "???", Autores_dos, true, -1, false, Valores_uno, true, "pintura", historial2, 3, 3, 14, "creatividad");
+        EsculturaPrueba = new Escultura("El pensador", "Me", 1990, "somewhere", Autores_dos, true, -1, false, Valores_uno, true, "escultura", historial1, 1, 10, 12, 56, false,"ruta");
+        VideoPrueba = new Video("Order 66", "Canc1ll3r_Palpatine", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial2, 20, 1, "720","ruta");
+        Photo = new Fotografia("Random photo", "Me_again", 2023, "who knows", Autores_uno, false, 32, true, Valores_dos, false, "video", historial1, "None", 28,"ruta");
+        PinturaPrueba = new Pintura("Una pintura", "alguien", 1020, "???", Autores_dos, true, -1, false, Valores_uno, true, "pintura", historial2, 3, 3, 14, "creatividad","ruta");
 
 
 
