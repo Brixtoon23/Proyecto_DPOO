@@ -22,7 +22,7 @@ public class Cajero  extends Usuario
 
 
 
-	public static void registrarCompraSubasta(Oferta oferta, Comprador comprador, Galeria galeria, String fecha)
+	public static void registrarCompraSubasta(Oferta oferta, Comprador comprador, Galeria galeria, String fecha, MetodoPago metodoPago)
 
 	{
 
@@ -48,7 +48,7 @@ public class Cajero  extends Usuario
 
 		pieza.getHistorialPropietarios().add(mapa);
 
-		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha);
+		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), nombrePieza, metodoPago, fecha);
 		
 		
 		comprador.getHistorialCompras().add(compra);
@@ -72,7 +72,7 @@ public class Cajero  extends Usuario
 
 
 	
-	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago,Galeria galeria, String fecha) 
+	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, Galeria galeria, String fecha, MetodoPago metodoPago) 
 	{
 		float cuenta = comprador.getEstadoCuenta();
 		ArrayList<Integer> valores = pieza.getValores();
@@ -91,6 +91,7 @@ public class Cajero  extends Usuario
 
 		
 		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
+	
 
 		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago, fecha);
 
@@ -143,4 +144,14 @@ public class Cajero  extends Usuario
 	public void setComprasRegistradas(ArrayList<Compra> comprasRegistradas) {
 		this.comprasRegistradas = comprasRegistradas;
 	}
+
+
+	public static void registrarCompraTarjeta(Comprador comprador,Pieza pieza, String numeroTarjeta,Galeria galeria, String fecha) 
+	{
+
+		return  ;
+	}
+
+
+
 }
