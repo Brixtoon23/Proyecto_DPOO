@@ -1,12 +1,11 @@
 package Logica;
-public class Transferencia {
+public class Transferencia extends MetodoPago
+{
 
     private String tipo;
     private String id;
-
-
-    
-    public Transferencia(String tipo, String id) {
+    public Transferencia(String nombre, int monto, String tipo, String id) {
+        super(nombre, monto);
         this.tipo = tipo;
         this.id = id;
     }
@@ -23,6 +22,8 @@ public class Transferencia {
         this.id = id;
     }
 
+
+    
     
 
 

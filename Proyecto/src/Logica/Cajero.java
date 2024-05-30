@@ -22,7 +22,7 @@ public class Cajero  extends Usuario
 
 
 
-	public static void registrarCompraSubasta(Oferta oferta, Comprador comprador, Galeria galeria, String fecha)
+	public static void registrarCompraSubasta(Oferta oferta, Comprador comprador, Galeria galeria, String fecha, MetodoPago metodoPago)
 
 	{
 
@@ -48,7 +48,7 @@ public class Cajero  extends Usuario
 
 		pieza.getHistorialPropietarios().add(mapa);
 
-		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha);
+		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), nombrePieza, metodoPago, fecha);
 		
 		
 		comprador.getHistorialCompras().add(compra);
@@ -72,7 +72,7 @@ public class Cajero  extends Usuario
 
 
 	
-	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago,Galeria galeria, String fecha) 
+	public static void registrarCompraPrecioFijo(Comprador comprador,Pieza pieza, Galeria galeria, String fecha, MetodoPago metodoPago) 
 	{
 		float cuenta = comprador.getEstadoCuenta();
 		ArrayList<Integer> valores = pieza.getValores();
@@ -91,6 +91,7 @@ public class Cajero  extends Usuario
 
 		
 		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
+	
 
 		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago, fecha);
 
@@ -143,4 +144,69 @@ public class Cajero  extends Usuario
 	public void setComprasRegistradas(ArrayList<Compra> comprasRegistradas) {
 		this.comprasRegistradas = comprasRegistradas;
 	}
+
+
+	public static void registrarCompraTarjetaPrecioFijo(String loginComprador, String nombrePieza, Galeria galeria, String fecha, int numeroTarjeta) 
+	{
+		Tarjeta metodoPago= Servicios.BuscarTarjeta(galeria, numeroTarjeta);
+		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
+		Pieza pieza= Servicios.buscarPieza(galeria, nombrePieza);
+		float cuenta = comprador.getEstadoCuenta();
+		ArrayList<Integer> valores = pieza.getValores();
+		int precioFijo = valores.get(0);
+		cuenta -= precioFijo;
+		comprador.setEstadoCuenta(cuenta);
+
+		pieza.setDisponible(false);
+		
+		String propietarioAnteriorLogin = pieza.getLoginPropietarioActual();
+		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, propietarioAnteriorLogin);
+		ArrayList<String> piezasPropietarioAnterior = propietarioAnterior.getIdPiezasActuales();
+
+		piezasPropietarioAnterior.remove(pieza.getTitulo());
+		propietarioAnterior.setIdPiezasActuales(piezasPropietarioAnterior);
+
+		
+		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
+	
+
+		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago, fecha);
+
+		historialCompra.add(compraNueva);
+
+		comprador.setHistorialCompras(historialCompra);
+		
+		
+		
+		
+		ArrayList<String> piezas =  comprador.getIdpiezasCompradas();
+		piezas.add(pieza.getTitulo());
+		comprador.setIdpiezasCompradas(piezas);
+		
+		
+		String loginnuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
+		Propietario nuevoPropiertario= Servicios.buscarPropietario(galeria, loginnuevoPropiertario);
+
+		nuevoPropiertario.getHistorialPiezas().add(pieza.getTitulo());
+		nuevoPropiertario.getIdPiezasActuales().add(pieza.getTitulo());
+
+
+		Map<String, Object> mapa = new HashMap<>();
+
+		mapa.put( "loginPropietario", loginnuevoPropiertario);
+		mapa.put("valorCompra", precioFijo);
+		mapa.put("fechaVenta", fecha);
+
+		pieza.getHistorialPropietarios().add(mapa);
+
+		PiezasPersistencia.actualizarPropietarioPieza(galeria,pieza);
+		UsuarioPersistencia.actualizarCompradorCompra( comprador );
+		UsuarioPersistencia.actualizarPropietarioCompra(propietarioAnterior,nuevoPropiertario);
+
+
+		
+	}
+
+
+
 }
