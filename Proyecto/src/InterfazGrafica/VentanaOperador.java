@@ -63,7 +63,10 @@ public class VentanaOperador extends JFrame implements ActionListener
 
         else if (e.getActionCommand().equals("HistArtista"))
         {
-
+            this.dispose();
+            VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
+            ventana2.setVisible(true);
+            ventana2.setLocationRelativeTo(null);
         }
         
     }

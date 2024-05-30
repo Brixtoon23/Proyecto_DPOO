@@ -14,14 +14,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class PanelNorteHistoriaPieza extends JPanel implements ActionListener
+public class PanelCentroHistArtist extends JPanel implements ActionListener
 {
     private JLabel titulo;
-    private JTextField txtNombrePieza;
+    private JTextField txtNombreArtist;
     private JLabel lblIngreseNombre;
     private JButton btnBuscar;
     
-    public PanelNorteHistoriaPieza()
+    public PanelCentroHistArtist()
     {
         setLayout(new GridBagLayout());
         add(Box.createVerticalStrut(20));
@@ -29,20 +29,20 @@ public class PanelNorteHistoriaPieza extends JPanel implements ActionListener
         JPanel organizador = new JPanel();
         organizador.setLayout(new GridLayout(3,1,0,10));        
         
-        titulo = new JLabel("Historial de Pieza");
+        titulo = new JLabel("Historial de Artista");
         titulo.setFont(new Font("Verdana",Font.BOLD,30));
         organizador.add(titulo);
 
         JPanel arregloBusqueda = new JPanel();
         arregloBusqueda.setLayout(new FlowLayout());
-        lblIngreseNombre = new JLabel("Ingrese el nombre de la pieza:");
+        lblIngreseNombre = new JLabel("Ingrese el nombre del artista:");
         lblIngreseNombre.setFont(new Font("Verdana",Font.PLAIN,15));
         arregloBusqueda.add(lblIngreseNombre);
-        txtNombrePieza = new JTextField();
-        txtNombrePieza.setEditable(true);
-        txtNombrePieza.setFont(new Font("Verdana",Font.PLAIN,15));
-        txtNombrePieza.setPreferredSize(new Dimension(200,30));
-        arregloBusqueda.add(txtNombrePieza);
+        txtNombreArtist = new JTextField();
+        txtNombreArtist.setEditable(true);
+        txtNombreArtist.setFont(new Font("Verdana",Font.PLAIN,15));
+        txtNombreArtist.setPreferredSize(new Dimension(200,30));
+        arregloBusqueda.add(txtNombreArtist);
         btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Verdana",Font.PLAIN,15));
         btnBuscar.setFocusable(false);
@@ -51,12 +51,16 @@ public class PanelNorteHistoriaPieza extends JPanel implements ActionListener
         organizador.add(arregloBusqueda);
 
         add(organizador);
-
     }
-
+    
+    
+    
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) 
+    {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
+
+    
 }
