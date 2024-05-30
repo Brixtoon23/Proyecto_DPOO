@@ -43,6 +43,7 @@ public class PiezasPersistencia
         piezaJSON.put("historialPropietarios", pieza.getHistorialPropietarios());
         piezaJSON.put("bodega", pieza.isBodega());
         piezaJSON.put("tipo", pieza.getTipo());
+        piezaJSON.put("rutaImagen", pieza.getRutaImagen());
 
 
 

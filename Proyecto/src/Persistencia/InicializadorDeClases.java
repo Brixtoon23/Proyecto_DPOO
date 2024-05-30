@@ -163,7 +163,7 @@ public class InicializadorDeClases
                     piezaParaAñadir = new Pintura(pieza.getString("titulo"),pieza.getString("loginPropietarioActual"), pieza.getInt("anioCreacion"), pieza.getString("lugarCreacion"),autores 
                                                 , pieza.getBoolean("disponible"),pieza.getInt("tiempoConsignacion") , pieza.getBoolean("subasta"), valores,  pieza.getBoolean("bodega"), 
                                                 pieza.getString("tipo"),historialPropietarios,pieza.getJSONObject("valoresEspeciales").getInt("alto"), pieza.getJSONObject("valoresEspeciales").getInt("ancho"),
-                                                pieza.getJSONObject("valoresEspeciales").getInt("peso"),pieza.getJSONObject("valoresEspeciales").getString("tecnica"));
+                                                pieza.getJSONObject("valoresEspeciales").getInt("peso"),pieza.getJSONObject("valoresEspeciales").getString("tecnica"),pieza.getString("rutaImagen");
 
 
 
@@ -174,14 +174,14 @@ public class InicializadorDeClases
                     piezaParaAñadir = new Video(pieza.getString("titulo"),pieza.getString("loginPropietarioActual"), pieza.getInt("anioCreacion"), pieza.getString("lugarCreacion"),autores , 
                                                 pieza.getBoolean("disponible"),pieza.getInt("tiempoConsignacion") , pieza.getBoolean("subasta"), valores, pieza.getBoolean("bodega"), 
                                                 pieza.getString("tipo"),historialPropietarios,pieza.getJSONObject("valoresEspeciales").getInt("duracion"), 
-                                                pieza.getJSONObject("valoresEspeciales").getInt("tamanioGiga"),pieza.getJSONObject("valoresEspeciales").getString("resolucion"));
+                                                pieza.getJSONObject("valoresEspeciales").getInt("tamanioGiga"),pieza.getJSONObject("valoresEspeciales").getString("resolucion"),pieza.getString("rutaImagen"));
                 }
                 else if (tipo.equals("fotografia")) 
                 {
                     piezaParaAñadir = new Fotografia(pieza.getString("titulo"),pieza.getString("loginPropietarioActual"), pieza.getInt("anioCreacion"), pieza.getString("lugarCreacion"),autores 
                                                     , pieza.getBoolean("disponible"),pieza.getInt("tiempoConsignacion") , pieza.getBoolean("subasta"), valores,  pieza.getBoolean("bodega"), 
                                                     pieza.getString("tipo"), historialPropietarios,pieza.getJSONObject("valoresEspeciales").getString("resolucion"), 
-                                                    pieza.getJSONObject("valoresEspeciales").getInt("tamanioGiga"));
+                                                    pieza.getJSONObject("valoresEspeciales").getInt("tamanioGiga"),pieza.getString("rutaImagen"));
                 }
                 else if (tipo.equals("escultura")) 
                 {
@@ -189,7 +189,7 @@ public class InicializadorDeClases
                                                 , pieza.getBoolean("disponible"),pieza.getInt("tiempoConsignacion") , pieza.getBoolean("subasta"), valores,  pieza.getBoolean("bodega"),
                                                 pieza.getString("tipo"),historialPropietarios, pieza.getJSONObject("valoresEspeciales").getInt("alto"), 
                                                 pieza.getJSONObject("valoresEspeciales").getInt("ancho"),pieza.getJSONObject("valoresEspeciales").getInt("profundidad"), 
-                                                pieza.getJSONObject("valoresEspeciales").getInt("peso"),pieza.getJSONObject("valoresEspeciales").getBoolean("electricidad"));
+                                                pieza.getJSONObject("valoresEspeciales").getInt("peso"),pieza.getJSONObject("valoresEspeciales").getBoolean("electricidad"),pieza.getString("rutaImagen"));
                 }
 
 
