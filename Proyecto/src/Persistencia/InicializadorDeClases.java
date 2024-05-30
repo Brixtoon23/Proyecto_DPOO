@@ -163,7 +163,7 @@ public class InicializadorDeClases
                     piezaParaAñadir = new Pintura(pieza.getString("titulo"),pieza.getString("loginPropietarioActual"), pieza.getInt("anioCreacion"), pieza.getString("lugarCreacion"),autores 
                                                 , pieza.getBoolean("disponible"),pieza.getInt("tiempoConsignacion") , pieza.getBoolean("subasta"), valores,  pieza.getBoolean("bodega"), 
                                                 pieza.getString("tipo"),historialPropietarios,pieza.getJSONObject("valoresEspeciales").getInt("alto"), pieza.getJSONObject("valoresEspeciales").getInt("ancho"),
-                                                pieza.getJSONObject("valoresEspeciales").getInt("peso"),pieza.getJSONObject("valoresEspeciales").getString("tecnica"),pieza.getString("rutaImagen");
+                                                pieza.getJSONObject("valoresEspeciales").getInt("peso"),pieza.getJSONObject("valoresEspeciales").getString("tecnica"),pieza.getString("rutaImagen"));
 
 
 
