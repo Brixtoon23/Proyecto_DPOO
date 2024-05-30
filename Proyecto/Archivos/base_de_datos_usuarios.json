@@ -1110,39 +1110,11 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "maxCompras": 0,
+            "maxCompras": 3.58935953E14,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 32330228,
+            "estadoCuenta": 1.23456794E18,
             "idPiezasCompradas": [],
-            "historialCompras": []
-        },
-        "password": "briceno",
-        "login": "briceno_comprador",
-        "telefono": "234323678",
-        "nombre": "briceno",
-        "rol": "comprador"
-    },
-    {
-        "verificado": false,
-        "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
-        },
-        "password": "briceno",
-        "login": "briceno_propietario",
-        "telefono": "234323678",
-        "nombre": "briceno",
-        "rol": "propietario"
-    },
-    {
-        "verificado": true,
-        "valores_especiales": {
-            "maxCompras": 3.5893595E+14,
-            "mora": false,
-            "mensajesSubasta": [],
-            "estadoCuenta": 1.234568E+18,
-            "idPiezasCompradas": ["La Ultima Cena", "La Venus de Milo"],
             "historialCompras": []
         },
         "password": "gabriela",
@@ -1152,16 +1124,20 @@
         "rol": "comprador"
     },
     {
-        "verificado": false,
+        "verificado": true,
         "valores_especiales": {
-            "idPiezasActuales": ["La Ultima Cena", "La Venus de Milo"],
-            "historialPiezas": []
+            "maxCompras": 2.34566544E8,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 1.23394842E9,
+            "idPiezasCompradas": [],
+            "historialCompras": []
         },
-        "password": "gabriela",
-        "login": "gabriela_propietario",
-        "telefono": "12657654",
-        "nombre": "gabriela",
-        "rol": "propietario"
+        "password": "amelia",
+        "login": "amelia_comprador",
+        "telefono": "12387544",
+        "nombre": "amelia",
+        "rol": "comprador"
     },
     {
         "verificado": true,
@@ -1169,7 +1145,7 @@
             "maxCompras": 1.2367777E29,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 3.0E15,
+            "estadoCuenta": 3.00000003E15,
             "idPiezasCompradas": [],
             "historialCompras": []
         },
@@ -1178,18 +1154,6 @@
         "telefono": "123456781",
         "nombre": "sara",
         "rol": "comprador"
-    },
-    {
-        "verificado": false,
-        "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
-        },
-        "password": "alejandra",
-        "login": "alejandra_propietario",
-        "telefono": "12345432167",
-        "nombre": "alejandra",
-        "rol": "propietario"
     },
     {
         "verificado": false,
@@ -1213,6 +1177,58 @@
         "login": "alejandra_propietario",
         "telefono": "12345432167",
         "nombre": "alejandra",
+        "rol": "propietario"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "alejandra",
+        "login": "alejandra_propietario",
+        "telefono": "12345432167",
+        "nombre": "alejandra",
+        "rol": "propietario"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "gabriela",
+        "login": "gabriela_propietario",
+        "telefono": "12657654",
+        "nombre": "gabriela",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "maxCompras": 0,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 3.077556E7,
+            "idPiezasCompradas": [],
+            "historialCompras": []
+        },
+        "password": "briceno",
+        "login": "briceno_comprador",
+        "telefono": "234323678",
+        "nombre": "briceno",
+        "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "briceno",
+        "login": "briceno_propietario",
+        "telefono": "234323678",
+        "nombre": "briceno",
         "rol": "propietario"
     }
 ]}

@@ -52,16 +52,16 @@ public class TestsCajero
         cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         assertEquals(cliente.getHistorialCompras().size(),tamanioHistorialCompras+1,"La compra no se añadío al historial del comprador");
         //Se verifica que la compra haya sido añadida correctamente
-        Compra compra = cliente.getHistorialCompras().getLast();
+        Compra compra = cliente.getHistorialCompras().get(cliente.getHistorialCompras().size()-1);
         assertEquals(compra.getNombrepieza(),pieza.getTitulo(),"La pieza que aparece en la compra no corresponde con la pieza que se vendió");
         assertEquals(compra.getCompradorLogin(),cliente.getLogin(),"El login del comprador de la pieza no corresponde con quien la compró");
         //Se verifica que el estado de cuenta del comprador haya cambiado
         assertEquals(true,estadoCuentaInicial>cliente.getEstadoCuenta(),"El estado de cuenta del comprador no se cambió");
         // Se verifica que la pieza haya sido añadida al historial del comprador
-        assertEquals(pieza.getTitulo(),cliente.getIdpiezasCompradas().getLast(),"La pieza no fue añadida al historial de piezas compradas");
+        assertEquals(pieza.getTitulo(),cliente.getIdpiezasCompradas().get(cliente.getIdpiezasCompradas().size()-1),"La pieza no fue añadida al historial de piezas compradas");
         //Se verifica que la pieza haya sido añadida a la lista de piezasActuales al perfil de propietario del comprador
         Propietario propietarioActual = Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario");
-        assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().getLast(),"La pieza no fue agregada al perfil de propiertario del comprador");
+        assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().get(propietarioActual.getIdPiezasActuales().size()-1),"La pieza no fue agregada al perfil de propiertario del comprador");
         //Se verifica que el historial de propietarios de la pieza se haya actualizado
         pieza = Servicios.buscarPieza(galeriaPrueba, "La Ultima Cena");
         assertEquals(tamanioHistorialPieza+1,pieza.getHistorialPropietarios().size(),"El historial de propietarios de la pieza no se actualizó");
@@ -91,16 +91,16 @@ public class TestsCajero
         cliente = Servicios.buscarComprador(galeriaPrueba,"briceno_comprador");
         assertEquals(cliente.getHistorialCompras().size(),tamanioHistorialCompras+1,"La compra no se añadío al historial del comprador");
         //Se verifica que la compra haya sido añadida correctamente
-        Compra compra = cliente.getHistorialCompras().getLast();
+        Compra compra = cliente.getHistorialCompras().get(cliente.getHistorialCompras().size()-1);
         assertEquals(compra.getNombrepieza(),pieza.getTitulo(),"La pieza que aparece en la compra no corresponde con la pieza que se vendió");
         assertEquals((compra.getCompradorLogin()),(cliente.getLogin()),"El login del comprador de la pieza no corresponde con quien la compró");
         //Se verifica que el estado de cuenta del comprador haya cambiado
         assertEquals(true,estadoCuentaInicial>cliente.getEstadoCuenta(),"El estado de cuenta del comprador no se cambió");
         // Se verifica que la pieza haya sido añadida al historial del comprador
-        assertEquals(pieza.getTitulo(),cliente.getIdpiezasCompradas().getLast(),"La pieza no fue añadida al historial de piezas compradas");
+        assertEquals(pieza.getTitulo(),cliente.getIdpiezasCompradas().get(cliente.getIdpiezasCompradas().size()-1),"La pieza no fue añadida al historial de piezas compradas");
         //Se verifica que la pieza haya sido añadida a la lista de piezasActuales al perfil de propietario del comprador
         Propietario propietarioActual = Servicios.buscarPropietario(galeriaPrueba, "briceno_propietario");
-        assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().getLast(),"La pieza no fue agregada al perfil de propiertario del comprador");
+        assertEquals(pieza.getTitulo(),propietarioActual.getIdPiezasActuales().get(propietarioActual.getIdPiezasActuales().size()-1),"La pieza no fue agregada al perfil de propiertario del comprador");
         //Se verifica que el historial de propietarios de la pieza se haya actualizado
         pieza = Servicios.buscarPieza(galeriaPrueba,"La Venus de Milo");
         assertEquals(tamanioHistorialPieza+1,pieza.getHistorialPropietarios().size(),"El historial de propietarios de la pieza no se actualizó");

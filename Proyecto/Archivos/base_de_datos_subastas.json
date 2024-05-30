@@ -2,7 +2,13 @@
     {
         "idListaPiezasSubasta": ["Order 66"],
         "id": "PacoList",
-        "listaOfertas": []
+        "listaOfertas": [{
+            "valorOfertado": 300000000,
+            "metodoPago": "efectivo",
+            "fecha": "12/03/2024",
+            "nombrepiezaSubastada": "Order 66",
+            "compradorLogin": "gladys_comprador"
+        }]
     },
     {
         "idListaPiezasSubasta": [
@@ -38,7 +44,22 @@
                 "fecha": "12/03/2024",
                 "nombrepiezaSubastada": "La monalisa",
                 "compradorLogin": "claudia_comprador"
+            },
+            {
+                "valorOfertado": 400000000,
+                "metodoPago": "efectivo",
+                "fecha": "15/03/2024",
+                "nombrepiezaSubastada": "La monalisa",
+                "compradorLogin": "gabriela_comprador"
             }
         ]
+    },
+    {
+        "idListaPiezasSubasta": [
+            "La Noche Estrellada",
+            "Guernica"
+        ],
+        "id": "subasta agragar",
+        "listaOfertas": []
     }
 ]}
