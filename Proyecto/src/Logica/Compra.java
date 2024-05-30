@@ -6,7 +6,7 @@ public class Compra
 	private String compradorLogin;
 	private int precio;
 	private  String Nombrepieza;
-	private String metodoPago; 
+	private MetodoPago metodoPago; 
 	private String fecha;
 
 	
@@ -14,7 +14,11 @@ public class Compra
 
 	
 	
-	public Compra(String compradorLogin, int precio, String nombrepieza, String metodoPago, String fecha) {
+	
+
+	
+
+	public Compra(String compradorLogin, int precio, String nombrepieza, MetodoPago metodoPago, String fecha) {
 		this.compradorLogin = compradorLogin;
 		this.precio = precio;
 		Nombrepieza = nombrepieza;
@@ -23,7 +27,7 @@ public class Compra
 	}
 
 
-	
+
 
 	public void setCompradorLogin(String compradorLogin) {
 		this.compradorLogin = compradorLogin;
@@ -53,9 +57,7 @@ public class Compra
 
 
 
-	public void setMetodoPago(String metodoPago) {
-		this.metodoPago = metodoPago;
-	}
+	
 
 
 
@@ -78,12 +80,27 @@ public class Compra
 		return precio;
 	}
 	
-	public String getMetodoPago() {
-		return metodoPago;
-	}
+	
+	
 	public String getCompradorLogin() {
 		return compradorLogin;
 	}
+
+
+
+
+	public MetodoPago getMetodoPago() {
+		return metodoPago;
+	}
+
+
+
+
+	public void setMetodoPago(MetodoPago metodoPago) {
+		this.metodoPago = metodoPago;
+	}
+
+	
 	
 	
 
