@@ -18,10 +18,12 @@ public abstract class Pieza
 	protected boolean bodega;
 	protected String tipo;
 	protected ArrayList<Map<String, Object>> historialPropietarios;
+	protected String rutaImagen;
+
 	public Pieza(String titulo, String loginPropietarioActual, int anioCreacion, String lugarCreacion,
 			ArrayList<String> autor, boolean disponible, int tiempoConsignacion, boolean subasta,
 			ArrayList<Integer> valores, boolean bodega, String tipo,
-			ArrayList<Map<String, Object>> historialPropietarios) 
+			ArrayList<Map<String, Object>> historialPropietarios, String rutaImagen) 
 			{
 		this.titulo = titulo;
 		this.loginPropietarioActual = loginPropietarioActual;
@@ -35,6 +37,7 @@ public abstract class Pieza
 		this.bodega = bodega;
 		this.tipo = tipo;
 		this.historialPropietarios = historialPropietarios;
+		this.rutaImagen = rutaImagen;
 	}
 	public String getTitulo() {
 		return titulo;
@@ -109,5 +112,14 @@ public abstract class Pieza
 		this.historialPropietarios = historialPropietarios;
 	}
 
+	public String getRutaImagen()
+	{
+		return rutaImagen;
+	}
+
+	public void setRutaImagen(String rutaImg)
+	{
+		rutaImagen = rutaImg;
+	}
 
 }

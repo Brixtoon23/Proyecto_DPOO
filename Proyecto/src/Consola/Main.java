@@ -372,6 +372,9 @@ public class Main
                     
                     System.out.print("¿Se encuentra en bodega? (true/false): ");
                     boolean bodega = Boolean.parseBoolean(scanner.nextLine());
+
+                    System.err.println("Ingrese la ruta de la imagen de la pieza: ");
+                    String rutaImg = scanner.nextLine();
                     
                     System.out.print("Ingrese el tipo (pintura/escultura/video/fotografia): ");
                     String tipo = scanner.nextLine();
@@ -400,7 +403,7 @@ public class Main
                     
 
     
-                        Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, peso, tecnica);
+                        Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, peso, tecnica, rutaImg);
                         
 
                         Administrador.ingresarPieza(galeria, pintura);
@@ -415,7 +418,7 @@ public class Main
                         System.out.print("Ingrese el tamaño en gigas: ");
                         tamanioGiga = Integer.parseInt(scanner.nextLine());
     
-                        Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, resolucion, tamanioGiga);
+                        Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, resolucion, tamanioGiga, rutaImg);
                         Administrador.ingresarPieza(galeria, fotografia);
                         Administrador.ingresarAutor(galeria, autores, titulo);
 
@@ -439,7 +442,7 @@ public class Main
                         System.out.print("¿Necesita electricidad? (true/false): ");
                         boolean electricidad = Boolean.parseBoolean(scanner.nextLine());
     
-                        Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, profundidad, peso, electricidad);
+                        Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, profundidad, peso, electricidad, rutaImg);
                         Administrador.ingresarPieza(galeria, escultura);
                         Administrador.ingresarAutor(galeria, autores, titulo);
 
@@ -455,7 +458,7 @@ public class Main
                         System.out.print("Ingrese la resolución: ");
                         resolucion = scanner.nextLine();
                         
-                        Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, duracion, tamanioGiga, resolucion);
+                        Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, duracion, tamanioGiga, resolucion,rutaImg);
                         
                         Administrador.ingresarPieza(galeria,video);
                         Administrador.ingresarAutor(galeria, autores, titulo);
