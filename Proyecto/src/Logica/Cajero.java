@@ -146,10 +146,65 @@ public class Cajero  extends Usuario
 	}
 
 
-	public static void registrarCompraTarjeta(Comprador comprador,Pieza pieza, String numeroTarjeta,Galeria galeria, String fecha) 
+	public static void registrarCompraTarjetaPrecioFijo(String loginComprador, String nombrePieza, Galeria galeria, String fecha, int numeroTarjeta) 
 	{
+		Tarjeta metodoPago= Servicios.BuscarTarjeta(galeria, numeroTarjeta);
+		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
+		Pieza pieza= Servicios.buscarPieza(galeria, nombrePieza);
+		float cuenta = comprador.getEstadoCuenta();
+		ArrayList<Integer> valores = pieza.getValores();
+		int precioFijo = valores.get(0);
+		cuenta -= precioFijo;
+		comprador.setEstadoCuenta(cuenta);
 
-		return  ;
+		pieza.setDisponible(false);
+		
+		String propietarioAnteriorLogin = pieza.getLoginPropietarioActual();
+		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, propietarioAnteriorLogin);
+		ArrayList<String> piezasPropietarioAnterior = propietarioAnterior.getIdPiezasActuales();
+
+		piezasPropietarioAnterior.remove(pieza.getTitulo());
+		propietarioAnterior.setIdPiezasActuales(piezasPropietarioAnterior);
+
+		
+		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
+	
+
+		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago, fecha);
+
+		historialCompra.add(compraNueva);
+
+		comprador.setHistorialCompras(historialCompra);
+		
+		
+		
+		
+		ArrayList<String> piezas =  comprador.getIdpiezasCompradas();
+		piezas.add(pieza.getTitulo());
+		comprador.setIdpiezasCompradas(piezas);
+		
+		
+		String loginnuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
+		Propietario nuevoPropiertario= Servicios.buscarPropietario(galeria, loginnuevoPropiertario);
+
+		nuevoPropiertario.getHistorialPiezas().add(pieza.getTitulo());
+		nuevoPropiertario.getIdPiezasActuales().add(pieza.getTitulo());
+
+
+		Map<String, Object> mapa = new HashMap<>();
+
+		mapa.put( "loginPropietario", loginnuevoPropiertario);
+		mapa.put("valorCompra", precioFijo);
+		mapa.put("fechaVenta", fecha);
+
+		pieza.getHistorialPropietarios().add(mapa);
+
+		PiezasPersistencia.actualizarPropietarioPieza(galeria,pieza);
+		UsuarioPersistencia.actualizarCompradorCompra( comprador );
+		UsuarioPersistencia.actualizarPropietarioCompra(propietarioAnterior,nuevoPropiertario);
+
+
+		
 	}
 
 
