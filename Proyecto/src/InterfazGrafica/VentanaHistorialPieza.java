@@ -33,6 +33,8 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
         btnVolver = new JButton("<");
         btnVolver.setFont(new Font("Verdana",Font.BOLD,25));
         btnVolver.setFocusable(false);
+        btnVolver.addActionListener(this);
+        btnVolver.setActionCommand("volver");
         pnlRegresar.add(btnVolver);
         pnlRegresar.add(Box.createVerticalStrut(15));
         pnlRegresar.add(Box.createVerticalStrut(15));
@@ -53,17 +55,25 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+    public void actionPerformed(ActionEvent e) 
+    {
+        if (e.getActionCommand().equals("volver"))
+        {
+            this.dispose();
+            VentanaOperador menu = new VentanaOperador();
+            menu.setVisible(true);
+            menu.setLocationRelativeTo(null);
+        }
+       
     }
 
 
+    /** 
     public static void main(String[] args)
     {
         VentanaHistorialPieza iniciar = new VentanaHistorialPieza();
         iniciar.setVisible(true);
         iniciar.setLocationRelativeTo(null);
     }
-
+    */
 }

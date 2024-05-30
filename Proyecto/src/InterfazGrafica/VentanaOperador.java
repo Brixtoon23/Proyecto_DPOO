@@ -32,9 +32,13 @@ public class VentanaOperador extends JFrame implements ActionListener
         btnHistoriaPieza = new JButton("Consultar historial de una pieza");
         btnHistoriaPieza.setFont(new Font("Verdana",Font.PLAIN,20));
         btnHistoriaPieza.setFocusable(false);
+        btnHistoriaPieza.addActionListener(this);
+        btnHistoriaPieza.setActionCommand("HistPieza");
         btnHistoriaArtista = new JButton("Consultar historial de un artista");
         btnHistoriaArtista.setFont(new Font("Verdana",Font.PLAIN,20));
         btnHistoriaArtista.setFocusable(false);
+        btnHistoriaArtista.addActionListener(this);
+        btnHistoriaArtista.setActionCommand("HistArtista");
         panelC.add(Box.createVerticalStrut(15));
         panelC.add(btnHistoriaPieza);
         panelC.add(btnHistoriaArtista);
@@ -47,9 +51,21 @@ public class VentanaOperador extends JFrame implements ActionListener
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+    public void actionPerformed(ActionEvent e) 
+    {
+        if (e.getActionCommand().equals("HistPieza"))
+        {
+            this.dispose();
+            VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
+            ventana1.setVisible(true);
+            ventana1.setLocationRelativeTo(null);
+        }
+
+        else if (e.getActionCommand().equals("HistArtista"))
+        {
+
+        }
+        
     }
 
     public static void main(String[] args)
