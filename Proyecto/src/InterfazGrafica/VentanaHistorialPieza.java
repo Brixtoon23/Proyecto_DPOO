@@ -48,7 +48,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
     private JPanel organizadorE;
     private JPanel organizadorW;
     private JPanel organizadorC;
-
+    private int posHistorial;
     private Pieza piezaDesplegar;
     private Galeria galeria;
 
@@ -159,15 +159,23 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
         btnUltimo = new JButton("Último");
         btnUltimo.setFocusable(false);
         btnUltimo.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnUltimo.addActionListener(this);
+        btnUltimo.setActionCommand("Last");
         btnAnterior = new JButton("<<");
         btnAnterior.setFocusable(false);
+        btnAnterior.addActionListener(this);
+        btnAnterior.setActionCommand("Before");
         btnAnterior.setFont(new Font("Verdana",Font.PLAIN,15));
         btnPrimero = new JButton("Primero");
         btnPrimero.setFocusable(false);
         btnPrimero.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnPrimero.addActionListener(this);
+        btnPrimero.setActionCommand("First");
         btnSiguiente = new JButton(">>");
         btnSiguiente.setFocusable(false);
         btnSiguiente.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnSiguiente.addActionListener(this);
+        btnSiguiente.setActionCommand("Next");
 
         organizadorBtns.add(btnUltimo);
         organizadorBtns.add(btnAnterior);
@@ -243,6 +251,26 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
         {
             desplegarInfoPiezaEncontrada();
         }
+
+        else if (e.getActionCommand().equals("Last"))
+        {
+            actualizarInfo("Last");
+        }
+
+        else if (e.getActionCommand().equals("Before"))
+        {
+            actualizarInfo("Before");
+        }
+
+        else if (e.getActionCommand().equals("Next"))
+        {
+            actualizarInfo("Next");   
+        }
+
+        else if (e.getActionCommand().equals("First"))
+        {
+            actualizarInfo("First");
+        }
        
     }
 
@@ -272,8 +300,54 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
             ImageIcon imgPieza = new ImageIcon(piezaDesplegar.getRutaImagen());
             imagenPieza.setIcon(imgPieza);
 
+            organizadorC.setVisible(false);
             organizadorE.setVisible(true);
             organizadorW.setVisible(true);
+            posHistorial = 0;
+        }
+    }
+
+    public void actualizarInfo(String accion)
+    {
+        if((organizadorE.isVisible())&&(organizadorW.isVisible()))
+        {
+            if (accion.equals("Last"))
+            {
+                txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("loginPropietario"));
+                txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
+                txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra"));
+                posHistorial = 0;
+            }
+
+            else if (accion.equals("Before"))
+            {
+                if((posHistorial-1)>=0)
+                {
+                    txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial-1).get("loginPropietario"));
+                    txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial-1).get("fechaVenta"));
+                    txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial-1).get("valorCompra"));
+                    posHistorial-= 1;
+                }
+            }
+
+            else if (accion.equals("Next"))
+            {
+                if((posHistorial+1)<=(piezaDesplegar.getHistorialPropietarios().size()-1))
+                {
+                    txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial+1).get("loginPropietario"));
+                    txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial+1).get("fechaVenta"));
+                    txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial+1).get("valorCompra"));
+                    posHistorial+= 1;
+                }
+            }
+
+            else
+            {
+                txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(piezaDesplegar.getHistorialPropietarios().size()-1).get("loginPropietario"));
+                txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(piezaDesplegar.getHistorialPropietarios().size()-1).get("fechaVenta"));
+                txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(piezaDesplegar.getHistorialPropietarios().size()-1).get("valorCompra"));
+                posHistorial = piezaDesplegar.getHistorialPropietarios().size()-1; 
+            }
         }
     }
 
