@@ -18,6 +18,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Logica.Galeria;
+import Logica.Pieza;
+import Logica.Servicios;
+
 public class VentanaHistorialPieza extends JFrame implements ActionListener
 {
     private String ventanaAnterior;
@@ -41,6 +45,12 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
     private JButton btnSiguiente;
     private JButton btnPrimero;
 
+    private JPanel organizadorE;
+    private JPanel organizadorW;
+    private JPanel organizadorC;
+
+    private Pieza piezaDesplegar;
+    private Galeria galeria;
 
 
     public VentanaHistorialPieza()
@@ -74,6 +84,8 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
         btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Verdana",Font.PLAIN,15));
         btnBuscar.setFocusable(false);
+        btnBuscar.addActionListener(this);
+        btnBuscar.setActionCommand("Buscar");
         arregloBusqueda.add(btnBuscar);
 
         organizador.add(arregloBusqueda);
@@ -108,7 +120,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
         JPanel pnlSur = new JPanel();
         pnlSur.setLayout(new BorderLayout());
 
-        JPanel organizadorE = new JPanel();
+        organizadorE = new JPanel();
         organizadorE.setLayout(new GridLayout(2,1,0,10));
 
         JPanel organizadorInfo = new JPanel();
@@ -169,7 +181,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
 
         pnlSur.add(organizadorE,BorderLayout.EAST);
 
-        JPanel organizadorW = new JPanel();
+        organizadorW = new JPanel();
         organizadorW.setLayout(new FlowLayout());
 
         ImageIcon imagen = new ImageIcon("Proyecto/Imagenes/ImagenTest.png");
@@ -186,7 +198,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
 
         pnlSur.add(Box.createVerticalStrut(20),BorderLayout.SOUTH);
 
-        JPanel organizadorC = new JPanel();
+        organizadorC = new JPanel();
         organizadorC.setLayout(new FlowLayout());
         organizadorC.add(Box.createHorizontalStrut(15));
         lblNoEncontro = new JLabel("No se encontró la pieza. Inténtelo de nuevo.");
@@ -226,6 +238,11 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
             }
             
         }
+
+        else if (e.getActionCommand().equals("Buscar"))
+        {
+            desplegarInfoPiezaEncontrada();
+        }
        
     }
 
@@ -234,6 +251,36 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
         ventanaAnterior = anterior;
     }
 
+
+    public void desplegarInfoPiezaEncontrada()
+    {
+        String nomPieza = txtNombrePieza.getText();
+        piezaDesplegar = Servicios.buscarPieza(galeria, nomPieza);
+
+        if (piezaDesplegar==null)
+        {
+            organizadorC.setVisible(true);
+        }
+
+        else
+        {
+            txtTituloPieza.setText(piezaDesplegar.getTitulo());
+            txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("loginPropietario"));
+            txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
+            txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra"));
+
+            ImageIcon imgPieza = new ImageIcon(piezaDesplegar.getRutaImagen());
+            imagenPieza.setIcon(imgPieza);
+
+            organizadorE.setVisible(true);
+            organizadorW.setVisible(true);
+        }
+    }
+
+    public void setGaleria (Galeria g)
+    {
+        galeria = g;
+    }
 
     /** 
     public static void main(String[] args)
