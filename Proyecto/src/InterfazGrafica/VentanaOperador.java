@@ -57,6 +57,7 @@ public class VentanaOperador extends JFrame implements ActionListener
         {
             this.dispose();
             VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
+            ventana1.setVentanaAnterior("Operador");
             ventana1.setVisible(true);
             ventana1.setLocationRelativeTo(null);
         }
@@ -65,6 +66,7 @@ public class VentanaOperador extends JFrame implements ActionListener
         {
             this.dispose();
             VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
+            ventana2.setVentanaAnterior("Operador");
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
         }

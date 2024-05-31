@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 
 public class VentanaHistorialPieza extends JFrame implements ActionListener
 {
+    private String ventanaAnterior;
     private JPanel panelN;
     private JPanel panelS;
     private JButton btnVolver;
@@ -59,12 +60,29 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
     {
         if (e.getActionCommand().equals("volver"))
         {
-            this.dispose();
-            VentanaOperador menu = new VentanaOperador();
-            menu.setVisible(true);
-            menu.setLocationRelativeTo(null);
+            if (ventanaAnterior.equals("Operador"))
+            {
+                this.dispose();
+                VentanaOperador menu = new VentanaOperador();
+                menu.setVisible(true);
+                menu.setLocationRelativeTo(null);
+            }
+
+            else if (ventanaAnterior.equals("Propietario"))
+            {
+                this.dispose();
+                VentanaPropietario menu = new VentanaPropietario();
+                menu.setVisible(true);
+                menu.setLocationRelativeTo(null);
+            }
+            
         }
        
+    }
+
+    public void setVentanaAnterior(String anterior)
+    {
+        ventanaAnterior = anterior;
     }
 
 
