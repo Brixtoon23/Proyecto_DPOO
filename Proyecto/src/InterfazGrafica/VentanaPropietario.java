@@ -58,11 +58,11 @@ public class VentanaPropietario extends JFrame implements ActionListener
         btnHistoriaArtist.setFocusable(false);
         btnHistoriaArtist.addActionListener(this);
         btnHistoriaArtist.setActionCommand("HistArtist");
-        btnHistorialPiezas = new JButton("Consultar historial de piezas compradas");
-        btnHistorialPiezas.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnHistorialPiezas = new JButton("Consultar piezas pasadas");
+        btnHistorialPiezas.setFont(new Font("Verdana",Font.PLAIN,20));
         btnHistorialPiezas.setFocusable(false);
         btnHistorialPiezas.addActionListener(this);
-        btnHistorialPiezas.setActionCommand("HistorialCompras");
+        btnHistorialPiezas.setActionCommand("PiezasPast");
         btnMisPiezas = new JButton("Mis piezas");
         btnMisPiezas.setFont(new Font("Verdana",Font.PLAIN,20));
         btnMisPiezas.setFocusable(false);
@@ -114,14 +114,20 @@ public class VentanaPropietario extends JFrame implements ActionListener
             ventana2.setLocationRelativeTo(null);
         }
 
-        else if (e.getActionCommand().equals("HistorialCompras"))
+        else if (e.getActionCommand().equals("PiezasPast"))
         {
-
+            this.dispose();
+            VentanaPiezasPasadas ventana3 = new VentanaPiezasPasadas();
+            ventana3.setVisible(true);
+            ventana3.setLocationRelativeTo(null);
         }
 
         else if (e.getActionCommand().equals("MisPiezas"))
         {
-
+            this.dispose();
+            VentanaPiezasActuales ventana4 = new VentanaPiezasActuales();
+            ventana4.setVisible(true);
+            ventana4.setLocationRelativeTo(null);
         }
 
         else
