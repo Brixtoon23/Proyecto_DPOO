@@ -9,6 +9,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.ImageIcon;
@@ -17,6 +19,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import Logica.Galeria;
+import Logica.Pieza;
+import Logica.Servicios;
 
 public class VentanaHistorialArtista extends JFrame implements ActionListener
 {
@@ -45,6 +51,11 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
     private JButton btnAnterior;
     private JButton btnSiguiente;
     private JButton btnUltima;
+
+    private int posHistorial;
+    private Pieza piezaDesplegar;
+    private String autor;
+    private Galeria galeria;
     
 
     public VentanaHistorialArtista()
@@ -100,6 +111,8 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
         btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Verdana",Font.PLAIN,15));
         btnBuscar.setFocusable(false);
+        btnBuscar.addActionListener(this);
+        btnBuscar.setActionCommand("Buscar");
         arregloBusqueda.add(btnBuscar);
 
         organizador.add(arregloBusqueda);
@@ -173,15 +186,23 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
         btnPrimera = new JButton("Primera");
         btnPrimera.setFocusable(false);
         btnPrimera.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnPrimera.addActionListener(this);
+        btnPrimera.setActionCommand("Pri");
         btnAnterior = new JButton("<<");
         btnAnterior.setFocusable(false);
         btnAnterior.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnAnterior.addActionListener(this);
+        btnAnterior.setActionCommand("Antes");
         btnUltima = new JButton("Última");
         btnUltima.setFocusable(false);
         btnUltima.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnUltima.addActionListener(this);
+        btnUltima.setActionCommand("Ult");
         btnSiguiente = new JButton(">>");
         btnSiguiente.setFocusable(false);
         btnSiguiente.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnSiguiente.addActionListener(this);
+        btnAnterior.setActionCommand("Sig");
 
         organizadorBtns.add(btnPrimera);
         organizadorBtns.add(btnAnterior);
@@ -250,11 +271,134 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
             }
             
         }
+
+        else if (e.getActionCommand().equals("Buscar"))
+        {
+            desplegarInfoPieza();
+        }
+
+        else if (e.getActionCommand().equals("Pri"))
+        {
+            
+        }
+
+        else if (e.getActionCommand().equals("Antes"))
+        {
+            
+        }
+
+        else if (e.getActionCommand().equals("Sig"))
+        {
+            
+        }
+
+        else
+        {
+            
+        }
+    }
+
+    public void desplegarInfoPieza()
+    {
+        String nomArtista = txtNombreArtist.getText();
+        Map<String,ArrayList<String>> autores = galeria.getAutores();
+
+        if (autores.containsKey(nomArtista))
+        {
+            autor = nomArtista;
+            piezaDesplegar = Servicios.buscarPieza(galeria, autores.get(nomArtista).get(0));
+            txtTituloPieza.setText(piezaDesplegar.getTitulo());
+            txtFechaCreacion.setText(((Integer)(piezaDesplegar.getAnioCreacion())).toString());
+            
+            if (piezaDesplegar.getHistorialPropietarios().size()>0)
+            {
+                txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
+                txtValor.setText(((Integer)(piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra"))).toString());
+                lblNoEncontroInfoVenta.setVisible(false);
+                detallesVenta.setVisible(true);
+            }
+
+            else
+            {
+                lblNoEncontroInfoVenta.setVisible(true);
+            }
+
+            ImageIcon icono = new ImageIcon(piezaDesplegar.getRutaImagen());
+            imagenPieza.setIcon(icono);
+            posHistorial = 0;
+
+            organizadorC.setVisible(false);
+            organizadorE.setVisible(true);
+            organizadorW.setVisible(true);
+        }
+
+        else
+        {
+            organizadorC.setVisible(true);
+        }
+    }
+
+    public void cambioPieza(String autor,int posPieza)
+    {
+        Map<String,ArrayList<String>> autores = galeria.getAutores();
+
+        piezaDesplegar = Servicios.buscarPieza(galeria, autores.get(autor).get(posPieza));
+            txtTituloPieza.setText(piezaDesplegar.getTitulo());
+            txtFechaCreacion.setText(((Integer)(piezaDesplegar.getAnioCreacion())).toString());
+            
+            if (piezaDesplegar.getHistorialPropietarios().size()>0)
+            {
+                txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
+                txtValor.setText(((Integer)(piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra"))).toString());
+                lblNoEncontroInfoVenta.setVisible(false);
+                detallesVenta.setVisible(true);
+            }
+
+            else
+            {
+                lblNoEncontroInfoVenta.setVisible(true);
+            }
+
+            ImageIcon icono = new ImageIcon(piezaDesplegar.getRutaImagen());
+            imagenPieza.setIcon(icono);
+            posHistorial = posPieza;
+
+    }
+
+    public void actualizarInfo(String accion)
+    {
+        if((organizadorE.isVisible())&&(organizadorW.isVisible()))
+        {
+            if (accion.equals("Pri"))
+            {
+                cambioPieza(autor,0);
+            }
+
+            else if ((accion.equals("Antes"))&&((posHistorial-1)>=0))
+            {
+                cambioPieza(autor, posHistorial-1);
+            }
+
+            else if ((accion.equals("Sig"))&&((posHistorial+1)<=(galeria.getAutores().get(autor).size()-1)))
+            {
+                cambioPieza(autor,posHistorial+1);
+            }
+
+            else
+            {
+                cambioPieza(autor, (galeria.getAutores().get(autor).size()-1));
+            }
+        }
     }
 
     public void setVentanaAnterior(String anterior)
     {
         ventanaAnterior = anterior;
+    }
+
+    public void setGaleria (Galeria g)
+    {
+        galeria = g;
     }
 
 }

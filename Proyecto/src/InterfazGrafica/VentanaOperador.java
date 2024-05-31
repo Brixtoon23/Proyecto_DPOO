@@ -4,6 +4,10 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import Logica.Galeria;
+import Persistencia.InicializadorDeClases;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -17,6 +21,7 @@ public class VentanaOperador extends JFrame implements ActionListener
     private JButton btnHistoriaArtista;
     private JButton btnHistoriaPieza;
     private JButton btnSalir;
+    private Galeria galeria; 
 
     public VentanaOperador()
     {
@@ -24,6 +29,8 @@ public class VentanaOperador extends JFrame implements ActionListener
         setSize(750,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+
+        galeria = InicializadorDeClases.cargarGaleria();
 
         panelN = new PanelNorteOperador();
         add(panelN, BorderLayout.NORTH);
@@ -65,6 +72,7 @@ public class VentanaOperador extends JFrame implements ActionListener
             this.dispose();
             VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
             ventana1.setVentanaAnterior("Operador");
+            ventana1.setGaleria(galeria);
             ventana1.setVisible(true);
             ventana1.setLocationRelativeTo(null);
         }
@@ -74,6 +82,7 @@ public class VentanaOperador extends JFrame implements ActionListener
             this.dispose();
             VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
             ventana2.setVentanaAnterior("Operador");
+            ventana2.setGaleria(galeria);
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
         }

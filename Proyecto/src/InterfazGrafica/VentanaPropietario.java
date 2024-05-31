@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Logica.Galeria;
+import Persistencia.InicializadorDeClases;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -26,12 +29,16 @@ public class VentanaPropietario extends JFrame implements ActionListener
     private JPanel panelN;
     private JPanel panelC;
 
+    private Galeria galeria;
+
     public VentanaPropietario()
     {
         setTitle("Menú Propietario");
         setSize(750,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+
+        galeria = InicializadorDeClases.cargarGaleria();
 
         panelN = new JPanel();
         panelN.setLayout(new GridBagLayout());
@@ -101,6 +108,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
             this.dispose();
             VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
             ventana1.setVentanaAnterior("Propietario");
+            ventana1.setGaleria(galeria);
             ventana1.setVisible(true);
             ventana1.setLocationRelativeTo(null);
         }
@@ -110,6 +118,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
             this.dispose();
             VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
             ventana2.setVentanaAnterior("Propietario");
+            ventana2.setGaleria(galeria);
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
         }
