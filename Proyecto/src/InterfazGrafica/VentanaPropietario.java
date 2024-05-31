@@ -49,12 +49,12 @@ public class VentanaPropietario extends JFrame implements ActionListener
         organizadorBtnsAction.setLayout(new GridLayout(2,2));
 
         btnHistoriaPieza = new JButton("Consultar historial de una pieza");
-        btnHistoriaPieza.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnHistoriaPieza.setFont(new Font("Verdana",Font.PLAIN,20));
         btnHistoriaPieza.setFocusable(false);
         btnHistoriaPieza.addActionListener(this);
         btnHistoriaPieza.setActionCommand("HistPieza");
         btnHistoriaArtist = new JButton("Consultar historia de un artista");
-        btnHistoriaArtist.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnHistoriaArtist.setFont(new Font("Verdana",Font.PLAIN,20));
         btnHistoriaArtist.setFocusable(false);
         btnHistoriaArtist.addActionListener(this);
         btnHistoriaArtist.setActionCommand("HistArtist");
@@ -64,7 +64,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
         btnHistorialPiezas.addActionListener(this);
         btnHistorialPiezas.setActionCommand("HistorialCompras");
         btnMisPiezas = new JButton("Mis piezas");
-        btnMisPiezas.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnMisPiezas.setFont(new Font("Verdana",Font.PLAIN,20));
         btnMisPiezas.setFocusable(false);
         btnMisPiezas.addActionListener(this);
         btnMisPiezas.setActionCommand("MisPiezas");
@@ -77,7 +77,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
         panelC.add(organizadorBtnsAction);
 
         btnSalir = new JButton("Salir");
-        btnSalir.setFont(new Font("Verdana",Font.PLAIN,15));
+        btnSalir.setFont(new Font("Verdana",Font.PLAIN,20));
         btnSalir.setForeground(Color.RED);
         btnSalir.setFocusable(false);
         btnSalir.addActionListener(this);

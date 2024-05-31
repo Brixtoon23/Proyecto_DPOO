@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ public class VentanaOperador extends JFrame implements ActionListener
     private JPanel panelC;
     private JButton btnHistoriaArtista;
     private JButton btnHistoriaPieza;
+    private JButton btnSalir;
 
     public VentanaOperador()
     {
@@ -39,9 +41,16 @@ public class VentanaOperador extends JFrame implements ActionListener
         btnHistoriaArtista.setFocusable(false);
         btnHistoriaArtista.addActionListener(this);
         btnHistoriaArtista.setActionCommand("HistArtista");
+        btnSalir = new JButton("Salir");
+        btnSalir.setFont(new Font("Verdana",Font.PLAIN,20));
+        btnSalir.setForeground(Color.RED);
+        btnSalir.setFocusable(false);
+        btnSalir.addActionListener(this);
+        btnSalir.setActionCommand("Salir");
         panelC.add(Box.createVerticalStrut(15));
         panelC.add(btnHistoriaPieza);
         panelC.add(btnHistoriaArtista);
+        panelC.add(btnSalir);
         panelC.add(Box.createVerticalStrut(10));
         add(panelC,BorderLayout.CENTER);
 
