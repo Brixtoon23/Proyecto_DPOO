@@ -212,6 +212,40 @@ public class Servicios
         return null;
 
     }
+
+    public static Tarjeta buscarTarjeta(Galeria galeria, int numeroTarjeta)
+    {
+
+        int cont = 0 ;
+        ArrayList<Tarjeta>listaTarjetas = galeria.getTarjetas();
+        while ( cont < listaTarjetas.size()) 
+        {
+            Tarjeta tarjeta = listaTarjetas.get(cont);
+
+            if (numeroTarjeta== tarjeta.getNumero())
+            
+            {
+
+                return tarjeta;
+
+            }
+            else
+            {
+                cont ++ ;
+
+            }
+
+        }
+
+
+        return null;
+
+    }
+
+
+
+
+
     public static void imprimirPiezas(Galeria galeria,boolean subasta)
     {
         int ward = 0;

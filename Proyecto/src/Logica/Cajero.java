@@ -148,7 +148,7 @@ public class Cajero  extends Usuario
 
 	public static void registrarCompraTarjetaPrecioFijo(String loginComprador, String nombrePieza, Galeria galeria, String fecha, int numeroTarjeta) 
 	{
-		Tarjeta metodoPago= Servicios.BuscarTarjeta(galeria, numeroTarjeta);
+		Tarjeta metodoPago= Servicios.buscarTarjeta(galeria, numeroTarjeta);
 		Comprador comprador= Servicios.buscarComprador(galeria, loginComprador);
 		Pieza pieza= Servicios.buscarPieza(galeria, nombrePieza);
 		float cuenta = comprador.getEstadoCuenta();
