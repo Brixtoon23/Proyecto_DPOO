@@ -767,14 +767,10 @@ public class Main
                    int monto= Integer.parseInt(scanner.nextLine());
                    System.out.println("Ingrese de nuevo su login: "); 
                    Tarjeta tarjeta= new Tarjeta("Tarjeta", monto, login, numero, pin, csv);
-                   galeria.getTarjetas().add(tarjeta);
+                   
 
+                   Administrador.ingresarTarjeta(tarjeta,galeria);
 
-
-                    
-                    
-                    
-                    
                     break;   
 
                 case 10:

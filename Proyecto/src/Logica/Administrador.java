@@ -8,6 +8,7 @@ import java.util.List;
 import Persistencia.AutoresPersistencia;
 import Persistencia.PiezasPersistencia;
 import Persistencia.SubastaPersistencia;
+import Persistencia.TarjetasPersistencia;
 import Persistencia.UsuarioPersistencia;
 
 public class Administrador extends Usuario
@@ -60,6 +61,14 @@ public class Administrador extends Usuario
 			galeria.getUsuarios().add(usuario);
 
 			UsuarioPersistencia.registrarUsuario(usuario);
+		
+	}
+	public static void ingresarTarjeta(Tarjeta tarjeta,Galeria galeria )
+	{
+
+			galeria.getTarjetas().add(tarjeta);
+
+			TarjetasPersistencia.registrarTarjetas(tarjeta);
 		
 	}
 		
