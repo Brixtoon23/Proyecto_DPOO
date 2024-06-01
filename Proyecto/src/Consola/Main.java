@@ -3,17 +3,21 @@ import Logica.Administrador;
 import Logica.Cajero;
 import Logica.Compra;
 import Logica.Comprador;
+import Logica.Efectivo;
 import Logica.Escultura;
 import Logica.Fotografia;
 import Logica.Galeria;
 
 import Logica.Mensaje;
+import Logica.MetodoPago;
 import Logica.Oferta;
 import Logica.Operador;
 import Logica.Pieza;
 import Logica.Pintura;
 import Logica.Propietario;
 import Logica.Servicios;
+import Logica.Tarjeta;
+import Logica.Transferencia;
 import Logica.Usuario;
 import Logica.Video;
 
@@ -556,11 +560,56 @@ public class Main
                 }
                 else
                 {
-                    System.out.println("Ingrese el metodo de pago que va a usar: ");
+                    System.out.println("Ingrese el metodo de pago que va a usar (Transferencia, Efectivo o Tarjeta): ");
 
                     String metdPago = scanner.nextLine();
-                    Comprador comprador1= Servicios.buscarComprador(galeria, login);
-                    boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago, galeria, fecha);
+                    int monto= piezaCompra.getValores().get(0);
+                    boolean aprobar;
+                    MetodoPago mpago;
+                    if ("Transferencia" == metdPago )
+                    {
+                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                     
+                        System.out.println("Ingrese el id de la transferencia: ");
+                        String id= scanner.nextLine();
+                        System.out.println("Ingrese el nombre de la pasarela: ");
+                        String tipo = scanner.nextLine();
+                        mpago = new Transferencia(metdPago, monto, tipo, id);
+                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha, mpago);
+
+                    }
+                    if  ("Tarjeta" == metdPago )
+                    {
+                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                       
+
+                        System.out.println("Ingrese el número de la tarjeta: ");
+                        int  numero= Integer.parseInt(scanner.nextLine());
+                        System.out.println("Ingrese el pin de la tarjeta: ");
+                        int pin = Integer.parseInt(scanner.nextLine());
+                        System.out.println("Ingrese el csv de la tarjeta: ");
+                        int csv= Integer.parseInt(scanner.nextLine());
+
+                        mpago= new Tarjeta(metdPago, monto, login, numero, pin, csv);
+                         aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
+
+
+                    }
+                    if  ("Efectivo" == metdPago )
+                    {
+                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                       
+
+                        
+
+                        mpago = new Efectivo(metdPago, monto);
+                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
+                        
+
+                    }
+
+                    
+                   
 
                     if(aprobar== true)
                     {
@@ -580,8 +629,10 @@ public class Main
 
                     System.out.print("Ingrese el nombre de la pieza: ");
                     String nombrePieza= scanner.nextLine();
+                    Pieza pCompra = Servicios.buscarPieza(galeria,nombrePieza);
+
                 
-                    
+            
                     System.out.print("Ingrese el valor ofertado: ");
                     int valorOfertado= Integer.parseInt(scanner.nextLine());
 
@@ -593,7 +644,55 @@ public class Main
             
 
                     Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
-                    Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1);
+                    System.out.println("Ingrese el metodo de pago que va a usar (Transferencia, Efectivo o Tarjeta): ");
+
+                    String metdPago = scanner.nextLine();
+                    int monto= piezaCompra.getValores().get(0);
+                    boolean aprobar;
+                    MetodoPago mpago;
+                    if ("Transferencia" == metdPago )
+                    {
+                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                     
+                        System.out.println("Ingrese el id de la transferencia: ");
+                        String id= scanner.nextLine();
+                        System.out.println("Ingrese el nombre de la pasarela: ");
+                        String tipo = scanner.nextLine();
+                        mpago = new Transferencia(metdPago, monto, tipo, id);
+                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha, mpago);
+
+                    }
+                    if  ("Tarjeta" == metdPago )
+                    {
+                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                       
+
+                        System.out.println("Ingrese el número de la tarjeta: ");
+                        int  numero= Integer.parseInt(scanner.nextLine());
+                        System.out.println("Ingrese el pin de la tarjeta: ");
+                        int pin = Integer.parseInt(scanner.nextLine());
+                        System.out.println("Ingrese el csv de la tarjeta: ");
+                        int csv= Integer.parseInt(scanner.nextLine());
+
+                        mpago= new Tarjeta(metdPago, monto, login, numero, pin, csv);
+                         aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
+
+
+                    }
+                    if  ("Efectivo" == metdPago )
+                    {
+                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                       
+
+                        
+
+                        mpago = new Efectivo(metdPago, monto);
+                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
+                        
+
+                    }
+
+                    Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1, mpago);
 
                     System.out.println("Revisa tus mensajes mensajes para saber si la venta fue exitosa");
 
