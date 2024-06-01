@@ -51,8 +51,11 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
     private Pieza piezaDesplegar;
     private int posHistorial;
 
-    public VentanaPiezasActuales()
+    public VentanaPiezasActuales(Propietario propietario, Galeria galeria)
     {
+        this.propietario = propietario;
+        this.galeria = galeria;
+
         setTitle("Ventana piezas acuales");
         setSize(750,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -256,44 +259,45 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
         String nomPieza = propietario.getHistorialPiezas().get(pos);
         piezaDesplegar = Servicios.buscarPieza(galeria, nomPieza);
         
-        lblTituloPieza.setText(nomPieza);
+        txtTituloPieza.setText(nomPieza);
         String autores = "";
-        for(int i=0;i<piezaDesplegar.getAutor().size()-1;i++)
+        for(int i=0;i<=piezaDesplegar.getAutor().size()-1;i++)
         {
             if((i==0)||(i==(piezaDesplegar.getAutor().size()-1)))
             {
-                autores+=piezaDesplegar.getAutor().get(i);
+                autores += piezaDesplegar.getAutor().get(i);
             }
 
             else
             {
-                autores+= (","+piezaDesplegar.getAutor().get(i));
+                autores += (","+(piezaDesplegar.getAutor().get(i)));
             }
         }
-        lblAutor.setText(autores);
-        lblAnioCreacion.setText(((Integer)piezaDesplegar.getAnioCreacion()).toString());
+        txtAutor.setText(autores);
+        txtAnioCreacion.setText(((Integer)piezaDesplegar.getAnioCreacion()).toString());
 
         ArrayList<Map<String,Object>> propietariosPieza = piezaDesplegar.getHistorialPropietarios();
 
         int j = 0;
         boolean encontro = false;
 
-        Map<String,Object> mapaInfoVenta = new HashMap<String,Object>();
-        while((j<propietariosPieza.size()-1)&&(!encontro))
+        while((j<=propietariosPieza.size()-1)&&(!encontro))
         {
             Map <String, Object> mapaProp = propietariosPieza.get(j);
             
             if ((mapaProp.get("loginPropietario")).equals(propietario.getLogin()))
             {
-                mapaInfoVenta = mapaProp;
+                txtValorCompra.setText(mapaProp.get("valorCompra").toString());
+                txtFechaCompra.setText(mapaProp.get("fechaVenta").toString());
                 encontro = true;
             }
 
             j++;
         }
 
-        lblValorCompra.setText(((Integer)mapaInfoVenta.get("valorCompra")).toString());
-        lblFechaCompra.setText((String)mapaInfoVenta.get("fechaVenta"));
+        ImageIcon icono = new ImageIcon(piezaDesplegar.getRutaImagen());
+        imagenPieza.setIcon(icono);
+
     }
     
 

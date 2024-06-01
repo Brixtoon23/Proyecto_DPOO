@@ -88,7 +88,7 @@
         "subasta": false,
         "valores": [7000],
         "disponible": true,
-        "rutaImagen":"null"
+        "rutaImagen":"Proyecto/Imagenes/elGrito.png"
     },
     {
         "tiempoConsignacion": -1,
@@ -113,7 +113,7 @@
             50999
         ],
         "disponible": true,
-        "rutaImagen":"null"
+        "rutaImagen":"Proyecto/Imagenes/vanGoh.jpg"
     },
     {
         "tiempoConsignacion": -1,
@@ -170,8 +170,8 @@
                 "fechaVenta": "15/03/2024"
             },
             {
-                "valorCompra": 400000000,
-                "loginPropietario": "gabriela_propietario",
+                "valorCompra": 239480,
+                "loginPropietario": "nikol_propietario",
                 "fechaVenta": "15/03/2024"
             }
         ],
@@ -184,7 +184,7 @@
             509999
         ],
         "disponible": false,
-        "rutaImagen":"null"
+        "rutaImagen":"Proyecto/Imagenes/monalisa.jpg"
     },
     {
         "tiempoConsignacion": -1,
@@ -276,7 +276,7 @@
         "subasta": false,
         "valores": [20000],
         "disponible": false,
-        "rutaImagen":"null"
+        "rutaImagen":"Proyecto/Imagenes/david.jpeg"
     },
     {
         "tiempoConsignacion": -1,
