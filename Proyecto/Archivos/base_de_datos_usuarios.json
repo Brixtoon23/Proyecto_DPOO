@@ -1211,7 +1211,17 @@
             "mensajesSubasta": [],
             "estadoCuenta": 3.077556E7,
             "idPiezasCompradas": [],
-            "historialCompras": []
+            "historialCompras": [
+                {
+                "compradorLogin":"briceno_comprador",
+                "precio": 34599,
+                "nombrePieza":"La Ultima Cena",
+                "metodoPago":{"nombre":"tarjeta","monto":35000,"loginComprador":"briceno_comprador","numero":11111,"pin":2005,"csv":123},
+                "fecha":"23/4/2020"
+                }
+            
+                
+            ]
         },
         "password": "briceno",
         "login": "briceno_comprador",

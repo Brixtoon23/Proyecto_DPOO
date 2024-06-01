@@ -58,6 +58,7 @@ public class Main
             System.out.println("2. Iniciar Sesión");
             System.out.println("3. Salir");
             System.out.print("Ingrese su opción: ");
+            Galeria gale = galeria;
             int opcion;
             try 
             {
