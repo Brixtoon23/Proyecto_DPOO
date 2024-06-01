@@ -1,11 +1,15 @@
 package InterfazGrafica;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.ImageIcon;
@@ -14,6 +18,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import Logica.Galeria;
+import Logica.Pieza;
+import Logica.Propietario;
+import Logica.Servicios;
 
 public class VentanaPiezasActuales extends JFrame implements ActionListener
 {
@@ -34,6 +43,13 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
     private JButton btnSiguiente;
     private JButton btnUltima;
     private JButton btnVolver;
+    private JPanel pnlSur;
+    private JPanel pnlCentro;
+    private JLabel lblHistorialVacio;
+    private Propietario propietario;
+    private Galeria galeria;
+    private Pieza piezaDesplegar;
+    private int posHistorial;
 
     public VentanaPiezasActuales()
     {
@@ -48,7 +64,7 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
         titulo = new JLabel("Mis piezas");
         titulo.setFont(new Font("Verdana",Font.BOLD,30));
         organizadorN.add(titulo);
-        add(organizadorN,BorderLayout.CENTER);
+        add(organizadorN,BorderLayout.NORTH);
 
         JPanel pnlRegresar = new JPanel();
         pnlRegresar.setLayout(new GridLayout(10,1));
@@ -69,11 +85,11 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
         pnlRegresar.add(Box.createVerticalStrut(15));
         add(pnlRegresar,BorderLayout.WEST);
 
-        JPanel pnlSur = new JPanel();
+        pnlSur = new JPanel();
         pnlSur.setLayout(new GridLayout(1,2));
 
         JPanel organizadorInfo = new JPanel();
-        organizadorInfo.setLayout(new GridLayout(5,2));
+        organizadorInfo.setLayout(new GridLayout(6,2));
         lblTituloPieza = new JLabel("Título:");
         lblTituloPieza.setFont(new Font("Verdana",Font.PLAIN,15));
         lblAutor = new JLabel("Autor:");
@@ -118,15 +134,23 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
         btnPrimera = new JButton("Primera");
         btnPrimera.setFont(new Font("Verdana",Font.PLAIN,15));
         btnPrimera.setFocusable(false);
+        btnPrimera.addActionListener(this);
+        btnPrimera.setActionCommand("Pri");
         btnSiguiente = new JButton(">>");
         btnSiguiente.setFont(new Font("Verdana",Font.PLAIN,15));
         btnSiguiente.setFocusable(false);
+        btnSiguiente.addActionListener(this);
+        btnSiguiente.setActionCommand("Sig");
         btnAnterior = new JButton("<<");
         btnAnterior.setFont(new Font("Verdana",Font.PLAIN,15));
         btnAnterior.setFocusable(false);
+        btnAnterior.addActionListener(this);
+        btnAnterior.setActionCommand("Ant");
         btnUltima = new JButton("Ultima");
         btnUltima.setFont(new Font("Verdana",Font.PLAIN,15));
         btnUltima.setFocusable(false);
+        btnUltima.addActionListener(this);
+        btnUltima.setActionCommand("Ult");
 
         organizadorBtns.add(btnPrimera);
         organizadorBtns.add(btnAnterior);
@@ -144,7 +168,35 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
 
         pnlSur.add(imagenPieza);
         pnlSur.add(pnlInfo);
+
+        //Este panel no es visible a menos de que el historial de piezas no esté vacío
+        pnlSur.setVisible(false);
+
         add(pnlSur,BorderLayout.SOUTH);
+
+        pnlCentro = new JPanel();
+        pnlCentro.setLayout(new GridBagLayout());
+        lblHistorialVacio = new JLabel("Actualmente usted no posee ninguna pieza");
+        lblHistorialVacio.setFont(new Font("Verdana",Font.BOLD,20));
+        lblHistorialVacio.setForeground(Color.RED);
+        pnlCentro.add(lblHistorialVacio);
+
+        //Este panel no es visible a menos que el historial de piezas esté vacío
+        pnlCentro.setVisible(false);
+
+        add(pnlCentro,BorderLayout.CENTER);
+
+        if(propietario.getHistorialPiezas().size()>0)
+        {
+            cambiarInfo(0);
+            pnlSur.setVisible(true);
+            posHistorial = 0;
+        }
+
+        else
+        {
+            pnlCentro.setVisible(true);
+        }
     }
 
     @Override
@@ -157,6 +209,91 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
             ventana.setVisible(true);
             ventana.setLocationRelativeTo(null);
         }
+
+        else if ((e.getActionCommand().equals("Pri"))&&(pnlSur.isVisible()))
+        {
+            cambiarInfo(0);
+            posHistorial = 0;
+        }
+
+        else if ((e.getActionCommand().equals("Ant"))&&(pnlSur.isVisible()))
+        {
+            if((posHistorial-1)>=0)
+            {
+                cambiarInfo(posHistorial-1);
+                posHistorial--;
+            }
+        }
+
+        else if ((e.getActionCommand().equals("Sig"))&&(pnlSur.isVisible()))
+        {
+            if ((posHistorial+1)<=(propietario.getHistorialPiezas().size()-1))
+            {
+                cambiarInfo(posHistorial+1);
+                posHistorial++;
+            }  
+        }
+
+        else if ((e.getActionCommand().equals("Ult"))&&(pnlSur.isVisible()))
+        {
+            cambiarInfo(propietario.getHistorialPiezas().size()-1);
+            posHistorial = propietario.getHistorialPiezas().size()-1;
+        }
+    }
+
+    public void setPropietario(Propietario prop)
+    {
+        propietario = prop;
+    }
+
+    public void setGaleria(Galeria g)
+    {
+        galeria = g;
+    }
+
+    public void cambiarInfo(int pos)
+    {
+        String nomPieza = propietario.getHistorialPiezas().get(pos);
+        piezaDesplegar = Servicios.buscarPieza(galeria, nomPieza);
+        
+        lblTituloPieza.setText(nomPieza);
+        String autores = "";
+        for(int i=0;i<piezaDesplegar.getAutor().size()-1;i++)
+        {
+            if((i==0)||(i==(piezaDesplegar.getAutor().size()-1)))
+            {
+                autores+=piezaDesplegar.getAutor().get(i);
+            }
+
+            else
+            {
+                autores+= (","+piezaDesplegar.getAutor().get(i));
+            }
+        }
+        lblAutor.setText(autores);
+        lblAnioCreacion.setText(((Integer)piezaDesplegar.getAnioCreacion()).toString());
+
+        ArrayList<Map<String,Object>> propietariosPieza = piezaDesplegar.getHistorialPropietarios();
+
+        int j = 0;
+        boolean encontro = false;
+
+        Map<String,Object> mapaInfoVenta = new HashMap<String,Object>();
+        while((j<propietariosPieza.size()-1)&&(!encontro))
+        {
+            Map <String, Object> mapaProp = propietariosPieza.get(j);
+            
+            if ((mapaProp.get("loginPropietario")).equals(propietario.getLogin()))
+            {
+                mapaInfoVenta = mapaProp;
+                encontro = true;
+            }
+
+            j++;
+        }
+
+        lblValorCompra.setText(((Integer)mapaInfoVenta.get("valorCompra")).toString());
+        lblFechaCompra.setText((String)mapaInfoVenta.get("fechaVenta"));
     }
     
 
