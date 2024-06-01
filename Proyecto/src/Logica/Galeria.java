@@ -19,7 +19,7 @@ public class Galeria
     
 
 
-    public Galeria(String nombre, int cantidadObras, Inventario inventario, ArrayList<Usuario> usuarios, ArrayList<Subasta> subastas, Map<String,ArrayList<String>> autores) 
+    public Galeria(String nombre, int cantidadObras, Inventario inventario, ArrayList<Usuario> usuarios, ArrayList<Subasta> subastas, Map<String,ArrayList<String>> autores ) 
     {
         this.nombre = nombre;
         this.cantidadObras = cantidadObras;
