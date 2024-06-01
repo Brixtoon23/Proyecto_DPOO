@@ -48,7 +48,7 @@ public class Cajero  extends Usuario
 
 		pieza.getHistorialPropietarios().add(mapa);
 
-		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), nombrePieza, metodoPago.getNombre(), fecha);
+		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), nombrePieza, metodoPago, fecha);
 		
 		
 		comprador.getHistorialCompras().add(compra);
@@ -93,7 +93,7 @@ public class Cajero  extends Usuario
 		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
 	
 
-		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago.getNombre(), fecha);
+		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago, fecha);
 
 		historialCompra.add(compraNueva);
 
@@ -170,7 +170,7 @@ public class Cajero  extends Usuario
 		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
 	
 
-		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago.getNombre(), fecha);
+		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo, pieza.getTitulo() , metodoPago, fecha);
 
 		historialCompra.add(compraNueva);
 

@@ -18,11 +18,11 @@ public class Compra
 
 	
 
-	public Compra(String compradorLogin, int precio, String nombrepieza, MetodoPago metodoPago, String fecha) {
+	public Compra(String compradorLogin, int precio, String nombrepieza, MetodoPago metodoPagoObjeto, String fecha) {
 		this.compradorLogin = compradorLogin;
 		this.precio = precio;
 		Nombrepieza = nombrepieza;
-		this.metodoPago = metodoPago;
+		this.metodoPago = metodoPagoObjeto;
 		this.fecha = fecha;
 	}
 
