@@ -9,7 +9,7 @@ public class PanelCentroOperador extends JPanel
 {
     public PanelCentroOperador()
     {
-        setLayout(new GridLayout(4,1,20,20));
+        setLayout(new GridLayout(5,1,20,20));
         setPreferredSize(new Dimension(200,200));
     }
     
