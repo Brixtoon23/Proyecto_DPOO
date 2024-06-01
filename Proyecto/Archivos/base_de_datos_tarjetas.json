@@ -1,50 +1,54 @@
-[
-    {
-        "nombre ": "Bancolombia",
-        "monto": "300000",
-        "loginComprador": "alejandro",
-        "numero": "11111",
-        "pin": "2005",
-        "csv": "123"
-    },
-    {
-        "nombre ": "Davivienda",
-        "monto": "450990",
-        "loginComprador": "michel",
-        "numero": "22222",
-        "pin": "2006",
-        "csv": "456"
-    },
-    {
-        "nombre ": "Caja Social",
-        "monto": "540690",
-        "loginComprador": "alejandra",
-        "numero": "33333",
-        "pin": "2004",
-        "csv": "789"
-    },
-    {
-        "nombre ": "Bancolombia",
-        "monto": "1000000",
-        "loginComprador": "jhon",
-        "numero": "44444",
-        "pin": "2003",
-        "csv": "101"
-    },
-    {
-        "nombre ": "Bancolombia",
-        "monto": "200000",
-        "loginComprador": "briceno",
-        "numero": "55555",
-        "pin": "2001",
-        "csv": "112"
-    },
-    {
-        "nombre ": "Davivienda",
-        "monto": "403002",
-        "loginComprador": "sara",
-        "numero": "66666",
-        "pin": "2000",
-        "csv": "121"
-    }
-]
+{"tarjetas":
+    [
+            {
+                "nombre": "Bancolombia",
+                "monto": "300000",
+                "loginComprador": "alejandro",
+                "numero": "11111",
+                "pin": "2005",
+                "csv": "123"
+            },
+            {
+                "nombre": "Davivienda",
+                "monto": "450990",
+                "loginComprador": "michel",
+                "numero": "22222",
+                "pin": "2006",
+                "csv": "456"
+            },
+            {
+                "nombre": "Caja Social",
+                "monto": "540690",
+                "loginComprador": "alejandra",
+                "numero": "33333",
+                "pin": "2004",
+                "csv": "789"
+            },
+            {
+                "nombre": "Bancolombia",
+                "monto": "1000000",
+                "loginComprador": "jhon",
+                "numero": "44444",
+                "pin": "2003",
+                "csv": "101"
+            },
+            {
+                "nombre": "MasterCard",
+                "monto": "200000",
+                "loginComprador": "briceno",
+                "numero": "55555",
+                "pin": "2001",
+                "csv": "112"
+            },
+            {
+                "nombre": "Davivienda",
+                "monto": "403002",
+                "loginComprador": "sara",
+                "numero": "66666",
+                "pin": "2000",
+                "csv": "121"
+            }
+    ]
+
+
+}

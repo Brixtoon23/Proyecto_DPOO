@@ -1,0 +1,21 @@
+{
+
+    
+    "transferencias":
+    [
+
+    
+        {
+            "nombre": "Nequi",
+            "monto": "300000",
+            "tipo": "transaccion",
+            "id": "1200"
+        },
+        {
+            "nombre": "Daviplata",
+            "monto": "150000",
+            "tipo": "transaccion",
+            "id": "3490"
+        }
+    ]
+}

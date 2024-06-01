@@ -26,7 +26,8 @@
             3549,
             234560000000000000000000000000000
         ],
-        "disponible": true
+        "disponible": true,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": -1,
@@ -58,7 +59,8 @@
             4000000,
             509999
         ],
-        "disponible": true
+        "disponible": true,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": 34,
@@ -85,7 +87,8 @@
         "anioCreacion": 1893,
         "subasta": false,
         "valores": [7000],
-        "disponible": true
+        "disponible": true,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": -1,
@@ -109,7 +112,8 @@
             400000,
             50999
         ],
-        "disponible": true
+        "disponible": true,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": -1,
@@ -133,7 +137,8 @@
             400300,
             50919676765544333334
         ],
-        "disponible": true
+        "disponible": true,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": -1,
@@ -178,7 +183,8 @@
             4000000,
             509999
         ],
-        "disponible": false
+        "disponible": false,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": -1,
@@ -218,7 +224,8 @@
             4000000,
             509999
         ],
-        "disponible": false
+        "disponible": false,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": 34,
@@ -268,7 +275,8 @@
         "anioCreacion": 1501,
         "subasta": false,
         "valores": [20000],
-        "disponible": false
+        "disponible": false,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": -1,
@@ -296,7 +304,8 @@
             400300,
             -134529002
         ],
-        "disponible": false
+        "disponible": false,
+        "rutaImagen":"null"
     },
     {
         "tiempoConsignacion": -1,
@@ -324,6 +333,7 @@
             400300,
             -134529002
         ],
-        "disponible": false
+        "disponible": false,
+        "rutaImagen":"null"
     }
 ]}

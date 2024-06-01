@@ -51,7 +51,6 @@ public class Main
         String password;
         String telefono;
         Usuario usuario;
-
         while (!salir) 
         {
             System.out.println("\nBienvenido al sistema de registro de usuarios");
