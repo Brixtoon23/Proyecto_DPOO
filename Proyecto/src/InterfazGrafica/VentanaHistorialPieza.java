@@ -303,10 +303,13 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
         else
         {
             txtTituloPieza.setText(piezaDesplegar.getTitulo());
-            txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("loginPropietario"));
-            txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
-            txtValor.setText((piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra")).toString());
-
+            if (piezaDesplegar.getHistorialPropietarios().size()!=0)
+            {
+                txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("loginPropietario"));
+                txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
+                txtValor.setText((piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra")).toString());
+            }
+            
             ImageIcon imgPieza = new ImageIcon(piezaDesplegar.getRutaImagen());
             imagenPieza.setIcon(imgPieza);
 
