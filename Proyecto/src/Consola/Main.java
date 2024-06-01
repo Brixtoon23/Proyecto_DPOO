@@ -528,7 +528,8 @@ public class Main
             System.out.println("6. ver Compra no aprobadas por subasta");
             System.out.println("7. ver historial de una pieza");
             System.out.println("8. ver historial de un artista");
-            System.out.println("9. Salir");
+            System.out.println("9. Ingresar una tarjeta de credito");
+            System.out.println("10. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -564,7 +565,7 @@ public class Main
 
                     String metdPago = scanner.nextLine();
                     int monto= piezaCompra.getValores().get(0);
-                    boolean aprobar;
+                    boolean aprobar= false;
                     MetodoPago mpago;
                     if ("Transferencia" == metdPago )
                     {
@@ -591,7 +592,7 @@ public class Main
                         int csv= Integer.parseInt(scanner.nextLine());
 
                         mpago= new Tarjeta(metdPago, monto, login, numero, pin, csv);
-                         aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
+                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
 
 
                     }
@@ -611,7 +612,7 @@ public class Main
                     
                    
 
-                    if(aprobar== true)
+                    if(aprobar ==  true)
                     {
                         System.out.println("La compra fue realizada exitosamente: ");
                        
@@ -629,42 +630,42 @@ public class Main
 
                     System.out.print("Ingrese el nombre de la pieza: ");
                     String nombrePieza= scanner.nextLine();
-                    Pieza pCompra = Servicios.buscarPieza(galeria,nombrePieza);
+                    
 
                 
             
                     System.out.print("Ingrese el valor ofertado: ");
                     int valorOfertado= Integer.parseInt(scanner.nextLine());
 
-                    System.out.print("Ingrese el metodo de pago: ");
+                    System.out.println("Ingrese el metodo de pago que va a usar (Transferencia, Efectivo o Tarjeta): ");
+
+                
                     String metodoPago= scanner.nextLine();
 
                     System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
                     String fecha1 = scanner.nextLine();
             
 
-                    Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
-                    System.out.println("Ingrese el metodo de pago que va a usar (Transferencia, Efectivo o Tarjeta): ");
+                    Oferta oferta = new Oferta(login, valorOfertado, metodoPago, nombrePieza, fecha1); 
+                  
+               
 
-                    String metdPago = scanner.nextLine();
-                    int monto= piezaCompra.getValores().get(0);
-                    boolean aprobar;
                     MetodoPago mpago;
-                    if ("Transferencia" == metdPago )
+                    if ("Transferencia" ==  metodoPago )
                     {
-                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                        
                      
                         System.out.println("Ingrese el id de la transferencia: ");
                         String id= scanner.nextLine();
                         System.out.println("Ingrese el nombre de la pasarela: ");
                         String tipo = scanner.nextLine();
-                        mpago = new Transferencia(metdPago, monto, tipo, id);
-                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha, mpago);
-
+                        mpago = new Transferencia( metodoPago, valorOfertado , tipo, id);
+                        Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1, mpago);
+                       
                     }
-                    if  ("Tarjeta" == metdPago )
+                    if  ("Tarjeta" == metodoPago )
                     {
-                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                       
                        
 
                         System.out.println("Ingrese el número de la tarjeta: ");
@@ -674,25 +675,26 @@ public class Main
                         System.out.println("Ingrese el csv de la tarjeta: ");
                         int csv= Integer.parseInt(scanner.nextLine());
 
-                        mpago= new Tarjeta(metdPago, monto, login, numero, pin, csv);
-                         aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
+                        mpago= new Tarjeta(metodoPago, valorOfertado, login, numero, pin, csv);
+                        Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1, mpago);
+                       
 
 
                     }
-                    if  ("Efectivo" == metdPago )
+                    if  ("Efectivo" == metodoPago )
                     {
-                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                    
                        
 
                         
 
-                        mpago = new Efectivo(metdPago, monto);
-                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
-                        
+                        mpago = new Efectivo(metodoPago, valorOfertado);
+                        Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1, mpago);
+                      
 
                     }
 
-                    Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1, mpago);
+                  
 
                     System.out.println("Revisa tus mensajes mensajes para saber si la venta fue exitosa");
 
@@ -753,7 +755,29 @@ public class Main
                     verHistorialAutor(galeria);
                     break;
 
-                case 9:
+                case 9:   
+                   System.out.println("Ingrese el número de la tarjeta: "); 
+                   int numero= Integer.parseInt(scanner.nextLine());
+
+                   System.out.println("Ingrese el pin de la tarjeta: ");
+                   int pin= Integer.parseInt(scanner.nextLine()); 
+                   System.out.println("Ingrese el csv de la tarjeta: "); 
+                   int csv= Integer.parseInt(scanner.nextLine());
+                   System.out.println("Ingrese el monto de la tarjeta: "); 
+                   int monto= Integer.parseInt(scanner.nextLine());
+                   System.out.println("Ingrese de nuevo su login: "); 
+                   Tarjeta tarjeta= new Tarjeta("Tarjeta", monto, login, numero, pin, csv);
+                   galeria.getTarjetas().add(tarjeta);
+
+
+
+                    
+                    
+                    
+                    
+                    break;   
+
+                case 10:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
