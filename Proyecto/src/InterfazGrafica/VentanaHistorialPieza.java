@@ -244,6 +244,14 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
                 menu.setVisible(true);
                 menu.setLocationRelativeTo(null);
             }
+
+            else if(ventanaAnterior.equals("Cajero"))
+            {
+                this.dispose();
+                VentanaCajero menu = new VentanaCajero();
+                menu.setVisible(true);
+                menu.setLocationRelativeTo(null);
+            }
             
         }
 

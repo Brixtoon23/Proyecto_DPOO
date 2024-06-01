@@ -269,6 +269,14 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
                 menu.setVisible(true);
                 menu.setLocationRelativeTo(null);
             }
+
+            else if (ventanaAnterior.equals("Cajero"))
+            {
+                this.dispose();
+                VentanaCajero menu = new VentanaCajero();
+                menu.setVisible(true);
+                menu.setLocationRelativeTo(null);
+            }
             
         }
 
@@ -279,22 +287,22 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
 
         else if (e.getActionCommand().equals("Pri"))
         {
-            
+            actualizarInfo("Pri");
         }
 
         else if (e.getActionCommand().equals("Antes"))
         {
-            
+            actualizarInfo("Antes");
         }
 
         else if (e.getActionCommand().equals("Sig"))
         {
-            
+            actualizarInfo("Sig");
         }
 
         else
         {
-            
+            actualizarInfo("ULt");
         }
     }
 
