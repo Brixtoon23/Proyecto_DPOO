@@ -244,16 +244,6 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
         }
     }
 
-    public void setPropietario(Propietario prop)
-    {
-        propietario = prop;
-    }
-
-    public void setGaleria(Galeria g)
-    {
-        galeria = g;
-    }
-
     public void cambiarInfo(int pos)
     {
         String nomPieza = propietario.getHistorialPiezas().get(pos);

@@ -132,9 +132,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
         else if (e.getActionCommand().equals("PiezasPast"))
         {
             this.dispose();
-            VentanaPiezasPasadas ventana3 = new VentanaPiezasPasadas();
-            ventana3.setGaleria(galeria);
-            ventana3.setPropietario(propietario);
+            VentanaPiezasPasadas ventana3 = new VentanaPiezasPasadas(propietario,galeria);
             ventana3.setVisible(true);
             ventana3.setLocationRelativeTo(null);
         }
@@ -143,8 +141,6 @@ public class VentanaPropietario extends JFrame implements ActionListener
         {
             this.dispose();
             VentanaPiezasActuales ventana4 = new VentanaPiezasActuales(propietario,galeria);
-            //ventana4.setGaleria(galeria);
-            //ventana4.setPropietario(propietario);
             ventana4.setVisible(true);
             ventana4.setLocationRelativeTo(null);
         }
