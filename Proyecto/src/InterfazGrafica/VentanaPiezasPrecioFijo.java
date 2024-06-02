@@ -9,23 +9,25 @@ import Logica.Galeria;
 import Logica.Pieza;
 import Logica.Servicios;
 import Persistencia.InicializadorDeClases;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 import Logica.Galeria;
 import Logica.Pieza;
 import Logica.Servicios;
 import Persistencia.InicializadorDeClases;
 
-public class VentanaPiezasSubasta extends JFrame implements ActionListener {
+public class VentanaPiezasPrecioFijo extends JFrame implements ActionListener {
     private List<Pieza> piezas;
     private int indiceActual;
     private JLabel tituloLabel;
     private JLabel propietarioLabel;
     private JLabel anioLabel;
     private JLabel lugarLabel;
-    private JLabel valorLabel;
+    private JLabel precioLabel;
     private JLabel tipoLabel;
     private JLabel fotoLabel;
     private JButton anteriorButton;
@@ -33,18 +35,18 @@ public class VentanaPiezasSubasta extends JFrame implements ActionListener {
     private JButton volverButton; // Nuevo botón para volver a la ventana del comprador
     private Galeria galeria;
 
-    public VentanaPiezasSubasta() {
+    public VentanaPiezasPrecioFijo() {
         galeria = InicializadorDeClases.cargarGaleria();
-        piezas = Servicios.hacerListaSubastas(galeria.getInventario().getPiezasExhibidad(), galeria.getInventario().getPiezasBodega());
+        piezas = Servicios.hacerListaPrecioFijo(galeria.getInventario().getPiezasExhibidad(), galeria.getInventario().getPiezasBodega());
         indiceActual = 0;
 
-        setTitle("Piezas en Subastas");
+        setTitle("Piezas con Precio Fijo");
         setSize(750, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
         // Título de la ventana
-        tituloLabel = new JLabel("Piezas en Subastas");
+        tituloLabel = new JLabel("Piezas con Precio Fijo");
         tituloLabel.setFont(new Font("Verdana", Font.BOLD, 24));
         tituloLabel.setHorizontalAlignment(SwingConstants.CENTER);
         add(tituloLabel, BorderLayout.NORTH);
@@ -84,9 +86,9 @@ public class VentanaPiezasSubasta extends JFrame implements ActionListener {
         lugarLabel = new JLabel();
         lugarLabel.setFont(font);
         lugarLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-        valorLabel = new JLabel();
-        valorLabel.setFont(font);
-        valorLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+        precioLabel = new JLabel();
+        precioLabel.setFont(font);
+        precioLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         tipoLabel = new JLabel();
         tipoLabel.setFont(font);
         tipoLabel.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -99,7 +101,7 @@ public class VentanaPiezasSubasta extends JFrame implements ActionListener {
         gbc.gridy++;
         detallesPanel.add(lugarLabel, gbc);
         gbc.gridy++;
-        detallesPanel.add(valorLabel, gbc);
+        detallesPanel.add(precioLabel, gbc);
         gbc.gridy++;
         detallesPanel.add(tipoLabel, gbc);
 
@@ -124,7 +126,7 @@ public class VentanaPiezasSubasta extends JFrame implements ActionListener {
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Cerrar la ventana actual y abrir la ventana del comprador
+                // Cerrar la ventana actual y abrir la ventana del comprador nuevamente
                 dispose(); // Cerrar la ventana actual
                 VentanaComprador ventanaComprador = new VentanaComprador();
                 ventanaComprador.setVisible(true);
@@ -162,7 +164,7 @@ public class VentanaPiezasSubasta extends JFrame implements ActionListener {
         propietarioLabel.setText("Propietario Actual: " + pieza.getLoginPropietarioActual());
         anioLabel.setText("Año de Creación: " + pieza.getAnioCreacion());
         lugarLabel.setText("Lugar de Creación: " + pieza.getLugarCreacion());
-        valorLabel.setText("Valor mínimo: " + pieza.getValores().get(1));
+        precioLabel.setText("Precio fijo: " + pieza.getValores().get(0));
         tipoLabel.setText("Tipo: " + pieza.getTipo());
 
         // Cargar la imagen
@@ -182,7 +184,7 @@ public class VentanaPiezasSubasta extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VentanaPiezasSubasta ventana = new VentanaPiezasSubasta();
+            VentanaPiezasPrecioFijo ventana = new VentanaPiezasPrecioFijo();
             ventana.setVisible(true);
             ventana.setLocationRelativeTo(null);
         });

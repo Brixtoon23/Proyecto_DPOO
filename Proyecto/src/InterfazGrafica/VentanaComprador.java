@@ -16,6 +16,8 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
 public class VentanaComprador extends JFrame implements ActionListener
 { 
 
@@ -160,6 +162,11 @@ public class VentanaComprador extends JFrame implements ActionListener
 
         else if(e.getActionCommand().equals("PiezaPrecioFijo"))
         {
+            this.dispose();
+            VentanaPiezasPrecioFijo ventana3 = new VentanaPiezasPrecioFijo();
+            
+            ventana3.setVisible(true);
+            ventana3.setLocationRelativeTo(null);
 
         }
 
