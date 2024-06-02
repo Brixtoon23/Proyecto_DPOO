@@ -111,8 +111,13 @@ public class Cajero  extends Usuario
 		String loginnuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
 		Propietario nuevoPropiertario= Servicios.buscarPropietario(galeria, loginnuevoPropiertario);
 
-		nuevoPropiertario.getHistorialPiezas().add(pieza.getTitulo());
-		nuevoPropiertario.getIdPiezasActuales().add(pieza.getTitulo());
+		ArrayList<String> nuevoHistorial = nuevoPropiertario.getHistorialPiezas();
+		nuevoHistorial.add(pieza.getTitulo());
+		nuevoPropiertario.setHistorialPiezas(nuevoHistorial);
+
+		ArrayList<String> nuevasIdPiezas = nuevoPropiertario.getIdPiezasActuales();
+		nuevasIdPiezas.add(pieza.getTitulo());
+		nuevoPropiertario.setIdPiezasActuales(nuevasIdPiezas);
 
 
 		Map<String, Object> mapa = new HashMap<>();

@@ -24,7 +24,7 @@
         "valores": [
             2345,
             3549,
-            234560000000000000000000000000000
+            23456000
         ],
         "rutaImagen": "null",
         "disponible": true
@@ -87,14 +87,8 @@
         "anioCreacion": 1893,
         "subasta": false,
         "valores": [7000],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/elGrito.png",
         "disponible": true
-    },
-    {
-
-        "disponible": true,
-        "rutaImagen":"Proyecto/Imagenes/elGrito.png"
-
     },
     {
         "tiempoConsignacion": -1,
@@ -118,8 +112,8 @@
             400000,
             50999
         ],
-        "disponible": true,
-        "rutaImagen":"Proyecto/Imagenes/vanGoh.jpg"
+        "rutaImagen": "Proyecto/Imagenes/vanGoh.jpg",
+        "disponible": true
     },
     {
         "tiempoConsignacion": -1,
@@ -179,18 +173,23 @@
                 "valorCompra": 239480,
                 "loginPropietario": "nikol_propietario",
                 "fechaVenta": "15/03/2024"
+            },
+            {
+                "valorCompra": 3000000,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "23/10/2014"
             }
         ],
-        "loginPropietarioActual": "alejandra_propietario",
+        "loginPropietarioActual": "briceno_propietario",
         "anioCreacion": 1956,
-        "subasta": true,
+        "subasta": false,
         "valores": [
             3000000,
             4000000,
             509999
         ],
-        "disponible": false,
-        "rutaImagen":"Proyecto/Imagenes/monalisa.jpg"
+        "rutaImagen": "Proyecto/Imagenes/monalisa.jpg",
+        "disponible": false
     },
     {
         "tiempoConsignacion": -1,
@@ -249,6 +248,7 @@
             "electricidad": false,
             "alto": 6
         },
+        "alto": 30,
         "bodega": true,
         "historialPropietarios": [
             {
@@ -259,49 +259,15 @@
             {
                 "valorCompra": 20000,
                 "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/26/10"
-            },
-            {
-                "valorCompra": 20000,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/26/10"
-            },
-            {
-                "valorCompra": 20000,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/26/10"
-            },
-            {
-                "valorCompra": 20000,
-                "loginPropietario": "briceno_propietario",
-                "fechaVenta": "10/26/10"
+                "fechaVenta": "23/23/2323"
             }
         ],
-        "loginPropietarioActual": "alejandra_propietario",
+        "loginPropietarioActual": "briceno_propietario",
         "anioCreacion": 1501,
         "subasta": false,
         "valores": [20000],
-        "disponible": false,
-        "rutaImagen":"Proyecto/Imagenes/david.jpeg",
         "tecnica": "oleo",
-        "alto": 30
-        },
-        {
-        "bodega": true,
-        "historialPropietarios": [{
-            "valorCompra": 300100,
-            "loginPropietario": "briceno_propietario",
-            "fechaVenta": "20/20/10"
-        }],
-        "loginPropietarioActual": "gabriela_propietario",
-        "anioCreacion": 1956,
-        "subasta": true,
-        "valores": [
-            300100,
-            400300,
-            -134529002
-        ],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/david.jpeg",
         "disponible": false
     },
     {

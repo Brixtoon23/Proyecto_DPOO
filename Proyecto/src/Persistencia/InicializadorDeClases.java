@@ -288,7 +288,7 @@ public class InicializadorDeClases
                     for (int a = 0; a < comprasJson.length(); a++) 
                     {
                         JSONObject compra = comprasJson.getJSONObject(a);
-                        Compra compraObjeto = new Compra(compra.getString("compradorLogin"), compra.getInt("precio"), compra.getString("nombrePieza"), compra.getString("metodoPago"), 
+                        Compra compraObjeto = new Compra(compra.getString("compradorLogin"), compra.getInt("precio"), compra.getString("nombrepieza"), compra.getString("metodoPago"), 
                         compra.getString("fecha"));
 
                         compras.add(compraObjeto);
@@ -296,7 +296,7 @@ public class InicializadorDeClases
                     for (int a = 0; a < mensajesJson.length(); a++) 
                     {
                         JSONObject mensaje = mensajesJson.getJSONObject(a);
-                        Mensaje mensajeObjeto =  new Mensaje(mensaje.getString("nombrePieza"), mensaje.getBoolean("vendida"), mensaje.getString("mensaje"));
+                        Mensaje mensajeObjeto =  new Mensaje(mensaje.getString("nombrepieza"), mensaje.getBoolean("vendida"), mensaje.getString("mensaje"));
                         mensajes.add(mensajeObjeto);
                     }
                     for (int a = 0; a < idPiezasJson.length(); a++) 

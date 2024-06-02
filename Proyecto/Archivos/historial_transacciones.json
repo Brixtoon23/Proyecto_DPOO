@@ -38,5 +38,21 @@
         "realizado": true,
         "banco": "Davivienda",
         "loginComprador": "briceno_comprador"
+    },
+    {
+        "fecha": "23/10/2014",
+        "monto": 3000000,
+        "numero": "6",
+        "realizado": true,
+        "banco": "Bancolombia",
+        "loginComprador": "briceno_comprador"
+    },
+    {
+        "fecha": "23/23/2323",
+        "monto": 20000,
+        "numero": "7",
+        "realizado": true,
+        "banco": "Bancolombia",
+        "loginComprador": "briceno_comprador"
     }
 ]}
