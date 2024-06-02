@@ -13,7 +13,7 @@ public class PanelNorteComprador extends JPanel
     public PanelNorteComprador()
     {
         setLayout(new GridBagLayout());
-        titulo = new JLabel("Bienvenido al menú de Cliente");
+        titulo = new JLabel("Bienvenido al menú de Comprador");
         titulo.setFont(new Font("Verdana",Font.BOLD,30));
         add(titulo);
         add(Box.createVerticalStrut(200));

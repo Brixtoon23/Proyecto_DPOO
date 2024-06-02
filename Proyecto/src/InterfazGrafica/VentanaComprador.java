@@ -20,6 +20,10 @@ public class VentanaComprador extends JFrame implements ActionListener
     private JPanel panelN;
     private JPanel panelC;
     private JButton btnHistoriaArtista;
+    private JButton  btnPiezasSubasta;
+    private JButton  btnPiezasPrecioFijo;
+    private JButton btnHacerOferta;
+    private JButton btnComprasAprobadas;
     private JButton btnHistoriaPieza;
     private JButton btnSalir;
     private Galeria galeria; 
@@ -39,16 +43,57 @@ public class VentanaComprador extends JFrame implements ActionListener
         add(panelN, BorderLayout.NORTH);
 
         panelC = new PanelCentroOperador();
+
+        btnPiezasSubasta = new JButton("Ver Piezas Subasta");
+        btnPiezasSubasta.setFont(new Font("Verdana",Font.PLAIN,20));
+        btnPiezasSubasta.setFocusable(false);
+        btnPiezasSubasta.addActionListener(this);
+        btnPiezasSubasta.setActionCommand("HistPieza");
+
+
+        btnPiezasPrecioFijo = new JButton("Ver Piezas a precio fijo");
+        btnPiezasPrecioFijo.setFont(new Font("Verdana",Font.PLAIN,20));
+        btnPiezasPrecioFijo.setFocusable(false);
+        btnPiezasPrecioFijo.addActionListener(this);
+        btnPiezasPrecioFijo.setActionCommand("HistPieza");
+
+
+        btnHacerOferta = new JButton("Hacer oferta para pieza subastada");
+        btnHacerOferta.setFont(new Font("Verdana",Font.PLAIN,20));
+        btnHacerOferta.setFocusable(false);
+        btnHacerOferta.addActionListener(this);
+        btnHacerOferta.setActionCommand("HistPieza");
+
+
+
+        btnComprasAprobadas = new JButton("ver Compra no aprobadas por subasta");
+        btnComprasAprobadas.setFont(new Font("Verdana",Font.PLAIN,20));
+        btnComprasAprobadas.setFocusable(false);
+        btnComprasAprobadas.addActionListener(this);
+        btnComprasAprobadas.setActionCommand("HistPieza");
+
+
+
+        
+
+
+
+
         btnHistoriaPieza = new JButton("Consultar historial de una pieza");
         btnHistoriaPieza.setFont(new Font("Verdana",Font.PLAIN,20));
         btnHistoriaPieza.setFocusable(false);
         btnHistoriaPieza.addActionListener(this);
         btnHistoriaPieza.setActionCommand("HistPieza");
+
+
         btnHistoriaArtista = new JButton("Consultar historial de un artista");
         btnHistoriaArtista.setFont(new Font("Verdana",Font.PLAIN,20));
         btnHistoriaArtista.setFocusable(false);
         btnHistoriaArtista.addActionListener(this);
         btnHistoriaArtista.setActionCommand("HistArtista");
+        
+        
+        
         btnSalir = new JButton("Salir");
         btnSalir.setFont(new Font("Verdana",Font.PLAIN,20));
         btnSalir.setForeground(Color.RED);
@@ -94,7 +139,7 @@ public class VentanaComprador extends JFrame implements ActionListener
 
     public static void main(String[] args)
     {
-        VentanaOperador iniciar = new VentanaOperador();
+        VentanaComprador iniciar = new VentanaComprador();
         iniciar.setVisible(true);
         iniciar.setLocationRelativeTo(null);
     }
