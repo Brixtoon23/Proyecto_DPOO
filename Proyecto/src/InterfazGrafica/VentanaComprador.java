@@ -24,6 +24,7 @@ public class VentanaComprador extends JFrame implements ActionListener
     private JPanel PiezasPrecioFijo;
     private JPanel HacerOferta;
     private JPanel ComprasAprobadas;
+    private JPanel CompraPrecioFijo;
 
     private JButton btnHistoriaArtista;
     private JButton  btnPiezasSubasta;
@@ -31,6 +32,7 @@ public class VentanaComprador extends JFrame implements ActionListener
     private JButton btnHacerOferta;
     private JButton btnComprasAprobadas;
     private JButton btnHistoriaPieza;
+    private JButton btnCompraPrecioFijo;
     private JButton btnSalir;
     private Galeria galeria; 
 
@@ -51,6 +53,8 @@ public class VentanaComprador extends JFrame implements ActionListener
         PiezasPrecioFijo = new JPanel();
         HacerOferta = new JPanel();
         ComprasAprobadas = new JPanel();
+        CompraPrecioFijo= new JPanel();
+
 
         // Crear los botones con el tamaño y la fuente especificados
         btnPiezasSubasta = crearBoton("Ver Piezas Subasta");
@@ -88,6 +92,11 @@ public class VentanaComprador extends JFrame implements ActionListener
         btnHistoriaArtista.setFocusable(false);
         btnHistoriaArtista.addActionListener(this);
         btnHistoriaArtista.setActionCommand("HistArtista");
+
+        btnCompraPrecioFijo = crearBoton("Comprar pieza a precio fijo");
+        btnCompraPrecioFijo.setFocusable(false);
+        btnCompraPrecioFijo.addActionListener(this);
+        btnCompraPrecioFijo.setActionCommand("PrecioFijo");
         
         btnSalir = crearBoton("Salir");
         btnSalir.setForeground(Color.RED);
@@ -101,6 +110,7 @@ public class VentanaComprador extends JFrame implements ActionListener
         agregarBotonConEspacio(btnComprasAprobadas);
         agregarBotonConEspacio(btnHistoriaPieza);
         agregarBotonConEspacio(btnHistoriaArtista); 
+        agregarBotonConEspacio(btnCompraPrecioFijo);
         agregarBotonConEspacio(btnSalir);
 
         add(panelC, BorderLayout.CENTER);
@@ -177,6 +187,11 @@ public class VentanaComprador extends JFrame implements ActionListener
         {
 
         }
+        else if(e.getActionCommand().equals("PrecioFijo"))
+        {
+
+        }
+        
 
        
 
