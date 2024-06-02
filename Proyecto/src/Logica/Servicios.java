@@ -281,5 +281,47 @@ public class Servicios
         }
 
     }
+
+
+    public static  ArrayList<Pieza> hacerListaPrecioFijo( ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega)
+    {
+        ArrayList<Pieza> piezasPrecioFijo= new ArrayList<>();
+
+        for(Pieza pieza :piezasExhibidas  )
+        {
+            if(pieza.isDisponible()==true && pieza.isSubasta()==false)
+            {
+                piezasPrecioFijo.add(pieza);
+
+            }
+
+        
+        }
+        return  piezasPrecioFijo;
+
+
+
+    }
+
+
+    public static  ArrayList<Pieza> hacerListaSubastas( ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega)
+    {
+        ArrayList<Pieza> piezasPrecioFijo= new ArrayList<>();
+
+        for(Pieza pieza :piezasExhibidas  )
+        {
+            if(pieza.isDisponible()==true && pieza.isSubasta()==true)
+            {
+                piezasPrecioFijo.add(pieza);
+
+            }
+
+        
+        }
+        return  piezasPrecioFijo;
+
+
+
+    }
 }
 
