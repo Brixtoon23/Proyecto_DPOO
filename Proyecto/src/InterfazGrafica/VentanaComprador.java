@@ -19,6 +19,12 @@ public class VentanaComprador extends JFrame implements ActionListener
   
     private JPanel panelN;
     private JPanel panelC;
+    private JPanel PiezasSubasta;
+    private JPanel PiezasPrecioFijo;
+    private JPanel HacerOferta;
+    private JPanel ComprasAprobadas;
+
+
     private JButton btnHistoriaArtista;
     private JButton  btnPiezasSubasta;
     private JButton  btnPiezasPrecioFijo;
@@ -44,13 +50,19 @@ public class VentanaComprador extends JFrame implements ActionListener
 
         panelC = new PanelCentroOperador();
 
+
+
+        PiezasSubasta = new JPanel();
+        PiezasSubasta.add(btnPiezasSubasta);
         btnPiezasSubasta = new JButton("Ver Piezas Subasta");
         btnPiezasSubasta.setFont(new Font("Verdana",Font.PLAIN,20));
         btnPiezasSubasta.setFocusable(false);
         btnPiezasSubasta.addActionListener(this);
         btnPiezasSubasta.setActionCommand("HistPieza");
+        
 
-
+        PiezasPrecioFijo = new JPanel();
+        PiezasPrecioFijo.add(btnPiezasPrecioFijo);
         btnPiezasPrecioFijo = new JButton("Ver Piezas a precio fijo");
         btnPiezasPrecioFijo.setFont(new Font("Verdana",Font.PLAIN,20));
         btnPiezasPrecioFijo.setFocusable(false);
@@ -58,12 +70,18 @@ public class VentanaComprador extends JFrame implements ActionListener
         btnPiezasPrecioFijo.setActionCommand("HistPieza");
 
 
+
+        HacerOferta= new JPanel();
+        HacerOferta.add(btnHacerOferta);
         btnHacerOferta = new JButton("Hacer oferta para pieza subastada");
         btnHacerOferta.setFont(new Font("Verdana",Font.PLAIN,20));
         btnHacerOferta.setFocusable(false);
         btnHacerOferta.addActionListener(this);
         btnHacerOferta.setActionCommand("HistPieza");
 
+
+        ComprasAprobadas= new JPanel();
+        ComprasAprobadas.add(btnComprasAprobadas);
 
 
         btnComprasAprobadas = new JButton("ver Compra no aprobadas por subasta");
