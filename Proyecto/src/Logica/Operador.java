@@ -27,7 +27,7 @@ public class Operador extends Usuario
 
 
 
-	public static  void  registrarOferta(Oferta oferta1, ArrayList<Subasta> subastas, Galeria galeria, String fecha, MetodoPago metodoPago)
+	public static  void  registrarOferta(Oferta oferta1, ArrayList<Subasta> subastas, Galeria galeria, String fecha)
 	{
 		 for (Subasta subasta  : subastas)
 
@@ -97,7 +97,7 @@ public class Operador extends Usuario
 				 {
 					Oferta mejoroferta =ofertasOrdenadas.get(i);
 
-					boolean aprobado= Administrador.aprobarVentaSubasta(mejoroferta, galeria, fecha, metodoPago);
+					boolean aprobado= Administrador.aprobarVentaSubasta(mejoroferta, galeria, fecha);
 					if(aprobado== true)
 					{
 						flag=true;

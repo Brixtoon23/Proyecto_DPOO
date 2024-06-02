@@ -16,15 +16,11 @@ public class Galeria
     private ArrayList<Usuario> usuarios;
     private ArrayList<Subasta> subastas;
     private Map<String,ArrayList<String>> autores;
-    private ArrayList<Tarjeta> tarjetas;
-    private ArrayList<Transferencia> transferencias;
-
+    private ArrayList<Historia> historias;
     
 
 
-    public Galeria(String nombre, int cantidadObras, Inventario inventario, ArrayList<Usuario> usuarios, ArrayList<Subasta> subastas, Map<String,ArrayList<String>> autores ,ArrayList<Tarjeta> tarjetas, 
-    ArrayList<Transferencia> transferencias)
- 
+    public Galeria(String nombre, int cantidadObras, Inventario inventario, ArrayList<Usuario> usuarios, ArrayList<Subasta> subastas, Map<String,ArrayList<String>> autores,ArrayList<Historia> historias) 
     {
         this.nombre = nombre;
         this.cantidadObras = cantidadObras;
@@ -32,8 +28,7 @@ public class Galeria
         this.usuarios = usuarios;
         this.subastas = subastas;
         this.autores = autores;
-        this.tarjetas =  tarjetas;
-        this.transferencias = transferencias;
+        this.historias = historias;
 
     }
     
@@ -76,24 +71,16 @@ public class Galeria
     }
 
 
-    public ArrayList<Tarjeta> getTarjetas() {
-        return tarjetas;
+    public ArrayList<Historia> getHistorias() {
+        return historias;
     }
 
 
-    public ArrayList<Transferencia> getTransferencias() {
-        return transferencias;
+    public void setHistorias(ArrayList<Historia> historias) {
+        this.historias = historias;
     }
 
-
-    public void setTarjetas(ArrayList<Tarjeta> tarjetas) {
-        this.tarjetas = tarjetas;
-    }
-
-
-    public void setTransferencias(ArrayList<Transferencia> transferencias) {
-        this.transferencias = transferencias;
-    }
+    
     
 
 

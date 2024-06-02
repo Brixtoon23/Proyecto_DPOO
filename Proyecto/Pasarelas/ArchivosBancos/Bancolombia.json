@@ -1,0 +1,65 @@
+{"cuentas": [
+    {
+        "clave": "PatitoSalvaje",
+        "numero": "55555",
+        "dinero": "30000000",
+        "csv": "112",
+        "nombre": "David Briceno"
+    },
+    {
+        "clave": "FanArt",
+        "numero": "11111",
+        "dinero": "150000",
+        "csv": "123",
+        "nombre": "Alejandro Patino"
+    },
+    {
+        "clave": "Goku",
+        "numero": "44444",
+        "dinero": "450000",
+        "csv": "101",
+        "nombre": "Jhon Perez"
+    },
+    {
+        "clave": "NBA",
+        "numero": "22222",
+        "dinero": "299900",
+        "csv": "456",
+        "nombre": "Michel Jordan"
+    },
+    {
+        "clave": "Nami",
+        "numero": "66666",
+        "dinero": "0",
+        "csv": "121",
+        "nombre": "Sara Gonzales"
+    },
+    {
+        "clave": "Ipad",
+        "numero": "5434",
+        "dinero": "345654",
+        "csv": "459",
+        "nombre": "Patricio Lonares"
+    },
+    {
+        "clave": "MOM",
+        "numero": "3553",
+        "dinero": "454444",
+        "csv": "908",
+        "nombre": "Victor Jara"
+    },
+    {
+        "clave": "Laura",
+        "numero": "5335",
+        "dinero": "400088",
+        "csv": "765",
+        "nombre": "Hechor Laboe"
+    },
+    {
+        "clave": "Volibear",
+        "numero": "9898",
+        "dinero": "89808",
+        "csv": "158",
+        "nombre": "Pancho Putarco"
+    }
+]}

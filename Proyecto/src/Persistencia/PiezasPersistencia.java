@@ -1,128 +1,88 @@
 package Persistencia;
-import java.io.*;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 
 import Logica.Escultura;
 import Logica.Fotografia;
 import Logica.Galeria;
 import Logica.Pieza;
 import Logica.Pintura;
-
 import Logica.Video;
 
-import java.util.ArrayList;
+public class PiezasPersistencia {
+    
+    private static final String NOMBRE_ARCHIVO = "Proyecto/Archivos/base_de_datos_piezas.json";
+    private static JSONObject baseDeDatosJSON = leerBaseDeDatos();
+    private static JSONArray piezasArray = baseDeDatosJSON.getJSONArray("piezas");
+    private static List<JSONObject> piezas = obtenerPiezasDesdeJSON(piezasArray);
 
-import java.util.List;
-import java.util.Scanner;
-
-public class PiezasPersistencia 
-{
-	
-	private static JSONObject baseDeDatosJSON = leerBaseDeDatos();
-
-	private static List<JSONObject> piezas = obtenerPiezasDesdeJSON(baseDeDatosJSON.getJSONArray("piezas"));
-
-	
-	
-	public static void registrarPieza(Galeria galeria , Pieza pieza) 
-    {   
-        
+    public static void registrarPieza(Galeria galeria, Pieza pieza) {
         // Crear el objeto JSON para la nueva pieza
         JSONObject piezaJSON = new JSONObject();
         piezaJSON.put("titulo", pieza.getTitulo());
         piezaJSON.put("anioCreacion", pieza.getAnioCreacion());
         piezaJSON.put("loginPropietarioActual", pieza.getLoginPropietarioActual());
         piezaJSON.put("lugarCreacion", pieza.getLugarCreacion());
-        piezaJSON.put("autores", pieza.getAutor()); // Usar un JSONArray para los autores
+        piezaJSON.put("autores", new JSONArray(pieza.getAutor()));
         piezaJSON.put("disponible", pieza.isDisponible());
         piezaJSON.put("tiempoConsignacion", pieza.getTiempoConsignacion());
         piezaJSON.put("subasta", pieza.isSubasta());
-        piezaJSON.put("valores", pieza.getValores()); // Usar un JSONArray para los valores
-        piezaJSON.put("historialPropietarios", pieza.getHistorialPropietarios());
+        piezaJSON.put("valores", new JSONArray(pieza.getValores()));
+        piezaJSON.put("historialPropietarios", new JSONArray(pieza.getHistorialPropietarios()));
         piezaJSON.put("bodega", pieza.isBodega());
         piezaJSON.put("tipo", pieza.getTipo());
-        piezaJSON.put("rutaImagen", pieza.getRutaImagen());
 
-
-
-        // Crear el objeto JSON para los valores especiales según el tip
+        // Crear el objeto JSON para los valores especiales según el tipo
         JSONObject valoresEspecialesJSON = new JSONObject();
-
-        switch (pieza.getTipo()) 
-        {
+        switch (pieza.getTipo()) {
             case "pintura":
-                Pintura pintura = (Pintura) pieza; 
-
+                Pintura pintura = (Pintura) pieza;
                 valoresEspecialesJSON.put("alto", pintura.getAlto());
-                
                 valoresEspecialesJSON.put("ancho", pintura.getAncho());
-                
-
                 valoresEspecialesJSON.put("peso", pintura.getPeso());
-
                 valoresEspecialesJSON.put("tecnica", pintura.getTecnica());
-
                 break;
-                
             case "fotografia":
                 Fotografia fotografia = (Fotografia) pieza;
-
-
                 valoresEspecialesJSON.put("resolucion", fotografia.getResolucion());
-                
-
                 valoresEspecialesJSON.put("tamanioGiga", fotografia.getTamanioGiga());
-                
                 break;
-                
             case "escultura":
                 Escultura escultura = (Escultura) pieza;
-
                 valoresEspecialesJSON.put("alto", escultura.getAlto());
-                
                 valoresEspecialesJSON.put("ancho", escultura.getAncho());
-                
                 valoresEspecialesJSON.put("profundidad", escultura.getProfundidad());
-
                 valoresEspecialesJSON.put("peso", escultura.getPeso());
-                
                 valoresEspecialesJSON.put("electricidad", escultura.isElectricidad());
-
-                
                 break;
-                
             case "video":
                 Video video = (Video) pieza;
-
                 valoresEspecialesJSON.put("duracion", video.getDuracion());
-                
                 valoresEspecialesJSON.put("tamanioGiga", video.getTamanioGiga());
-                
-
                 valoresEspecialesJSON.put("resolucion", video.getResolucion());
                 break;
-                
             default:
                 System.out.println("Tipo no reconocido. Los valores especiales no se guardarán.");
         }
-        
         piezaJSON.put("valoresEspeciales", valoresEspecialesJSON);
 
         // Agregar la nueva pieza al arreglo de piezas
         piezas.add(piezaJSON);
 
         // Guardar la base de datos actualizada
-        baseDeDatosJSON.put("piezas", new JSONArray(piezas)); // Actualizar el arreglo de piezas en el JSON
+        baseDeDatosJSON.put("piezas", new JSONArray(piezas));
         guardarBaseDeDatos(baseDeDatosJSON);
-
-        System.out.println("Registro exitoso.");
-        
     }
 
-    private static List<JSONObject> obtenerPiezasDesdeJSON(JSONArray piezasArray) 
-    {
+    private static List<JSONObject> obtenerPiezasDesdeJSON(JSONArray piezasArray) {
         List<JSONObject> listaPiezas = new ArrayList<>();
         for (int i = 0; i < piezasArray.length(); i++) {
             listaPiezas.add(piezasArray.getJSONObject(i));
@@ -130,11 +90,9 @@ public class PiezasPersistencia
         return listaPiezas;
     }
 
-    public static JSONObject leerBaseDeDatos() 
-    {
+    public static JSONObject leerBaseDeDatos() {
         try {
-            // Utilizamos la misma ruta relativa que en guardarBaseDeDatos
-            File archivo = new File("Proyecto/Archivos/base_de_datos_piezas.json");
+            File archivo = new File(NOMBRE_ARCHIVO);
             Scanner scanner = new Scanner(archivo);
             StringBuilder jsonText = new StringBuilder();
             while (scanner.hasNextLine()) {
@@ -142,38 +100,41 @@ public class PiezasPersistencia
             }
             scanner.close();
             return new JSONObject(jsonText.toString());
-        } catch (FileNotFoundException e) {
-            // Si el archivo no existe, se devuelve un JSON con un arreglo de piezas vacío
+        } catch (IOException e) {
+            e.printStackTrace();
             return new JSONObject().put("piezas", new JSONArray());
         }
     }
 
-    private static void guardarBaseDeDatos(JSONObject baseDeDatosJSON) 
-    {
-        try (FileWriter file = new FileWriter("Proyecto/Archivos/base_de_datos_piezas.json")) {
+    private static void guardarBaseDeDatos(JSONObject baseDeDatosJSON) {
+        try (FileWriter file = new FileWriter(NOMBRE_ARCHIVO)) {
             file.write(baseDeDatosJSON.toString(4));
-            System.out.println("Base de datos actualizada y guardada.");
+
         } catch (IOException e) {
-            System.out.println("Error al guardar la base de datos.");
+
             e.printStackTrace();
         }
     }
 
-    public static void actualizarPropietarioPieza( Galeria galeria,Pieza pieza) 
+    public static void actualizarPropietarioPieza(Galeria galeria, Pieza pieza) 
     {
         for (int i = 0; i < piezas.size(); i++) {
             JSONObject objPieza = piezas.get(i);
-            // Verifica si el objeto tiene la clave que quieres eliminar
-            if (objPieza.getString("titulo").equals(pieza.getTitulo())) 
-            {            
+            if (objPieza.getString("titulo").equals(pieza.getTitulo())) {
+                // Actualiza el propietario actual y el historial de propietarios
+                objPieza.put("loginPropietarioActual", pieza.getLoginPropietarioActual());
+                objPieza.put("historialPropietarios", new JSONArray(pieza.getHistorialPropietarios()));
+                objPieza.put("disponible", pieza.isDisponible());
+                
+                // Remueve y añade nuevamente para garantizar que se registre como un cambio
                 piezas.remove(i);
-                registrarPieza( galeria, pieza);
-                break; 
-            }
+                piezas.add(i, objPieza);
 
+                // Guarda los cambios en el archivo JSON
+                baseDeDatosJSON.put("piezas", new JSONArray(piezas));
+                guardarBaseDeDatos(baseDeDatosJSON);
+                break;
+            }
         }
     }
-    
-
-    // Método para obtener la lista de piezas desde un JSONArray
 }

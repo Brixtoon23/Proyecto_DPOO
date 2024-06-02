@@ -3,21 +3,17 @@ import Logica.Administrador;
 import Logica.Cajero;
 import Logica.Compra;
 import Logica.Comprador;
-import Logica.Efectivo;
 import Logica.Escultura;
 import Logica.Fotografia;
 import Logica.Galeria;
 
 import Logica.Mensaje;
-import Logica.MetodoPago;
 import Logica.Oferta;
 import Logica.Operador;
 import Logica.Pieza;
 import Logica.Pintura;
 import Logica.Propietario;
 import Logica.Servicios;
-import Logica.Tarjeta;
-import Logica.Transferencia;
 import Logica.Usuario;
 import Logica.Video;
 
@@ -51,6 +47,7 @@ public class Main
         String password;
         String telefono;
         Usuario usuario;
+
         while (!salir) 
         {
             System.out.println("\nBienvenido al sistema de registro de usuarios");
@@ -58,7 +55,7 @@ public class Main
             System.out.println("2. Iniciar Sesión");
             System.out.println("3. Salir");
             System.out.print("Ingrese su opción: ");
-            Galeria gale = galeria;
+            Galeria gal = galeria;
             int opcion;
             try 
             {
@@ -377,8 +374,8 @@ public class Main
                     System.out.print("¿Se encuentra en bodega? (true/false): ");
                     boolean bodega = Boolean.parseBoolean(scanner.nextLine());
 
-                    System.err.println("Ingrese la ruta de la imagen de la pieza: ");
-                    String rutaImg = scanner.nextLine();
+                    System.out.print("Ingrese la ruta de imagen: ");
+                        String rutaImagen = scanner.nextLine();
                     
                     System.out.print("Ingrese el tipo (pintura/escultura/video/fotografia): ");
                     String tipo = scanner.nextLine();
@@ -402,12 +399,11 @@ public class Main
     
                         
                         System.out.print("Ingrese la técnica: ");
-                        String tecnica = scanner.nextLine();
-                        
+                        String tecnica = scanner.nextLine();           
                     
 
     
-                        Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, peso, tecnica, rutaImg);
+                        Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, peso, tecnica,rutaImagen);
                         
 
                         Administrador.ingresarPieza(galeria, pintura);
@@ -422,7 +418,7 @@ public class Main
                         System.out.print("Ingrese el tamaño en gigas: ");
                         tamanioGiga = Integer.parseInt(scanner.nextLine());
     
-                        Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, resolucion, tamanioGiga, rutaImg);
+                        Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, resolucion, tamanioGiga,rutaImagen);
                         Administrador.ingresarPieza(galeria, fotografia);
                         Administrador.ingresarAutor(galeria, autores, titulo);
 
@@ -446,7 +442,7 @@ public class Main
                         System.out.print("¿Necesita electricidad? (true/false): ");
                         boolean electricidad = Boolean.parseBoolean(scanner.nextLine());
     
-                        Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, profundidad, peso, electricidad, rutaImg);
+                        Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, profundidad, peso, electricidad,rutaImagen);
                         Administrador.ingresarPieza(galeria, escultura);
                         Administrador.ingresarAutor(galeria, autores, titulo);
 
@@ -462,7 +458,7 @@ public class Main
                         System.out.print("Ingrese la resolución: ");
                         resolucion = scanner.nextLine();
                         
-                        Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, duracion, tamanioGiga, resolucion,rutaImg);
+                        Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, autores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, duracion, tamanioGiga, resolucion,rutaImagen);
                         
                         Administrador.ingresarPieza(galeria,video);
                         Administrador.ingresarAutor(galeria, autores, titulo);
@@ -528,8 +524,7 @@ public class Main
             System.out.println("6. ver Compra no aprobadas por subasta");
             System.out.println("7. ver historial de una pieza");
             System.out.println("8. ver historial de un artista");
-            System.out.println("9. Ingresar una tarjeta de credito");
-            System.out.println("10. Salir");
+            System.out.println("9. Salir");
             System.out.print("Ingrese su opción: ");
             int opcion;
             try {
@@ -561,58 +556,34 @@ public class Main
                 }
                 else
                 {
-                    System.out.println("Ingrese el metodo de pago que va a usar (Transferencia, Efectivo o Tarjeta): ");
+                    System.out.println("Ingrese el metodo de pago que va a usar(efectivo,tarjeta,transferencia): ");
 
                     String metdPago = scanner.nextLine();
-                    int monto= piezaCompra.getValores().get(0);
-                    boolean aprobar= false;
-                    MetodoPago mpago;
-                    if ("Transferencia" == metdPago )
+
+                    String pasarela = null;
+
+                    if (metdPago.equals("efectivo") == false)
                     {
-                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
-                     
-                        System.out.println("Ingrese el id de la transferencia: ");
-                        String id= scanner.nextLine();
-                        System.out.println("Ingrese el nombre de la pasarela: ");
-                        String tipo = scanner.nextLine();
-                        mpago = new Transferencia(metdPago, monto, tipo, id);
-                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha, mpago);
-
-                    }
-                    if  ("Tarjeta" == metdPago )
-                    {
-                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
-                       
-
-                        System.out.println("Ingrese el número de la tarjeta: ");
-                        int  numero= Integer.parseInt(scanner.nextLine());
-                        System.out.println("Ingrese el pin de la tarjeta: ");
-                        int pin = Integer.parseInt(scanner.nextLine());
-                        System.out.println("Ingrese el csv de la tarjeta: ");
-                        int csv= Integer.parseInt(scanner.nextLine());
-
-                        mpago= new Tarjeta(metdPago, monto, login, numero, pin, csv);
-                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
-
-
-                    }
-                    if  ("Efectivo" == metdPago )
-                    {
-                        Comprador comprador1= Servicios.buscarComprador(galeria, login);
-                       
-
+                        System.out.println("Ingrese 1 para usar PSE ");
+                        System.out.println("Ingrese 2 para usar PayU ");
+                        String op = scanner.nextLine();
+                        if(op.equals("1"))
+                        {
+                            pasarela = "PSE";
+                        }
+                        else
+                        {
+                            pasarela = "PayU";
+                        }
                         
 
-                        mpago = new Efectivo(metdPago, monto);
-                        aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra,  galeria, fecha,mpago);
-                        
 
                     }
-
                     
-                   
+                    Comprador comprador1= Servicios.buscarComprador(galeria, login);
+                    boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago, galeria, fecha,pasarela);
 
-                    if(aprobar ==  true)
+                    if(aprobar== true)
                     {
                         System.out.println("La compra fue realizada exitosamente: ");
                        
@@ -630,71 +601,20 @@ public class Main
 
                     System.out.print("Ingrese el nombre de la pieza: ");
                     String nombrePieza= scanner.nextLine();
-                    
-
                 
-            
+                    
                     System.out.print("Ingrese el valor ofertado: ");
                     int valorOfertado= Integer.parseInt(scanner.nextLine());
 
-                    System.out.println("Ingrese el metodo de pago que va a usar (Transferencia, Efectivo o Tarjeta): ");
-
-                
+                    System.out.print("Ingrese el metodo de pago: ");
                     String metodoPago= scanner.nextLine();
 
                     System.out.println("Ingrese la fecha en el siguente formato dia/mes/año: ");
                     String fecha1 = scanner.nextLine();
             
 
-                    Oferta oferta = new Oferta(login, valorOfertado, metodoPago, nombrePieza, fecha1); 
-                  
-               
-
-                    MetodoPago mpago;
-                    if ("Transferencia" ==  metodoPago )
-                    {
-                        
-                     
-                        System.out.println("Ingrese el id de la transferencia: ");
-                        String id= scanner.nextLine();
-                        System.out.println("Ingrese el nombre de la pasarela: ");
-                        String tipo = scanner.nextLine();
-                        mpago = new Transferencia( metodoPago, valorOfertado , tipo, id);
-                        Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1, mpago);
-                       
-                    }
-                    if  ("Tarjeta" == metodoPago )
-                    {
-                       
-                       
-
-                        System.out.println("Ingrese el número de la tarjeta: ");
-                        int  numero= Integer.parseInt(scanner.nextLine());
-                        System.out.println("Ingrese el pin de la tarjeta: ");
-                        int pin = Integer.parseInt(scanner.nextLine());
-                        System.out.println("Ingrese el csv de la tarjeta: ");
-                        int csv= Integer.parseInt(scanner.nextLine());
-
-                        mpago= new Tarjeta(metodoPago, valorOfertado, login, numero, pin, csv);
-                        Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1, mpago);
-                       
-
-
-                    }
-                    if  ("Efectivo" == metodoPago )
-                    {
-                    
-                       
-
-                        
-
-                        mpago = new Efectivo(metodoPago, valorOfertado);
-                        Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1, mpago);
-                      
-
-                    }
-
-                  
+                    Oferta oferta = new Oferta(login, valorOfertado, metodoPago,nombrePieza, fecha1); 
+                    Operador.registrarOferta(oferta, galeria.getSubastas(), galeria, fecha1);
 
                     System.out.println("Revisa tus mensajes mensajes para saber si la venta fue exitosa");
 
@@ -755,25 +675,7 @@ public class Main
                     verHistorialAutor(galeria);
                     break;
 
-                case 9:   
-                   System.out.println("Ingrese el número de la tarjeta: "); 
-                   int numero= Integer.parseInt(scanner.nextLine());
-
-                   System.out.println("Ingrese el pin de la tarjeta: ");
-                   int pin= Integer.parseInt(scanner.nextLine()); 
-                   System.out.println("Ingrese el csv de la tarjeta: "); 
-                   int csv= Integer.parseInt(scanner.nextLine());
-                   System.out.println("Ingrese el monto de la tarjeta: "); 
-                   int monto= Integer.parseInt(scanner.nextLine());
-                   System.out.println("Ingrese de nuevo su login: "); 
-                   Tarjeta tarjeta= new Tarjeta("Tarjeta", monto, login, numero, pin, csv);
-                   
-
-                   Administrador.ingresarTarjeta(tarjeta,galeria);
-
-                    break;   
-
-                case 10:
+                case 9:
                     salir = true;
                     System.out.println("Gracias por usar nuestro sistema. ¡Hasta luego!");
                     break;
@@ -811,7 +713,7 @@ public class Main
                     
                     break;
                 case 2:
-                    UsuarioPersistencia.iniciarSesion();
+                   
                     break;
 
                 case 3:
