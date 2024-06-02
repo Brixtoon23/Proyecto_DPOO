@@ -55,27 +55,59 @@ public class VentanaComprador extends JFrame implements ActionListener
 
         // Crear los botones con el tamaño y la fuente especificados
         btnPiezasSubasta = crearBoton("Ver Piezas Subasta");
+        btnPiezasSubasta.setFocusable(false);
+        btnPiezasSubasta.addActionListener(this);
+        btnPiezasSubasta.setActionCommand("PiezaSubasta");
+        
+
         btnPiezasPrecioFijo = crearBoton("Ver Piezas a precio fijo");
+        btnPiezasPrecioFijo.setFocusable(false);
+        btnPiezasPrecioFijo.addActionListener(this);
+        btnPiezasPrecioFijo.setActionCommand("PiezaPrecioFijo");
+        
+
+
         btnHacerOferta = crearBoton("Hacer oferta para pieza subastada");
-        btnComprasAprobadas = crearBoton("Ver Compra no aprobadas por subasta");
+        btnHacerOferta.setFocusable(false);
+        btnHacerOferta.addActionListener(this);
+        btnHacerOferta.setActionCommand("HacerOferta");
+
+
+        btnComprasAprobadas = crearBoton("Ver Compra no aprobadas y aprobadas por subasta");
+        btnComprasAprobadas.setFocusable(false);
+        btnComprasAprobadas.addActionListener(this);
+        btnComprasAprobadas.setActionCommand("ComprasAprobadas");
+
+
         btnHistoriaPieza = crearBoton("Consultar historial de una pieza");
+        btnHistoriaPieza.setFocusable(false);
+        btnHistoriaPieza.addActionListener(this);
+        btnHistoriaPieza.setActionCommand("HistPieza");
+
+        // Inicialización y configuración de btnHistoriaArtista
         btnHistoriaArtista = crearBoton("Consultar historial de un artista");
+        btnHistoriaArtista.setFocusable(false);
+        btnHistoriaArtista.addActionListener(this);
+        btnHistoriaArtista.setActionCommand("HistArtista");
+        
         btnSalir = crearBoton("Salir");
         btnSalir.setForeground(Color.RED);
+        btnSalir.setFocusable(false);
+        btnSalir.addActionListener(this);
+        btnSalir.setActionCommand("Salir");
 
-        // Agregar los botones y el espacio fijo entre ellos
         agregarBotonConEspacio(btnPiezasSubasta);
         agregarBotonConEspacio(btnPiezasPrecioFijo);
         agregarBotonConEspacio(btnHacerOferta);
         agregarBotonConEspacio(btnComprasAprobadas);
         agregarBotonConEspacio(btnHistoriaPieza);
-        agregarBotonConEspacio(btnHistoriaArtista);
+        agregarBotonConEspacio(btnHistoriaArtista); 
         agregarBotonConEspacio(btnSalir);
 
         add(panelC, BorderLayout.CENTER);
     }
 
-    // Método para crear un botón con el tamaño y la fuente especificados
+    
     private JButton crearBoton(String texto) {
         JButton boton = new JButton(texto);
         
@@ -83,36 +115,70 @@ public class VentanaComprador extends JFrame implements ActionListener
         boton.setFocusable(false);
         boton.setPreferredSize(new Dimension(500, 50));
         boton.addActionListener(this);
-        boton.setActionCommand(texto); // Usar el texto del botón como comando de acción
+        boton.setActionCommand(texto); 
         return boton;
     }
 
-    // Método para agregar un botón con un espacio fijo debajo
+    
     private void agregarBotonConEspacio(JButton boton) {
         panelC.add(boton);
-        panelC.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio fijo vertical
+        panelC.add(Box.createRigidArea(new Dimension(0, 10))); 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        // Manejar los eventos de los botones aquí
-        String comando = e.getActionCommand();
-        if (comando.equals("Salir")) {
-            // Código para salir de la aplicación
-        } else if (comando.equals("Consultar historial de una pieza")) {
-            // Código para consultar historial de una pieza
-        } else if (comando.equals("Consultar historial de un artista")) {
-            // Código para consultar historial de un artista
-        } else if (comando.equals("Ver Piezas Subasta")) {
-            // Código para ver piezas en subasta
-        } else if (comando.equals("Ver Piezas a precio fijo")) {
-            // Código para ver piezas a precio fijo
-        } else if (comando.equals("Hacer oferta para pieza subastada")) {
-            // Código para hacer oferta por una pieza subastada
-        } else if (comando.equals("Ver Compra no aprobadas por subasta")) {
-            // Código para ver compras no aprobadas por subasta
+        if (e.getActionCommand().equals("HistPieza"))
+        {
+            this.dispose();
+            VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
+            ventana1.setVentanaAnterior("Comprador");
+            ventana1.setGaleria(galeria);
+            ventana1.setVisible(true);
+            ventana1.setLocationRelativeTo(null);
         }
+
+        else if (e.getActionCommand().equals("HistArtista"))
+        {
+            this.dispose();
+            VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
+            ventana2.setVentanaAnterior("Comprador");
+            ventana2.setGaleria(galeria);
+            ventana2.setVisible(true);
+            ventana2.setLocationRelativeTo(null);
+        }
+
+        else if(e.getActionCommand().equals("PiezaSubasta"))
+        {
+            this.dispose();
+            VentanaPiezasSubasta ventana3 = new VentanaPiezasSubasta();
+            
+            ventana3.setVisible(true);
+            ventana3.setLocationRelativeTo(null);
+
+        }
+
+        else if(e.getActionCommand().equals("PiezaPrecioFijo"))
+        {
+
+        }
+
+
+        else if(e.getActionCommand().equals("HacerOferta"))
+        {
+
+        }
+
+        else if(e.getActionCommand().equals("ComprasAprobadas"))
+        {
+
+        }
+
+       
+
+
+
+        
     }
 
     public static void main(String[] args)

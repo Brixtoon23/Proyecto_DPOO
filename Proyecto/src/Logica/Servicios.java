@@ -338,6 +338,27 @@ public class Servicios
 
 
 
+  
+    public static ArrayList<Pieza> hacerListaSubastas(ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega) {
+        ArrayList<Pieza> listaPiezasSubastadas = new ArrayList<>();
+
+        for (Pieza pieza : piezasExhibidas) {
+            if (pieza.isDisponible() && pieza.isSubasta()) {
+                listaPiezasSubastadas.add(pieza);
+            }
+        }
+
+        for (Pieza pieza : piezasBodega) {
+            if (pieza.isDisponible() && pieza.isSubasta()) {
+                listaPiezasSubastadas.add(pieza);
+            }
+        }
+
+        return listaPiezasSubastadas;
+    }
+
+
+
     
 
 
