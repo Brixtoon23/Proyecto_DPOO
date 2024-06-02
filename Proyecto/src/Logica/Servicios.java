@@ -281,47 +281,40 @@ public class Servicios
         }
 
     }
+    public static ArrayList<Pieza> hacerListaPrecioFijo(ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega) {
+        ArrayList<Pieza> piezasPrecioFijo = new ArrayList<>();
 
-
-    public static  ArrayList<Pieza> hacerListaPrecioFijo( ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega)
-    {
-        ArrayList<Pieza> piezasPrecioFijo= new ArrayList<>();
-
-        for(Pieza pieza :piezasExhibidas  )
-        {
-            if(pieza.isDisponible()==true && pieza.isSubasta()==false)
-            {
+        for (Pieza pieza : piezasExhibidas) {
+            if (pieza.isDisponible() && !pieza.isSubasta()) {
                 piezasPrecioFijo.add(pieza);
-
             }
-
-        
         }
-        return  piezasPrecioFijo;
 
+        for (Pieza pieza : piezasBodega) {
+            if (pieza.isDisponible() && !pieza.isSubasta()) {
+                piezasPrecioFijo.add(pieza);
+            }
+        }
 
-
+        return piezasPrecioFijo;
     }
 
+    public static ArrayList<Pieza> hacerListaSubastas(ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega) {
+        ArrayList<Pieza> piezasSubasta = new ArrayList<>();
 
-    public static  ArrayList<Pieza> hacerListaSubastas( ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega)
-    {
-        ArrayList<Pieza> piezasPrecioFijo= new ArrayList<>();
-
-        for(Pieza pieza :piezasExhibidas  )
-        {
-            if(pieza.isDisponible()==true && pieza.isSubasta()==true)
-            {
-                piezasPrecioFijo.add(pieza);
-
+        for (Pieza pieza : piezasExhibidas) {
+            if (pieza.isDisponible() && pieza.isSubasta()) {
+                piezasSubasta.add(pieza);
             }
-
-        
         }
-        return  piezasPrecioFijo;
 
+        for (Pieza pieza : piezasBodega) {
+            if (pieza.isDisponible() && pieza.isSubasta()) {
+                piezasSubasta.add(pieza);
+            }
+        }
 
-
+        return piezasSubasta;
     }
 }
 

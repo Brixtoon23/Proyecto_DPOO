@@ -4,22 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-import Logica.Galeria;
-import Logica.Pieza;
-import Logica.Servicios;
-import Persistencia.InicializadorDeClases;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.List;
 import Logica.Galeria;
 import Logica.Pieza;
 import Logica.Servicios;
 import Persistencia.InicializadorDeClases;
 
+
 public class VentanaPiezasSubasta extends JFrame implements ActionListener {
-    private List<Pieza> piezas;
+    private ArrayList<Pieza> piezas;
     private int indiceActual;
     private JLabel tituloLabel;
     private JLabel propietarioLabel;
@@ -33,10 +27,17 @@ public class VentanaPiezasSubasta extends JFrame implements ActionListener {
     private JButton volverButton; // Nuevo botón para volver a la ventana del comprador
     private Galeria galeria;
 
-    public VentanaPiezasSubasta() {
+    public VentanaPiezasSubasta() 
+    {
         galeria = InicializadorDeClases.cargarGaleria();
-        piezas = Servicios.hacerListaSubastas(galeria.getInventario().getPiezasExhibidad(), galeria.getInventario().getPiezasBodega());
+        ArrayList<Pieza> bodega = galeria.getInventario().getPiezasBodega();
+        ArrayList<Pieza> exhibidas= galeria.getInventario().getPiezasExhibidad();
+
+        
+        piezas = Servicios.hacerListaSubastas(exhibidas, bodega);
+        
         indiceActual = 0;
+
 
         setTitle("Piezas en Subastas");
         setSize(750, 600);
