@@ -87,11 +87,7 @@
         "anioCreacion": 1893,
         "subasta": false,
         "valores": [7000],
-<<<<<<< HEAD
         "rutaImagen": "null",
-=======
-        "rutaImagen": "Proyecto/Imagenes/elGrito.png",
->>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
         "disponible": true
     },
     {
@@ -116,11 +112,7 @@
             400000,
             50999
         ],
-<<<<<<< HEAD
         "rutaImagen": "null",
-=======
-        "rutaImagen": "Proyecto/Imagenes/vanGoh.jpg",
->>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
         "disponible": true
     },
     {
@@ -196,11 +188,7 @@
             4000000,
             509999
         ],
-<<<<<<< HEAD
         "rutaImagen": "null",
-=======
-        "rutaImagen": "Proyecto/Imagenes/monalisa.jpg",
->>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
         "disponible": false
     },
     {
@@ -278,7 +266,6 @@
         "anioCreacion": 1501,
         "subasta": false,
         "valores": [20000],
-<<<<<<< HEAD
         "rutaImagen": "null",
         "disponible": false
     },
@@ -309,10 +296,6 @@
             -134529002
         ],
         "rutaImagen": "null",
-=======
-        "tecnica": "oleo",
-        "rutaImagen": "Proyecto/Imagenes/david.jpeg",
->>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
         "disponible": false
     },
     {
