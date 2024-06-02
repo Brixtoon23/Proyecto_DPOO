@@ -10,15 +10,6 @@ import Logica.Pieza;
 import Logica.Servicios;
 import Persistencia.InicializadorDeClases;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.List;
-import Logica.Galeria;
-import Logica.Pieza;
-import Logica.Servicios;
-import Persistencia.InicializadorDeClases;
 
 public class VentanaPiezasPrecioFijo extends JFrame implements ActionListener {
     private List<Pieza> piezas;
