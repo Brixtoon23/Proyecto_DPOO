@@ -13,7 +13,6 @@ import Persistencia.InicializadorDeClases;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -34,7 +33,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
 
     private Galeria galeria;
 
-    public VentanaPropietario()
+    public VentanaPropietario(Propietario propietario)
     {
         setTitle("Menú Propietario");
         setSize(750,600);
@@ -43,9 +42,8 @@ public class VentanaPropietario extends JFrame implements ActionListener
 
         galeria = InicializadorDeClases.cargarGaleria();
 
-        //Prueba
-        propietario = Servicios.buscarPropietario(galeria, "nikol_propietario");
-
+        this.propietario = propietario;
+        
         panelN = new JPanel();
         panelN.setLayout(new GridBagLayout());
         lblTitulo = new JLabel("Bienvenido al menú Propietario");
@@ -115,6 +113,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
             VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
             ventana1.setVentanaAnterior("Propietario");
             ventana1.setGaleria(galeria);
+            ventana1.setPropietario(propietario);
             ventana1.setVisible(true);
             ventana1.setLocationRelativeTo(null);
         }
@@ -125,6 +124,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
             VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
             ventana2.setVentanaAnterior("Propietario");
             ventana2.setGaleria(galeria);
+            ventana2.setPropietario(propietario);
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
         }
@@ -150,9 +150,11 @@ public class VentanaPropietario extends JFrame implements ActionListener
         }
     }
 
+    //Quitar el main cuando se añada la pestaña principal
     public static void main(String[] args)
     {
-        VentanaPropietario iniciar = new VentanaPropietario();
+        Propietario prueba = Servicios.buscarPropietario(InicializadorDeClases.cargarGaleria(), "nikol_propietario");
+        VentanaPropietario iniciar = new VentanaPropietario(prueba);
         iniciar.setVisible(true);
         iniciar.setLocationRelativeTo(null);
     }

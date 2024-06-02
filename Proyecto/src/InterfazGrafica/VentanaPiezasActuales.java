@@ -8,7 +8,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.Box;
@@ -208,7 +207,7 @@ public class VentanaPiezasActuales extends JFrame implements ActionListener
         if (e.getActionCommand().equals("volver"))
         {
             this.dispose();
-            VentanaPropietario ventana = new VentanaPropietario();
+            VentanaPropietario ventana = new VentanaPropietario(propietario);
             ventana.setVisible(true);
             ventana.setLocationRelativeTo(null);
         }
