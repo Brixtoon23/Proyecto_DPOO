@@ -45,7 +45,6 @@ public class VentanaAdministrador extends JFrame implements ActionListener
 
 
         panelC = new JPanel();
-      
         CrearSubasta = new JPanel();
         CargarPieza = new JPanel();
         HistorialComprador = new JPanel();
