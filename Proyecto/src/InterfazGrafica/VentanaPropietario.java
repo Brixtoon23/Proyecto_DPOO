@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Logica.Galeria;
+import Logica.Propietario;
+import Logica.Servicios;
 import Persistencia.InicializadorDeClases;
 
 import java.awt.BorderLayout;
@@ -28,6 +30,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
     private JButton btnSalir;
     private JPanel panelN;
     private JPanel panelC;
+    private Propietario propietario;
 
     private Galeria galeria;
 
@@ -39,6 +42,9 @@ public class VentanaPropietario extends JFrame implements ActionListener
         setLayout(new BorderLayout());
 
         galeria = InicializadorDeClases.cargarGaleria();
+
+        //Prueba
+        propietario = Servicios.buscarPropietario(galeria, "nikol_propietario");
 
         panelN = new JPanel();
         panelN.setLayout(new GridBagLayout());
@@ -126,7 +132,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
         else if (e.getActionCommand().equals("PiezasPast"))
         {
             this.dispose();
-            VentanaPiezasPasadas ventana3 = new VentanaPiezasPasadas();
+            VentanaPiezasPasadas ventana3 = new VentanaPiezasPasadas(propietario,galeria);
             ventana3.setVisible(true);
             ventana3.setLocationRelativeTo(null);
         }
@@ -134,7 +140,7 @@ public class VentanaPropietario extends JFrame implements ActionListener
         else if (e.getActionCommand().equals("MisPiezas"))
         {
             this.dispose();
-            VentanaPiezasActuales ventana4 = new VentanaPiezasActuales();
+            VentanaPiezasActuales ventana4 = new VentanaPiezasActuales(propietario,galeria);
             ventana4.setVisible(true);
             ventana4.setLocationRelativeTo(null);
         }

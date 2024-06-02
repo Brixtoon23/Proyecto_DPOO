@@ -91,6 +91,12 @@
         "disponible": true
     },
     {
+
+        "disponible": true,
+        "rutaImagen":"Proyecto/Imagenes/elGrito.png"
+
+    },
+    {
         "tiempoConsignacion": -1,
         "tipo": "pintura",
         "lugarCreacion": "Italia",
@@ -112,8 +118,8 @@
             400000,
             50999
         ],
-        "rutaImagen": "null",
-        "disponible": true
+        "disponible": true,
+        "rutaImagen":"Proyecto/Imagenes/vanGoh.jpg"
     },
     {
         "tiempoConsignacion": -1,
@@ -170,8 +176,8 @@
                 "fechaVenta": "15/03/2024"
             },
             {
-                "valorCompra": 400000000,
-                "loginPropietario": "gabriela_propietario",
+                "valorCompra": 239480,
+                "loginPropietario": "nikol_propietario",
                 "fechaVenta": "15/03/2024"
             }
         ],
@@ -183,8 +189,8 @@
             4000000,
             509999
         ],
-        "rutaImagen": "null",
-        "disponible": false
+        "disponible": false,
+        "rutaImagen":"Proyecto/Imagenes/monalisa.jpg"
     },
     {
         "tiempoConsignacion": -1,
@@ -275,21 +281,12 @@
         "anioCreacion": 1501,
         "subasta": false,
         "valores": [20000],
-        "rutaImagen": "null",
-        "disponible": false
-    },
-    {
-        "tiempoConsignacion": -1,
-        "tipo": "pintura",
-        "lugarCreacion": "Italia",
-        "titulo": "La Ultima Cena",
-        "autores": ["Leonardo da Vinci"],
-        "valoresEspeciales": {
-            "peso": 4,
-            "ancho": 60,
-            "tecnica": "oleo",
-            "alto": 30
+        "disponible": false,
+        "rutaImagen":"Proyecto/Imagenes/david.jpeg",
+        "tecnica": "oleo",
+        "alto": 30
         },
+        {
         "bodega": true,
         "historialPropietarios": [{
             "valorCompra": 300100,

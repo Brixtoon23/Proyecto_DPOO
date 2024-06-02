@@ -192,7 +192,7 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
         btnAnterior.setFocusable(false);
         btnAnterior.setFont(new Font("Verdana",Font.PLAIN,15));
         btnAnterior.addActionListener(this);
-        btnAnterior.setActionCommand("Antes");
+        btnAnterior.setActionCommand("Ant");
         btnUltima = new JButton("Última");
         btnUltima.setFocusable(false);
         btnUltima.setFont(new Font("Verdana",Font.PLAIN,15));
@@ -202,7 +202,7 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
         btnSiguiente.setFocusable(false);
         btnSiguiente.setFont(new Font("Verdana",Font.PLAIN,15));
         btnSiguiente.addActionListener(this);
-        btnAnterior.setActionCommand("Sig");
+        btnSiguiente.setActionCommand("Sig");
 
         organizadorBtns.add(btnPrimera);
         organizadorBtns.add(btnAnterior);
@@ -290,7 +290,7 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
             actualizarInfo("Pri");
         }
 
-        else if (e.getActionCommand().equals("Antes"))
+        else if (e.getActionCommand().equals("Ant"))
         {
             actualizarInfo("Antes");
         }
@@ -342,6 +342,8 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
 
         else
         {
+            organizadorE.setVisible(false);
+            organizadorW.setVisible(false);
             organizadorC.setVisible(true);
         }
     }
@@ -351,25 +353,25 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
         Map<String,ArrayList<String>> autores = galeria.getAutores();
 
         piezaDesplegar = Servicios.buscarPieza(galeria, autores.get(autor).get(posPieza));
-            txtTituloPieza.setText(piezaDesplegar.getTitulo());
-            txtFechaCreacion.setText(((Integer)(piezaDesplegar.getAnioCreacion())).toString());
+        txtTituloPieza.setText(piezaDesplegar.getTitulo());
+        txtFechaCreacion.setText(((Integer)(piezaDesplegar.getAnioCreacion())).toString());
             
-            if (piezaDesplegar.getHistorialPropietarios().size()>0)
-            {
-                txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
-                txtValor.setText(((Integer)(piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra"))).toString());
-                lblNoEncontroInfoVenta.setVisible(false);
-                detallesVenta.setVisible(true);
-            }
+        if (piezaDesplegar.getHistorialPropietarios().size()>0)
+        {
+            txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
+            txtValor.setText(((Integer)(piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra"))).toString());
+            lblNoEncontroInfoVenta.setVisible(false);
+            detallesVenta.setVisible(true);
+        }
 
-            else
-            {
-                lblNoEncontroInfoVenta.setVisible(true);
-            }
+        else
+        {
+            lblNoEncontroInfoVenta.setVisible(true);
+        }
 
-            ImageIcon icono = new ImageIcon(piezaDesplegar.getRutaImagen());
-            imagenPieza.setIcon(icono);
-            posHistorial = posPieza;
+        ImageIcon icono = new ImageIcon(piezaDesplegar.getRutaImagen());
+        imagenPieza.setIcon(icono);
+        posHistorial = posPieza;
 
     }
 
@@ -384,12 +386,12 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
 
             else if ((accion.equals("Antes"))&&((posHistorial-1)>=0))
             {
-                cambioPieza(autor, posHistorial-1);
+                cambioPieza(autor, (posHistorial-1));
             }
 
             else if ((accion.equals("Sig"))&&((posHistorial+1)<=(galeria.getAutores().get(autor).size()-1)))
             {
-                cambioPieza(autor,posHistorial+1);
+                cambioPieza(autor,(posHistorial+1));
             }
 
             else

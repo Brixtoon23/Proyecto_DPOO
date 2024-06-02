@@ -281,5 +281,75 @@ public class Servicios
         }
 
     }
+
+    public static Tarjeta metodoPagoTarjeta(String nombre , String login_comprador, int numero, int pin, int csv, int  monto )
+    {
+        Tarjeta tarjeta = new Tarjeta(nombre, monto, login_comprador, numero, pin, csv);
+
+        return tarjeta ;
+
+    }
+
+    public static Efectivo metodoPagoEfectivo(String nombre, int monto )
+    {
+        Efectivo efectivo = new Efectivo(nombre, monto);
+        return efectivo;
+    }
+
+    public static Transferencia metodoPagoEfectivo(String nombre, int monto, String id)
+    {
+        Transferencia transferencia  = new Transferencia(nombre, monto, nombre, id);
+        return transferencia;
+    }
+
+
+
+  
+    public static ArrayList<Pieza> hacerListaSubastas(ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega) {
+        ArrayList<Pieza> listaPiezasSubastadas = new ArrayList<>();
+
+        for (Pieza pieza : piezasExhibidas) {
+            if (pieza.isDisponible() && pieza.isSubasta()) {
+                listaPiezasSubastadas.add(pieza);
+            }
+        }
+
+        for (Pieza pieza : piezasBodega) {
+            if (pieza.isDisponible() && pieza.isSubasta()) {
+                listaPiezasSubastadas.add(pieza);
+            }
+        }
+
+        return listaPiezasSubastadas;
+    }
+
+
+        
+    public static ArrayList<Pieza> hacerListaPrecioFijo(ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega) {
+        ArrayList<Pieza> listaPiezasPrecioFijo = new ArrayList<>();
+
+        for (Pieza pieza : piezasExhibidas) {
+            if (pieza.isDisponible()==true && pieza.isSubasta() == false) {
+                listaPiezasPrecioFijo.add(pieza);
+            }
+        }
+
+        for (Pieza pieza : piezasBodega) {
+            if (pieza.isDisponible() && pieza.isSubasta()==false) {
+                listaPiezasPrecioFijo.add(pieza);
+            }
+        }
+
+        return listaPiezasPrecioFijo;
+
+    }
+
+
+
+
+
+    
+
+
 }
 
