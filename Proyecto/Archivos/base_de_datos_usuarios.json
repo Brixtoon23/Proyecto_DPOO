@@ -1185,18 +1185,6 @@
             "idPiezasActuales": [],
             "historialPiezas": []
         },
-        "password": "alejandra",
-        "login": "alejandra_propietario",
-        "telefono": "12345432167",
-        "nombre": "alejandra",
-        "rol": "propietario"
-    },
-    {
-        "verificado": false,
-        "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
-        },
         "password": "gabriela",
         "login": "gabriela_propietario",
         "telefono": "12657654",
@@ -1211,6 +1199,7 @@
             "mensajesSubasta": [],
             "estadoCuenta": 3.077556E7,
             "idPiezasCompradas": [],
+<<<<<<< HEAD
             "historialCompras": [{
                 "metodoPago": "tarjeta",
                 "fecha": "03/06/2024",
@@ -1219,12 +1208,43 @@
                 "compradorLogin": "briceno_comprador"
             }],
             "idPiezasCoompradas": ["La Venus de Milo"]
+=======
+            "historialCompras": [
+                {
+                    "metodoPago": "tarjeta",
+                    "fecha": "03/06/2024",
+                    "precio": 300100,
+                    "nombrepieza": "La Venus de Milo",
+                    "compradorLogin": "briceno_comprador"
+                },
+                {
+                    "metodoPago": "tarjeta",
+                    "fecha": "23/23/2323",
+                    "precio": 20000,
+                    "nombrepieza": "El David",
+                    "compradorLogin": "briceno_comprador"
+                }
+            ],
+            "idPiezasCoompradas": ["El David"]
+>>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
         },
         "password": "briceno",
         "login": "briceno_comprador",
         "telefono": "234323678",
         "nombre": "briceno",
         "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "alejandra",
+        "login": "alejandra_propietario",
+        "telefono": "12345432167",
+        "nombre": "alejandra",
+        "rol": "propietario"
     },
     {
         "verificado": false,

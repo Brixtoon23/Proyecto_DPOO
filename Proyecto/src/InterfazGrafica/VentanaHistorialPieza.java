@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 
 import Logica.Galeria;
 import Logica.Pieza;
+import Logica.Propietario;
 import Logica.Servicios;
 
 public class VentanaHistorialPieza extends JFrame implements ActionListener
@@ -51,6 +52,9 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
     private int posHistorial;
     private Pieza piezaDesplegar;
     private Galeria galeria;
+    
+    //Se guarda el propietario para se decida volver a VentanaPropietario
+    private Propietario propietario;
 
 
     public VentanaHistorialPieza()
@@ -240,7 +244,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
             else if (ventanaAnterior.equals("Propietario"))
             {
                 this.dispose();
-                VentanaPropietario menu = new VentanaPropietario();
+                VentanaPropietario menu = new VentanaPropietario(propietario);
                 menu.setVisible(true);
                 menu.setLocationRelativeTo(null);
             }
@@ -295,16 +299,21 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
 
         if (piezaDesplegar==null)
         {
+            organizadorE.setVisible(false);
+            organizadorW.setVisible(false);
             organizadorC.setVisible(true);
         }
 
         else
         {
             txtTituloPieza.setText(piezaDesplegar.getTitulo());
-            txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("loginPropietario"));
-            txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
-            txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra"));
-
+            if (piezaDesplegar.getHistorialPropietarios().size()!=0)
+            {
+                txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("loginPropietario"));
+                txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
+                txtValor.setText((piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra")).toString());
+            }
+            
             ImageIcon imgPieza = new ImageIcon(piezaDesplegar.getRutaImagen());
             imagenPieza.setIcon(imgPieza);
 
@@ -323,7 +332,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
             {
                 txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("loginPropietario"));
                 txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("fechaVenta"));
-                txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra"));
+                txtValor.setText((piezaDesplegar.getHistorialPropietarios().get(0).get("valorCompra")).toString());
                 posHistorial = 0;
             }
 
@@ -333,7 +342,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
                 {
                     txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial-1).get("loginPropietario"));
                     txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial-1).get("fechaVenta"));
-                    txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial-1).get("valorCompra"));
+                    txtValor.setText((piezaDesplegar.getHistorialPropietarios().get(posHistorial-1).get("valorCompra")).toString());
                     posHistorial-= 1;
                 }
             }
@@ -344,7 +353,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
                 {
                     txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial+1).get("loginPropietario"));
                     txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial+1).get("fechaVenta"));
-                    txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(posHistorial+1).get("valorCompra"));
+                    txtValor.setText((piezaDesplegar.getHistorialPropietarios().get(posHistorial+1).get("valorCompra")).toString());
                     posHistorial+= 1;
                 }
             }
@@ -353,7 +362,7 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
             {
                 txtPropietario.setText((String)piezaDesplegar.getHistorialPropietarios().get(piezaDesplegar.getHistorialPropietarios().size()-1).get("loginPropietario"));
                 txtFechaCompra.setText((String)piezaDesplegar.getHistorialPropietarios().get(piezaDesplegar.getHistorialPropietarios().size()-1).get("fechaVenta"));
-                txtValor.setText((String)piezaDesplegar.getHistorialPropietarios().get(piezaDesplegar.getHistorialPropietarios().size()-1).get("valorCompra"));
+                txtValor.setText((piezaDesplegar.getHistorialPropietarios().get(piezaDesplegar.getHistorialPropietarios().size()-1).get("valorCompra")).toString());
                 posHistorial = piezaDesplegar.getHistorialPropietarios().size()-1; 
             }
         }
@@ -362,6 +371,11 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
     public void setGaleria (Galeria g)
     {
         galeria = g;
+    }
+
+    public void setPropietario(Propietario p)
+    {
+        propietario = p;
     }
 
     /** 
