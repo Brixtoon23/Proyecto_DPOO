@@ -96,69 +96,6 @@ public class Cajero  extends Usuario
 		
 		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
 
-<<<<<<< HEAD
-		Compra compraNueva = new Compra(comprador.getLogin(),valor , pieza.getTitulo() , metodoPago, fecha);
-=======
-		Compra compraNueva = new Compra(comprador.getLogin(), precioFijo , pieza.getTitulo() , metodoPago, fecha);
->>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
-
-		historialCompra.add(compraNueva);
-
-		comprador.setHistorialCompras(historialCompra);
-		
-		
-		ArrayList<String> piezas =  comprador.getIdpiezasCompradas();
-		piezas.add(pieza.getTitulo());
-		comprador.setIdpiezasCompradas(piezas);
-		
-		
-		String loginnuevoPropiertario= comprador.login.replace("_comprador", "_propietario");
-		Propietario nuevoPropiertario= Servicios.buscarPropietario(galeria, loginnuevoPropiertario);
-
-		ArrayList<String> nuevoHistorial = nuevoPropiertario.getHistorialPiezas();
-		nuevoHistorial.add(pieza.getTitulo());
-		nuevoPropiertario.setHistorialPiezas(nuevoHistorial);
-
-		ArrayList<String> nuevasIdPiezas = nuevoPropiertario.getIdPiezasActuales();
-		nuevasIdPiezas.add(pieza.getTitulo());
-		nuevoPropiertario.setIdPiezasActuales(nuevasIdPiezas);
-
-
-		Map<String, Object> mapa = new HashMap<>();
-
-		mapa.put( "loginPropietario", loginnuevoPropiertario);
-<<<<<<< HEAD
-		mapa.put("valorCompra", valor);
-=======
-		mapa.put("valorCompra",  precioFijo);
->>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
-		mapa.put("fechaVenta", fecha);
-
-		pieza.getHistorialPropietarios().add(mapa);
-		pieza.setLoginPropietarioActual(loginnuevoPropiertario);
-<<<<<<< HEAD
-=======
-
-		PiezasPersistencia.actualizarPropietarioPieza(galeria,pieza);
-		UsuarioPersistencia.actualizarCompradorCompra( comprador );
-		UsuarioPersistencia.actualizarPropietarioCompra(propietarioAnterior,nuevoPropiertario);
-		}
-
-
-		int valor = pieza.getValores().get(0); 
-
-		pieza.setDisponible(false);
-		
-		String propietarioAnteriorLogin = pieza.getLoginPropietarioActual();
-		Propietario propietarioAnterior= Servicios.buscarPropietario(galeria, propietarioAnteriorLogin);
-		ArrayList<String> piezasPropietarioAnterior = propietarioAnterior.getIdPiezasActuales();
-
-		piezasPropietarioAnterior.remove(pieza.getTitulo());
-		propietarioAnterior.setIdPiezasActuales(piezasPropietarioAnterior);
-
-		
-		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
-
 		Compra compraNueva = new Compra(comprador.getLogin(),valor , pieza.getTitulo() , metodoPago, fecha);
 
 		historialCompra.add(compraNueva);
@@ -191,7 +128,6 @@ public class Cajero  extends Usuario
 
 		pieza.getHistorialPropietarios().add(mapa);
 		pieza.setLoginPropietarioActual(loginnuevoPropiertario);
->>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
 
 		PiezasPersistencia.actualizarPropietarioPieza(galeria,pieza);
 		UsuarioPersistencia.actualizarCompradorCompra( comprador );
