@@ -4,31 +4,25 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import Logica.Compra;
 import Logica.Comprador;
-import Logica.Galeria;
-import Logica.Mensaje;
-import Logica.Usuario;
+
 import Logica.Propietario;
+import Logica.Usuario;
 
+public class UsuarioPersistencia {
 
-
-public class UsuarioPersistencia 
-{
-
+    private static final String NOMBRE_ARCHIVO = "Proyecto/Archivos/base_de_datos_usuarios.json";
     private static JSONObject baseDatos = leerBaseDeDatos();
     private static JSONArray usuariosJSON = baseDatos.getJSONArray("usuarios");
-    
 
-    public static void registrarUsuario(Usuario usuario) 
-
-    {
+    public static void registrarUsuario(Usuario usuario) {
         JSONObject usuarioJSON = new JSONObject();
-
         usuarioJSON.put("login", usuario.getLogin());
         usuarioJSON.put("nombre", usuario.getNombre());
         usuarioJSON.put("password", usuario.getPassword());
@@ -37,41 +31,28 @@ public class UsuarioPersistencia
         usuarioJSON.put("verificado", usuario.isVerificado());
 
         JSONObject valoresEspecialesJSON = new JSONObject();
-
-        switch (usuario.getRol()) 
-        {
+        switch (usuario.getRol()) {
             case "cajero":
-            	
-                valoresEspecialesJSON.put("comprasRegistradas", new ArrayList<Compra>()); 
-
-              
+                valoresEspecialesJSON.put("comprasRegistradas", new JSONArray());
                 break;
-            case "operador" :
-                
-                valoresEspecialesJSON.put("idSubastas",new ArrayList<String>());
-               
+            case "operador":
+                valoresEspecialesJSON.put("idSubastas", new JSONArray());
+                break;
             case "administrador":
-
                 valoresEspecialesJSON.put("soyAdmin", true);
-               
                 break;
             case "comprador":
-            
                 Comprador comprador = (Comprador) usuario;
                 valoresEspecialesJSON.put("estadoCuenta", comprador.getEstadoCuenta());
                 valoresEspecialesJSON.put("maxCompras", comprador.getMaxCompras());
                 valoresEspecialesJSON.put("mora", comprador.isMora());
-                valoresEspecialesJSON.put("historialCompras", new ArrayList<Compra>());
-                valoresEspecialesJSON.put("mensajesSubasta", new ArrayList<Mensaje>());
-                valoresEspecialesJSON.put("idPiezasCompradas", new ArrayList<String>());
-
+                valoresEspecialesJSON.put("historialCompras", new JSONArray());
+                valoresEspecialesJSON.put("mensajesSubasta", new JSONArray());
+                valoresEspecialesJSON.put("idPiezasCompradas", new JSONArray());
                 break;
-
-            case "propietario" :
-
-                valoresEspecialesJSON.put("idPiezasActuales", new ArrayList<String>());
-                valoresEspecialesJSON.put("historialPiezas", new ArrayList<String>());
-
+            case "propietario":
+                valoresEspecialesJSON.put("idPiezasActuales", new JSONArray());
+                valoresEspecialesJSON.put("historialPiezas", new JSONArray());
                 break;
             default:
                 System.out.println("Rol no reconocido. Los valores especiales no se guardarán.");
@@ -80,15 +61,12 @@ public class UsuarioPersistencia
         usuarioJSON.put("valores_especiales", valoresEspecialesJSON);
         usuariosJSON.put(usuarioJSON);
         guardarBaseDeDatos(baseDatos);
-        System.out.println("Registro exitoso.");
-    }
-      
-      
 
-    public static JSONObject leerBaseDeDatos()
-     {
+    }
+
+    public static JSONObject leerBaseDeDatos() {
         try {
-            Scanner scanner = new Scanner(new File("Proyecto/Archivos/base_de_datos_usuarios.json"));
+            Scanner scanner = new Scanner(new File(NOMBRE_ARCHIVO));
             StringBuilder jsonText = new StringBuilder();
             while (scanner.hasNextLine()) {
                 jsonText.append(scanner.nextLine());
@@ -96,83 +74,65 @@ public class UsuarioPersistencia
             scanner.close();
             return new JSONObject(jsonText.toString());
         } catch (FileNotFoundException e) {
-            // Si el archivo no existe, se devuelve un JSON vacío
             return new JSONObject().put("usuarios", new JSONArray());
         }
     }
 
-    
-    private static void guardarBaseDeDatos(JSONObject baseDeDatosJSON) 
-    {
-        try (FileWriter file = new FileWriter("Proyecto/Archivos/base_de_datos_usuarios.json")) 
-        {
+    private static void guardarBaseDeDatos(JSONObject baseDeDatosJSON) {
+        try (FileWriter file = new FileWriter(NOMBRE_ARCHIVO)) {
             file.write(baseDeDatosJSON.toString(4));
-            System.out.println("Base de datos actualizada y guardada.");
         } catch (IOException e) {
-            System.out.println("Error al guardar la base de datos.");
             e.printStackTrace();
         }
     }
 
-
-    public static void actualizarPropietario(Propietario propietario)
+    public static void actualizarUsuario(Usuario usuario) 
     {
-
-    }
-
-    public static void ActualizarregistrarCompraSubasta(String loginPropietarioAnteror, String loginPropietarioNuevo, String loginComprador)
-    {
-        
-    }
-
-    public static void iniciarSesion() 
-    {
-        
-    }
-
-
-
-    public static void actualizarCompradorCompra( Comprador comprador) 
-    {
-        for (int i = 0; i < usuariosJSON.length(); i++) 
-        {
+        for (int i = 0; i < usuariosJSON.length(); i++) {
             JSONObject objUsuario = usuariosJSON.getJSONObject(i);
-            // Verifica si el objeto tiene la clave que quieres eliminar
-            if (objUsuario.getString("login").equals(comprador.getLogin())) 
-            {            
+            if (objUsuario.getString("login").equals(usuario.getLogin())) {
                 usuariosJSON.remove(i);
-                registrarUsuario(comprador);
-                break; 
-            
+                registrarUsuario(usuario);
+                break;
             }
         }
+    }
+
+    public static void actualizarPropietario(Propietario propietario) {
+        actualizarUsuario(propietario);
+    }
+
+    public static void actualizarCompradorCompra(Comprador comprador) 
+    {
+        actualizarUsuario(comprador);
+        JSONObject compradorJson = usuariosJSON.getJSONObject(usuariosJSON.length()-1);
+        JSONObject valoresEspeciales = compradorJson.getJSONObject("valores_especiales");
+        valoresEspeciales.put("historialCompras", comprador.getHistorialCompras());
+        valoresEspeciales.put("mensajesSubasta", comprador.getMensajesSubasta());
+        valoresEspeciales.put("idPiezasCoompradas", comprador.getIdpiezasCompradas());
 
     }
 
+    public static void actualizarPropietarioCompra(Propietario propietarioAnterior, Propietario nuevoPropietario) {
+        actualizarUsuario(propietarioAnterior);
+        actualizarUsuario(nuevoPropietario);
+        JSONObject propietarioAnteriorJson = usuariosJSON.getJSONObject(usuariosJSON.length()-2);
+        JSONObject nuevoPropietarioJson = usuariosJSON.getJSONObject(usuariosJSON.length()-1);
+        JSONObject valoresEspeciales1 = propietarioAnteriorJson.getJSONObject("valores_especiales");
+        JSONObject valoresEspeciales2 = nuevoPropietarioJson.getJSONObject("valores_especiales");
+        valoresEspeciales1.put("idPiezasActuales", propietarioAnterior.getIdPiezasActuales());
+        valoresEspeciales1.put("historialPiezas", nuevoPropietario.getHistorialPiezas());
+        valoresEspeciales2.put("idPiezasActuales", propietarioAnterior.getIdPiezasActuales());
+        valoresEspeciales2.put("historialPiezas", nuevoPropietario.getHistorialPiezas());
 
-
-    public static void actualizarPropietarioCompra( Propietario propietarioAnterior, Propietario nuevoPropietario) 
-    {
-        for (int i = 0; i < usuariosJSON.length(); i++) 
-        {
-            JSONObject objUsuario = usuariosJSON.getJSONObject(i);
-            // Verifica si el objeto tiene la clave que quieres eliminar
-            if (objUsuario.getString("login").equals(propietarioAnterior.getLogin())) 
-            {            
-                usuariosJSON.remove(i);
-                registrarUsuario(propietarioAnterior);
-
-            }
-            else if (objUsuario.getString("login").equals(nuevoPropietario.getLogin()))
-            {
-                usuariosJSON.remove(i);
-                registrarUsuario(nuevoPropietario);
-                
-
-            }
-        }
     }
     
+    public static void iniciarSesion() 
+    {
+        // Implementar lógica de inicio de sesión si es necesario
+    }
+
+    public static void actualizarRegistroCompraSubasta(String loginPropietarioAnterior, String loginPropietarioNuevo, String loginComprador) {
+        // Implementar lógica de actualización de registros de compra/subasta si es necesario
+    }
 }
-
-

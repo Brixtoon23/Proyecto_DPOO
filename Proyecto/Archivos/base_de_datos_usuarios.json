@@ -1110,10 +1110,10 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "maxCompras": 3.58935953E14,
+            "maxCompras": 3.58935953E+14,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 1.23456794E18,
+            "estadoCuenta": 1.23456794E+18,
             "idPiezasCompradas": [],
             "historialCompras": []
         },
@@ -1126,10 +1126,10 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "maxCompras": 2.34566544E8,
+            "maxCompras": 234566544,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 1.23394842E9,
+            "estadoCuenta": 1.23394842E+9,
             "idPiezasCompradas": [],
             "historialCompras": []
         },
@@ -1142,10 +1142,10 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "maxCompras": 1.2367777E29,
+            "maxCompras": 1.2367777E+29,
             "mora": false,
             "mensajesSubasta": [],
-            "estadoCuenta": 3.00000003E15,
+            "estadoCuenta": 3.00000003E+15,
             "idPiezasCompradas": [],
             "historialCompras": []
         },
@@ -1211,17 +1211,14 @@
             "mensajesSubasta": [],
             "estadoCuenta": 3.077556E7,
             "idPiezasCompradas": [],
-            "historialCompras": [
-                {
-                "compradorLogin":"briceno_comprador",
-                "precio": 34599,
-                "nombrePieza":"La Ultima Cena",
-                "metodoPago":{"nombre":"tarjeta","monto":35000,"loginComprador":"briceno_comprador","numero":11111,"pin":2005,"csv":123},
-                "fecha":"23/4/2020"
-                }
-            
-                
-            ]
+            "historialCompras": [{
+                "metodoPago": "tarjeta",
+                "fecha": "03/06/2024",
+                "precio": 300100,
+                "nombrepieza": "La Venus de Milo",
+                "compradorLogin": "briceno_comprador"
+            }],
+            "idPiezasCoompradas": ["La Venus de Milo"]
         },
         "password": "briceno",
         "login": "briceno_comprador",

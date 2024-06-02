@@ -54,9 +54,9 @@ public class SubastaPersistencia
     private static void guardarBaseDeDatos(JSONObject baseDeDatosJSON) {
         try (FileWriter file = new FileWriter(NOMBRE_ARCHIVO)) {
             file.write(baseDeDatosJSON.toString(4));
-            System.out.println("Base de datos actualizada y guardada.");
+
         } catch (IOException e) {
-            System.out.println("Error al guardar la base de datos.");
+
             e.printStackTrace();
         }
     }

@@ -70,10 +70,10 @@ public class TestsAdmin
         historial1 = new ArrayList<Map<String,Object>>();
         historial1.add(propietario1);
 
-        EsculturaPrueba = new Escultura("El pensador", "nikol_propietario", 1990, "somewhere", Autores_dos, true, -1, false, Valores_uno, true, "escultura", historial1, 1, 10, 12, 56, false,"ruta");
-        VideoPrueba = new Video("Order 66", "nikol_propietario", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial1, 20, 1, "720","ruta");
-        Photo = new Fotografia("Random photo", "nikol_propietario", 2023, "who knows", Autores_uno, false, 32, true, Valores_dos, false, "video", historial1, "None", 28,"ruta");
-        PinturaPrueba = new Pintura("Una pintura", "nikol_propietario", 1020, "???", Autores_dos, true, -1, false, Valores_uno, true, "pintura", historial1, 3, 3, 14, "creatividad","ruta");
+        EsculturaPrueba = new Escultura("El pensador", "nikol_propietario", 1990, "somewhere", Autores_dos, true, -1, false, Valores_uno, true, "escultura", historial1, 1, 10, 12, 56, false,null);
+        VideoPrueba = new Video("Order 66", "nikol_propietario", 2020, "In a galaxy far, far away", Autores_uno, false, 20, true, Valores_dos, false, "video", historial1, 20, 1, "720",null);
+        Photo = new Fotografia("Random photo", "nikol_propietario", 2023, "who knows", Autores_uno, false, 32, true, Valores_dos, false, "video", historial1, "None", 28,null);
+        PinturaPrueba = new Pintura("Una pintura", "nikol_propietario", 1020, "???", Autores_dos, true, -1, false, Valores_uno, true, "pintura", historial1, 3, 3, 14, "creatividad",null);
 
     }
 
@@ -116,8 +116,8 @@ public class TestsAdmin
         Comprador sinSuficienteDinero = Servicios.buscarComprador(GaleriaPrueba, "Sin_Plata_comprador");
         Pieza pieza = Servicios.buscarPieza(GaleriaPrueba, "El David");
         //Se veirifica que el administrador autorice la compra para un comprador con monto suficiente y que no lo autorice para uno sin suficiente dinero
-        boolean respuesta1 = Administrador.aprobarVentaPrecioFijo(conSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10");
-        boolean respuesta2 = Administrador.aprobarVentaPrecioFijo(sinSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10");
+        boolean respuesta1 = Administrador.aprobarVentaPrecioFijo(conSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10","efectivo");
+        boolean respuesta2 = Administrador.aprobarVentaPrecioFijo(sinSuficienteDinero,pieza,"X",GaleriaPrueba,"10/26/10","tarjeta");
         assertEquals(true, respuesta1,"No se aprobó la venta para un comprador con el suficiente dinero");
         assertEquals(false,respuesta2,"Se aprobó la venta para un cliente que no tiene suficiente dinero");
     }

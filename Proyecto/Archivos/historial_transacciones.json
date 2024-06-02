@@ -1,0 +1,42 @@
+{"historias": [
+    {
+        "fecha": "23/07/2004",
+        "monto": "30000",
+        "numero": "10000",
+        "realizado": "true",
+        "banco": "bancolombia",
+        "loginComprador": "briceno_comprador"
+    },
+    {
+        "fecha": "25/10/2015",
+        "monto": "50000",
+        "numero": "10001",
+        "realizado": "false",
+        "banco": "davivienda",
+        "loginComprador": "sara_comprador"
+    },
+    {
+        "fecha": "26/11/2010",
+        "monto": "58900",
+        "numero": "10002",
+        "realizado": "true",
+        "banco": "davivienda",
+        "loginComprador": "amelia_comprador"
+    },
+    {
+        "fecha": "2",
+        "monto": 300100,
+        "numero": "4",
+        "realizado": false,
+        "banco": "",
+        "loginComprador": "briceno_comprador"
+    },
+    {
+        "fecha": "03/06/2024",
+        "monto": 300100,
+        "numero": "5",
+        "realizado": true,
+        "banco": "Davivienda",
+        "loginComprador": "briceno_comprador"
+    }
+]}

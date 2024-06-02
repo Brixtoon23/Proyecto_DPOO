@@ -14,21 +14,18 @@ import Logica.Administrador;
 import Logica.Cajero;
 import Logica.Compra;
 import Logica.Comprador;
-import Logica.Efectivo;
 import Logica.Escultura;
 import Logica.Fotografia;
 import Logica.Galeria;
+import Logica.Historia;
 import Logica.Inventario;
 import Logica.Mensaje;
-import Logica.MetodoPago;
 import Logica.Oferta;
 import Logica.Operador;
 import Logica.Pieza;
 import Logica.Pintura;
 import Logica.Propietario;
 import Logica.Subasta;
-import Logica.Tarjeta;
-import Logica.Transferencia;
 import Logica.Usuario;
 import Logica.Video;
 
@@ -38,7 +35,7 @@ public class InicializadorDeClases
     public static Galeria cargarGaleria() 
     
     {
-        Galeria galeriaRetornada = new Galeria(null, 0, null, null, null,null,null,null);
+        Galeria galeriaRetornada = new Galeria(null, 0, null, null, null,null,null);
         try 
         {
         // Especifica la ruta del archivo JSON con la carpeta "Archivos"
@@ -46,8 +43,7 @@ public class InicializadorDeClases
         String rutaArchivoUsuarios = "Proyecto/Archivos/base_de_datos_usuarios.json";
         String rutaArchivoSubastas = "Proyecto/Archivos/base_de_datos_subastas.json";
         String rutaArchivoAutores = "Proyecto/Archivos/base_de_datos_autores.json";
-        String rutaArchivoTarjetas = "Proyecto/Archivos/base_de_datos_tarjetas.json";
-        String rutaArchivoTransferencias = "Proyecto/Archivos/base_de_datos_transferencias.json";
+        String rutaArchivoHistorias = "Proyecto/Archivos/historial_transacciones.json";
 
 
 
@@ -56,8 +52,7 @@ public class InicializadorDeClases
             File archivoUsuarios = new File(rutaArchivoUsuarios);
             File archivoSubastas = new File(rutaArchivoSubastas);
             File archivoAutores = new File(rutaArchivoAutores);
-            File archivoTarjetas = new File(rutaArchivoTarjetas);
-            File archivoTransferencias = new File(rutaArchivoTransferencias);
+            File archivoHistorias = new File(rutaArchivoHistorias);
        
 
             // Crea un Scanner para leer el contenido del archivo JSON
@@ -65,8 +60,7 @@ public class InicializadorDeClases
             Scanner scannerUsuarios = new Scanner(archivoUsuarios);
             Scanner scannerSubastas = new Scanner(archivoSubastas);
             Scanner scannerAutores = new Scanner(archivoAutores);
-            Scanner scannerTrajetas = new Scanner(archivoTarjetas);
-            Scanner scannerTransferencias = new Scanner(archivoTransferencias);
+            Scanner scannerHistorias = new Scanner(archivoHistorias);
 
 
             // Lee todo el contenido del archivo y lo almacena en un StringBuilder
@@ -88,15 +82,10 @@ public class InicializadorDeClases
             {
                 autoresStringBuilder.append(scannerAutores.nextLine());
             }
-            StringBuilder tarjetasStringBuilder = new StringBuilder();
-            while (scannerTrajetas.hasNextLine()) 
+            StringBuilder historiasStringBuilder = new StringBuilder();
+            while (scannerHistorias.hasNextLine()) 
             {
-                tarjetasStringBuilder.append(scannerTrajetas.nextLine());
-            }
-            StringBuilder transferenciasStringBuilder = new StringBuilder();
-            while (scannerTransferencias.hasNextLine()) 
-            {
-                transferenciasStringBuilder.append(scannerTransferencias.nextLine());
+                historiasStringBuilder.append(scannerHistorias.nextLine());
             }
 
             // Cierra el scanner
@@ -104,24 +93,21 @@ public class InicializadorDeClases
             scannerUsuarios.close();
             scannerSubastas.close();
             scannerAutores.close();
-            scannerTrajetas.close();
-            scannerTransferencias.close();
+            scannerHistorias.close();
 
             // Convierte el contenido del StringBuilder a String
             String piezasString = piezasStringBuilder.toString();
             String usuariosString = usuariosStringBuilder.toString();
             String subastasString = subastasStringBuilder.toString();
             String autoresString = autoresStringBuilder.toString();
-            String tarjetasString = tarjetasStringBuilder.toString();
-            String transferenciasString = transferenciasStringBuilder.toString();
+            String historiasString = historiasStringBuilder.toString();
 
             // Convierte el String JSON en un objeto JSONObject
             JSONObject piezasObject = new JSONObject(piezasString);
             JSONObject usuariosObject = new JSONObject(usuariosString);
             JSONObject subastasObject = new JSONObject(subastasString);
             JSONObject autoresObject = new JSONObject(autoresString);
-            JSONObject tarjetasObject = new JSONObject(tarjetasString);
-            JSONObject transferenciasObject = new JSONObject(transferenciasString);
+            JSONObject historiasObject = new JSONObject(historiasString);
             
 
             // Obtiene el array "piezas" del JSON
@@ -129,8 +115,7 @@ public class InicializadorDeClases
             JSONArray usuariosArray = usuariosObject.getJSONArray("usuarios");
             JSONArray subastasArray = subastasObject.getJSONArray("subastas");
             JSONArray autoresArray = autoresObject.getJSONArray("autores");
-            JSONArray tarjetasArray = tarjetasObject.getJSONArray("tarjetas");
-            JSONArray transferenciasArray = transferenciasObject.getJSONArray("transferencias");
+            JSONArray historiasArray = historiasObject.getJSONArray("historias");
 
             // Inicializa variables necesarias
 
@@ -279,30 +264,12 @@ public class InicializadorDeClases
                 {
 
                     JSONArray compras = usuario.getJSONObject("valores_especiales").getJSONArray("comprasRegistradas");
-                    ArrayList <Compra> comprasLista  = new ArrayList<Compra>();
-                    
+                    ArrayList <Compra> comprasLista  = new ArrayList<Compra>();;
+
                     for (int a = 0; a < compras.length(); a++) 
                     {
                         JSONObject compra = compras.getJSONObject(i);
-                        JSONObject metodoPago = compra.getJSONObject("metodoPago");
-                        MetodoPago metodoPagoObjeto = null;
-                        if (metodoPago.getString("nombre").equals("efectivo"))
-                        {
-                            metodoPagoObjeto = new Efectivo(metodoPago.getString("nombre"), metodoPago.getInt("monto"));
-
-                        }
-                        else if(metodoPago.getString("nombre").equals("tarjeta"))
-                        {
-                            metodoPagoObjeto = new Tarjeta(metodoPago.getString("nombre"), metodoPago.getInt("monto"), metodoPago.getString("loginComprador"), metodoPago.getInt("numero")
-                                                                    , metodoPago.getInt("pin"), metodoPago.getInt("csv"));
-
-                        }
-                        else if(metodoPago.getString("nombre").equals("transferencia"))
-                        {
-                            metodoPagoObjeto = new Transferencia(metodoPago.getString("nombre"), metodoPago.getInt("monto"), metodoPago.getString("tipo"), metodoPago.getString("id"));
-
-                        }
-                        Compra compraObjeto = new Compra(compra.getString("compradorLogin"), compra.getInt("precio"), compra.getString("nombrePieza"), metodoPagoObjeto, compra.getString("fecha"));
+                        Compra compraObjeto = new Compra(compra.getString("compradorLogin"), compra.getInt("precio"), compra.getString("nombrePieza"), compra.getString("metodoPago"), compra.getString("fecha"));
                         comprasLista.add(compraObjeto);
                     }
 
@@ -320,30 +287,12 @@ public class InicializadorDeClases
                     ArrayList<String> idPiezas  = new ArrayList<String>();
                     for (int a = 0; a < comprasJson.length(); a++) 
                     {
-                        
                         JSONObject compra = comprasJson.getJSONObject(a);
-                        JSONObject metodoPago = compra.getJSONObject("metodoPago");
-                        MetodoPago metodoPagoObjeto= null;
-                        if (metodoPago.getString("nombre").equals("efectivo"))
-                        {
-                            metodoPagoObjeto = new Efectivo(metodoPago.getString("nombre"), metodoPago.getInt("monto"));
+                        Compra compraObjeto = new Compra(compra.getString("compradorLogin"), compra.getInt("precio"), compra.getString("nombrePieza"), compra.getString("metodoPago"), 
+                        compra.getString("fecha"));
 
-                        }
-                        else if(metodoPago.getString("nombre").equals("tarjeta"))
-                        {
-                            metodoPagoObjeto = new Tarjeta(metodoPago.getString("nombre"), metodoPago.getInt("monto"), metodoPago.getString("loginComprador"), metodoPago.getInt("numero")
-                                                                    , metodoPago.getInt("pin"), metodoPago.getInt("csv"));
-
-                        }
-                        else if(metodoPago.getString("nombre").equals("transferencia"))
-                        {
-                            metodoPagoObjeto = new Transferencia(metodoPago.getString("nombre"), metodoPago.getInt("monto"), metodoPago.getString("tipo"), metodoPago.getString("id"));
-
-                        }
-                        Compra compraObjeto = new Compra(compra.getString("compradorLogin"), compra.getInt("precio"), compra.getString("nombrePieza"), metodoPagoObjeto, compra.getString("fecha"));
                         compras.add(compraObjeto);
                     }
-
                     for (int a = 0; a < mensajesJson.length(); a++) 
                     {
                         JSONObject mensaje = mensajesJson.getJSONObject(a);
@@ -413,34 +362,25 @@ public class InicializadorDeClases
                 subastasObjeto.add(subastaObjeto);
             }
 
+            ArrayList<Historia> historiasObjeto = new ArrayList<Historia>();
+
+            for (int i = 0 ; i < historiasArray.length(); i++)
+            {
+                JSONObject historiaJson = historiasArray.getJSONObject(i);
+
+                Historia historia = new Historia(historiaJson.getString("loginComprador"), historiaJson.getString("fecha"), historiaJson.getInt("monto"), 
+                                                historiaJson.getBoolean("realizado"), historiaJson.getInt("numero"),historiaJson.getString("banco"));
+                historiasObjeto.add(historia);
+            }
+
 
 
             int totalObras = piezasBodegaObjeto.size() + piezasExhibidasObjeto.size();
 
             Inventario inventario = new Inventario(piezasBodegaObjeto,piezasExhibidasObjeto);
 
-            ArrayList<Tarjeta> listaTarjetas = new ArrayList<Tarjeta>();
 
-            for (int i = 0 ; i<tarjetasArray.length(); i++)
-            {
-                JSONObject tarjeta = tarjetasArray.getJSONObject(i);
-                Tarjeta tarjetaNueva = new Tarjeta(tarjeta.getString("nombre"), tarjeta.getInt("monto"), tarjeta.getString("loginComprador"), tarjeta.getInt("numero"), 
-                tarjeta.getInt("pin"), tarjeta.getInt("csv"));
-                listaTarjetas.add(tarjetaNueva);
-
-            }
-            
-            ArrayList<Transferencia> listaTransferencias = new ArrayList<Transferencia>();
-
-            for (int i = 0 ; i<transferenciasArray.length(); i++)
-            {
-                JSONObject transferencia = transferenciasArray.getJSONObject(i);
-                Transferencia nuevaTransferencia = new Transferencia(transferencia.getString("nombre"), transferencia.getInt("monto"), transferencia.getString("tipo"), transferencia.getString("id"));
-                listaTransferencias.add(nuevaTransferencia);
-            }
-
-
-            galeriaRetornada = new Galeria("GaleriaDakol", totalObras,inventario , usuariosObjeto, subastasObjeto,autoresMapa,listaTarjetas,listaTransferencias) ;
+            galeriaRetornada = new Galeria("GaleriaDakol", totalObras,inventario , usuariosObjeto, subastasObjeto,autoresMapa,historiasObjeto) ;
 
             
             

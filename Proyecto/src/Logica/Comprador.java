@@ -25,6 +25,7 @@ public class Comprador  extends Usuario
 		this.mensajesSubasta = mensajesSubasta;
 		this.idpiezasCompradas = idpiezasCompradas;
 	}
+	
 
 	public float getEstadoCuenta() {
 		return estadoCuenta;

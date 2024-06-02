@@ -1,0 +1,74 @@
+{"cuentas": [
+    {
+        "clave": "PatitoTactico",
+        "numero": "122334",
+        "dinero": "26889100",
+        "csv": "abc",
+        "telefono": "3156781234 ",
+        "nombre": "David Briceno"
+    },
+    {
+        "clave": "Fiction",
+        "numero": "455667",
+        "dinero": "90000",
+        "csv": "def",
+        "telefono": "3209876543 ",
+        "nombre": "Alejandro Patino"
+    },
+    {
+        "clave": "Vegeta",
+        "numero": "788990",
+        "dinero": "87769",
+        "csv": "ghi",
+        "telefono": "3103456789 ",
+        "nombre": "Jhon Perez"
+    },
+    {
+        "clave": "NBA",
+        "numero": "099887",
+        "dinero": "908766",
+        "csv": "jkl",
+        "telefono": "3124567890 ",
+        "nombre": "Michel Jordan"
+    },
+    {
+        "clave": "MissFortune",
+        "numero": "766554",
+        "dinero": "35456",
+        "csv": "mno",
+        "telefono": "3001234567 ",
+        "nombre": "Sara Gonzales"
+    },
+    {
+        "clave": "iphone",
+        "numero": "433221",
+        "dinero": "345654",
+        "csv": "pqr",
+        "telefono": "3182345678 ",
+        "nombre": "Patricio Lonares"
+    },
+    {
+        "clave": "DAD",
+        "numero": "102938",
+        "dinero": "656755",
+        "csv": "est",
+        "telefono": "3138901234 ",
+        "nombre": "Victor Jara"
+    },
+    {
+        "clave": "Laura",
+        "numero": "374565",
+        "dinero": "5667655",
+        "csv": "xyz",
+        "telefono": "3167890123 ",
+        "nombre": "Hechor Laboe"
+    },
+    {
+        "clave": "Volibear",
+        "numero": "123457",
+        "dinero": "57576",
+        "csv": "ulo",
+        "telefono": "3225678901 ",
+        "nombre": "Pancho Putarco"
+    }
+]}

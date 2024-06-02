@@ -26,8 +26,8 @@
             3549,
             234560000000000000000000000000000
         ],
-        "disponible": true,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": true
     },
     {
         "tiempoConsignacion": -1,
@@ -59,8 +59,8 @@
             4000000,
             509999
         ],
-        "disponible": true,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": true
     },
     {
         "tiempoConsignacion": 34,
@@ -87,8 +87,8 @@
         "anioCreacion": 1893,
         "subasta": false,
         "valores": [7000],
-        "disponible": true,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": true
     },
     {
         "tiempoConsignacion": -1,
@@ -112,8 +112,8 @@
             400000,
             50999
         ],
-        "disponible": true,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": true
     },
     {
         "tiempoConsignacion": -1,
@@ -137,8 +137,8 @@
             400300,
             50919676765544333334
         ],
-        "disponible": true,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": true
     },
     {
         "tiempoConsignacion": -1,
@@ -183,8 +183,8 @@
             4000000,
             509999
         ],
-        "disponible": false,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": false
     },
     {
         "tiempoConsignacion": -1,
@@ -224,8 +224,8 @@
             4000000,
             509999
         ],
-        "disponible": false,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": false
     },
     {
         "tiempoConsignacion": 34,
@@ -275,8 +275,8 @@
         "anioCreacion": 1501,
         "subasta": false,
         "valores": [20000],
-        "disponible": false,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": false
     },
     {
         "tiempoConsignacion": -1,
@@ -304,8 +304,8 @@
             400300,
             -134529002
         ],
-        "disponible": false,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": false
     },
     {
         "tiempoConsignacion": -1,
@@ -320,20 +320,27 @@
             "alto": 30
         },
         "bodega": true,
-        "historialPropietarios": [{
-            "valorCompra": 1234567,
-            "loginPropietario": "briceno_propietario",
-            "fechaVenta": "10/10/10"
-        }],
-        "loginPropietarioActual": "gabriela_propietario",
+        "historialPropietarios": [
+            {
+                "valorCompra": 1234567,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "10/10/10"
+            },
+            {
+                "valorCompra": 300100,
+                "loginPropietario": "briceno_propietario",
+                "fechaVenta": "03/06/2024"
+            }
+        ],
+        "loginPropietarioActual": "briceno_propietario",
         "anioCreacion": 1956,
-        "subasta": true,
+        "subasta": false,
         "valores": [
             300100,
             400300,
-            -134529002
+            -13452
         ],
-        "disponible": false,
-        "rutaImagen":"null"
+        "rutaImagen": "null",
+        "disponible": false
     }
 ]}

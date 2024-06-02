@@ -8,7 +8,7 @@ import java.util.List;
 import Persistencia.AutoresPersistencia;
 import Persistencia.PiezasPersistencia;
 import Persistencia.SubastaPersistencia;
-import Persistencia.TarjetasPersistencia;
+import Persistencia.TransaccionesPersistencia;
 import Persistencia.UsuarioPersistencia;
 
 public class Administrador extends Usuario
@@ -61,14 +61,6 @@ public class Administrador extends Usuario
 			galeria.getUsuarios().add(usuario);
 
 			UsuarioPersistencia.registrarUsuario(usuario);
-		
-	}
-	public static void ingresarTarjeta(Tarjeta tarjeta,Galeria galeria )
-	{
-
-			galeria.getTarjetas().add(tarjeta);
-
-			TarjetasPersistencia.registrarTarjetas(tarjeta);
 		
 	}
 		
@@ -173,7 +165,7 @@ public class Administrador extends Usuario
 		
 	}
 	
-	public static boolean aprobarVentaSubasta(Oferta mejorOferta, Galeria galeria, String fecha, MetodoPago metodoPago)
+	public static boolean aprobarVentaSubasta(Oferta mejorOferta, Galeria galeria, String fecha)
 	{
 		String loginComprador=mejorOferta.getCompradorLogin();
 		
@@ -221,7 +213,7 @@ public class Administrador extends Usuario
 		{
 			vendida=true;
 
-			Cajero.registrarCompraSubasta(mejorOferta, comprador, galeria, fecha, metodoPago);
+			Cajero.registrarCompraSubasta(mejorOferta, comprador, galeria, fecha);
 
 		}
 
@@ -231,22 +223,58 @@ public class Administrador extends Usuario
 		
 	}
 	
-	public static boolean aprobarVentaPrecioFijo(Comprador comprador,Pieza pieza, Galeria galeria ,String fecha, MetodoPago metodoPago) 
+	public static boolean aprobarVentaPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago, Galeria galeria, String fecha,String pasarela) 
 	{
-		float cuenta = comprador.getEstadoCuenta();
-		List<Integer> valores = pieza.getValores();
-		int precioFijo = valores.get(0);
-		boolean retorno= false;
-		if (precioFijo <= cuenta)
-		{
-			Cajero.registrarCompraPrecioFijo(comprador,pieza, galeria, fecha, metodoPago);
-			retorno= true;
+		boolean pagoAprovado = false;
+		boolean retorno = false;
+		
+
+
+		if (metodoPago.equals("tarjeta") || metodoPago.equals("transferencia") )
+			{
+
+				int n = galeria.getHistorias().size();
+				n++;
+				Historia historia = new Historia(comprador.getLogin(), fecha, pieza.getValores().get(0), false, n,null);
+				
+
+				if (pasarela.equals("PSE"))
+				{
+					pagoAprovado = Pasarelas.PSE.menuPSE(historia);
+					
+				}
+				else if (pasarela.equals("PayU"))
+				{
+					pagoAprovado = Pasarelas.PayU.menuPayU(historia);
+					
+				}
+				
+				historia.setRealizada(pagoAprovado);
+
+				galeria.getHistorias().add(historia);
+				TransaccionesPersistencia.registrarHistoria(historia);
+		
+				if (pagoAprovado == true)
+				{
+				Cajero.registrarCompraPrecioFijo(comprador,pieza, metodoPago, galeria, fecha);
+				retorno= true;
+					
+				}
+			}
+			else
+			{
+				float cuenta = comprador.getEstadoCuenta();
+				List<Integer> valores = pieza.getValores();
+				int precioFijo = valores.get(0);
+				if (precioFijo <= cuenta || pagoAprovado == true)
+				{
+					Cajero.registrarCompraPrecioFijo(comprador,pieza, metodoPago, galeria, fecha);
+					retorno= true;
+					
+				}
+
+			}
 			
-		}
-		else 
-		{
-			retorno= false;
-		}
 
 		return retorno;
 	}

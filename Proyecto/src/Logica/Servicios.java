@@ -212,40 +212,6 @@ public class Servicios
         return null;
 
     }
-
-    public static Tarjeta buscarTarjeta(Galeria galeria, int numeroTarjeta)
-    {
-
-        int cont = 0 ;
-        ArrayList<Tarjeta>listaTarjetas = galeria.getTarjetas();
-        while ( cont < listaTarjetas.size()) 
-        {
-            Tarjeta tarjeta = listaTarjetas.get(cont);
-
-            if (numeroTarjeta== tarjeta.getNumero())
-            
-            {
-
-                return tarjeta;
-
-            }
-            else
-            {
-                cont ++ ;
-
-            }
-
-        }
-
-
-        return null;
-
-    }
-
-
-
-
-
     public static void imprimirPiezas(Galeria galeria,boolean subasta)
     {
         int ward = 0;
@@ -315,31 +281,5 @@ public class Servicios
         }
 
     }
-
-    public static Tarjeta metodoPagoTarjeta(String nombre , String login_comprador, int numero, int pin, int csv, int  monto )
-    {
-        Tarjeta tarjeta = new Tarjeta(nombre, monto, login_comprador, numero, pin, csv);
-
-        return tarjeta ;
-
-    }
-
-    public static Efectivo metodoPagoEfectivo(String nombre, int monto )
-    {
-        Efectivo efectivo = new Efectivo(nombre, monto);
-        return efectivo;
-    }
-
-    public static Transferencia metodoPagoEfectivo(String nombre, int monto, String id)
-    {
-        Transferencia transferencia  = new Transferencia(nombre, monto, nombre, id);
-        return transferencia;
-    }
-
-
-
-    
-
-
 }
 
