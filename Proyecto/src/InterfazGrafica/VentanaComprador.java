@@ -182,7 +182,6 @@ public class VentanaComprador extends JFrame implements ActionListener
         {
             this.dispose();
             VentanaHacerOferta ventana4 = new VentanaHacerOferta();
-        
             ventana4.setVisible(true);
             ventana4.setLocationRelativeTo(null);
 
@@ -191,6 +190,11 @@ public class VentanaComprador extends JFrame implements ActionListener
 
         else if(e.getActionCommand().equals("ComprasAprobadas"))
         {
+            this.dispose();
+            VentanaMensajes ventana4 = new VentanaMensajes();
+            ventana4.setVisible(true);
+            ventana4.setLocationRelativeTo(null);
+
 
         }
         else if(e.getActionCommand().equals("PrecioFijo"))
