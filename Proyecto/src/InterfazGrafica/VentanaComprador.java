@@ -37,7 +37,7 @@ public class VentanaComprador extends JFrame implements ActionListener
 
     public VentanaComprador()
     {
-      
+        setTitle("Menú Comprador");
         setSize(750,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
