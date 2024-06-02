@@ -13,69 +13,65 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
-public class VentanaComprador extends JFrame implements ActionListener
-{ 
-
+public class VentanaAdministrador extends JFrame implements ActionListener
+{
     private JPanel panelN;
     private JPanel panelC;
-    private JPanel PiezasSubasta;
-    private JPanel PiezasPrecioFijo;
-    private JPanel HacerOferta;
-    private JPanel ComprasAprobadas;
+    private JPanel CrearSubasta;
+    private JPanel CargarPieza;
+    private JPanel HistorialComprador;
+
 
     private JButton btnHistoriaArtista;
-    private JButton  btnPiezasSubasta;
-    private JButton  btnPiezasPrecioFijo;
-    private JButton btnHacerOferta;
-    private JButton btnComprasAprobadas;
+    private JButton  btnCrearSubasta;
+    private JButton  btnCargarPieza;
+    private JButton btnHistorialComprador;
     private JButton btnHistoriaPieza;
     private JButton btnSalir;
     private Galeria galeria; 
 
-    public VentanaComprador()
+    public VentanaAdministrador()
     {
-        setTitle("Menú Comprador");
+        setTitle("Menú Administrador");
         setSize(750,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        panelN = new PanelNorteComprador();
+        panelN = new PanelNorteAdministrador();
         add(panelN, BorderLayout.NORTH);
+
+
 
         galeria = InicializadorDeClases.cargarGaleria();
 
+
         panelC = new JPanel();
       
-        PiezasSubasta = new JPanel();
-        PiezasPrecioFijo = new JPanel();
-        HacerOferta = new JPanel();
-        ComprasAprobadas = new JPanel();
+        CrearSubasta = new JPanel();
+        CargarPieza = new JPanel();
+        HistorialComprador = new JPanel();
+
 
         // Crear los botones con el tamaño y la fuente especificados
-        btnPiezasSubasta = crearBoton("Ver Piezas Subasta");
-        btnPiezasSubasta.setFocusable(false);
-        btnPiezasSubasta.addActionListener(this);
-        btnPiezasSubasta.setActionCommand("PiezaSubasta");
+        btnCrearSubasta = crearBoton("Crear Subasta");
+        btnCrearSubasta.setFocusable(false);
+        btnCrearSubasta.addActionListener(this);
+        btnCrearSubasta.setActionCommand("CrearSubasta");
         
 
-        btnPiezasPrecioFijo = crearBoton("Ver Piezas a precio fijo");
-        btnPiezasPrecioFijo.setFocusable(false);
-        btnPiezasPrecioFijo.addActionListener(this);
-        btnPiezasPrecioFijo.setActionCommand("PiezaPrecioFijo");
+        btnCargarPieza = crearBoton("Cargar Pieza");
+        btnCargarPieza.setFocusable(false);
+        btnCargarPieza.addActionListener(this);
+        btnCargarPieza.setActionCommand("CargarPieza");
         
 
 
-        btnHacerOferta = crearBoton("Hacer oferta para pieza subastada");
-        btnHacerOferta.setFocusable(false);
-        btnHacerOferta.addActionListener(this);
-        btnHacerOferta.setActionCommand("HacerOferta");
+        btnHistorialComprador = crearBoton("Ver Historial Comprador");
+        btnHistorialComprador.setFocusable(false);
+        btnHistorialComprador.addActionListener(this);
+        btnHistorialComprador.setActionCommand("HistorialComprador");
 
 
-        btnComprasAprobadas = crearBoton("Ver Compra no aprobadas y aprobadas por subasta");
-        btnComprasAprobadas.setFocusable(false);
-        btnComprasAprobadas.addActionListener(this);
-        btnComprasAprobadas.setActionCommand("ComprasAprobadas");
+       
 
 
         btnHistoriaPieza = crearBoton("Consultar historial de una pieza");
@@ -95,10 +91,9 @@ public class VentanaComprador extends JFrame implements ActionListener
         btnSalir.addActionListener(this);
         btnSalir.setActionCommand("Salir");
 
-        agregarBotonConEspacio(btnPiezasSubasta);
-        agregarBotonConEspacio(btnPiezasPrecioFijo);
-        agregarBotonConEspacio(btnHacerOferta);
-        agregarBotonConEspacio(btnComprasAprobadas);
+        agregarBotonConEspacio(btnCargarPieza);
+        agregarBotonConEspacio(btnCrearSubasta);
+        agregarBotonConEspacio(btnHistorialComprador);
         agregarBotonConEspacio(btnHistoriaPieza);
         agregarBotonConEspacio(btnHistoriaArtista); 
         agregarBotonConEspacio(btnSalir);
@@ -147,36 +142,23 @@ public class VentanaComprador extends JFrame implements ActionListener
             ventana2.setLocationRelativeTo(null);
         }
 
-        else if(e.getActionCommand().equals("PiezaSubasta"))
+        else if(e.getActionCommand().equals("CrearSubasta"))
         {
-            this.dispose();
-            VentanaPiezasSubasta ventana3 = new VentanaPiezasSubasta();
-            
-            ventana3.setVisible(true);
-            ventana3.setLocationRelativeTo(null);
-
+           
         }
 
-        else if(e.getActionCommand().equals("PiezaPrecioFijo"))
+        else if(e.getActionCommand().equals("CargarPieza"))
         {
-            this.dispose();
-            VentanaPiezasPrecioFijo ventana3 = new VentanaPiezasPrecioFijo();
-            
-            ventana3.setVisible(true);
-            ventana3.setLocationRelativeTo(null);
-
+           
         }
 
 
-        else if(e.getActionCommand().equals("HacerOferta"))
+        else if(e.getActionCommand().equals("HistorialComprador"))
         {
 
         }
 
-        else if(e.getActionCommand().equals("ComprasAprobadas"))
-        {
-
-        }
+       
 
        
 
@@ -187,8 +169,11 @@ public class VentanaComprador extends JFrame implements ActionListener
 
     public static void main(String[] args)
     {
-        VentanaComprador iniciar = new VentanaComprador();
+        VentanaAdministrador iniciar = new VentanaAdministrador();
         iniciar.setVisible(true);
         iniciar.setLocationRelativeTo(null);
     }
 }
+
+
+
