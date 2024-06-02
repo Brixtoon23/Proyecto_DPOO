@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 
 import Logica.Galeria;
 import Logica.Pieza;
+import Logica.Propietario;
 import Logica.Servicios;
 
 public class VentanaHistorialArtista extends JFrame implements ActionListener
@@ -57,6 +58,8 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
     private String autor;
     private Galeria galeria;
     
+    //Guarda el propietario para cuando se decida regresar a la ventanaPropietario
+    private Propietario propietario;
 
     public VentanaHistorialArtista()
     {
@@ -265,7 +268,7 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
             else if (ventanaAnterior.equals("Propietario"))
             {
                 this.dispose();
-                VentanaPropietario menu = new VentanaPropietario();
+                VentanaPropietario menu = new VentanaPropietario(propietario);
                 menu.setVisible(true);
                 menu.setLocationRelativeTo(null);
             }
@@ -409,6 +412,11 @@ public class VentanaHistorialArtista extends JFrame implements ActionListener
     public void setGaleria (Galeria g)
     {
         galeria = g;
+    }
+
+    public void setPropietario(Propietario p)
+    {
+        propietario = p;
     }
 
 }

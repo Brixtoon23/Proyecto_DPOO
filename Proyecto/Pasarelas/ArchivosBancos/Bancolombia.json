@@ -2,7 +2,11 @@
     {
         "clave": "PatitoSalvaje",
         "numero": "55555",
+<<<<<<< HEAD
+        "dinero": "30000000",
+=======
         "dinero": "26980000",
+>>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
         "csv": "112",
         "nombre": "David Briceno"
     },

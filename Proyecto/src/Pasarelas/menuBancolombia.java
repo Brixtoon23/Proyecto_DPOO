@@ -33,6 +33,7 @@ public class menuBancolombia
                 {
                     valor -= historia.getMonto();
                     cuenta.put("dinero", (Integer.toString(valor)));
+                    
                     guardarBaseDeDatos(baseDeDatosJSON); // Guardar la base de datos completa
                     System.out.println("Pago realizado con exito");
                     return true;

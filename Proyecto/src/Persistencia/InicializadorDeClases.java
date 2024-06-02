@@ -288,7 +288,7 @@ public class InicializadorDeClases
                     for (int a = 0; a < comprasJson.length(); a++) 
                     {
                         JSONObject compra = comprasJson.getJSONObject(a);
-                        Compra compraObjeto = new Compra(compra.getString("compradorLogin"), compra.getInt("precio"), compra.getString("nombrepieza"), compra.getString("metodoPago"), 
+                        Compra compraObjeto = new Compra(compra.getString("compradorLogin"), compra.getInt("precio"), compra.getString("nombrePieza"), compra.getString("metodoPago"), 
                         compra.getString("fecha"));
 
                         compras.add(compraObjeto);

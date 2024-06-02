@@ -281,55 +281,5 @@ public class Servicios
         }
 
     }
-
-
-
-  
-    public static ArrayList<Pieza> hacerListaSubastas(ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega) {
-        ArrayList<Pieza> listaPiezasSubastadas = new ArrayList<>();
-
-        for (Pieza pieza : piezasExhibidas) {
-            if (pieza.isDisponible() && pieza.isSubasta()) {
-                listaPiezasSubastadas.add(pieza);
-            }
-        }
-
-        for (Pieza pieza : piezasBodega) {
-            if (pieza.isDisponible() && pieza.isSubasta()) {
-                listaPiezasSubastadas.add(pieza);
-            }
-        }
-
-        return listaPiezasSubastadas;
-    }
-
-
-        
-    public static ArrayList<Pieza> hacerListaPrecioFijo(ArrayList<Pieza> piezasExhibidas, ArrayList<Pieza> piezasBodega) {
-        ArrayList<Pieza> listaPiezasPrecioFijo = new ArrayList<>();
-
-        for (Pieza pieza : piezasExhibidas) {
-            if (pieza.isDisponible()==true && pieza.isSubasta() == false) {
-                listaPiezasPrecioFijo.add(pieza);
-            }
-        }
-
-        for (Pieza pieza : piezasBodega) {
-            if (pieza.isDisponible() && pieza.isSubasta()==false) {
-                listaPiezasPrecioFijo.add(pieza);
-            }
-        }
-
-        return listaPiezasPrecioFijo;
-
-    }
-
-
-
-
-
-    
-
-
 }
 

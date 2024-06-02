@@ -38,6 +38,8 @@
         "realizado": true,
         "banco": "Davivienda",
         "loginComprador": "briceno_comprador"
+<<<<<<< HEAD
+=======
     },
     {
         "fecha": "23/10/2014",
@@ -54,5 +56,6 @@
         "realizado": true,
         "banco": "Bancolombia",
         "loginComprador": "briceno_comprador"
+>>>>>>> 4a87a9d3eca90a78a021b71617be40f7b66d835c
     }
 ]}
