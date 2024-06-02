@@ -16,7 +16,7 @@ public class PanelNorteComprador extends JPanel
         titulo = new JLabel("Bienvenido al menú de Comprador");
         titulo.setFont(new Font("Verdana",Font.BOLD,30));
         add(titulo);
-        add(Box.createVerticalStrut(200));
+        add(Box.createVerticalStrut(100));
     }
 
 }

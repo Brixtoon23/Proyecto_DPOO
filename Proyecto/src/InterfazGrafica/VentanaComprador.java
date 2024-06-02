@@ -1,14 +1,17 @@
 package InterfazGrafica;
+
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.BoxLayout;
 
 import Logica.Galeria;
 import Persistencia.InicializadorDeClases;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,14 +19,12 @@ import java.awt.event.ActionListener;
 public class VentanaComprador extends JFrame implements ActionListener
 { 
 
-  
     private JPanel panelN;
     private JPanel panelC;
     private JPanel PiezasSubasta;
     private JPanel PiezasPrecioFijo;
     private JPanel HacerOferta;
     private JPanel ComprasAprobadas;
-
 
     private JButton btnHistoriaArtista;
     private JButton  btnPiezasSubasta;
@@ -34,125 +35,84 @@ public class VentanaComprador extends JFrame implements ActionListener
     private JButton btnSalir;
     private Galeria galeria; 
 
-   
-       
     public VentanaComprador()
     {
-        setTitle("Menú Comprador");
+      
         setSize(750,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-
-        galeria = InicializadorDeClases.cargarGaleria();
-
         panelN = new PanelNorteComprador();
         add(panelN, BorderLayout.NORTH);
 
-        panelC = new PanelCentroOperador();
+        galeria = InicializadorDeClases.cargarGaleria();
 
-
-
+        panelC = new JPanel();
+      
         PiezasSubasta = new JPanel();
-        PiezasSubasta.add(btnPiezasSubasta);
-        btnPiezasSubasta = new JButton("Ver Piezas Subasta");
-        btnPiezasSubasta.setFont(new Font("Verdana",Font.PLAIN,20));
-        btnPiezasSubasta.setFocusable(false);
-        btnPiezasSubasta.addActionListener(this);
-        btnPiezasSubasta.setActionCommand("HistPieza");
-        
-
         PiezasPrecioFijo = new JPanel();
-        PiezasPrecioFijo.add(btnPiezasPrecioFijo);
-        btnPiezasPrecioFijo = new JButton("Ver Piezas a precio fijo");
-        btnPiezasPrecioFijo.setFont(new Font("Verdana",Font.PLAIN,20));
-        btnPiezasPrecioFijo.setFocusable(false);
-        btnPiezasPrecioFijo.addActionListener(this);
-        btnPiezasPrecioFijo.setActionCommand("HistPieza");
+        HacerOferta = new JPanel();
+        ComprasAprobadas = new JPanel();
 
-
-
-        HacerOferta= new JPanel();
-        HacerOferta.add(btnHacerOferta);
-        btnHacerOferta = new JButton("Hacer oferta para pieza subastada");
-        btnHacerOferta.setFont(new Font("Verdana",Font.PLAIN,20));
-        btnHacerOferta.setFocusable(false);
-        btnHacerOferta.addActionListener(this);
-        btnHacerOferta.setActionCommand("HistPieza");
-
-
-        ComprasAprobadas= new JPanel();
-        ComprasAprobadas.add(btnComprasAprobadas);
-
-
-        btnComprasAprobadas = new JButton("ver Compra no aprobadas por subasta");
-        btnComprasAprobadas.setFont(new Font("Verdana",Font.PLAIN,20));
-        btnComprasAprobadas.setFocusable(false);
-        btnComprasAprobadas.addActionListener(this);
-        btnComprasAprobadas.setActionCommand("HistPieza");
-
-
-
-        
-
-
-
-
-        btnHistoriaPieza = new JButton("Consultar historial de una pieza");
-        btnHistoriaPieza.setFont(new Font("Verdana",Font.PLAIN,20));
-        btnHistoriaPieza.setFocusable(false);
-        btnHistoriaPieza.addActionListener(this);
-        btnHistoriaPieza.setActionCommand("HistPieza");
-
-
-        btnHistoriaArtista = new JButton("Consultar historial de un artista");
-        btnHistoriaArtista.setFont(new Font("Verdana",Font.PLAIN,20));
-        btnHistoriaArtista.setFocusable(false);
-        btnHistoriaArtista.addActionListener(this);
-        btnHistoriaArtista.setActionCommand("HistArtista");
-        
-        
-        
-        btnSalir = new JButton("Salir");
-        btnSalir.setFont(new Font("Verdana",Font.PLAIN,20));
+        // Crear los botones con el tamaño y la fuente especificados
+        btnPiezasSubasta = crearBoton("Ver Piezas Subasta");
+        btnPiezasPrecioFijo = crearBoton("Ver Piezas a precio fijo");
+        btnHacerOferta = crearBoton("Hacer oferta para pieza subastada");
+        btnComprasAprobadas = crearBoton("Ver Compra no aprobadas por subasta");
+        btnHistoriaPieza = crearBoton("Consultar historial de una pieza");
+        btnHistoriaArtista = crearBoton("Consultar historial de un artista");
+        btnSalir = crearBoton("Salir");
         btnSalir.setForeground(Color.RED);
-        btnSalir.setFocusable(false);
-        btnSalir.addActionListener(this);
-        btnSalir.setActionCommand("Salir");
-        panelC.add(Box.createVerticalStrut(15));
-        panelC.add(btnHistoriaPieza);
-        panelC.add(btnHistoriaArtista);
-        panelC.add(btnSalir);
-        panelC.add(Box.createVerticalStrut(10));
-        add(panelC,BorderLayout.CENTER);
 
-        add(Box.createHorizontalStrut(100),BorderLayout.WEST);
-        add(Box.createHorizontalStrut(100),BorderLayout.EAST);
+        // Agregar los botones y el espacio fijo entre ellos
+        agregarBotonConEspacio(btnPiezasSubasta);
+        agregarBotonConEspacio(btnPiezasPrecioFijo);
+        agregarBotonConEspacio(btnHacerOferta);
+        agregarBotonConEspacio(btnComprasAprobadas);
+        agregarBotonConEspacio(btnHistoriaPieza);
+        agregarBotonConEspacio(btnHistoriaArtista);
+        agregarBotonConEspacio(btnSalir);
 
+        add(panelC, BorderLayout.CENTER);
+    }
+
+    // Método para crear un botón con el tamaño y la fuente especificados
+    private JButton crearBoton(String texto) {
+        JButton boton = new JButton(texto);
+        
+        boton.setFont(new Font("Verdana", Font.PLAIN, 15));
+        boton.setFocusable(false);
+        boton.setPreferredSize(new Dimension(500, 50));
+        boton.addActionListener(this);
+        boton.setActionCommand(texto); // Usar el texto del botón como comando de acción
+        return boton;
+    }
+
+    // Método para agregar un botón con un espacio fijo debajo
+    private void agregarBotonConEspacio(JButton boton) {
+        panelC.add(boton);
+        panelC.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio fijo vertical
     }
 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        if (e.getActionCommand().equals("HistPieza"))
-        {
-            this.dispose();
-            VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
-            ventana1.setVentanaAnterior("Comprador");
-            ventana1.setGaleria(galeria);
-            ventana1.setVisible(true);
-            ventana1.setLocationRelativeTo(null);
+        // Manejar los eventos de los botones aquí
+        String comando = e.getActionCommand();
+        if (comando.equals("Salir")) {
+            // Código para salir de la aplicación
+        } else if (comando.equals("Consultar historial de una pieza")) {
+            // Código para consultar historial de una pieza
+        } else if (comando.equals("Consultar historial de un artista")) {
+            // Código para consultar historial de un artista
+        } else if (comando.equals("Ver Piezas Subasta")) {
+            // Código para ver piezas en subasta
+        } else if (comando.equals("Ver Piezas a precio fijo")) {
+            // Código para ver piezas a precio fijo
+        } else if (comando.equals("Hacer oferta para pieza subastada")) {
+            // Código para hacer oferta por una pieza subastada
+        } else if (comando.equals("Ver Compra no aprobadas por subasta")) {
+            // Código para ver compras no aprobadas por subasta
         }
-
-        else if (e.getActionCommand().equals("HistArtista"))
-        {
-            this.dispose();
-            VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
-            ventana2.setVentanaAnterior("Comprador");
-            ventana2.setGaleria(galeria);
-            ventana2.setVisible(true);
-            ventana2.setLocationRelativeTo(null);
-        }
-        
     }
 
     public static void main(String[] args)
@@ -161,5 +121,4 @@ public class VentanaComprador extends JFrame implements ActionListener
         iniciar.setVisible(true);
         iniciar.setLocationRelativeTo(null);
     }
-
 }
