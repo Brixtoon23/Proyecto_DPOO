@@ -103,40 +103,40 @@ public class VentanaAdministrador extends JFrame implements ActionListener {
             ventana1.setGaleria(galeria);
             ventana1.setVisible(true);
             ventana1.setLocationRelativeTo(null);
-        } else if (e.getActionCommand().equals("HistArtista")) {
+        } 
+        
+        else if (e.getActionCommand().equals("HistArtista")) {
             this.dispose();
             VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
             ventana2.setVentanaAnterior("Admin");
             ventana2.setGaleria(galeria);
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
-        } else if (e.getActionCommand().equals("CrearSubasta")) {
+        } 
+        
+        else if (e.getActionCommand().equals("CrearSubasta")) {
             this.dispose();
             VentanaCrearSubasta ventana4 = new VentanaCrearSubasta();
             ventana4.setVisible(true);
             ventana4.setLocationRelativeTo(null);
-        } else if (e.getActionCommand().equals("CargarPieza")) {
+        } 
+        
+        else if (e.getActionCommand().equals("CargarPieza")) {
             this.dispose();
             VentanaCargarPieza ventana4 = new VentanaCargarPieza();
             ventana4.setVisible(true);
             ventana4.setLocationRelativeTo(null);
-        } else if (e.getActionCommand().equals("HistorialComprador")) {
-            // Acción para el historial del comprador (incompleta)
-        } else if (e.getActionCommand().equals("Salir")) {
-            System.exit(0);
         }
+        
+        else if (e.getActionCommand().equals("HistorialComprador")) {
 
-       
-        else if(e.getActionCommand().equals("CargarPieza"))
-        {
-           
+            this.dispose();
+            VentanaHistorialComprador ventana4 = new VentanaHistorialComprador();
+            ventana4.setVisible(true);
+            ventana4.setLocationRelativeTo(null);
+            
         }
-
-
-        else if(e.getActionCommand().equals("HistorialComprador"))
-        {
-
-        }
+        
 
         else if(e.getActionCommand().equals("Salir"))
         {
