@@ -199,8 +199,15 @@ public class VentanaComprador extends JFrame implements ActionListener
         }
         else if(e.getActionCommand().equals("PrecioFijo"))
         {
+            this.dispose();
+            VentanaMetodosPago ventana4 = new VentanaMetodosPago();
+            ventana4.setVisible(true);
+            ventana4.setLocationRelativeTo(null);
+
 
         }
+
+        
         
         else if(e.getActionCommand().equals("Salir"))
         {
