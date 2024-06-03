@@ -217,10 +217,20 @@ public class VentanaComprador extends JFrame implements ActionListener
             ventana.setLocationRelativeTo(null);
         }
        
-
+       
 
 
         
     }
+
+
+    public static void main(String[] args)
+    {
+        VentanaComprador iniciar = new VentanaComprador();
+        iniciar.setVisible(true);
+        iniciar.setLocationRelativeTo(null);
+    }
+
+
 
 }

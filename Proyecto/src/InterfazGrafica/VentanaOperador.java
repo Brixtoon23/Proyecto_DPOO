@@ -97,12 +97,12 @@ public class VentanaOperador extends JFrame implements ActionListener
         
     }
 
-    //public static void main(String[] args)
-    //{
-        //VentanaOperador iniciar = new VentanaOperador();
-        //iniciar.setVisible(true);
-        //iniciar.setLocationRelativeTo(null);
-    //}
+    public static void main(String[] args)
+    {
+        VentanaOperador iniciar = new VentanaOperador();
+        iniciar.setVisible(true);
+        iniciar.setLocationRelativeTo(null);
+    }
 
 
 }
