@@ -32,43 +32,6 @@
     {
         "verificado": true,
         "valores_especiales": {
-            "maxCompras": 3983443983983993493483493,
-            "mora": false,
-            "mensajesSubasta": [],
-            "estadoCuenta": 4.0E+18,
-            "idPiezasCompradas": [
-                "Las meninas",
-                "La monalisa"
-            ],
-            "historialCompras": []
-        },
-        "password": "N1k0l%",
-        "login": "nikol_comprador",
-        "telefono": "3144676533",
-        "nombre": "nikol",
-        "rol": "comprador"
-    },
-    {
-        "verificado": true,
-        "valores_especiales": {
-            "idPiezasActuales": [
-                "Las meninas",
-                "La monalisa"
-            ],
-            "historialPiezas": [
-                "Las meninas",
-                "La monalisa"
-            ]
-        },
-        "password": "N1k0l%",
-        "login": "nikol_propietario",
-        "telefono": "3144676533",
-        "nombre": "nikol",
-        "rol": "propietario"
-    },
-    {
-        "verificado": true,
-        "valores_especiales": {
             "maxCompras": 9349894892440208248240,
             "mora": false,
             "mensajesSubasta": [],
@@ -1173,18 +1136,6 @@
             "idPiezasActuales": [],
             "historialPiezas": []
         },
-        "password": "alejandra",
-        "login": "alejandra_propietario",
-        "telefono": "12345432167",
-        "nombre": "alejandra",
-        "rol": "propietario"
-    },
-    {
-        "verificado": false,
-        "valores_especiales": {
-            "idPiezasActuales": [],
-            "historialPiezas": []
-        },
         "password": "gabriela",
         "login": "gabriela_propietario",
         "telefono": "12657654",
@@ -1264,6 +1215,57 @@
         "login": "prueba_propietario",
         "telefono": "272838",
         "nombre": "Alguien",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "maxCompras": 3.983444E24,
+            "mora": false,
+            "mensajesSubasta": [],
+            "estadoCuenta": 4.0E18,
+            "idPiezasCompradas": [],
+            "historialCompras": [{
+                "metodoPago": "efectivo",
+                "fecha": "30/08/2024",
+                "precio": 7000,
+                "nombrepieza": "El grito",
+                "compradorLogin": "nikol_comprador"
+            }],
+            "idPiezasCoompradas": [
+                "Las meninas",
+                "La monalisa",
+                "El grito"
+            ]
+        },
+        "password": "N1k0l%",
+        "login": "nikol_comprador",
+        "telefono": "3144676533",
+        "nombre": "nikol",
+        "rol": "comprador"
+    },
+    {
+        "verificado": false,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "alejandra",
+        "login": "alejandra_propietario",
+        "telefono": "12345432167",
+        "nombre": "alejandra",
+        "rol": "propietario"
+    },
+    {
+        "verificado": true,
+        "valores_especiales": {
+            "idPiezasActuales": [],
+            "historialPiezas": []
+        },
+        "password": "N1k0l%",
+        "login": "nikol_propietario",
+        "telefono": "3144676533",
+        "nombre": "nikol",
         "rol": "propietario"
     }
 ]}

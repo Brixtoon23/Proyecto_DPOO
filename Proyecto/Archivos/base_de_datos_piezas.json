@@ -78,12 +78,19 @@
             "alto": 2
         },
         "bodega": true,
-        "historialPropietarios": [{
-            "valorCompra": 4000,
-            "loginPropietario": "alejandra_propietario",
-            "fechaVenta": "23/09/2007"
-        }],
-        "loginPropietarioActual": "alejandra_propietario",
+        "historialPropietarios": [
+            {
+                "valorCompra": 4000,
+                "loginPropietario": "alejandra_propietario",
+                "fechaVenta": "23/09/2007"
+            },
+            {
+                "valorCompra": 7000,
+                "loginPropietario": "nikol_propietario",
+                "fechaVenta": "30/08/2024"
+            }
+        ],
+        "loginPropietarioActual": "nikol_propietario",
         "anioCreacion": 1893,
         "subasta": false,
         "valores": [7000],
@@ -137,7 +144,7 @@
             400300,
             50919676765544333334
         ],
-        "rutaImagen":  "Proyecto/Imagenes/Guernica.jpeg",
+        "rutaImagen": "Proyecto/Imagenes/Guernica.jpeg",
         "disponible": true
     },
     {
@@ -229,7 +236,7 @@
             4000000,
             509999
         ],
-        "rutaImagen":  "Proyecto/Imagenes/LasMeninas.jpg",
+        "rutaImagen": "Proyecto/Imagenes/LasMeninas.jpg",
         "disponible": true
     },
     {
@@ -295,7 +302,7 @@
             400300,
             -134529002
         ],
-        "rutaImagen":  "Proyecto/Imagenes/LaUltimaCena.jpeg",
+        "rutaImagen": "Proyecto/Imagenes/LaUltimaCena.jpeg",
         "disponible": true
     },
     {

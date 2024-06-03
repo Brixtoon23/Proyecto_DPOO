@@ -1,14 +1,4 @@
 {"subastas": [
-  
-    {
-        "idListaPiezasSubasta": [
-            "Las meninas",
-            "La monalisa"
-        ],
-        "id": "1",
-        "listaOfertas": [
-        ]
-    },
     {
         "idListaPiezasSubasta": [
             "La Noche Estrellada",
@@ -16,5 +6,19 @@
         ],
         "id": "2",
         "listaOfertas": []
+    },
+    {
+        "idListaPiezasSubasta": [
+            "Las meninas",
+            "La monalisa"
+        ],
+        "id": "1",
+        "listaOfertas": [{
+            "valorOfertado": 4110000,
+            "metodoPago": "efectivo",
+            "fecha": "20/09/2023",
+            "nombrepiezaSubastada": "La monalisa",
+            "compradorLogin": "nikol_comprador"
+        }]
     }
 ]}

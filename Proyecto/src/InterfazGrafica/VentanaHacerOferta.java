@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import Logica.Galeria;
 import Logica.Oferta;
 import Logica.Operador;
+import Persistencia.InicializadorDeClases;
 
 public class VentanaHacerOferta extends JFrame {
     private Galeria galeria;
@@ -16,7 +17,9 @@ public class VentanaHacerOferta extends JFrame {
     private JTextField fechaField;
     private JTextField LoginField;
 
-    public VentanaHacerOferta() {
+    public VentanaHacerOferta(Galeria galeria) {
+        this.galeria = galeria;
+
         setTitle("Hacer oferta");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -94,12 +97,11 @@ public class VentanaHacerOferta extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                VentanaHacerOferta iniciar = new VentanaHacerOferta();
+                Galeria galeria = InicializadorDeClases.cargarGaleria();
+                VentanaHacerOferta iniciar = new VentanaHacerOferta(galeria);
                 iniciar.setVisible(true);
                 iniciar.setLocationRelativeTo(null);
             }
         });
     }
 }
-
-
