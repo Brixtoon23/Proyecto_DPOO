@@ -87,7 +87,7 @@
         "anioCreacion": 1893,
         "subasta": false,
         "valores": [7000],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/elGrito.png",
         "disponible": true
     },
     {
@@ -112,7 +112,7 @@
             400000,
             50999
         ],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/vanGoh.jpg",
         "disponible": true
     },
     {
@@ -188,7 +188,7 @@
             4000000,
             509999
         ],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/monalisa.jpg",
         "disponible": false
     },
     {
@@ -266,7 +266,7 @@
         "anioCreacion": 1501,
         "subasta": false,
         "valores": [20000],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/david.jpeg",
         "disponible": false
     },
     {

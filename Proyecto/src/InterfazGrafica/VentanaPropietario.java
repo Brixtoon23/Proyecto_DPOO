@@ -151,12 +151,12 @@ public class VentanaPropietario extends JFrame implements ActionListener
     }
 
     //Quitar el main cuando se añada la pestaña principal
-    public static void main(String[] args)
-    {
-        Propietario prueba = Servicios.buscarPropietario(InicializadorDeClases.cargarGaleria(), "nikol_propietario");
-        VentanaPropietario iniciar = new VentanaPropietario(prueba);
-        iniciar.setVisible(true);
-        iniciar.setLocationRelativeTo(null);
-    }
+    //public static void main(String[] args)
+    //{
+        //Propietario prueba = Servicios.buscarPropietario(InicializadorDeClases.cargarGaleria(), "nikol_propietario");
+        //VentanaPropietario iniciar = new VentanaPropietario(prueba);
+        //iniciar.setVisible(true);
+        //iniciar.setLocationRelativeTo(null);
+    //}
 
 }

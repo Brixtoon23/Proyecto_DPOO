@@ -166,12 +166,6 @@ public class VentanaAdministrador extends JFrame implements ActionListener
         
     }
 
-    public static void main(String[] args)
-    {
-        VentanaAdministrador iniciar = new VentanaAdministrador();
-        iniciar.setVisible(true);
-        iniciar.setLocationRelativeTo(null);
-    }
 }
 
 
