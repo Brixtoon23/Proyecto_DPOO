@@ -86,6 +86,14 @@ public class VentanaOperador extends JFrame implements ActionListener
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
         }
+
+        else if(e.getActionCommand().equals("Salir"))
+        {
+            this.dispose();
+            VentanaPrincipal ventana = new VentanaPrincipal();
+            ventana.setVisible(true);
+            ventana.setLocationRelativeTo(null);
+        }
         
     }
 

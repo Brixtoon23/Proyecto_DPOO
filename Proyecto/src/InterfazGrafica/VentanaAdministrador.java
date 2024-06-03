@@ -125,7 +125,7 @@ public class VentanaAdministrador extends JFrame implements ActionListener
         {
             this.dispose();
             VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
-            ventana1.setVentanaAnterior("Comprador");
+            ventana1.setVentanaAnterior("Admin");
             ventana1.setGaleria(galeria);
             ventana1.setVisible(true);
             ventana1.setLocationRelativeTo(null);
@@ -135,7 +135,7 @@ public class VentanaAdministrador extends JFrame implements ActionListener
         {
             this.dispose();
             VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
-            ventana2.setVentanaAnterior("Comprador");
+            ventana2.setVentanaAnterior("Admin");
             ventana2.setGaleria(galeria);
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
@@ -155,6 +155,14 @@ public class VentanaAdministrador extends JFrame implements ActionListener
         else if(e.getActionCommand().equals("HistorialComprador"))
         {
 
+        }
+
+        else if(e.getActionCommand().equals("Salir"))
+        {
+            this.dispose();
+            VentanaPrincipal ventana = new VentanaPrincipal();
+            ventana.setVisible(true);
+            ventana.setLocationRelativeTo(null);
         }
 
        
