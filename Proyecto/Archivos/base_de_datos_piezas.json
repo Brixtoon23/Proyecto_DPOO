@@ -182,7 +182,7 @@
         ],
         "loginPropietarioActual": "briceno_propietario",
         "anioCreacion": 1956,
-        "subasta": false,
+        "subasta": true,
         "valores": [
             3000000,
             4000000,
@@ -289,7 +289,7 @@
         }],
         "loginPropietarioActual": "gabriela_propietario",
         "anioCreacion": 1956,
-        "subasta": true,
+        "subasta": false,
         "valores": [
             300100,
             400300,
@@ -331,7 +331,7 @@
             400300,
             -13452
         ],
-        "rutaImagen": "Proyecto/Imagenes/venusdemilo.jpg",
+        "rutaImagen": "Proyecto/Imagenes/venusdemilo.jg",
         "disponible": false
     }
 ]}

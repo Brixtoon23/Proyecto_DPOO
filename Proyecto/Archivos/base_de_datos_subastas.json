@@ -1,57 +1,12 @@
 {"subastas": [
-    {
-        "idListaPiezasSubasta": ["Order 66"],
-        "id": "PacoList",
-        "listaOfertas": [{
-            "valorOfertado": 300000000,
-            "metodoPago": "efectivo",
-            "fecha": "12/03/2024",
-            "nombrepiezaSubastada": "Order 66",
-            "compradorLogin": "gladys_comprador"
-        }]
-    },
+  
     {
         "idListaPiezasSubasta": [
             "Las meninas",
             "La monalisa"
         ],
-        "id": "subasta prueba",
+        "id": "1",
         "listaOfertas": [
-            {
-                "valorOfertado": -1294967296,
-                "metodoPago": "efectivo",
-                "fecha": "12/03/2024",
-                "nombrepiezaSubastada": "La monalisa",
-                "compradorLogin": "nikol_comprador"
-            },
-            {
-                "valorOfertado": 300000000,
-                "metodoPago": "efectivo",
-                "fecha": "12/03/2024",
-                "nombrepiezaSubastada": "La monalisa",
-                "compradorLogin": "alejandro_comprador"
-            },
-            {
-                "valorOfertado": 30000000,
-                "metodoPago": "efectivo",
-                "fecha": "12/03/2024",
-                "nombrepiezaSubastada": "La monalisa",
-                "compradorLogin": "michel_comprador"
-            },
-            {
-                "valorOfertado": 3000000,
-                "metodoPago": "efectivo",
-                "fecha": "12/03/2024",
-                "nombrepiezaSubastada": "La monalisa",
-                "compradorLogin": "claudia_comprador"
-            },
-            {
-                "valorOfertado": 400000000,
-                "metodoPago": "efectivo",
-                "fecha": "15/03/2024",
-                "nombrepiezaSubastada": "La monalisa",
-                "compradorLogin": "gabriela_comprador"
-            }
         ]
     },
     {
@@ -59,7 +14,7 @@
             "La Noche Estrellada",
             "Guernica"
         ],
-        "id": "subasta agragar",
+        "id": "2",
         "listaOfertas": []
     }
 ]}
