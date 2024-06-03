@@ -189,7 +189,7 @@
             509999
         ],
         "rutaImagen": "Proyecto/Imagenes/monalisa.jpg",
-        "disponible": false
+        "disponible": true
     },
     {
         "tiempoConsignacion": -1,
@@ -230,7 +230,7 @@
             509999
         ],
         "rutaImagen":  "Proyecto/Imagenes/LasMeninas.jpg",
-        "disponible": false
+        "disponible": true
     },
     {
         "tiempoConsignacion": 34,
@@ -267,7 +267,7 @@
         "subasta": false,
         "valores": [20000],
         "rutaImagen": "Proyecto/Imagenes/david.jpeg",
-        "disponible": false
+        "disponible": true
     },
     {
         "tiempoConsignacion": -1,
@@ -296,7 +296,7 @@
             -134529002
         ],
         "rutaImagen":  "Proyecto/Imagenes/LaUltimaCena.jpeg",
-        "disponible": false
+        "disponible": true
     },
     {
         "tiempoConsignacion": -1,
@@ -331,7 +331,7 @@
             400300,
             -13452
         ],
-        "rutaImagen": "Proyecto/Imagenes/venusdemilo.jg",
-        "disponible": false
+        "rutaImagen": "Proyecto/Imagenes/venusdemilo.jpg",
+        "disponible": true
     }
 ]}
