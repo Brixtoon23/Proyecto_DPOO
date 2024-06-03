@@ -281,8 +281,9 @@ public class Administrador extends Usuario
 	
 		
 
-	public static void crearSusbasta(Galeria galeria, String id, ArrayList<String> piezas)
+	public static boolean  crearSusbasta(Galeria galeria, String id, ArrayList<String> piezas)
 	{
+		boolean retorno = true; 
 
 		ArrayList<Oferta> listaOfertas= new ArrayList<Oferta>();
 
@@ -291,6 +292,9 @@ public class Administrador extends Usuario
 		galeria.getSubastas().add(subasta);
 		
 		SubastaPersistencia.registrarSubasta(subasta);
+
+
+		return retorno;
 	}
 	
 	
