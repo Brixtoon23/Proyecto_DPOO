@@ -1,4 +1,3 @@
-
 package InterfazGrafica;
 
 import javax.swing.*;
@@ -14,9 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 import Logica.Galeria;
 import Persistencia.InicializadorDeClases;
-
-
-
 
 public class VentanaPintura extends JFrame {
     // Campos para los detalles de la pintura
@@ -41,7 +37,6 @@ public class VentanaPintura extends JFrame {
     private Galeria galeria;
 
     public VentanaPintura() {
-
         galeria = InicializadorDeClases.cargarGaleria();
         setTitle("Cargar Pintura");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Cerrar solo esta ventana al cargar la pintura
@@ -160,51 +155,77 @@ public class VentanaPintura extends JFrame {
         cargarPinturaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Obtener los valores ingresados por el usuario
-                String titulo = tituloField.getText();
-                int anioCreacion = Integer.parseInt(anioCreacionField.getText());
-                String lugarCreacion = lugarCreacionField.getText();
-                String fechaAdquisicion = fechaAdquisicionField.getText();
-                int valorCompra = Integer.parseInt(valorCompraField.getText());
-                String[] autores = autoresField.getText().split(",");
-                boolean disponible = Boolean.parseBoolean(disponibleField.getText());
-                int tiempoConsignacion = Integer.parseInt(tiempoConsignacionField.getText());
-                boolean subasta = Boolean.parseBoolean(subastaField.getText());
-                String[] valoresString = valoresField.getText().split(",");
-                ArrayList<Integer> valores = new ArrayList<>();
-                for (String valor : valoresString) {valores.add(Integer.parseInt(valor.trim()));
+                try {
+                    // Obtener los valores ingresados por el usuario
+                    String titulo = tituloField.getText();
+                    int anioCreacion = Integer.parseInt(anioCreacionField.getText());
+                    String lugarCreacion = lugarCreacionField.getText();
+                    String fechaAdquisicion = fechaAdquisicionField.getText();
+                    int valorCompra = Integer.parseInt(valorCompraField.getText());
+                    String[] autores = autoresField.getText().split(",");
+                    boolean disponible = Boolean.parseBoolean(disponibleField.getText());
+                    int tiempoConsignacion = Integer.parseInt(tiempoConsignacionField.getText());
+                    boolean subasta = Boolean.parseBoolean(subastaField.getText());
+                    String[] valoresString = valoresField.getText().split(",");
+                    ArrayList<Integer> valores = new ArrayList<>();
+                    for (String valor : valoresString) {
+                        valores.add(Integer.parseInt(valor.trim()));
+                    }
+                    boolean bodega = Boolean.parseBoolean(bodegaField.getText());
+                    String tipo = tipoField.getText();
+                    int alto = Integer.parseInt(altoField.getText());
+                    int ancho = Integer.parseInt(anchoField.getText());
+                    int peso = Integer.parseInt(pesoField.getText());
+                    String tecnica = tecnicaField.getText();
+                    String rutaImagen = rutaImagenField.getText();
+                    String loginPropietario = loginPropietarioField.getText(); // Obtener el login del propietario
+
+                    // Crear una lista de autores
+                    ArrayList<String> listaAutores = new ArrayList<>();
+                    for (String autor : autores) {
+                        listaAutores.add(autor.trim());
+                    }
+
+                    // Crear y cargar la pintura con los detalles ingresados
+                    ArrayList<Map<String, Object>> propietarios = new ArrayList<>();
+                    Map<String, Object> mapaPropietario = new HashMap<>();
+                    mapaPropietario.put("loginPropietario", loginPropietario);
+                    mapaPropietario.put("valorCompra", valorCompra);
+                    mapaPropietario.put("fechaVenta", fechaAdquisicion);
+                    propietarios.add(mapaPropietario);
+
+                    Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, listaAutores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, peso, tecnica, rutaImagen);
+
+                    // Agregar la pintura a la galería y el autor si no existe
+                    Administrador.ingresarPieza(galeria, pintura);
+                    Administrador.ingresarAutor(galeria, listaAutores, titulo);
+
+                    // Mostrar mensaje de éxito
+                    JOptionPane.showMessageDialog(null, "Pintura agregada exitosamente");
+
+                    // Limpiar los campos de texto
+                    tituloField.setText("");
+                    anioCreacionField.setText("");
+                    lugarCreacionField.setText("");
+                    fechaAdquisicionField.setText("");
+                    valorCompraField.setText("");
+                    autoresField.setText("");
+                    disponibleField.setText("");
+                    tiempoConsignacionField.setText("");
+                    subastaField.setText("");
+                    valoresField.setText("");
+                    bodegaField.setText("");
+                    tipoField.setText("");
+                    altoField.setText("");
+                    anchoField.setText("");
+                    pesoField.setText("");
+                    tecnicaField.setText("");
+                    rutaImagenField.setText("");
+                    loginPropietarioField.setText("");
+                } catch (Exception ex) {
+                    // Mostrar mensaje de error si ocurre una excepción
+                    JOptionPane.showMessageDialog(null, "Error al agregar la pintura. Por favor, verifique los datos ingresados.");
                 }
-                boolean bodega = Boolean.parseBoolean(bodegaField.getText());
-                String tipo = tipoField.getText();
-                int alto = Integer.parseInt(altoField.getText());
-                int ancho = Integer.parseInt(anchoField.getText());
-                int peso = Integer.parseInt(pesoField.getText());
-                String tecnica = tecnicaField.getText();
-                String rutaImagen = rutaImagenField.getText();
-                String loginPropietario = loginPropietarioField.getText(); // Obtener el login del propietario
-
-                // Crear una lista de autores
-                ArrayList<String> listaAutores = new ArrayList<>();
-                for (String autor : autores) {
-                    listaAutores.add(autor.trim());
-                }
-
-                // Crear y cargar la pintura con los detalles ingresados
-                ArrayList<Map<String, Object>> propietarios = new ArrayList<>();
-                Map<String, Object> mapaPropietario = new HashMap<>();
-                mapaPropietario.put("loginPropietario", loginPropietario);
-                mapaPropietario.put("valorCompra", valorCompra);
-                mapaPropietario.put("fechaVenta", fechaAdquisicion);
-                propietarios.add(mapaPropietario);
-
-                Pintura pintura = new Pintura(titulo, loginPropietario, anioCreacion, lugarCreacion, listaAutores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, peso, tecnica, rutaImagen);
-
-                // Agregar la pintura a la galería y el autor si no existe
-                Administrador.ingresarPieza(galeria, pintura);
-                Administrador.ingresarAutor(galeria, listaAutores, titulo);
-
-                // Cerrar esta ventana
-                dispose();
             }
         });
     }

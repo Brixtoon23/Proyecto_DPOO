@@ -5,7 +5,6 @@ import javax.swing.*;
 
 import Logica.Administrador;
 import Logica.Fotografia;
-import Logica.Pintura;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,10 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 import Logica.Galeria;
 import Persistencia.InicializadorDeClases;
-
-
-
-
 
 public class VentanaFotografia extends JFrame {
     private JTextField tituloField;
@@ -42,7 +37,7 @@ public class VentanaFotografia extends JFrame {
     public VentanaFotografia()
     {
         galeria = InicializadorDeClases.cargarGaleria();
-         setTitle("Cargar Fotografía");
+        setTitle("Cargar Fotografía");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Cerrar solo esta ventana al cargar la fotografía
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(5, 5)); // Usar BorderLayout con espacio entre componentes
@@ -151,52 +146,80 @@ public class VentanaFotografia extends JFrame {
         cargarFotografiaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Obtener los valores ingresados por el usuario
-                String titulo = tituloField.getText();
-                int anioCreacion = Integer.parseInt(anioCreacionField.getText());
-                String lugarCreacion = lugarCreacionField.getText();
-                String fechaAdquisicion = fechaAdquisicionField.getText();
-                int valorCompra = Integer.parseInt(valorCompraField.getText());
-                String[] autores = autoresField.getText().split(",");
-                boolean disponible = Boolean.parseBoolean(disponibleField.getText());
-                int tiempoConsignacion = Integer.parseInt(tiempoConsignacionField.getText());
-                boolean subasta = Boolean.parseBoolean(subastaField.getText());
-                String[] valoresString = valoresField.getText().split(",");
-                ArrayList<Integer> valores = new ArrayList<>();
-                for (String valor : valoresString) {
-                    valores.add(Integer.parseInt(valor.trim()));
+                try {
+                    // Obtener los valores ingresados por el usuario
+                    String titulo = tituloField.getText();
+                    int anioCreacion = Integer.parseInt(anioCreacionField.getText());
+                    String lugarCreacion = lugarCreacionField.getText();
+                    String fechaAdquisicion = fechaAdquisicionField.getText();
+                    int valorCompra = Integer.parseInt(valorCompraField.getText());
+                    String[] autores = autoresField.getText().split(",");
+                    boolean disponible = Boolean.parseBoolean(disponibleField.getText());
+                    int tiempoConsignacion = Integer.parseInt(tiempoConsignacionField.getText());
+                    boolean subasta = Boolean.parseBoolean(subastaField.getText());
+                    String[] valoresString = valoresField.getText().split(",");
+                    ArrayList<Integer> valores = new ArrayList<>();
+                    for (String valor : valoresString) {
+                        valores.add(Integer.parseInt(valor.trim()));
+                    }
+                    boolean bodega = Boolean.parseBoolean(bodegaField.getText());
+                    String tipo = tipoField.getText();
+                    String resolucion = resolucionField.getText();
+                    int tamanioGiga = Integer.parseInt(tamanioGigaField.getText());
+                    String rutaImagen = rutaImagenField.getText();
+                    String loginPropietario = loginPropietarioField.getText(); // Obtener el login del propietario
+
+                    // Crear una lista de autores
+                    ArrayList<String> listaAutores = new ArrayList<>();
+                    for (String autor : autores) {
+                        listaAutores.add(autor.trim());
+                    }
+
+                    // Crear y cargar la fotografía con los detalles ingresados
+                    ArrayList<Map<String, Object>> propietarios = new ArrayList<>();
+                    Map<String, Object> mapaPropietario = new HashMap<>();
+                    mapaPropietario.put("loginPropietario", loginPropietario);
+                    mapaPropietario.put("valorCompra", valorCompra);
+                    mapaPropietario.put("fechaVenta", fechaAdquisicion);
+                    propietarios.add(mapaPropietario);
+
+                    Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, listaAutores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, resolucion, tamanioGiga, rutaImagen);
+
+                    // Agregar la fotografía a la galería y el autor si no existe
+                    Administrador.ingresarPieza(galeria, fotografia);
+                    Administrador.ingresarAutor(galeria, listaAutores, titulo);
+
+                    // Mostrar mensaje de éxito
+                    JOptionPane.showMessageDialog(null, "Fotografía cargada satisfactoriamente");
+
+                    // Limpiar los campos
+                    limpiarCampos();
+                } catch (NumberFormatException ex) {
+                    // Mostrar mensaje de error si hay algún campo numérico incorrecto
+                    JOptionPane.showMessageDialog(null, "Error en el formato de algún campo numérico");
                 }
-                boolean bodega = Boolean.parseBoolean(bodegaField.getText());
-                String tipo = tipoField.getText();
-                String resolucion = resolucionField.getText();
-                int tamanioGiga = Integer.parseInt(tamanioGigaField.getText());
-                String rutaImagen = rutaImagenField.getText();
-                String loginPropietario = loginPropietarioField.getText(); // Obtener el login del propietario
-
-                // Crear una lista de autores
-                ArrayList<String> listaAutores = new ArrayList<>();
-                for (String autor : autores) {
-                    listaAutores.add(autor.trim());
-                }
-
-                // Crear y cargar la fotografía con los detalles ingresados
-                ArrayList<Map<String, Object>> propietarios = new ArrayList<>();
-                Map<String, Object> mapaPropietario = new HashMap<>();
-                mapaPropietario.put("loginPropietario", loginPropietario);
-                mapaPropietario.put("valorCompra", valorCompra);
-                mapaPropietario.put("fechaVenta", fechaAdquisicion);
-                propietarios.add(mapaPropietario);
-
-                Fotografia fotografia = new Fotografia(titulo, loginPropietario, anioCreacion, lugarCreacion, listaAutores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, resolucion, tamanioGiga, rutaImagen);
-
-                // Agregar la fotografía a la galería y el autor si no existe
-                Administrador.ingresarPieza(galeria, fotografia);
-                Administrador.ingresarAutor(galeria, listaAutores, titulo);
-
-                // Cerrar esta ventana
-                dispose();
             }
         });
+    }
+
+    // Método para limpiar los campos de entrada
+    private void limpiarCampos() {
+        tituloField.setText("");
+        anioCreacionField.setText("");
+        lugarCreacionField.setText("");
+        fechaAdquisicionField.setText("");
+        valorCompraField.setText("");
+        autoresField.setText("");
+        disponibleField.setText("");
+        tiempoConsignacionField.setText("");
+        subastaField.setText("");
+        valoresField.setText("");
+        bodegaField.setText("");
+        tipoField.setText("");
+        resolucionField.setText("");
+        tamanioGigaField.setText("");
+        rutaImagenField.setText("");
+        loginPropietarioField.setText("");
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,5 @@
 package InterfazGrafica;
+
 import javax.swing.*;
 
 import Logica.Administrador;
@@ -155,8 +156,6 @@ public class VentanaEscultura extends JFrame
                 setVisible(false);
             }
         });
-
-        // Acción del botón cargarEsculturaButton
         cargarEsculturaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -184,13 +183,13 @@ public class VentanaEscultura extends JFrame
                 boolean electricidad = Boolean.parseBoolean(electricidadField.getText());
                 String rutaImagen = rutaImagenField.getText();
                 String loginPropietario = loginPropietarioField.getText(); // Obtener el login del propietario
-
+        
                 // Crear una lista de autores
                 ArrayList<String> listaAutores = new ArrayList<>();
                 for (String autor : autores) {
                     listaAutores.add(autor.trim());
                 }
-
+        
                 // Crear y cargar la escultura con los detalles ingresados
                 ArrayList<Map<String, Object>> propietarios = new ArrayList<>();
                 Map<String, Object> mapaPropietario = new HashMap<>();
@@ -198,23 +197,48 @@ public class VentanaEscultura extends JFrame
                 mapaPropietario.put("valorCompra", valorCompra);
                 mapaPropietario.put("fechaVenta", fechaAdquisicion);
                 propietarios.add(mapaPropietario);
-
+        
                 Escultura escultura = new Escultura(titulo, loginPropietario, anioCreacion, lugarCreacion, listaAutores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, alto, ancho, profundidad, peso, electricidad, rutaImagen);
-
+        
                 // Agregar la escultura a la galería y el autor si no existe
                 Administrador.ingresarPieza(galeria, escultura);
                 Administrador.ingresarAutor(galeria, listaAutores, titulo);
-
-                // Cerrar esta ventana
-                dispose();
+        
+                // Mostrar mensaje de carga satisfactoria
+                JOptionPane.showMessageDialog(null, "Escultura cargada satisfactoriamente.");
+        
+                // Limpiar campos de texto
+                limpiarCamposTexto();
             }
         });
     }
-
-    public static void main(String[] args) {
-        VentanaEscultura ventanaEscultura = new VentanaEscultura();
-        ventanaEscultura.pack(); // Ajustar tamaño automáticamente
-        ventanaEscultura.setVisible(true);
-    }
-}
-    
+        
+        // Método para limpiar los campos de texto
+        private void limpiarCamposTexto() {
+            tituloField.setText("");
+            anioCreacionField.setText("");
+            lugarCreacionField.setText("");
+            fechaAdquisicionField.setText("");
+            valorCompraField.setText("");
+            autoresField.setText("");
+            disponibleField.setText("");
+            tiempoConsignacionField.setText("");
+            subastaField.setText("");
+            valoresField.setText("");
+            bodegaField.setText("");
+            tipoField.setText("");
+            altoField.setText("");
+            anchoField.setText("");
+            profundidadField.setText("");
+            pesoField.setText("");
+            electricidadField.setText("");
+            rutaImagenField.setText("");
+            loginPropietarioField.setText("");
+        }
+        
+        public static void main(String[] args) {
+            VentanaEscultura ventanaEscultura = new VentanaEscultura();
+            ventanaEscultura.pack(); // Ajustar tamaño automáticamente
+            ventanaEscultura.setVisible(true);
+        }
+        }

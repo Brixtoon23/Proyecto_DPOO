@@ -1,5 +1,4 @@
 package InterfazGrafica;
-
 import javax.swing.*;
 
 import Logica.Administrador;
@@ -149,51 +148,76 @@ public class VentanaVideo extends JFrame {
         cargarVideoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Obtener los valores ingresados por el usuario
-                String titulo = tituloField.getText();
-                int anioCreacion = Integer.parseInt(anioCreacionField.getText());
-                String lugarCreacion = lugarCreacionField.getText();
-                String fechaAdquisicion = fechaAdquisicionField.getText();
-                int valorCompra = Integer.parseInt(valorCompraField.getText());
-                String[] autores = autoresField.getText().split(",");
-                boolean disponible = Boolean.parseBoolean(disponibleField.getText());
-                int tiempoConsignacion = Integer.parseInt(tiempoConsignacionField.getText());
-                boolean subasta = Boolean.parseBoolean(subastaField.getText());
-                String[] valoresString = valoresField.getText().split(",");
-                ArrayList<Integer> valores = new ArrayList<>();
-                for (String valor : valoresString) {
-                    valores.add(Integer.parseInt(valor.trim()));
+                try {
+                    // Obtener los valores ingresados por el usuario
+                    String titulo = tituloField.getText();
+                    int anioCreacion = Integer.parseInt(anioCreacionField.getText());
+                    String lugarCreacion = lugarCreacionField.getText();
+                    String fechaAdquisicion = fechaAdquisicionField.getText();
+                    int valorCompra = Integer.parseInt(valorCompraField.getText());
+                    String[] autores = autoresField.getText().split(",");
+                    boolean disponible = Boolean.parseBoolean(disponibleField.getText());
+                    int tiempoConsignacion = Integer.parseInt(tiempoConsignacionField.getText());
+                    boolean subasta = Boolean.parseBoolean(subastaField.getText());
+                    String[] valoresString = valoresField.getText().split(",");
+                    ArrayList<Integer> valores = new ArrayList<>();
+                    for (String valor : valoresString) {
+                        valores.add(Integer.parseInt(valor.trim()));
+                    }
+                    boolean bodega = Boolean.parseBoolean(bodegaField.getText());
+                    String tipo = tipoField.getText();
+                    String resolucion = resolucionField.getText();
+                    int tamanioGiga = Integer.parseInt(tamanioGigaField.getText());
+                    int duracion = Integer.parseInt(duracionField.getText());
+                    String rutaImagen = rutaImagenField.getText();
+                    String loginPropietario = loginPropietarioField.getText(); // Obtener el login del propietario
+
+                    // Crear una lista de autores
+                    ArrayList<String> listaAutores = new ArrayList<>();
+                    for (String autor : autores) {
+                        listaAutores.add(autor.trim());
+                    }
+
+                    // Crear y cargar el video con los detalles ingresados
+                    ArrayList<Map<String, Object>> propietarios = new ArrayList<>();
+                    Map<String, Object> mapaPropietario = new HashMap<>();
+                    mapaPropietario.put("loginPropietario", loginPropietario);
+                    mapaPropietario.put("valorCompra", valorCompra);
+                    mapaPropietario.put("fechaVenta", fechaAdquisicion);
+                    propietarios.add(mapaPropietario);
+
+                    Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, listaAutores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, duracion, tamanioGiga, resolucion, rutaImagen);
+
+                    // Agregar el video a la galería y el autor si no existe
+                    Administrador.ingresarPieza(galeria, video);
+                    Administrador.ingresarAutor(galeria, listaAutores, titulo);
+
+                    // Mostrar mensaje de éxito
+                    JOptionPane.showMessageDialog(null, "Video agregado satisfactoriamente");
+
+                    // Limpiar campos de texto
+                    tituloField.setText("");
+                    anioCreacionField.setText("");
+                    lugarCreacionField.setText("");
+                    fechaAdquisicionField.setText("");
+                    valorCompraField.setText("");
+                    autoresField.setText("");
+                    disponibleField.setText("");
+                    tiempoConsignacionField.setText("");
+                    subastaField.setText("");
+                    valoresField.setText("");
+                    bodegaField.setText("");
+                    tipoField.setText("");
+                    resolucionField.setText("");
+                    tamanioGigaField.setText("");
+                    rutaImagenField.setText("");
+                    loginPropietarioField.setText("");
+                    duracionField.setText("");
+
+                } catch (Exception ex) {
+                    // Mostrar mensaje de error si ocurre una excepción
+                    JOptionPane.showMessageDialog(null, "Error al cargar el video. Por favor, verifique los datos ingresados.");
                 }
-                boolean bodega = Boolean.parseBoolean(bodegaField.getText());
-                String tipo = tipoField.getText();
-                String resolucion = resolucionField.getText();
-                int tamanioGiga = Integer.parseInt(tamanioGigaField.getText());
-                int duracion = Integer.parseInt(duracionField.getText());
-                String rutaImagen = rutaImagenField.getText();
-                String loginPropietario = loginPropietarioField.getText(); // Obtener el login del propietario
-
-                // Crear una lista de autores
-                ArrayList<String> listaAutores = new ArrayList<>();
-                for (String autor : autores) {
-                    listaAutores.add(autor.trim());
-                }
-
-                // Crear y cargar el video con los detalles ingresados
-                ArrayList<Map<String, Object>> propietarios = new ArrayList<>();
-                Map<String, Object> mapaPropietario = new HashMap<>();
-                mapaPropietario.put("loginPropietario", loginPropietario);
-                mapaPropietario.put("valorCompra", valorCompra);
-                mapaPropietario.put("fechaVenta", fechaAdquisicion);
-                propietarios.add(mapaPropietario);
-
-                Video video = new Video(titulo, loginPropietario, anioCreacion, lugarCreacion, listaAutores, disponible, tiempoConsignacion, subasta, valores, bodega, tipo, propietarios, duracion, tamanioGiga, resolucion, rutaImagen);
-
-                // Agregar el video a la galería y el autor si no existe
-                Administrador.ingresarPieza(galeria, video);
-                Administrador.ingresarAutor(galeria, listaAutores, titulo);
-
-                // Cerrar esta ventana
-                dispose();
             }
         });
     }
