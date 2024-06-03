@@ -79,6 +79,9 @@ public class VentanaCrearSubasta extends JFrame implements ActionListener {
             boolean exito = Administrador.crearSusbasta(galeria, id, piezas);
             if (exito) {
                 JOptionPane.showMessageDialog(this, "Subasta creada satisfactoriamente.");
+                // Limpiar los campos de texto después de mostrar el mensaje
+                txtID.setText("");
+                txtPiezas.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "Error al crear la subasta.");
             }
