@@ -209,7 +209,13 @@ public class VentanaComprador extends JFrame implements ActionListener
 
         
         
-
+        else if(e.getActionCommand().equals("Salir"))
+        {
+            this.dispose();
+            VentanaPrincipal ventana = new VentanaPrincipal();
+            ventana.setVisible(true);
+            ventana.setLocationRelativeTo(null);
+        }
        
 
 
@@ -217,10 +223,4 @@ public class VentanaComprador extends JFrame implements ActionListener
         
     }
 
-    public static void main(String[] args)
-    {
-        VentanaComprador iniciar = new VentanaComprador();
-        iniciar.setVisible(true);
-        iniciar.setLocationRelativeTo(null);
-    }
 }

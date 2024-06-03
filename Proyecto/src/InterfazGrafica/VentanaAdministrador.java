@@ -99,22 +99,22 @@ public class VentanaAdministrador extends JFrame implements ActionListener {
         if (e.getActionCommand().equals("HistPieza")) {
             this.dispose();
             VentanaHistorialPieza ventana1 = new VentanaHistorialPieza();
-            ventana1.setVentanaAnterior("Comprador");
+            ventana1.setVentanaAnterior("Admin");
             ventana1.setGaleria(galeria);
             ventana1.setVisible(true);
             ventana1.setLocationRelativeTo(null);
         } else if (e.getActionCommand().equals("HistArtista")) {
             this.dispose();
             VentanaHistorialArtista ventana2 = new VentanaHistorialArtista();
-            ventana2.setVentanaAnterior("Comprador");
+            ventana2.setVentanaAnterior("Admin");
             ventana2.setGaleria(galeria);
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
         } else if (e.getActionCommand().equals("CrearSubasta")) {
             this.dispose();
             VentanaCrearSubasta ventana4 = new VentanaCrearSubasta();
-            //ventana4.setVisible(true);
-            //ventana4.setLocationRelativeTo(null);
+            ventana4.setVisible(true);
+            ventana4.setLocationRelativeTo(null);
         } else if (e.getActionCommand().equals("CargarPieza")) {
             this.dispose();
             VentanaCargarPieza ventana4 = new VentanaCargarPieza();
@@ -125,6 +125,34 @@ public class VentanaAdministrador extends JFrame implements ActionListener {
         } else if (e.getActionCommand().equals("Salir")) {
             System.exit(0);
         }
+
+       
+        else if(e.getActionCommand().equals("CargarPieza"))
+        {
+           
+        }
+
+
+        else if(e.getActionCommand().equals("HistorialComprador"))
+        {
+
+        }
+
+        else if(e.getActionCommand().equals("Salir"))
+        {
+            this.dispose();
+            VentanaPrincipal ventana = new VentanaPrincipal();
+            ventana.setVisible(true);
+            ventana.setLocationRelativeTo(null);
+        }
+
+       
+
+       
+
+
+
+        
     }
 
     public static void main(String[] args) {

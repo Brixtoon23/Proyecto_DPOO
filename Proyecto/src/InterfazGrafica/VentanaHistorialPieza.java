@@ -256,7 +256,22 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
                 menu.setVisible(true);
                 menu.setLocationRelativeTo(null);
             }
-            
+
+            else if(ventanaAnterior.equals("Comprador"))
+            {
+                this.dispose();
+                VentanaComprador menu = new VentanaComprador();
+                menu.setVisible(true);
+                menu.setLocationRelativeTo(null);
+            }
+
+            else if(ventanaAnterior.equals("Admin"))
+            {
+                this.dispose();
+                VentanaAdministrador menu = new VentanaAdministrador();
+                menu.setVisible(true);
+                menu.setLocationRelativeTo(null);
+            }
         }
 
         else if (e.getActionCommand().equals("Buscar"))
@@ -378,12 +393,5 @@ public class VentanaHistorialPieza extends JFrame implements ActionListener
         propietario = p;
     }
 
-    /** 
-    public static void main(String[] args)
-    {
-        VentanaHistorialPieza iniciar = new VentanaHistorialPieza();
-        iniciar.setVisible(true);
-        iniciar.setLocationRelativeTo(null);
-    }
-    */
+    
 }
