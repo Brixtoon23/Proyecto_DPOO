@@ -245,6 +245,7 @@ public class VentanaRegistro extends JFrame implements ActionListener
         
     }
 
+    //Quitar main
     public static void main (String[] args)
     {
         VentanaRegistro iniciar = new VentanaRegistro();
@@ -316,7 +317,9 @@ public class VentanaRegistro extends JFrame implements ActionListener
             lblIntenteDnuevo.setVisible(true);
         }
 
-        if (rol.equals("cajero"))
+        else
+        {
+            if (rol.equals("cajero"))
         {
             Cajero cajero=new Cajero(loginFinal, nombre, contrasenia,rol, numTel, false, new ArrayList<Compra>());
             Administrador.verificarCajero(cajero);
@@ -335,7 +338,7 @@ public class VentanaRegistro extends JFrame implements ActionListener
 
         else if (rol.equals("operador"))
         {
-            Operador operador = new Operador(loginFinal, nombre, contrasenia,rol, numTel, false, new ArrayList<Compra>());
+            Operador operador = new Operador(loginFinal, nombre, contrasenia,rol, numTel, false, new ArrayList<String>());
             Administrador.verificarOperador(operador);
 
             if (operador.isVerificado())
@@ -406,6 +409,9 @@ public class VentanaRegistro extends JFrame implements ActionListener
                 lblIntenteDnuevo.setVisible(true);
             }
         }
+        }
+
+        
 
 
         

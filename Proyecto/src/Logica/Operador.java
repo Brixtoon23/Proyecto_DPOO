@@ -17,7 +17,7 @@ public class Operador extends Usuario
 
 
 	public Operador(String login, String nombre, String password, String rol, String telefono, boolean verificado,
-			ArrayList<Compra> arrayList) {
+			ArrayList<String> arrayList) {
 		super(login, nombre, password, rol, telefono, verificado);
 		this.idSubastas = arrayList;
 	}

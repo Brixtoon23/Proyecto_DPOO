@@ -131,6 +131,14 @@ public class VentanaPrincipal extends JFrame implements ActionListener
         {
             inicioSesion();
         }
+
+        else
+        {
+            this.dispose();
+            VentanaRegistro ventana = new VentanaRegistro();
+            ventana.setVisible(true);
+            ventana.setLocationRelativeTo(null);
+        }
     }
 
 
