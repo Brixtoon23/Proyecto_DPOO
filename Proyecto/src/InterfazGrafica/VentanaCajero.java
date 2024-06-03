@@ -87,12 +87,12 @@ public class VentanaCajero extends JFrame implements ActionListener
         add(Box.createHorizontalStrut(100),BorderLayout.EAST);
     }
 
-    public static void main(String[] args)
-    {
-        VentanaCajero iniciar = new VentanaCajero();
-        iniciar.setVisible(true);
-        iniciar.setLocationRelativeTo(null);
-    }
+    //public static void main(String[] args)
+    //{
+        //VentanaCajero iniciar = new VentanaCajero();
+        //iniciar.setVisible(true);
+        //iniciar.setLocationRelativeTo(null);
+    //}
 
     @Override
     public void actionPerformed(ActionEvent e) 
