@@ -106,4 +106,3 @@ public class VentanaCompraEfectivoPrecioFijo extends JFrame {
         ventana.setLocationRelativeTo(null);
     }
 }
-
