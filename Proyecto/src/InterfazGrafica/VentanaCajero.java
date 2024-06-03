@@ -125,4 +125,11 @@ public class VentanaCajero extends JFrame implements ActionListener
             ventana.setLocationRelativeTo(null);
         }
     }
+    public static void main(String[] args)
+    {
+        VentanaCajero iniciar = new VentanaCajero();
+        iniciar.setVisible(true);
+        iniciar.setLocationRelativeTo(null);
+    }
+
 }

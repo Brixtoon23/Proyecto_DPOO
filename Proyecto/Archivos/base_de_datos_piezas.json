@@ -26,7 +26,7 @@
             3549,
             23456000
         ],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/LaPola.jpg",
         "disponible": true
     },
     {
@@ -59,7 +59,7 @@
             4000000,
             509999
         ],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/CaminosEntrelazados.jpg",
         "disponible": true
     },
     {
@@ -137,7 +137,7 @@
             400300,
             50919676765544333334
         ],
-        "rutaImagen": "null",
+        "rutaImagen":  "Proyecto/Imagenes/Guernica.jpeg",
         "disponible": true
     },
     {
@@ -229,7 +229,7 @@
             4000000,
             509999
         ],
-        "rutaImagen": "null",
+        "rutaImagen":  "Proyecto/Imagenes/LasMeninas.jpg",
         "disponible": false
     },
     {
@@ -295,7 +295,7 @@
             400300,
             -134529002
         ],
-        "rutaImagen": "null",
+        "rutaImagen":  "Proyecto/Imagenes/LaUltimaCena.jpeg",
         "disponible": false
     },
     {
@@ -331,7 +331,7 @@
             400300,
             -13452
         ],
-        "rutaImagen": "null",
+        "rutaImagen": "Proyecto/Imagenes/venusdemilo.jpg",
         "disponible": false
     }
 ]}
