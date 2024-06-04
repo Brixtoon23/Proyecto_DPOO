@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Persistencia.ComprasPersistencia;
 import Persistencia.PiezasPersistencia;
 import Persistencia.UsuarioPersistencia;
 
@@ -49,7 +50,8 @@ public class Cajero  extends Usuario
 		pieza.getHistorialPropietarios().add(mapa);
 
 		Compra compra= new Compra(comprador.getLogin(), oferta.getValorOfertado(), nombrePieza, nombrePieza, fecha);
-		
+		galeria.getCompras().add(compra);
+		ComprasPersistencia.registrarCompra(compra);
 		
 		comprador.getHistorialCompras().add(compra);
 		comprador.getIdpiezasCompradas().add(pieza.getTitulo());
@@ -97,7 +99,8 @@ public class Cajero  extends Usuario
 		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
 
 		Compra compraNueva = new Compra(comprador.getLogin(),valor , pieza.getTitulo() , metodoPago, fecha);
-
+        galeria.getCompras().add(compraNueva);
+		ComprasPersistencia.registrarCompra(compraNueva);
 		historialCompra.add(compraNueva);
 
 		comprador.setHistorialCompras(historialCompra);
@@ -149,7 +152,8 @@ public class Cajero  extends Usuario
 		ArrayList<Compra> historialCompra = comprador.getHistorialCompras();
 
 		Compra compraNueva = new Compra(comprador.getLogin(),valor , pieza.getTitulo() , metodoPago, fecha);
-
+		galeria.getCompras().add(compraNueva);
+		ComprasPersistencia.registrarCompra(compraNueva);
 		historialCompra.add(compraNueva);
 
 		comprador.setHistorialCompras(historialCompra);
