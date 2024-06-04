@@ -22,6 +22,8 @@ public class VentanaAdministrador extends JFrame implements ActionListener {
     private JButton btnCargarPieza;
     private JButton btnHistorialComprador;
     private JButton btnHistoriaPieza;
+    private JButton btnHistorialCompras;
+
     private JButton btnSalir;
     private Galeria galeria;
 
@@ -63,6 +65,11 @@ public class VentanaAdministrador extends JFrame implements ActionListener {
         btnHistoriaArtista.addActionListener(this);
         btnHistoriaArtista.setActionCommand("HistArtista");
 
+        btnHistorialCompras = crearBoton("Ver historial de compras en un año");
+        btnHistorialCompras.setFocusable(false);
+        btnHistorialCompras.addActionListener(this);
+        btnHistorialCompras.setActionCommand("HistorialCompras");
+
         btnSalir = crearBoton("Salir");
         btnSalir.setForeground(Color.RED);
         btnSalir.setFocusable(false);
@@ -74,6 +81,7 @@ public class VentanaAdministrador extends JFrame implements ActionListener {
         agregarBotonConEspacio(btnHistorialComprador);
         agregarBotonConEspacio(btnHistoriaPieza);
         agregarBotonConEspacio(btnHistoriaArtista);
+        agregarBotonConEspacio(btnHistorialCompras);
         agregarBotonConEspacio(btnSalir);
 
         add(panelC, BorderLayout.CENTER);
@@ -134,6 +142,15 @@ public class VentanaAdministrador extends JFrame implements ActionListener {
             VentanaHistorialComprador ventana4 = new VentanaHistorialComprador();
             ventana4.setVisible(true);
             ventana4.setLocationRelativeTo(null);
+            
+        }
+
+        else if (e.getActionCommand().equals("HistorialCompras")) {
+
+            this.dispose();
+            //VentanaHistorialCompras ventana4 = new VentanaHistorialCompras();
+            //ventana4.setVisible(true);
+            //ventana4.setLocationRelativeTo(null);
             
         }
         

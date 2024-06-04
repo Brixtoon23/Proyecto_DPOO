@@ -223,61 +223,52 @@ public class Administrador extends Usuario
 		
 	}
 	
-	public static boolean aprobarVentaPrecioFijo(Comprador comprador,Pieza pieza, String metodoPago, Galeria galeria, String fecha,String pasarela) 
-	{
+	public static String aprobarVentaPrecioFijo(Comprador comprador, Pieza pieza, String metodoPago, Galeria galeria, String fecha, String pasarela, String pago, String csv, String clave) {
 		boolean pagoAprovado = false;
 		boolean retorno = false;
-		
-
-
-		if (metodoPago.equals("tarjeta") || metodoPago.equals("transferencia") )
+		String mensaje = "";
+	
+		if (metodoPago.equals("tarjeta") || metodoPago.equals("transferencia")) {
+			int n = galeria.getHistorias().size();
+			n++;
+			Historia historia = new Historia(comprador.getLogin(), fecha, pieza.getValores().get(0), false, n, null);
+	
+			if (pago.equals("davivienda")) 
 			{
-
-				int n = galeria.getHistorias().size();
-				n++;
-				Historia historia = new Historia(comprador.getLogin(), fecha, pieza.getValores().get(0), false, n,null);
-				
-
-				if (pasarela.equals("PSE"))
+				mensaje = Pasarelas.menuDavivienda.menu(historia, csv, clave, clave);
+				if ( mensaje.equals("Pago realizado con éxito"))
 				{
-					pagoAprovado = Pasarelas.PSE.menuPSE(historia);
-					
+				pagoAprovado = true;
 				}
-				else if (pasarela.equals("PayU"))
-				{
-					pagoAprovado = Pasarelas.PayU.menuPayU(historia);
-					
-				}
-				
-				historia.setRealizada(pagoAprovado);
 
-				galeria.getHistorias().add(historia);
-				TransaccionesPersistencia.registrarHistoria(historia);
-		
-				if (pagoAprovado == true)
-				{
-				Cajero.registrarCompraPrecioFijo(comprador,pieza, metodoPago, galeria, fecha);
-				retorno= true;
-					
-				}
-			}
-			else
+			} else if (pago.equals("bancolombia")) 
 			{
-				float cuenta = comprador.getEstadoCuenta();
-				List<Integer> valores = pieza.getValores();
-				int precioFijo = valores.get(0);
-				if (precioFijo <= cuenta || pagoAprovado == true)
-				{
-					Cajero.registrarCompraPrecioFijo(comprador,pieza, metodoPago, galeria, fecha);
-					retorno= true;
-					
-				}
-
+				mensaje = Pasarelas.menuBancolombia.menu(historia, csv, clave);
+				pagoAprovado = mensaje.equals("Pago realizado con éxito");
 			}
-			
-
-		return retorno;
+	
+			historia.setRealizada(pagoAprovado);
+			galeria.getHistorias().add(historia);
+			TransaccionesPersistencia.registrarHistoria(historia);
+	
+			if (pagoAprovado) 
+			{
+				Cajero.registrarCompraPrecioFijo(comprador, pieza, metodoPago, galeria, fecha);
+				retorno = true;
+			}
+		} else {
+			float cuenta = comprador.getEstadoCuenta();
+			List<Integer> valores = pieza.getValores();
+			int precioFijo = valores.get(0);
+			if (precioFijo <= cuenta || pagoAprovado) {
+				Cajero.registrarCompraPrecioFijo(comprador, pieza, metodoPago, galeria, fecha);
+				mensaje= "true";
+			}
+		}
+	
+		return mensaje;
 	}
+	
 	
 		
 

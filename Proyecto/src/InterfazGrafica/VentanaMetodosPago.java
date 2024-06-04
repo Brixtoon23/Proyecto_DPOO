@@ -72,9 +72,9 @@ public class VentanaMetodosPago extends JFrame implements ActionListener {
                 ventanaEfectivo.setLocationRelativeTo(null);
                 break;
             case "Tarjeta":
-                VentanaPayU ventanaTarjeta = new VentanaPayU();
-                ventanaTarjeta.setVisible(true);
-                ventanaTarjeta.setLocationRelativeTo(null);
+                VentanaPasarelas ventanaPasarelas = new VentanaPasarelas();
+                ventanaPasarelas.setVisible(true);
+                ventanaPasarelas.setLocationRelativeTo(null);
                 break;
             case "Transferencia":
                 VentanaPayU ventanaTransferencia = new VentanaPayU();

@@ -91,8 +91,9 @@ public class VentanaCompraEfectivoPrecioFijo extends JFrame {
             JOptionPane.showMessageDialog(this, "Comprador no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
-        boolean aprobar = Administrador.aprobarVentaPrecioFijo(comprador, piezaCompra, metdPago, galeria, fecha, pasarela);
+        String mensaje=Administrador.aprobarVentaPrecioFijo(comprador, piezaCompra, metdPago, galeria, fecha, pasarela, "efectivo", "","" );
+       
+        boolean aprobar =  mensaje.equals("true");
         if (aprobar) {
             JOptionPane.showMessageDialog(this, "La compra fue realizada exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {

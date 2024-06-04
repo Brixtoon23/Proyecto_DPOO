@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class VentanaPayU extends JFrame implements ActionListener {
     private JButton pagarDaviviendaButton;
     private JButton pagarBancolombiaButton;
-    private JButton salirButton;
+    private JButton volverButton;
 
     public VentanaPayU() {
         setTitle("Pago con PayU");
@@ -24,9 +24,9 @@ public class VentanaPayU extends JFrame implements ActionListener {
         pagarBancolombiaButton.addActionListener(this);
         add(pagarBancolombiaButton);
 
-        salirButton = new JButton("Salir");
-        salirButton.addActionListener(this);
-        add(salirButton);
+        volverButton = new JButton("Volver");
+        volverButton.addActionListener(this);
+        add(volverButton);
 
         // Centrar la ventana en la pantalla
         setLocationRelativeTo(null);
@@ -42,9 +42,12 @@ public class VentanaPayU extends JFrame implements ActionListener {
             // Abrir la ventana de Bancolombia
             VentanaBancolombia ventanaBancolombia = new VentanaBancolombia();
             ventanaBancolombia.setVisible(true);
-        } else if (e.getSource() == salirButton) 
-        {
-            
+        } else if (e.getSource() == volverButton) 
+        { 
+            VentanaPasarelas ventanaPasarelas = new VentanaPasarelas();
+            ventanaPasarelas.setVisible(true);
+
+
         }
 
     }
