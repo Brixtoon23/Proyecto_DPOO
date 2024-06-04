@@ -19,7 +19,7 @@ public class ComprasPersistencia
     private static JSONObject baseDeDatosJSON = leerBaseDeDatos();
     private static JSONArray historialArray = baseDeDatosJSON.getJSONArray("compras");
 
-    public static void registrarHistoria(Compra compra) 
+    public static void registrarCompra(Compra compra) 
     {
         JSONObject historiaJson = new JSONObject();
         historiaJson.put("compradorLogin",compra.getCompradorLogin());
