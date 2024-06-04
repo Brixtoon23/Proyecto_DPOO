@@ -47,7 +47,7 @@ public class ComprasPersistencia
             return new JSONObject(jsonText.toString());
         } catch (FileNotFoundException e) {
             // Si el archivo no existe, crear un nuevo JSON con el array de historias vacío
-            return new JSONObject().put("historias", new JSONArray());
+            return new JSONObject().put("compras", new JSONArray());
         }
     }
 
