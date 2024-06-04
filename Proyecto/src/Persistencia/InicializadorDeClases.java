@@ -35,7 +35,7 @@ public class InicializadorDeClases
     public static Galeria cargarGaleria() 
     
     {
-        Galeria galeriaRetornada = new Galeria(null, 0, null, null, null,null,null);
+        Galeria galeriaRetornada = new Galeria(null, 0, null, null, null,null,null, null);
         try 
         {
         // Especifica la ruta del archivo JSON con la carpeta "Archivos"
@@ -380,7 +380,7 @@ public class InicializadorDeClases
             Inventario inventario = new Inventario(piezasBodegaObjeto,piezasExhibidasObjeto);
 
 
-            galeriaRetornada = new Galeria("GaleriaDakol", totalObras,inventario , usuariosObjeto, subastasObjeto,autoresMapa,historiasObjeto) ;
+            galeriaRetornada = new Galeria("GaleriaDakol", totalObras,inventario , usuariosObjeto, subastasObjeto,autoresMapa,historiasObjeto, new ArrayList<Compra>()) ;
 
             
             
