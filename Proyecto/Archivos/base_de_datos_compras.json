@@ -1,26 +1,88 @@
 {
-    "compras":
-    [
+    "compras": [
         {
-            "compradorLogin": "briceno_comprador",
-            "nombrePieza": "La Pola",
+            "compradorLogin": "comprador_enero",
+            "nombrePieza": "Pieza Enero",
+            "precio": 10000,
+            "metodoPago": "efectivo",
+            "fecha": "15/01/2023"
+        },
+        {
+            "compradorLogin": "comprador_febrero",
+            "nombrePieza": "Pieza Febrero",
+            "precio": 15000,
+            "metodoPago": "tarjeta",
+            "fecha": "20/02/2023"
+        },
+        {
+            "compradorLogin": "comprador_marzo",
+            "nombrePieza": "Pieza Marzo",
+            "precio": 20000,
+            "metodoPago": "efectivo",
+            "fecha": "10/03/2023"
+        },
+        {
+            "compradorLogin": "comprador_abril",
+            "nombrePieza": "Pieza Abril",
+            "precio": 25000,
+            "metodoPago": "tarjeta",
+            "fecha": "05/04/2023"
+        },
+        {
+            "compradorLogin": "comprador_mayo",
+            "nombrePieza": "Pieza Mayo",
             "precio": 30000,
             "metodoPago": "efectivo",
-            "fecha": "06/07/2023"
+            "fecha": "25/05/2023"
         },
         {
-            "compradorLogin": "sara_comprador",
-            "nombrePieza": "La Pola",
-            "precio": 50000,
+            "compradorLogin": "comprador_junio",
+            "nombrePieza": "Pieza Junio",
+            "precio": 35000,
             "metodoPago": "tarjeta",
-            "fecha": "06/09/2023"
+            "fecha": "10/06/2023"
         },
         {
-            "compradorLogin": "amelia_comprador",
-            "nombrePieza": "La Pola",
-            "precio": 58900,
+            "compradorLogin": "comprador_julio",
+            "nombrePieza": "Pieza Julio",
+            "precio": 40000,
             "metodoPago": "efectivo",
-            "fecha": "20/07/2023"
+            "fecha": "15/07/2023"
+        },
+        {
+            "compradorLogin": "comprador_agosto",
+            "nombrePieza": "Pieza Agosto",
+            "precio": 45000,
+            "metodoPago": "tarjeta",
+            "fecha": "20/08/2023"
+        },
+        {
+            "compradorLogin": "comprador_septiembre",
+            "nombrePieza": "Pieza Septiembre",
+            "precio": 50000,
+            "metodoPago": "efectivo",
+            "fecha": "10/09/2023"
+        },
+        {
+            "compradorLogin": "comprador_octubre",
+            "nombrePieza": "Pieza Octubre",
+            "precio": 55000,
+            "metodoPago": "tarjeta",
+            "fecha": "25/10/2023"
+        },
+        {
+            "compradorLogin": "comprador_noviembre",
+            "nombrePieza": "Pieza Noviembre",
+            "precio": 60000,
+            "metodoPago": "efectivo",
+            "fecha": "15/11/2023"
+        },
+        {
+            "compradorLogin": "comprador_diciembre",
+            "nombrePieza": "Pieza Diciembre",
+            "precio": 65000,
+            "metodoPago": "tarjeta",
+            "fecha": "20/12/2023"
         }
     ]
 }
