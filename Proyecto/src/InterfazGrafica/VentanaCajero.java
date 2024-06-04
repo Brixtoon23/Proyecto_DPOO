@@ -68,7 +68,7 @@ public class VentanaCajero extends JFrame implements ActionListener
         btnSalir.setFocusable(false);
         btnSalir.addActionListener(this);
         btnSalir.setActionCommand("Salir");
-        btnPago = new JButton("Consultar info medio de pago");
+        btnPago = new JButton("Hacer compra con tarjeta de credito");
         btnPago.setFont(new Font("Verdana",Font.PLAIN,20));
         btnPago.setFocusable(false);
         btnPago.addActionListener(this);
@@ -115,6 +115,15 @@ public class VentanaCajero extends JFrame implements ActionListener
             ventana2.setGaleria(galeria);
             ventana2.setVisible(true);
             ventana2.setLocationRelativeTo(null);
+        }
+
+        else if (e.getActionCommand().equals("Pago"))
+        {
+            this.dispose();
+            VentanaPasarelas ventana4 = new VentanaPasarelas();
+            ventana4.setVisible(true);
+            ventana4.setLocationRelativeTo(null);
+            
         }
 
         else if(e.getActionCommand().equals("Salir"))

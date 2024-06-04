@@ -69,11 +69,13 @@ public class VentanaPasarelas extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "Pse":
+            case "PSE":
+
                 VentanaPSE ventanaPSE = new VentanaPSE();
                 ventanaPSE.setVisible(true);
                 ventanaPSE.setLocationRelativeTo(null);
                 break;
+
             case "PayU":
                 VentanaPayU ventanaPayU = new VentanaPayU();
                 ventanaPayU.setVisible(true);
