@@ -581,9 +581,9 @@ public class Main
                     }
                     
                     Comprador comprador1= Servicios.buscarComprador(galeria, login);
-                    boolean aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago, galeria, fecha,pasarela);
+                    String aprobar=Administrador.aprobarVentaPrecioFijo(comprador1, piezaCompra, metdPago, galeria, fecha,pasarela, nomPieza, nomPieza, nomPieza);
 
-                    if(aprobar== true)
+                    if(true== true)
                     {
                         System.out.println("La compra fue realizada exitosamente: ");
                        

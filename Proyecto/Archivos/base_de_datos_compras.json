@@ -1,0 +1,26 @@
+{
+    "compras":
+    [
+        {
+            "compradorLogin": "briceno_comprador",
+            "nombrePieza": "La Pola",
+            "precio": 30000,
+            "metodoPago": "efectivo",
+            "fecha": "06/07/2023"
+        },
+        {
+            "compradorLogin": "sara_comprador",
+            "nombrePieza": "La Pola",
+            "precio": 50000,
+            "metodoPago": "tarjeta",
+            "fecha": "06/09/2023"
+        },
+        {
+            "compradorLogin": "amelia_comprador",
+            "nombrePieza": "La Pola",
+            "precio": 58900,
+            "metodoPago": "efectivo",
+            "fecha": "20/07/2023"
+        }
+    ]
+}

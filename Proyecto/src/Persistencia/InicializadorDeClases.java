@@ -44,6 +44,7 @@ public class InicializadorDeClases
         String rutaArchivoSubastas = "Proyecto/Archivos/base_de_datos_subastas.json";
         String rutaArchivoAutores = "Proyecto/Archivos/base_de_datos_autores.json";
         String rutaArchivoHistorias = "Proyecto/Archivos/historial_transacciones.json";
+        String rutaArchivoCompras = "Proyecto/Archivos/base_de_datos_compras.json";
 
 
 
@@ -53,6 +54,7 @@ public class InicializadorDeClases
             File archivoSubastas = new File(rutaArchivoSubastas);
             File archivoAutores = new File(rutaArchivoAutores);
             File archivoHistorias = new File(rutaArchivoHistorias);
+            File archivoCompras = new File(rutaArchivoCompras);
        
 
             // Crea un Scanner para leer el contenido del archivo JSON
@@ -61,6 +63,7 @@ public class InicializadorDeClases
             Scanner scannerSubastas = new Scanner(archivoSubastas);
             Scanner scannerAutores = new Scanner(archivoAutores);
             Scanner scannerHistorias = new Scanner(archivoHistorias);
+            Scanner scannerCompras = new Scanner(archivoCompras);
 
 
             // Lee todo el contenido del archivo y lo almacena en un StringBuilder
@@ -87,6 +90,11 @@ public class InicializadorDeClases
             {
                 historiasStringBuilder.append(scannerHistorias.nextLine());
             }
+            StringBuilder comprasStringBuilder = new StringBuilder();
+            while (scannerCompras.hasNextLine()) 
+            {
+                comprasStringBuilder.append(scannerCompras.nextLine());
+            }
 
             // Cierra el scanner
             scannerPiezas.close();
@@ -94,6 +102,7 @@ public class InicializadorDeClases
             scannerSubastas.close();
             scannerAutores.close();
             scannerHistorias.close();
+            scannerCompras.close();
 
             // Convierte el contenido del StringBuilder a String
             String piezasString = piezasStringBuilder.toString();
@@ -101,6 +110,7 @@ public class InicializadorDeClases
             String subastasString = subastasStringBuilder.toString();
             String autoresString = autoresStringBuilder.toString();
             String historiasString = historiasStringBuilder.toString();
+            String comprasString = comprasStringBuilder.toString();
 
             // Convierte el String JSON en un objeto JSONObject
             JSONObject piezasObject = new JSONObject(piezasString);
@@ -108,6 +118,7 @@ public class InicializadorDeClases
             JSONObject subastasObject = new JSONObject(subastasString);
             JSONObject autoresObject = new JSONObject(autoresString);
             JSONObject historiasObject = new JSONObject(historiasString);
+            JSONObject comprasObject = new JSONObject(comprasString);
             
 
             // Obtiene el array "piezas" del JSON
@@ -116,6 +127,7 @@ public class InicializadorDeClases
             JSONArray subastasArray = subastasObject.getJSONArray("subastas");
             JSONArray autoresArray = autoresObject.getJSONArray("autores");
             JSONArray historiasArray = historiasObject.getJSONArray("historias");
+            JSONArray comprasArray = comprasObject.getJSONArray("compras");
 
             // Inicializa variables necesarias
 
@@ -374,13 +386,25 @@ public class InicializadorDeClases
             }
 
 
+            ArrayList<Compra> comprasObjeto = new ArrayList<Compra>();
+
+            for (int i = 0 ; i < comprasArray.length(); i++)
+            {
+                JSONObject compraJson = comprasArray.getJSONObject(i);
+
+                Compra compra = new Compra(compraJson.getString("compradorLogin"), compraJson.getInt("precio"), compraJson.getString("nombrePieza"), compraJson.getString("metodoPago"), compraJson.getString("fecha"));
+
+                comprasObjeto.add(compra);
+
+            }
+
 
             int totalObras = piezasBodegaObjeto.size() + piezasExhibidasObjeto.size();
 
             Inventario inventario = new Inventario(piezasBodegaObjeto,piezasExhibidasObjeto);
 
 
-            galeriaRetornada = new Galeria("GaleriaDakol", totalObras,inventario , usuariosObjeto, subastasObjeto,autoresMapa,historiasObjeto, new ArrayList<Compra>()) ;
+            galeriaRetornada = new Galeria("GaleriaDakol", totalObras,inventario , usuariosObjeto, subastasObjeto,autoresMapa,historiasObjeto, comprasObjeto) ;
 
             
             

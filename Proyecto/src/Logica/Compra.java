@@ -14,7 +14,8 @@ public class Compra
 
 	
 	
-	public Compra(String compradorLogin, int precio, String nombrepieza, String metodoPago, String fecha) {
+	public Compra(String compradorLogin, int precio, String nombrepieza, String metodoPago, String fecha) 
+	{
 		this.compradorLogin = compradorLogin;
 		this.precio = precio;
 		Nombrepieza = nombrepieza;

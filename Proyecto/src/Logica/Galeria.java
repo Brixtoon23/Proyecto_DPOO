@@ -18,6 +18,7 @@ public class Galeria
     private Map<String,ArrayList<String>> autores;
     private ArrayList<Historia> historias;
     private ArrayList<Compra> compras;
+    
     public Galeria(String nombre, int cantidadObras, Inventario inventario, ArrayList<Usuario> usuarios,
             ArrayList<Subasta> subastas, Map<String, ArrayList<String>> autores, ArrayList<Historia> historias,
             ArrayList<Compra> compras) {

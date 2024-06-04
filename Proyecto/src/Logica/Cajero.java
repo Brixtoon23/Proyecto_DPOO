@@ -63,6 +63,7 @@ public class Cajero  extends Usuario
 		PiezasPersistencia.actualizarPropietarioPieza(galeria,pieza);
 		UsuarioPersistencia.actualizarCompradorCompra( comprador );
 		UsuarioPersistencia.actualizarPropietarioCompra(propietarioAnterior,nuevoPropiertario);
+		
 
 
 		
